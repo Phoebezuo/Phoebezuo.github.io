@@ -6,7 +6,7 @@ email:       phoebezuobj@gmail.com
 author:      Yufei Zuo
 description: "A little space of internet for myself"
 baseurl:     ""
-url:         "https://juniortheme.live/"
+url:         "https://yufeizuo.xyz/"
 date_format: "%b %-d, %Y"
 
 # Google services
@@ -40,7 +40,7 @@ show_workshops_section: true
 ## Disqus post comments             ##
 ## (leave blank to disable Disqus)  ##
 ######################################
-disqus_shortname: 'juniortheme-live'
+disqus_shortname: ''
 
 ##########################################################################
 ## Facebook Comments plugin                                             ##
