@@ -293,7 +293,6 @@ class Solution {
 
 Given a string *s*, partition *s* such that every substring of the partition is a palindrome.
 
-🖥 [Video Explanation](https://www.youtube.com/watch?v=FGrapMFgbCA)
 <iframe src="https://www.youtube.com/watch?v=FGrapMFgbCA" frameborder="0" allowfullscreen></iframe>
 
 ```
