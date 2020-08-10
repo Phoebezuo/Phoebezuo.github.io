@@ -125,13 +125,6 @@ hopefully sidestep this inconvenience.
 
 $$a^2 + b^2 = c^2$$
 
-### There's more being added all the time
-
-Checkout the [Github repository](https://github.com/thundergolfer/junior-theme) to request,
-or add, features.
-
-Happy writing.
-
 ---
 
 [^1]: Important information that may distract from the main text can go in footnotes.
