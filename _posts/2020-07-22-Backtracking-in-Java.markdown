@@ -9,7 +9,8 @@ categories: Algorithm Backtracking Leetcode
 ## [Subsets](https://leetcode.com/problems/subsets/)
 
 Given a set of **distinct** integers, return all possible subsets.
-🖥 [Click here to see video explanation](https://www.youtube.com/watch?v=znxeqMys_ac)
+
+🖥 [Video Explanation](https://www.youtube.com/watch?v=znxeqMys_ac)
 
 ```
 Input: nums = [1,2,3]
@@ -49,7 +50,8 @@ class Solution {
 ## [SubSets II](https://leetcode.com/problems/subsets-ii/)
 
 Given a set of **some duplicate** integers, return all possible subsets.
-🖥 [Click here to see video explanation](https://www.youtube.com/watch?v=hu7ez-Dv0r8)
+
+🖥 [Video Explanation](https://www.youtube.com/watch?v=hu7ez-Dv0r8)
 
 ```
 Input: [1,2,2]
@@ -89,7 +91,8 @@ class Solution {
 ## [Permutation](https://leetcode.com/problems/permutations/)
 
 Given a collection of **distinct** integers, return all possible permutations.
-🖥 [Click here to see video explanation](https://www.youtube.com/watch?v=6iOXVmtjO-M&t=2s)
+
+🖥 [Video Explanation](https://www.youtube.com/watch?v=6iOXVmtjO-M&t=2s)
 
 ```
 Input: [1,2,3]
@@ -130,7 +133,8 @@ class Solution {
 ## [Permutation II](https://leetcode.com/problems/permutations-ii/)
 
 Given a collection of **some duplicate** integers, return all possible permutations.
-🖥 [Click here to see video explanation](https://www.youtube.com/watch?v=ziKo42Q3nQ8&t=8s)
+
+🖥 [Video Explanation](https://www.youtube.com/watch?v=ziKo42Q3nQ8&t=8s)
 
 ```
 Input: [1,1,2]
@@ -171,7 +175,8 @@ class Solution {
 ## [Combination Sum](https://leetcode.com/problems/combination-sum/)
 
 Given a set of candidate numbers (candidates) **(without duplicates)** and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. The **same** repeated number may be chosen from candidates **unlimited** number of times.
-🖥 [Click here to see video explanation](https://www.youtube.com/watch?v=WXEh-xk9j3k&t=14s)
+
+🖥 [Video Explanation](https://www.youtube.com/watch?v=WXEh-xk9j3k&t=14s)
 
 ```
 Input: candidates = [2,3,5], target = 8,
@@ -211,7 +216,8 @@ class Solution {
 ## [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
 
 Given a set of candidate numbers (candidates) **(with some duplicates)** and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. Each number may be chosen from candidates **once**. 
-🖥 [Click here to see video explanation](https://www.youtube.com/watch?v=tbjipJMXMPs&t=8s)
+
+🖥 [Video Explanation](https://www.youtube.com/watch?v=tbjipJMXMPs&t=8s)
 
 ```
 Input: candidates = [2,5,2,1,2], target = 5,
@@ -251,7 +257,8 @@ class Solution {
 ## [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)
 
 Find all possible combinations of ***k*** numbers that add up to a number ***n***, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.
-🖥 [Click here to see video explanation](https://www.youtube.com/watch?v=wE51ZRxZTMA&t=16s)
+
+🖥 [Video Explanation](https://www.youtube.com/watch?v=wE51ZRxZTMA&t=16s)
 
 ```
 Input: k = 3, n = 9
@@ -285,7 +292,8 @@ class Solution {
 ## [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)
 
 Given a string *s*, partition *s* such that every substring of the partition is a palindrome.
-🖥 [Click here to see video explanation](https://www.youtube.com/watch?v=FGrapMFgbCA)
+
+🖥 [Video Explanation](https://www.youtube.com/watch?v=FGrapMFgbCA)
 
 ```
 Input: "aab"
