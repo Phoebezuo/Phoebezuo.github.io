@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Couse Schedule in Java"
-date:   2020-08-10
-summary: Summaries a few questions in Leetcode about Course Schedule
+layout:     post
+title:      Courses Schedule in Java
+date:       2020-08-10
+summary:    Summaries a few questions in Leetcode about Course Schedule
 categories: Algorithm Leetcode
 ---
 
