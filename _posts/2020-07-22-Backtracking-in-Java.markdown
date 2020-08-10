@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Backtracking in Java"
-date:   2020-07-22
-summary: Summaries a few questions in Leetcode about Backtracking
+layout:     post
+title:      Backtracking in Java
+date:       2020-07-22
+summary:    Summaries a few questions in Leetcode about Backtracking
 categories: Algorithm Backtracking Leetcode
 ---
 
