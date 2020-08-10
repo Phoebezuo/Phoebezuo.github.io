@@ -1,6 +1,6 @@
 ---
 layout:  post
-title:   Some recommend developer tools
+title:   Developer Tools
 date:    2020-08-10
 summary: 记录一些编程软件的配置和插件
 categories: MacOS Iterm Zsh
