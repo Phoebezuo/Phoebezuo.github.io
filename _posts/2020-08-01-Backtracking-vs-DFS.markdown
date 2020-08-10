@@ -11,7 +11,7 @@ DFS is a way of iterating through an actual graph/tree structure looking for a v
 Backtracking is a more general algorithm that doesn't necessarily even relate to trees.
 
 <div class="showcase">
-  <img style="width:50%" src="/images/portfolio/personal-logo/1.png" alt="">
+  <img style="width:50%" src="/images/post/difference.png" alt="">
 </div>
 
 ## **Recursion**
