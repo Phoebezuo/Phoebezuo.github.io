@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "MacOS Softwares and Settings"
-date:   2020-08-10
-summary: 一些非常实用的mac软件以及系统设置
+layout:     post
+title:      MacOS Softwares and Settings
+date:       2020-08-10
+summary:    一些非常实用的mac软件以及系统设置
 categories: MacOS Softwares
 
 ---
@@ -108,7 +108,7 @@ categories: MacOS Softwares
 
 ## 效率利器
 
-### [PDF Expert]([https://pdfexpert.com/?utm_source=google&utm_medium=cpc&utm_campaign=brand-hp&utm_google-campaign=brand-hp&utm_content=350969397485&utm_term=pdf%20expert&gclid=CjwKCAjw4MP5BRBtEiwASfwALzh1SibRfplKjf6awSzFMyrBD1XaHmgdRdgWryTqnH7kkDStyrIeOBoCetcQAvD_BwE#](https://pdfexpert.com/?utm_source=google&utm_medium=cpc&utm_campaign=brand-hp&utm_google-campaign=brand-hp&utm_content=350969397485&utm_term=pdf expert&gclid=CjwKCAjw4MP5BRBtEiwASfwALzh1SibRfplKjf6awSzFMyrBD1XaHmgdRdgWryTqnH7kkDStyrIeOBoCetcQAvD_BwE#))
+### [PDF Expert](https://pdfexpert.com/)
 
 - 推荐指数：★★★★★
 - 推荐理由：比系统自带的preview增加了更多的编辑功能，颜值也更高。印象中Acrobat不能merge两个文件，也不能在电脑上签字。
