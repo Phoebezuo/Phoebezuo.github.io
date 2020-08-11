@@ -23,7 +23,7 @@ categories: MacOS Softwares
 - 推荐理由：一款效率工具，能够快速完成一系列操作。它的工作流允许一系列的操作结合在一起，做一个集合， 只需要一次调用便可以运行所有的任务， 可以做出很多实用的东西，比如快速查询，网易云音乐的控制等。可以在这个[链接](https://www.packal.org/)上找到合适的工作流。
 
 <div class="showcase">
-  <img style="width:50%" src="/images/post/software/alfred_1.gif" alt="">
+  <img style="width:100%" src="/images/post/software/alfred_1.gif" alt="">
   <img style="width:50%" src="/images/post/software/alfred_2.png" alt="">
 </div>
 
@@ -33,7 +33,7 @@ categories: MacOS Softwares
 - 推荐理由：一个帮助Mac分屏的应用，可以填补MacOS系统的不足，像Windows那样拖动窗口分屏，也可以用快捷键分屏。只要是用过就离不开的一个软件， 装机必备。
 
 <div class="showcase">
-  <img style="width:50%" src="/images/post/software/magnet_1.gif" alt="">
+  <img src="/images/post/software/magnet_1.gif" alt="">
   <img style="width:50%" src="/images/post/software/magnet_2.png" alt="">
 </div>
 
