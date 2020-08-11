@@ -122,16 +122,10 @@ categories: MacOS Softwares
 - 推荐指数：★★★☆☆
 - 推荐理由：它是一款重新定义数字笔记的知识管理软件，整合了笔记/日记，知识库，markdown编辑器，任务代办，日历，项目管理等功能于一身。平台里自带很多template，颜值超高，笔记还可以导出任意格式的文件。
 
-<div class="showcase">
+<div>
   <img src="/images/post/software/notion_3.gif" alt="">
-</div>
-<div style="overflow: hidden; display: flex; justify-content:space-around;">
-  <div class="" style="max-width: 30%; max-height: 20%;">
-      <img src="/images/post/software/notion_1.png" alt="">
-  </div>
-  <div class="" style="max-width: 30%; max-height: 20%;">
-      <img src="/images/post/software/notion_2.png" alt="">
-  </div>
+  <img src="/images/post/software/notion_1.png" alt="">
+  <img src="/images/post/software/notion_2.png" alt="">
 </div>
 
 ### [Matrix Snipping Tool](https://mathpix.com/)
