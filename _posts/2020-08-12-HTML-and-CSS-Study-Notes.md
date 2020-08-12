@@ -48,26 +48,26 @@ HTML has nothing to do with fancy presentation and layout of a page. Thus, at th
 
 ### Mark-up / Tag Guidelines
 
-- **HTML** files contain a set of tags e.g. ***<head></head>***, ***<title></title>***, ***<em></em>***
+- **HTML** files contain a set of tags e.g. ***`<head></head>`***, ***`<title></title>`***, ***`<em></em>`***
 - Tags are **case insensitive**, but the convention is to write them in lowercase
 - All HTML tags are enclosed in angled brackets: ‘<’ and ‘>’
-- Tag elements often come in **pairs**. That is, you have a beginning tag and an ending tag e.g. ***<html></html>***. Beginning tags mark the start of a tag element and closing tags mark the end of a tag element i.e. a paragraph starts here (<p>) and ends here (</p>)
-- Some tags do not need to be closed as browses are smart; it is obvious to the browser that once a new tag starts, the unclosed tag must have ended. After all, certain tags cannot be nested inside other tags. E.g. <p>, <html> and <body>
+- Tag elements often come in **pairs**. That is, you have a beginning tag and an ending tag e.g. ***`<html></html>`***. Beginning tags mark the start of a tag element and closing tags mark the end of a tag element i.e. a paragraph starts here (`<p>`) and ends here (`</p>`)
+- Some tags do not need to be closed as browses are smart; it is obvious to the browser that once a new tag starts, the unclosed tag must have ended. After all, certain tags cannot be nested inside other tags. E.g. `<p>`, `<html>` and `<body>`
 
 ### About the Tags
 
 - ***DOCTYPE*** declares the type of document you are writing. If this tag is missing, the browser will try to guess the type. Including the ***DOCTYPE*** is good practice for backward compatibility with older browsers. ***DOCTYPE html*** indicates the document is type ***HTML5***
-- ***<html>*** tells the browser this is the start of an HTML document and ***</html>*** tells the browser this is the end of the HTML document
-- ***<head>*** represents an area for heading information e.g. title and meta information (data about data). Heading information is not displayed in the browser window except the title.
-- ***<title>*** contains the title of your document. The title is displayed in the browser's caption:
-- ***<body>*** contains text that will be displayed in the browser
-- **<*h1>***, ***<h2>***, **<h3>** represent headings. ***<h1>*** is the largest heading and ***<h6>*** is the smallest heading
-- ***<ol>*** defines an ordered (numbered) list. Inside the ***<ol>*** tag, you need to mark the individual list item element by using the ***<li>*** tag (list items)
-- ***<ul>*** is similar to ***<ol>*** except it defines an unordered list. This means individual ***<li>*** tags will define bulleted list items
-- ***<p>*** is a paragraph tag with an automatic line break afterwards
-- ***<em>*** defines text to be emphasised (the browser default displays this tag with an italic effect)
-- ***<strong>*** mark-up important text (the browser default displays this tag with a bold effect)
-- Notice we can also have a nesting of tags to define an emphasised and important text. This is common in HTML: ***<strong><em>* ...*</strong></em>***
+- ***`<html>`*** tells the browser this is the start of an HTML document and ***`</html>`*** tells the browser this is the end of the HTML document
+- ***`<head>`*** represents an area for heading information e.g. title and meta information (data about data). Heading information is not displayed in the browser window except the title.
+- ***`<title>`*** contains the title of your document. The title is displayed in the browser's caption:
+- ***`<body>`*** contains text that will be displayed in the browser
+- ***`<h1>`***, ***`<h2>`***, **`<h3>`** represent headings. ***`<h1>`*** is the largest heading and ***`<h6>`*** is the smallest heading
+- ***`<ol>`*** defines an ordered (numbered) list. Inside the ***`<ol>`*** tag, you need to mark the individual list item element by using the ***`<li>`*** tag (list items)
+- ***`<ul>`*** is similar to ***`<ol>`*** except it defines an unordered list. This means individual ***`<li>`*** tags will define bulleted list items
+- ***`<p>`*** is a paragraph tag with an automatic line break afterwards
+- ***`<em>`*** defines text to be emphasised (the browser default displays this tag with an italic effect)
+- ***`<strong>`*** mark-up important text (the browser default displays this tag with a bold effect)
+- Notice we can also have a nesting of tags to define an emphasised and important text. This is common in HTML: ***`<strong><em>`* ...*`</strong></em>`***
 
 # HTML Attributes
 
@@ -79,19 +79,19 @@ SYNTAX: <tag attribute="value">content</tag>
 
 ### **IDs and Classes**
 
-The attributes that apply to all mark-up are the id and class attributes. IDs are unique names which identify a *single* element e.g. <h1 id=**"motto"**>. Classes are unique names which identify a *group* of elements e.g. <p class=**"welcome"**>, <h1 class=**"welcome"**>. Tags may have multiple attributes. <ol id=**"wishList"** class=**"alpha"**>
+The attributes that apply to all mark-up are the id and class attributes. IDs are unique names which identify a *single* element e.g. `<h1 id=**"motto"**>`. Classes are unique names which identify a *group* of elements e.g. `<p class=**"welcome"**>`, `<h1 class=**"welcome"**>`. Tags may have multiple attributes. `<ol id=**"wishList"** class=**"alpha"**>`
 
 IDs and classes should add meaning to your code. They should help you quickly gather the overall content from a distant glance. You should not assign IDs and classes based on how you want them to look like (e.g. red, leftSide), but by semantics.
 
 # Creating Hyperlinks
 
-An example of a tag with additional attributes is the anchor tag **<a>** (or hyperlinks). Hyperlinks allow webpages to connect to each other. Hyperlinks can link to: pages outside the current website; pages within the current website; and links to other anchors on the current webpage.
+An example of a tag with additional attributes is the anchor tag **`<a>`** (or hyperlinks). Hyperlinks allow webpages to connect to each other. Hyperlinks can link to: pages outside the current website; pages within the current website; and links to other anchors on the current webpage.
 
 ```html
 SYNTAX: <a href="URL">Hyperlink Text</a>
 ```
 
-- <a> tells you where the link should begin and </a> indicates where the link ends
+- `<a>` tells you where the link should begin and </a> indicates where the link ends
 - Any text between these two tags act as the hyperlink text
 - The attribute href defines the path of where the hyperlink will link to
 
@@ -113,18 +113,18 @@ The **id** attribute can also specify the name of an **anchor**, used to crea
 
 # Referencing Images
 
-Images are not technically *inserted* into a webpage, rather images are *linked* to webpages. We use the image tag ***<img>*** to create a holding space for the image.
+Images are not technically *inserted* into a webpage, rather images are *linked* to webpages. We use the image tag ***`<img>`*** to create a holding space for the image.
 
 ```html
 SYNTAX: <img src="URL" alt="TEXT" />
 ```
 
-- The ***<img>*** tag has a src (source) attribute whose value is the path of the image location to be downloaded
+- The ***`<img>`*** tag has a src (source) attribute whose value is the path of the image location to be downloaded
 - It is good practice to include an alt (alternate) attribute whose value is the text to be displayed if the user for some reason cannot view the image. If the image is moved or the requested URL is missing, this is the fall back text that is displayed. The text associated with the alt attribute is also the text picked up by search engines, crawlers and reading software used by blind people (screen readers) to access the web.
 
 When you load a webpage, the browser gets the image from the web server and inserts it into the page for you. This is different from using MS Word. In MS Word, when you insert an image into Word, the image becomes a ‘part’ of the document. When you save a Word file, all you need to keep track of is that one Word file, knowing that the images you inserted will be there when you open it next time no matter where you move the Word file. With an HTML page, since you are only *referencing* the images, you have to make sure the image you are linking to always stay in the same spot in relation to the webpage.
 
-- <img> tags are examples of tags with no content inside them (void tags). Thus, the tag can be simplified: <img />
+- `<img>` tags are examples of tags with no content inside them (void tags). Thus, the tag can be simplified: `<img />`
 - In the example, "computer.gif", means that the browser will look for the image named "computer.gif" **in the same folder (or directory) as the HTML document itself**
 - This image path is an example of a partial *(relative)* You can also specify the full *(absolute)* path to the URL e.g. src=**"home/Users/{yourUserName}/Downloads/Files/computer.gif"**
 
@@ -132,7 +132,7 @@ When you load a webpage, the browser gets the image from the web server and inse
 
 # Referencing Multimedia
 
-The new mostly used media element in HTML5 is digital audio, which uses the ***<audio>*** tag. This tag is not included in the previous version of HTML. The ***<src>*** tag references a digital audio asset file name, and the ***<controls>*** tag adds the audio transport user interface feature. The following table shows the ***<audio>*** tag parameters supported in HTML5:
+The new mostly used media element in HTML5 is digital audio, which uses the ***<audio>*** tag. This tag is not included in the previous version of HTML. The ***`<src>`*** tag references a digital audio asset file name, and the ***`<controls>`*** tag adds the audio transport user interface feature. The following table shows the ***`<audio>`*** tag parameters supported in HTML5:
 
 [Untitled](https://www.notion.so/5fcf6bf05d4743099f1759cf49e80702)
 
@@ -151,10 +151,10 @@ When referencing multimedia elements, the source elements are referenced using t
 
 ### Explanation
 
-- The presence of any ***<audio>*** attributes has an implicit "true" value so you do not need to type: <audio controls=**"true"**>. Similarly, the absence of any attributes indicates an implicit "false". For example, the inclusion (true scenario) of the controls attribute tells the browser to display default audio controls such as play, pause, and volume. If this attribute is excluded (false scenario), no controls will be displayed.
+- The presence of any ***`<audio>`*** attributes has an implicit "true" value so you do not need to type: `<audio controls=**"true"**>`. Similarly, the absence of any attributes indicates an implicit "false". For example, the inclusion (true scenario) of the controls attribute tells the browser to display default audio controls such as play, pause, and volume. If this attribute is excluded (false scenario), no controls will be displayed.
 - This ***true/false*** attribute can similarly be applied for other audio attributes e.g. autoplay.
-- The ***<audio>*** element allows multiple ***<source>*** elements (or audio file paths) in case the browser does not support the first specified format.
-- The browser will try to use the first recognised format. If this does not work, it will try the second format under ***<source>***. If this still doesn’t work, it will try the third format in the list and so on until finally it will display the alternative error text message.
+- The ***`<audio>`*** element allows multiple ***`<source>`*** elements (or audio file paths) in case the browser does not support the first specified format.
+- The browser will try to use the first recognised format. If this does not work, it will try the second format under ***`<source>`***. If this still doesn’t work, it will try the third format in the list and so on until finally it will display the alternative error text message.
 - Fallback error text can be written anywhere, as long as it is between audio tags.
 - Browser does not load each file and see if it works. Rather, it looks at the type attribute and compare it to its own browser specification to see if it supports the specified codec.
 - The controls look different in different browsers.
@@ -162,7 +162,7 @@ When referencing multimedia elements, the source elements are referenced using t
 
 ### Referencing Video
 
-Videos can be referenced similar to audio elements using ***<video>*** tag. The following table presents the ten parameters for ***<video>*** tag. The last four parameters in the table are less frequently utilized.
+Videos can be referenced similar to audio elements using ***`<video>`*** tag. The following table presents the ten parameters for ***`<video>`*** tag. The last four parameters in the table are less frequently utilized.
 
 [Untitled](https://www.notion.so/2c3fd6fd80754c43a64ebb121fa74317)
 
@@ -199,7 +199,7 @@ When you created your first HTML page you have noticed you can format your texts
 
 There are three types of lists available in HTML.
 
-Ordered List: ***<ol>*** defines an ordered (numbered) list. Inside the ***<ol>*** tag, you need to mark the individual list item element by using the ***<li>*** tag (list items)
+Ordered List: ***`<ol>`*** defines an ordered (numbered) list. Inside the ***`<ol>`*** tag, you need to mark the individual list item element by using the ***`<li>`*** tag (list items)
 
 ![3.png](https://i.loli.net/2020/08/12/HPC5bXUSYNQWn1l.png)
 
@@ -250,7 +250,7 @@ Description List: ***<dl>*** defines a description list. The idea behind the d
 
 		<dt>Coffee</dt>
 		<dd>Want to have when you are sleepy.</dd>
-		
+
 		<dt>Water</dt>
 		<dd>Life saver!</dd>
 </dl>
@@ -371,7 +371,7 @@ Basic Tags
    <li>Item</li>
 </ol>
 
-<!-- Description List --> 
+<!-- Description List -->
 <dl>
 	 <dt>Item</dt>
 	 <dd>Description</dd>
@@ -379,7 +379,7 @@ Basic Tags
 
 <!-- Images -->
 <img src="URL" alt="Alternate Text" />
- 
+
 <!-- Audio -->
 <audio>
    <source src="URL" type="audio/mp3" />
@@ -659,7 +659,7 @@ padding-top, padding-right, padding-bottom, padding-left, specified in pixels or
 
 ## Margin Considerations
 
-There is one aspect of margins that tends to trip up designers. **Unlike horizontal elements, vertical elements collapse.** That means if you have two elements loaded on top of the other, only one of the margin element will be applied. 
+There is one aspect of margins that tends to trip up designers. **Unlike horizontal elements, vertical elements collapse.** That means if you have two elements loaded on top of the other, only one of the margin element will be applied.
 
 For example, consider a **heading1** with a **10px bottom margin**, and a paragraph with a **10px top margin**. In this case, there will only be a margin of 10px worth of space between them, not 20px. If the values are not the same, the higher value will be applied.
 
@@ -671,7 +671,7 @@ For example, consider a **heading1** with a **10px bottom margin**, and a par
 
 ![9.png](https://i.loli.net/2020/08/12/tBSX4zr9F7JyPNx.png)
 
-This top/right/bottom/left syntax can similarly be applied to the border’s color and weight property (e.g. border-left-weight, border-bottom-color). Putting these three attributes together, we have the shorthand notation to control these properties: border-weight, border-style, border-color. 
+This top/right/bottom/left syntax can similarly be applied to the border’s color and weight property (e.g. border-left-weight, border-bottom-color). Putting these three attributes together, we have the shorthand notation to control these properties: border-weight, border-style, border-color.
 
 ```css
 border-top: 1px solid black;
@@ -724,8 +724,8 @@ The **Alternative CSS Box model** is another option for Standard Box Model. It
 
 ```css
 /* The browser takes the border box as the area defined by any size you set. */
-.box { 
-	  box-sizing: border-box; 
+.box {
+	  box-sizing: border-box;
 }
 ```
 
@@ -754,7 +754,7 @@ html {
 
 				<p>paragraph 1</p>
 		</article>
-		
+
 		<article class="box-standard box-alternate">
 				<header>
 						<h2>header 2</h2>
@@ -801,13 +801,13 @@ html {
 ```css
 p {
 		padding: 5px;
-		color: blue; 
+		color: blue;
 		width: 200px;
 		border: 1px solid blue;
 }
 
-.box { 
-		box-sizing: border-box; 
+.box {
+		box-sizing: border-box;
 }
 
 <p class=box>Lorem ipsum dolor sit amet.Vestibulum pretium purus orci, eget malesuada nunc iaculis non. Nullam mollis feugiat risus, id egestas diam. </p>
@@ -991,7 +991,7 @@ li {
 .flex-display {
 		display: flex;
 		list-style: none; /* no bullut point */
-} 
+}
 
 .inline {
 		display: inline;
@@ -1057,7 +1057,7 @@ Here, elements are actually removed from normal document flow and repositioned b
 
 Any element below the absolute positioned element moves up in its place. Where they get tricky is where the element gets positioned. Essentially, an absolute positioned element looks to the nearest parent element that has a positioning property. If there are no elements positioned above it, it simply looks at the body tag, and thus offsets relative within the body tag.
 
-Relying on the body tag does not always give the desired result. 
+Relying on the body tag does not always give the desired result.
 
 ![16.png](https://i.loli.net/2020/08/12/6DdxjTEKROzHQ1U.png)
 
@@ -1076,7 +1076,7 @@ Relying on the body tag does not always give the desired result.
 }
 ```
 
-This is because your actual desired parent element (the content block) is not a positioned element, thus the quote block positions the quote with the body tag as the parent. To rectify this, you must qualify the content element as a positioned element. This is achieved by setting the containing block to have a position: relative property-value. 
+This is because your actual desired parent element (the content block) is not a positioned element, thus the quote block positions the quote with the body tag as the parent. To rectify this, you must qualify the content element as a positioned element. This is achieved by setting the containing block to have a position: relative property-value.
 
 - Trying to create layouts purely based on relative positioning will give you a lot to keep track of. That is, it would be very difficult to remember where everything was supposed to be normally so that you can offset it correctly. Even then, if you change one element, then the whole layout flexes and changes since everybody is responding to everything else. Thus, relative positioning is not going to be used to create entire layouts, rather, mainly to do two things:
     - provide slight tweaks to your layout when you need to offset an element in a specific direction (e.g. up a little bit, or left a little bit)
@@ -1109,13 +1109,13 @@ By default, positioned elements are stacked on top of each other based on where 
 header, aside {
    z-index: 1;
 }
- 
+
 
 .content {
    z-index: 2;
 }
 
- 
+
 .quote {
    z-index: 3;
 }
@@ -1175,7 +1175,7 @@ Your typical two-column layout can, therefore, be obtained by using floats:
 /* method 1 */
 aside {
    float: left;
-} 
+}
 
 .content {
    float: right;
@@ -1185,7 +1185,7 @@ aside {
 aside {
    float: left;
    margin-right: 20px;
-} 
+}
 
 .content {
    float: left;
@@ -1196,17 +1196,17 @@ aside {
    width: 960px;
    margin: 20px auto;
 }
- 
+
 #content {
    float: left;
    width: 620px;
-} 
+}
 
 #sidebar {
    float: left;
    width: 340px;
 }
- 
+
 #footer {
    clear: both;
 }
@@ -1261,7 +1261,7 @@ nav {
 }
 ul li {
     padding: 0px 10px 5px 5px;
-		margin: 20px 10px; 
+		margin: 20px 10px;
 		text-align: left; /* align with nav */
 }
 ```
@@ -1457,7 +1457,7 @@ To remedy the two main problems of CSS media queries, JavaScript is needed to re
 if (screen.width > 600) {
       // download complicated script
       // swap in full-source images for low-source ones
-}    
+}
 // OR
 if (document.documentElement.clientWidth < 900) {
       // scripts
@@ -1474,7 +1474,7 @@ However, **respond.js** was never meant to be a full-featured solution. Its pu
 
 The meaning of a flexible grid is to add a breakpoint in the style to change the design at the point where it requires. As a result you don't need to target every possible device size and design layout for it.
 
-In the early days of responsive design the only available option was using float. The basic idea is to transform pixel-based absolute widths to percentage-based relative measurements. The general rule to apply is: 
+In the early days of responsive design the only available option was using float. The basic idea is to transform pixel-based absolute widths to percentage-based relative measurements. The general rule to apply is:
 
 ```html
 Target/Context=Result (The rule is first proposed by Marcotte)
@@ -1533,7 +1533,7 @@ There are other modern technologies that are responsive by default. These method
 You can use **column-count** and **column-width** attributes to make your content responsive to the device needs. The attribute **column-count** indicates how many columns the webpage content will be split into. The browser then changes the size of the columns accordingly.
 
 ```css
-.container { 
+.container {
 		column-count: 2;
 }
 ```
@@ -1541,8 +1541,8 @@ You can use **column-count** and **column-width** attributes to make your co
 On the other hand, if you specify a column-width, the browser will create as many columns of that width will fit into the container. Then it will share out the remaining space between all the columns. Therefore the number of columns will change according to how much space there is.
 
 ```css
-.container { 
-		column-width: 12em; 
+.container {
+		column-width: 12em;
 }
 
 /* px -> absolute dimension, em -> relative dimension */
@@ -1552,7 +1552,7 @@ On the other hand, if you specify a column-width, the browser will create as man
 
 ### Flex box
 
-The Flex box method allows the flex items to shrink and distribute space between them according to the space in their container, as their initial behaviour. The **flex-grow** and **flex-shrink** attributes control the behaviour of the items behave when they encounter more or less space around them. 
+The Flex box method allows the flex items to shrink and distribute space between them according to the space in their container, as their initial behaviour. The **flex-grow** and **flex-shrink** attributes control the behaviour of the items behave when they encounter more or less space around them.
 
 - No floats
 - Responsive and mobile friendly
@@ -1565,12 +1565,12 @@ The Flex box method allows the flex items to shrink and distribute space between
 ```css
 
 /* the flex items will each take an equal amount of space in the flex container, using the shorthand of flex: 1 */
-.container { 
-	  display: flex; 
-} 
+.container {
+	  display: flex;
+}
 
-.item { 
-	  flex: 1; 
+.item {
+	  flex: 1;
 }
 ```
 
@@ -1578,13 +1578,13 @@ The Flex box method allows the flex items to shrink and distribute space between
 
 ### Grid
 
-In the Grid Layout, the distribution of space is maintained through **fr** unit. 
+In the Grid Layout, the distribution of space is maintained through **fr** unit.
 
 ```css
 /* the three 1 fr will create three columns taking equal space from the container */
-.container { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 ```
 
@@ -1745,9 +1745,9 @@ document.addEventListener(“DOMContentLoaded”, function() {
 
    function resizeWindow(e){
        var newWindowWidth = $(window).width();
- 
+
        if (newWindowWidth < 600) { // Mobile
-           $("link[rel=stylesheet]").attr({href : "../css/mobile.css"});            
+           $("link[rel=stylesheet]").attr({href : "../css/mobile.css"});
        } else if (newWindowWidth < 1024) { // iPad
            $("link[rel=stylesheet]").attr({href : "../css/ipad.css"});
        } else {
@@ -1771,13 +1771,13 @@ header nav {
    float: right;
    margin: 24px 0 0 0;
 }
- 
+
 #content {
    float: left;
    width: 900px;
    margin-right: 20px;
 }
- 
+
 #content article {
    background: #FFF;
    margin: 0 0 30px 0;
@@ -1788,7 +1788,7 @@ header nav {
    float: left;
    width: 280px;
 }
- 
+
 #sidebar aside {
    background: #FFF;
    margin: 0 0 30px 0;
@@ -1802,11 +1802,11 @@ header nav {
 		#container{
 		      width: 960px;
 		}
-		
+
 		#content {
 		     width: 700px;
 		}
-			
+
 		#sidebar {
 		     width: 240px;
 		}
@@ -1819,24 +1819,24 @@ header nav {
 		#container {
 				width: 768px;
 		}
-		
+
 		#content {
 				width: 540px;
 		}
-		
+
 		#sidebar {
 				width: 208px;
 		}
-		
+
 		header nav {
 				float: none;
 				clear: both;
 		}
-		
+
 		header nav ul {
 				width: 100%;
 		}
-		
+
 		#content article img {
 				float: none;
 				margin: 0 0 10px 0;
@@ -1851,13 +1851,13 @@ header nav {
 		#container {
 				width: 600px;
 		}
-		
+
 		#content {
 				float: none;
 				width: 600px;
 				margin: 0 0 12px 0;
 		}
-		
+
 		#sidebar {
 				float: none;
 				width: 600px;
@@ -1865,7 +1865,7 @@ header nav {
 
 		header nav ul {
 				width: 100%;
-		}  
+		}
 }
 ```
 
@@ -1875,24 +1875,24 @@ header nav {
 				float: none;
 				width: inherit;
 		}
-		
+
 		#content {
 				margin: 0;
 		}
-		
+
 		#sidebar,#banner {
 				display: none;
 		}
-		
+
 		header nav {
 				float: none;
 				clear: both;
 		}
-		 
+
 		header nav ul {
 				width: 100%;
 		}
-		
+
 		header nav ul li {
 				float: none;
 				display: block;
@@ -1901,11 +1901,11 @@ header nav {
 				text-align: left;
 				border-bottom: 1px solid #938A78;
 		}
-		
+
 		#content article img {
 				display: none;
 		}
-		
+
 		#sidebar aside {
 				background: #A79F91;
 				color: #FFF;
