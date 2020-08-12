@@ -5,6 +5,7 @@ date:       2020-08-12
 summaries:  Study notes about interactive web pages with JavaScript
 categories: JavaScript Web
 ---
+
 ## What is JavaScript?
 
 A programming language used to make web pages interactive.
