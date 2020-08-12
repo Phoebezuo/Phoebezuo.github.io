@@ -2,7 +2,7 @@
 layout:     post
 title:      JavaScript Study Notes
 date:       2020-08-12
-summaries:  Study notes about interactive web pages with JavaScript
+summary:    Study notes about interactive web pages with JavaScript
 categories: JavaScript Web
 ---
 
