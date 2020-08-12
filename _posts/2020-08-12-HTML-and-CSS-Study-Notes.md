@@ -67,7 +67,7 @@ HTML has nothing to do with fancy presentation and layout of a page. Thus, at th
 - ***`<p>`*** is a paragraph tag with an automatic line break afterwards
 - ***`<em>`*** defines text to be emphasised (the browser default displays this tag with an italic effect)
 - ***`<strong>`*** mark-up important text (the browser default displays this tag with a bold effect)
-- Notice we can also have a nesting of tags to define an emphasised and important text. This is common in HTML: ***`<strong><em>`* ...*`</strong></em>`***
+- Notice we can also have a nesting of tags to define an emphasised and important text. This is common in HTML: *`<strong><em>`* ...*`</strong></em>`*
 
 # HTML Attributes
 
@@ -79,7 +79,7 @@ SYNTAX: <tag attribute="value">content</tag>
 
 ### **IDs and Classes**
 
-The attributes that apply to all mark-up are the id and class attributes. IDs are unique names which identify a *single* element e.g. `<h1 id=**"motto"**>`. Classes are unique names which identify a *group* of elements e.g. `<p class=**"welcome"**>`, `<h1 class=**"welcome"**>`. Tags may have multiple attributes. `<ol id=**"wishList"** class=**"alpha"**>`
+The attributes that apply to all mark-up are the id and class attributes. IDs are unique names which identify a *single* element e.g. `<h1 id="motto">`. Classes are unique names which identify a *group* of elements e.g. `<p class="welcome">`, `<h1 class="welcome">`. Tags may have multiple attributes. `<ol id="wishList" class="alpha">`
 
 IDs and classes should add meaning to your code. They should help you quickly gather the overall content from a distant glance. You should not assign IDs and classes based on how you want them to look like (e.g. red, leftSide), but by semantics.
 
@@ -132,7 +132,7 @@ When you load a webpage, the browser gets the image from the web server and inse
 
 # Referencing Multimedia
 
-The new mostly used media element in HTML5 is digital audio, which uses the ***<audio>*** tag. This tag is not included in the previous version of HTML. The ***`<src>`*** tag references a digital audio asset file name, and the ***`<controls>`*** tag adds the audio transport user interface feature. The following table shows the ***`<audio>`*** tag parameters supported in HTML5:
+The new mostly used media element in HTML5 is digital audio, which uses the ***`<audio>`*** tag. This tag is not included in the previous version of HTML. The ***`<src>`*** tag references a digital audio asset file name, and the ***`<controls>`*** tag adds the audio transport user interface feature. The following table shows the ***`<audio>`*** tag parameters supported in HTML5:
 
 [Untitled](https://www.notion.so/5fcf6bf05d4743099f1759cf49e80702)
 
@@ -219,7 +219,7 @@ Ordered List: ***`<ol>`*** defines an ordered (numbered) list. Inside the ***
 </ol>
 ```
 
-Unordered List: ***<ul>*** is similar to ***<ol>*** except it defines an unordered list. This means individual ***<li>*** tags will define bulleted list items
+Unordered List: ***`<ul>`*** is similar to ***`<ol>`*** except it defines an unordered list. This means individual ***`<li>`*** tags will define bulleted list items
 
 ![2.png](https://i.loli.net/2020/08/12/e2nEYkw78yaKqXp.png)
 
@@ -239,7 +239,7 @@ Unordered List: ***<ul>*** is similar to ***<ol>*** except it defines an uno
 </ul>
 ```
 
-Description List: ***<dl>*** defines a description list. The idea behind the description list is to set up a set of items and their related descriptions. ***<dt>*** wrapped up in ***<dl>*** defines description term, and each description is wrapped in a ***<dd>** which is* description definition element.
+Description List: ***`<dl>`*** defines a description list. The idea behind the description list is to set up a set of items and their related descriptions. ***`<dt>`*** wrapped up in ***`<dl>`*** defines description term, and each description is wrapped in a `<dd>`which is* description definition element.
 
 ![4.png](https://i.loli.net/2020/08/12/KIrtG68bOuqEnJw.png)
 
@@ -267,15 +267,15 @@ HTML has the options to mark up quotations as block and inline quotation. Block 
 
 ## Other Text Formatting
 
-- Abbreviations: <abbr> - is used to wrap around an abbreviation or acronym.
-- <address> - wraps around any contact details.
-- <sup></sup>and <sub></sub>: To format texts and numbers as superscript and subscript.
-- <code>: For marking up generic pieces of computer code.
-- <pre></pre>: For retaining whitespace (generally code blocks)
-- <var>: For specifically marking up variable names.
-- <kbd>: For marking up keyboard (and other types of) input entered into the computer.
-- <samp>: For marking up the output of a computer program.
-- <time>: For marking up times and dates in a machine-readable format.
+- Abbreviations: `<abbr>` - is used to wrap around an abbreviation or acronym.
+- `<address>` - wraps around any contact details.
+- `<sup></sup>`and `<sub></sub>`: To format texts and numbers as superscript and subscript.
+- `<code>`: For marking up generic pieces of computer code.
+- `<pre></pre>`: For retaining whitespace (generally code blocks)
+- `<var>`: For specifically marking up variable names.
+- `<kbd>`: For marking up keyboard (and other types of) input entered into the computer.
+- `<samp>`: For marking up the output of a computer program.
+- `<time>`: For marking up times and dates in a machine-readable format.
 
 ### Example to jump to bottom
 
@@ -328,11 +328,11 @@ Remember, HTML is about content. This means just because you grouped content und
 
 ### Notice the differences between these mark-ups:
 
-<section> -> *groups **related** content together*
+`<section>` -> *groups **related** content together*
 
-<article> -> *wraps **independent** content that can be **syndicated***
+`<article>` -> *wraps **independent** content that can be **syndicated***
 
-<div> -> *groups **any** elements together for **styling** purposes*
+`<div>` -> *groups **any** elements together for **styling** purposes*
 
 ```html
 <!DOCTYPE html>
@@ -568,7 +568,7 @@ In your HTML file, you need to link your CSS file with the following line in bet
 <link rel="stylesheet" href="URL">
 ```
 
-- The <link> tag allows the page to link to the external style sheet
+- The `<link>` tag allows the page to link to the external style sheet
 - rel specifies the relationship between the current document and the linked document. In this case, the relationship is a **"stylesheet"**
 - href refers to the path of the external style sheet
 
@@ -888,9 +888,9 @@ A ***block-level*** element always starts **on a new line and takes up the fu
 
 An ***inline*** element **does not start on a new line and only takes up as much width as necessary**. Examples of inline elements:
 
-- <span>
-- <a>
-- <img>
+- `<span>`
+- `<a>`
+- `<img>`
 
 ## Display:flex
 
@@ -900,7 +900,7 @@ The flex option establishes the outer display type as block, but the inner displ
 
 *display: none;* is commonly used with *JavaScript* to hide and show elements without deleting and recreating them.
 
-The *<script>* element uses *display: none;* as default.
+The *`<script>`* element uses *display: none;* as default.
 
 ## Override The Default Display Value
 
@@ -1001,11 +1001,11 @@ li {
 ### True or false
 
 - Setting the visibility property to hidden will only hide the element and will use the same space for the element as before. (True)
-- <img> is a block-level element. (True)
+- `<img>` is a block-level element. (True)
 - The display:none and visibility:hidden hide the elements in exact same way. (False)
 - The following style will make the paragraphs start on a new line. p { display: inline; } (False)
 - A inline-level element always starts on a new line and takes up the full width available. (False)
-- The <script> element uses display: none; as default. (True)
+- The `<script>` element uses display: none; as default. (True)
 - An inline element does not start on a new line and only takes up as much width as necessary. (True)
 
 # CSS Positions Schemes Intro
@@ -1313,7 +1313,7 @@ You can set the viewport as follows:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 ```
 
-- A *<meta>* viewport element gives the browser instructions on how to control the page's dimensions and scaling.
+- A *`<meta>`* viewport element gives the browser instructions on how to control the page's dimensions and scaling.
 - The *width=device-width* part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
 - The *initial-scale=1.0* part sets the initial zoom level when the page is first loaded by the browser. Simply it disables the initial scale, thus ensuring that when the page is first displayed, it is fully zoomed in.
 - *maximum-scale = 1* ensures that there is always a 1:1 ratio between the page’s CSS pixel and the device’s screen pixels. This is important when a device switches to landscape orientation and you want the width to increase accordingly.
@@ -1674,7 +1674,7 @@ Since the divs are empty, you will need dimensions to prevent them from collapsi
 
 ### Switching Sizes
 
-The two new attributes of <img> tag **srcset** and **sizes** help the browser to pick the right images by proving several sources of images. Here is an example:
+The two new attributes of `<img>` tag **srcset** and **sizes** help the browser to pick the right images by proving several sources of images. Here is an example:
 
 ```html
 <img srcset="cat-480w.jpg 480w, cat-800w.jpg 800w"
@@ -1703,7 +1703,7 @@ As a result with the **srcset** and **sizes** attribute of **<img>** tag s
 
 ### Solving Art Direction Problem
 
-The **art direction problem** is the method to change the image displayed to suit different image display sizes. The <picture> element allows to solve this issue.
+The **art direction problem** is the method to change the image displayed to suit different image display sizes. The `<picture>` element allows to solve this issue.
 
 ```html
 <picture>
@@ -1713,11 +1713,11 @@ The **art direction problem** is the method to change the image displayed to s
 </picture>
 ```
 
-The explanation of <picture> tag:
-
+The explanation of `<picture>` tag:
+`
 - The elements include a media attribute that contains a media condition.
 - The srcset attributes contain the path to the image to display.
-- You must provide an **<img>** element, with **src** and **alt** attribute, otherwise no images will appear. This provides a default case while none of the media condition are true and a workaround for browsers that do not support the **<picture>** element.
+- You must provide an **`<img>`** element, with **src** and **alt** attribute, otherwise no images will appear. This provides a default case while none of the media condition are true and a workaround for browsers that do not support the **`<picture>`** element.
 
 ### Filament’s Group Solution
 
