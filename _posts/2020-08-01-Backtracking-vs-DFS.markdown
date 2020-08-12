@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Backtracking vs DFS"
-date:   2020-08-01
-summaries: Personal understanding between recursion, backtracking and dfs 
+layout:     post
+title:      Backtracking vs DFS
+date:       2020-08-01
+summaries:  Personal understanding between recursion, backtracking and dfs 
 categories: Algorithm Backtracking DFS
 ---
 
