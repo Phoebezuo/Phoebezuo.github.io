@@ -134,8 +134,6 @@ When you load a webpage, the browser gets the image from the web server and inse
 
 The new mostly used media element in HTML5 is digital audio, which uses the ***`<audio>`*** tag. This tag is not included in the previous version of HTML. The ***`<src>`*** tag references a digital audio asset file name, and the ***`<controls>`*** tag adds the audio transport user interface feature. The following table shows the ***`<audio>`*** tag parameters supported in HTML5:
 
-[Untitled](https://www.notion.so/5fcf6bf05d4743099f1759cf49e80702)
-
 The last two parameters are not recommended for use unless absolutely necessary. The reason for this is that the autoplay bothers many users, and an autobuffer takes up system resources that may not even be used if the user chooses not to hit the transport play button.
 
 When referencing multimedia elements, the source elements are referenced using their own source tags. There can be more than one source tag. This source tag provides a fallback mechanism if the browser does not support the first specified format.
@@ -163,8 +161,6 @@ When referencing multimedia elements, the source elements are referenced using t
 ### Referencing Video
 
 Videos can be referenced similar to audio elements using ***`<video>`*** tag. The following table presents the ten parameters for ***`<video>`*** tag. The last four parameters in the table are less frequently utilized.
-
-[Untitled](https://www.notion.so/2c3fd6fd80754c43a64ebb121fa74317)
 
 ```html
 <video controls poster="card/poster.jpg">
@@ -595,8 +591,6 @@ Typography is the design and use of typefaces and fonts, including their proport
 
 The font CSS property group dictates general font characteristics such as font-style and font-weight. The text CSS property group deals with the characters, spaces, words and paragraphs. For example, the text-indent property indents the first line of a text block. The letter-spacing property controls the spaces between a text block.
 
-[Font](https://www.notion.so/86e58b5ff27a430ebc51d0910d311d29)
-
 ### Web Fonts
 
 Web fonts refer to the technique of having the browser download and install fonts that are requested in the page using the @font-face syntax. This allows web authors to apply any font without worrying about if they are installed on the client's machine or not.
@@ -619,7 +613,6 @@ Essentially, you make a font-face rule by giving the font a name for the font-fa
 
 To then use the referenced font, the font-family attribute can be applied to a CSS selector.
 
-[CSS Typography Text](https://www.notion.so/fb43727709944c118edcc5764f20d88d)
 
 # CSS Box Model
 
@@ -652,8 +645,6 @@ This means when you assign a width to a tag element, this is just the content wi
 ## Individual Properties
 
 padding-top, padding-right, padding-bottom, padding-left, specified in pixels or percentages
-
-[Shorthand Notation](https://www.notion.so/79628ac462e2464fadd0d6c2b9412b6f)
 
 # CSS Box Model Margin Considerations
 
@@ -1418,8 +1409,6 @@ Media queries can also be included in a linked style sheet’s media attribute:
 ```html
 <link rel="stylesheet" media="screen and (max-device-width: 800px)" href="style768.css"/>
 ```
-
-[Media Feature Rules](https://www.notion.so/c33d26fddc5f4cc4892c3b5fccb75fe9)
 
 All the above queries, except for orientation, accept a min/max prefix. This will set a maximum/ minimum browser/device width that a certain set of styles would apply to.
 
