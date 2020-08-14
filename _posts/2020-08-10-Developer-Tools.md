@@ -11,9 +11,7 @@ categories: MacOS Iterm Zsh
 - 推荐指数：★★★★★
 - 推荐理由：功能强大且轻巧的免费代码编辑器，里面有很多插件可以实现各种功能。
 
-<div class="showcase">
-  <img style="width:50%" src="/images/post/developer/vscode_1.gif" alt="">
-</div>
+![setting.png](https://i.loli.net/2020/08/14/pyNHFV5XSI6rtDA.png)
 
 | Plugins                                                      | Describe                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
