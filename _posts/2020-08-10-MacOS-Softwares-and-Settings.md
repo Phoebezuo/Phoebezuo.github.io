@@ -153,15 +153,13 @@ categories: MacOS Softwares
 
 ## 系统设置
 
-<div class="showcase">
-  <img src="/images/post/system_setting/1.png" alt="">
-  <img src="/images/post/system_setting/2.png" alt="">
-  <img src="/images/post/system_setting/3.png" alt="">
-  <img src="/images/post/system_setting/4.png" alt="">
-  <img src="/images/post/system_setting/5.png" alt="">
-  <img src="/images/post/system_setting/6.png" alt="">
-  <img src="/images/post/system_setting/7.png" alt="">
-  <img src="/images/post/system_setting/8.png" alt="">
-  <img src="/images/post/system_setting/9.png" alt="">
-  <img src="/images/post/system_setting/10.png" alt="">
-</div>
+![1.png](https://i.loli.net/2020/08/14/ertgKRZSBiplhIC.png)
+![2.png](https://i.loli.net/2020/08/14/vhN9bSEMJH4w2no.png)
+![3.png](https://i.loli.net/2020/08/14/9L6hMyuJQcZxKBt.png)
+![4.png](https://i.loli.net/2020/08/14/r7FjIf29Asa4Bqe.png)
+![5.png](https://i.loli.net/2020/08/14/YogaSXQ7CqnVeNT.png)
+![6.png](https://i.loli.net/2020/08/14/KWpgcOxRLnzIfsb.png)
+![7.png](https://i.loli.net/2020/08/14/bhps7jE5ROZyg6L.png)
+![8.png](https://i.loli.net/2020/08/14/iOKcSwz6y9urWGV.png)
+![9.png](https://i.loli.net/2020/08/14/wBY3jEW25Tzf6pG.png)
+![10.png](https://i.loli.net/2020/08/14/S7BvFrsPKnZWyfc.png)
