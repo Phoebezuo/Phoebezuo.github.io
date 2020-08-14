@@ -31,9 +31,7 @@ categories: MacOS Iterm Zsh
 - 推荐指数：★★★★★
 - 推荐理由：它比Mac自带的terminal功能强大很多，可以通过改变配色字体等改变颜值。如果下载了oh-my-zsh，还有更多pluging大大提升了效率。
 
-<div class="showcase">
-  <img style="width:50%" src="/images/post/developer/iterm_1.gif" alt="">
-</div>
+![iterm_1.gif](https://i.loli.net/2020/08/14/dxycI2zDCfP6B7l.gif)
 
 ### Change Shell to ZSH
 
@@ -91,15 +89,11 @@ categories: MacOS Iterm Zsh
    ```
    iTerm2 → Preferences → Profiles → Text → Change Font
    ```
-   <div class="showcase">
-     <img style="width:50%" src="/images/post/developer/font.png" alt="">
-   </div>
+![font.png](https://i.loli.net/2020/08/14/rYbe1m3IniTZugX.png)
 
 ### Customise Color Scheme
 
-<div class="showcase">
-  <img style="width:50%" src="/images/post/developer/color.png" alt="">
-</div>
+![color.png](https://i.loli.net/2020/08/14/n9j63wfVCtXp8kW.png)
 
 ### Install Plugins
 
@@ -160,6 +154,4 @@ categories: MacOS Iterm Zsh
 
 5. Trivial settings
 
-  <div class="showcase">
-    <img style="width:50%" src="/images/post/developer/setting.png" alt="">
-  </div>
+![setting.png](https://i.loli.net/2020/08/14/pyNHFV5XSI6rtDA.png)
