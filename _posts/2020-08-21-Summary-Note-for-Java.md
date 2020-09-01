@@ -1,19 +1,33 @@
 ---
 layout:     post
-title:      Summary Note for Java 
+title:      Summary Note for Java
 date:       2020-08-21
-summary:    Summary notes for Object-Oriented Programming 
+summary:    Summary notes for Object-Oriented Programming
 categories: Java Programming Object-Oriented
 ---
 
 ## Compilation
 
-- a byte is made up of 8 bits 
-- your code is compiled to form bytecode(.class file), then JVM then convert this Bytecode into machine code in order to communicate with the underlying system. 
-- python source code is interpreted by a python interpreter and code is **compiled and executed at runtime** 
-- C is **compiled into a set of machine instructions** and can be executed by the machine. 
+- A byte is made up of 8 bits
+- Java is **compiled** into **bytecode**(.class file), then **JVM** then convert this Bytecode into **machine code** in order to communicate with the underlying system.
+- Python source code is interpreted by a python interpreter and code is **compiled and executed at runtime**
+- C is **compiled into a set of machine instructions** and can be executed by the machine.
 
-## Printing 
+```bash
+> javac MyProgram.java
+> java MyProgram
+Output from MyProgram ...
+```
+
+![iShot2020-08-21pm10.26.07.png](https://i.loli.net/2020/08/21/AZBTK3I4htolgdY.png)
+
+## Anatomy of a Source File
+
+![iShot2020-08-21pm10.13.42.png](https://i.loli.net/2020/08/21/m1yXf8ucViwtLRQ.png)
+
+![iShot2020-08-21pm10.16.25.png](https://i.loli.net/2020/08/21/5fI9REAdHqJzcZj.png)
+
+## Printing
 
 ``` java
 int a = 2;
@@ -25,9 +39,9 @@ System.out.printf("%d %s %f", a, b, c);
 - %d --> integer (base 10)
 - %o --> octal (base 8)
 - %x --> hexadecimal (base 16)
-- %f -->  float 
+- %f -->  float
 - %s --> string
-- %%, \% --> print a percent sign 
+- %%, \% --> print a percent sign
 
 ``` java
 int x = 2;
@@ -44,27 +58,36 @@ while(i < 10) {
 ## Converting
 
 ``` java
-// String to integer
+// number-like String to integer
 int x = Integer.parseInt("1");
 
-// int to String 
+// int to String
 String s = String.valueOf(1);
 
-// char to string 
+// char to string
 String s = Character.toString(c);
 
-// array to string 
+// array to string
 String s = Arrays.toString(array);
 ```
 
 ### Type Casting
 
-Although we cannot change the type of the variable after declaring it, we can use it in operations with certain types 
+Although we cannot change the type of the variable after declaring it, we can use it in operations with certain types
 
 ``` java
 int x = 5;
 float z = 2.0;
-z = z + x; // implicit casting, compiler recognnises the type of z as a float 
+z = z + x; // implicit casting, compiler recognnises the type of z as a float
+```
+
+```java
+int i = 1;
+double f = 1.0;
+
+System.out.println(i / 2); // 0
+System.out.println(f / 2); // 0.5
+System.out.println(f / i); // 1.0
 ```
 
 ## Data Type
@@ -86,9 +109,19 @@ Reference types hold an address pointing to the area of memory containing the da
 ``` java
 String s1 = "Meow";
 String s2 = new String("Meow");
+
+// compare the address of s1 and s2
 System.out.println(s1 == s2); // false
+
+// compare the content within s1 and s2
 System.out.println(s1.equals(s2)); // true
 ```
+
+## Command Line Arguments
+
+Program name is not included in the commands line arguments
+
+![iShot2020-08-21pm10.53.42.png](https://i.loli.net/2020/08/21/xqCPLByOmu7bd8W.png)
 
 ## Scanner
 
@@ -100,7 +133,7 @@ public class UsingScanner {
     public static void main(String[] args) {
         ArrayList<String> lines = new ArrayList<String>();
         Scanner scan = new Scanner(System.in);
-        // the new keyword on instatiation creates an instant 
+        // the new keyword on instatiation creates an instant
         // of the object using the called constructor.
         // which defines a blueprint of how to make and use a scanner
         while (scan.hasNextLine()) {
@@ -119,7 +152,7 @@ public class UsingScanner {
 
 ``` java
 // 1D array: check for null and empty array
-// 2D array: also check for null array of array 
+// 2D array: also check for null array of array
 public static void printSum(int[][] numbers) {
     if (numbers == null || numbers.length == 0) {
         return;
@@ -127,7 +160,7 @@ public static void printSum(int[][] numbers) {
         return;
     } else {
         int sum = 0
-            // for loop has 3 parts: variable, condition, updates 
+            // for loop has 3 parts: variable, condition, updates
             for (int i = 0; i < numbers.length; i++) {
                 for (int j = 0; j < numbers[i].length; j++) {
                     sum += numbers[i][j];
@@ -140,7 +173,7 @@ public static void printSum(int[][] numbers) {
 
 ## Array
 
-An array is a contiguous block of memory that holds a fixed number of values of the same type. 
+An array is a contiguous block of memory that holds a fixed number of values of the same type.
 
 ``` java
 String[] strArray = new String[10]; // define the size in 2nd bracket
@@ -152,7 +185,7 @@ type[]<name> = new type[size];
 // method 1
 int[] numbers = new int[] {1,2,3,4};
 // method 2
-int[] numbers = new int[4]; // initialising 4 references 
+int[] numbers = new int[4]; // initialising 4 references
 numbers = {1,2,3,4};
 ```
 
@@ -164,16 +197,16 @@ a memory address is the size of the cpu address size. E.g. X86-64 CPU (Intel, AM
 int[] arr = {
   				{1,2,3,4,4,4,4,4,4},
   				{1,2,3,4,4,4,4,4,4}
-						}; 
+						};
 
 // method 1
-for (int i = 0; i < arr.length; i++) { 
+for (int i = 0; i < arr.length; i++) {
 	for (int j = 0; j < arr[i].length; j++) {
     	System.out.println(arr[i][j]);
   	}
 }
 
-// method 2 
+// method 2
 String[] strings = new String[] {"a","b","c"};
 for (String s: strings) {
     System.out.println(s);
@@ -185,7 +218,7 @@ int[][] arr = new arr[2][]; // vector type
 
 ## String
 
-- Each time we use += with the String type we are creating a new string. 
+- Each time we use += with the String type we are creating a new string.
 
 - The String class is immutable
 
@@ -196,31 +229,31 @@ cat += " , says the cat"
 
 ### String Builder
 
-- it can resize and append very efficiently 
+- it can resize and append very efficiently
 
 ``` java
 StringBuilder sb = new StringBuilder();
 append(Stirng str): StringBuilder
 charAt(int index): char
-indexOf(String str): int 
+indexOf(String str): int
 length(): int
-toString(): String 
+toString(): String
 ```
 
 ## Classes
 
-- reference type, the type of an object variable is its class 
-- Objects are instance of a particular class. 
+- reference type, the type of an object variable is its class
+- Objects are instance of a particular class.
 - a class is a **Blueprint** of an object
-- it defines the **attributes** and **behaviours** of the object. 
+- it defines the **attributes** and **behaviours** of the object.
 - the main objective of a class is to able to reuse the data we store in an efficient and easy manner
 
-### Constuctor 
+### Constuctor
 
-- what is the difference between constructor and a normal method? 
+- what is the difference between constructor and a normal method?
   - The return type of a constructor is defined as the object of the class being created, hence there is no need to specify the return type
-- every class in java has a constructor even if it is not explicity defined. 
-- extending the class, we can write our own constructor 
+- every class in java has a constructor even if it is not explicity defined.
+- extending the class, we can write our own constructor
 
 ``` java
 public class Coffee {
@@ -238,12 +271,12 @@ public class Coffee {
 
 ### Static Methods
 
-- a method is a set of instructions bound to an object 
-- for static method, the object is the class itself 
-- The **this** keyword allows the programmer to refer to the object while **within an instance method** context. It refers to the current calling object 
+- a method is a set of instructions bound to an object
+- for static method, the object is the class itself
+- The **this** keyword allows the programmer to refer to the object while **within an instance method** context. It refers to the current calling object
 - We **cannot** use the keyword **within a static context**. It is unable to refer to the calling object.
 
-``` java 
+``` java
 public static double getArea(r) {
     return r * r * math.pi;
 }
@@ -255,9 +288,9 @@ public static void main(String[] args) {
 
 ### Non-static Methods (instance)
 
-- static methods belong to the class 
-- Non-static methods belong to the instance of the class object 
-- a way to know when to use static methods, is to check whether this method will be called regardless of any object being created 
+- static methods belong to the class
+- Non-static methods belong to the instance of the class object
+- a way to know when to use static methods, is to check whether this method will be called regardless of any object being created
 
 ``` java
 public class Circle {
@@ -278,7 +311,7 @@ public class Circle {
 }
 ```
 
-example 1 
+example 1
 
 ``` java
 public class Postcard {
@@ -286,30 +319,30 @@ public class Postcard {
     String receiver;
     boolean received;
 
-  // this static method is attempting to utillise an instance variable. what is the issue? 
+  // this static method is attempting to utillise an instance variable. what is the issue?
   // because it isn't referring to an object
-  // instance methods are not allowed in this context 
+  // instance methods are not allowed in this context
   public static boolean inTransit() {
       return !received;
   }
 }
 ```
 
-example 2 
+example 2
 
 ``` java
 public class Postcard {
     String sender;
     String receiver;
     boolean received;
-  
+
     public boolean inTransit() {
         return !received;
     }
 
-    // this static method is attempting to utillise an instance method 
+    // this static method is attempting to utillise an instance method
     // attached to an object. is there an issue?
-    // nope! there is an object instantiated and we are able to utilise method 
+    // nope! there is an object instantiated and we are able to utilise method
     public static boolean hasArrived(Postcard p) {
         if (!p.inTransit()) {
             return true;
@@ -320,17 +353,17 @@ public class Postcard {
 }
 ```
 
-example 3 
+example 3
 
 ``` java
 public class Postcard {
     String sender;
     String receiver;
     boolean received;
-  
-      // we have an instance method invoking a static method 
-      // while also using this keyword. is this correct? 
-      // yes! we are just passing the instance to a static function. 
+
+      // we have an instance method invoking a static method
+      // while also using this keyword. is this correct?
+      // yes! we are just passing the instance to a static function.
       // this is no difference from what we have done before but we are using this keyword
       public boolean alreadyArrived() {
           return hasArrived(this);
@@ -348,14 +381,14 @@ public class Postcard {
 
 ### Getters and Setters
 
-- why we make variable private (aka, only allows access within the same class)? 
+- why we make variable private (aka, only allows access within the same class)?
   - customisation, safety and more control
 
 ## Unified Modelling Language
 
 UML offers a the ability to purely design a system in how objects will interact with each other as well as describing interaction a user may have with the system.
 
-### Abstract Class 
+### Abstract Class
 
 - italicised font shows that it is an abstract class  <<abstract>>
 - we also show polymorphic method as italicised (abstract class & interface)
@@ -363,15 +396,15 @@ UML offers a the ability to purely design a system in how objects will interact 
 ### Interface
 
 - specify the stereotype in UML to be interface   <<interface>>
-- the relationship link is dashed line 
+- the relationship link is dashed line
 
 ## File IO
 
-- reader and writer classes are character stream classes 
-- difference between a file and a stream 
-    - no finite size or beginning 
-    - no concept of beginning or end in a stream 
-    - Recall System.out is a stream 
+- reader and writer classes are character stream classes
+- difference between a file and a stream
+    - no finite size or beginning
+    - no concept of beginning or end in a stream
+    - Recall System.out is a stream
 
 ### Reading from Files
 
@@ -383,15 +416,15 @@ import java.io.FileNotFoundException;
 public class ReadingFile {
 	public static void main(String[] args) {
 		File f = new File("numbers.txt");
-        
+
 		try {
 			Scanner reader = new Scanner(f);
-            
+
 			while(reader.hasNextInt()) {
 				int n = reader.nextInt();
 				System.out.println(n);
 			}
-            
+
 		} catch (FileNotFoundException e) {
             System.err.println("File not found");
             // we can also print the error
@@ -424,15 +457,15 @@ public class WritingFile {
             }
 			writer.close(); // save from 10 to 19
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();	
-		}		
+			e.printStackTrace();
+		}
 	}
 }
 ```
 
 ## Binary IO
 
-- Input stream and output stream classes are byte stream classes 
+- Input stream and output stream classes are byte stream classes
 
 ### Reading
 
@@ -442,14 +475,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class BinaryWriter {
-  
+
     public static int convert(byte[] b) {
         return (b[3] & 0xFF) |
             ((b[2] & 0xFF) << 8) |
             ((b[1] & 0xFF) << 16) |
             ((b[0] & 0xFF) << 24);
     }
-    
+
     public static void main(String[] args) {
         try {
             FileInputStream f = new FileInputStream("file.bin");
@@ -466,7 +499,7 @@ public class BinaryWriter {
 }
 ```
 
-### Writing 
+### Writing
 
 ``` java
 import java.io.FileOutputStream;
@@ -474,7 +507,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class BinaryWriter {
-  
+
     public static byte[] convert(int v) {
         byte[] b = new byte[4];
         b[0] = (byte) (v >> 24);
@@ -513,10 +546,10 @@ add(E e): boolean
 add(int index, E element): void
 contains(Object o): boolean
 get(int index): E
-indexOf(Object o): int 
+indexOf(Object o): int
 remove(int index): E
 set(int index, E element): E
-size(): int 
+size(): int
 toArray(): Object[]
 ```
 
@@ -542,57 +575,57 @@ for (Type each: name.keySet()) {
 Set<T> name = new Set<T>;
 ```
 
-## Checked Operation VS Unchecked Operation 
+## Checked Operation VS Unchecked Operation
 
-### Checked Operation 
+### Checked Operation
 
 - compiler checks for errors in the code and ensures that the types we are using are valid and not being muddled
 - e.g. FileNotFoundException
 
-### Unchecked Operation 
+### Unchecked Operation
 
 - assumption of the compiler that the user knows to a degree what they are doing in areas of code where exceptions can occur
-- e.g. RuntimeException 
+- e.g. RuntimeException
 
-## Inheritance 
+## Inheritance
 
-- What does inheritance offer? 
-  - attribute and method reusability 
-  - defining sub-type methods 
-  - overriding inherited methods 
-  - type information 
+- What does inheritance offer?
+  - attribute and method reusability
+  - defining sub-type methods
+  - overriding inherited methods
+  - type information
 - what does protected mean? (Encapsulation)
-  - Is only accessible within the class 
-  - attributes and methods will be accessible by all subtypes 
-  - allows single definition of an attribute instead of multiple 
-- some factors to consider 
-  - superclass does not know about its subclass 
-  - private is not inherited, only protected and public 
-  - only inherit from 1 class 
-- Polymorphism 
+  - Is only accessible within the class
+  - attributes and methods will be accessible by all subtypes
+  - allows single definition of an attribute instead of multiple
+- some factors to consider
+  - superclass does not know about its subclass
+  - private is not inherited, only protected and public
+  - only inherit from 1 class
+- Polymorphism
     - idea of having the same interface/design to represent diﬀerent types of objects and being able to manipulate this to represent them under a branch
 
 ### Abstract Class
 
-- cannot be instantiated, but can specify methods subtypes must define 
-- the main case for abstract is that we have some type that we do not want instantiate but is a generalisation of many other types 
+- cannot be instantiated, but can specify methods subtypes must define
+- the main case for abstract is that we have some type that we do not want instantiate but is a generalisation of many other types
 
-### Abstract methods 
+### Abstract methods
 
-- only declare an abstract method in only abstract classes 
+- only declare an abstract method in only abstract classes
 - When declearing an abstract method, we do not define a method body
 
-### Interface 
+### Interface
 
-- Cannot use instances variables, only static and constant (have the final modifier applied to them) in interface  
-- do not (typically) provide a method definition 
-- cannot instantiate them 
-- can be implemented multiple times 
+- Cannot use instances variables, only static and constant (have the final modifier applied to them) in interface
+- do not (typically) provide a method definition
+- cannot instantiate them
+- can be implemented multiple times
 
 ``` java
 public interface move {
   	public void move(double hours);
-  // an interface is not a class, it defines a group of methods for implementers to define 
+  // an interface is not a class, it defines a group of methods for implementers to define
 }
 
 // sinve they both implement Move interface, we can treat them as a Move type
@@ -601,7 +634,7 @@ public class Dog implements Move {
 }
 
 public class Dophin implements Move {
-  ... 
+  ...
 }
 
 public class MovingAnimals {
@@ -610,7 +643,7 @@ public class MovingAnimals {
         Dolphine dolphine = new Dolphin();
         Move[] movingAnimals = {dog, dolphine};
 
-        // if they of type Move we are guaranteed to be able to use move() method 
+        // if they of type Move we are guaranteed to be able to use move() method
         for (Move m: movingAnimals) {
             m.move(1.0);
         }
@@ -646,9 +679,9 @@ public class CoffeeCup implements Container {
 }
 ```
 
-## Overloading 
+## Overloading
 
-- use the same method name but with different method signature 
+- use the same method name but with different method signature
 
 - We are unable to apply overloading if we have a different return type between the methods. the return type is **not** part of method signature
 
@@ -657,19 +690,19 @@ public class CoffeeCup implements Container {
     ``` java
     int[] x = add(null, null);
     float[] y = add(null, null);
-    // the compiler would be unable to determine exactly 
-    // what method is trying to be called and will throw an error 
-    
+    // the compiler would be unable to determine exactly
+    // what method is trying to be called and will throw an error
+
     int[] x = add((int[])null, (int[])null);
     float[] y = add((float[])null, (float[])null);
-    // if we want to deal with ambiguous statement, we will need to cast. 
+    // if we want to deal with ambiguous statement, we will need to cast.
     ```
 
-### Constructor Overloading 
+### Constructor Overloading
 
 ``` java
 public class Person {
-  
+
     private static int DEFAULT_AGE = 21;
 
     private String name;
@@ -687,56 +720,56 @@ public class Person {
         this.name = name;
         this.age = age;
     }
-    // by using this keyword, we are able to eliminate 2 lines 
+    // by using this keyword, we are able to eliminate 2 lines
     // from the other constructors by usinte last one
 }
 
 public class Employee extends Person {
-  
+
     private long employeeID;
     private long departmentID;
 
     public Employee(String name, int age, long departmentID, long employeeID) {
         super(name, age);
-        // we are able to specify the constructor we want to invoke 
-        // and set attributes for the object 
+        // we are able to specify the constructor we want to invoke
+        // and set attributes for the object
         this.departmentID = departmentID;
         this.employeeID = employeeID;
     }
 }
 ```
 
-## Overriding 
+## Overriding
 
--   applies for classes, abstract classes and interface 
+-   applies for classes, abstract classes and interface
 
--   able to override inherited methods and replace them with a subtype specific definition 
+-   able to override inherited methods and replace them with a subtype specific definition
 
--   without the use of the '@Override', java automatically overrides 
+-   without the use of the '@Override', java automatically overrides
 
--   cannot override final class 
+-   cannot override final class
 
-    ``` java 
+    ``` java
     public final class Person {
-        ... 
+        ...
     }
     ```
 
 
-example 
+example
 
-``` java 
+``` java
 @Override
 public boolean equals(Object o) {
-    // Defensive checking 
+    // Defensive checking
     if (!(o instanceof Plant)) {
         return false;
     }
-    
-    // type casting 
+
+    // type casting
     Plant p = (Plant) o;
-    
-    ... 
+
+    ...
 }
 ```
 
@@ -744,30 +777,30 @@ public boolean equals(Object o) {
 
 -   checked exception (handled at compile time)
 
-    -   These exceptions are checked during compilation and the code will compile only if these conditions are met. 
+    -   These exceptions are checked during compilation and the code will compile only if these conditions are met.
     -   Examples of these include Type exceptions etc.
 
 -   runtime exception (unchecked exception)
 
-    -   It is something that can occur but the compiler will allow you to compile. This can cause an exception if not handled correctly. 
+    -   It is something that can occur but the compiler will allow you to compile. This can cause an exception if not handled correctly.
     -   e.g. list of objects. Adding elements that are not expected
     -   e.g. an Integer to an Object list of Strings. Then casting to Strings.
 
 -   Error (state that cannot be handled)
 
-    -   Cannot be handled by a try/catch block and these include irrecoverable errors, such as StackOverﬂowError and the program will crash. 
+    -   Cannot be handled by a try/catch block and these include irrecoverable errors, such as StackOverﬂowError and the program will crash.
 
-    -   Both Errors and Exception are subclasses of java.lang.Throwable class. 
+    -   Both Errors and Exception are subclasses of java.lang.Throwable class.
 
-    -   All errors are also unchecked. 
+    -   All errors are also unchecked.
 
     -   ``` java
-        // StackOverFlowError 
+        // StackOverFlowError
         public int recursion(int n) {
             return recursion(n-1) + recursion(n-2);
         }
-        // occur then a recursive function does not have base case that 
-        // properly exits it out of the recursive case 
+        // occur then a recursive function does not have base case that
+        // properly exits it out of the recursive case
         ```
 
 example 1
@@ -777,7 +810,7 @@ public static void imGonnaCrash() throws Exception {
   	throw new Exception("Definitely crashing!");
 }
 
-// we are forced to catch it by the compiler 
+// we are forced to catch it by the compiler
 public static void main(String[] args) {
     try {
         imGonnaCrash();
@@ -797,7 +830,7 @@ class InvalidRateException extends Exception {
 }
 
 public class Monitor {
-    
+
     private double rate;
     public final double MAX_RATE;
 
@@ -817,16 +850,16 @@ public class Monitor {
 }
 ```
 
-## Enums 
+## Enums
 
--   a set of defined instances of the same type 
--   Cannot use the "new" keywoard of an enum type 
+-   a set of defined instances of the same type
+-   Cannot use the "new" keywoard of an enum type
 
 ``` java
 // method 1
 enum Colour {
     Red, Green, Yellow;
-    
+
     public Colour change() {
         if (this == Red) {
             return Green;
@@ -843,17 +876,17 @@ enum Colour {
     Red { public Colour change() { return Green; }},
     Green { public Colour change() { return Yellow; }},
     Yellow { public Colour change() { return Red; }};
-    
+
     public abstract Colour change();
 }
 
 public class TrafficLight {
     private Colour colour;
-    
+
     public TrafficLight() {
-        colour = Colour.Red; // by default it is red 
+        colour = Colour.Red; // by default it is red
     }
-    
+
     public Colour change() {
         colour = colour.change();
         return colour;
@@ -886,18 +919,18 @@ remove(): void;
 
 ## Generics
 
--   advantages 
+-   advantages
 
-    -   Stronger type checks at compile time 
-    -   elimination of casts 
+    -   Stronger type checks at compile time
+    -   elimination of casts
     -   enabling programmers to implement generic algorithms (handle multiple different types without needing to rewrite the same code)
 
--   Generic Static Method 
+-   Generic Static Method
 
     ``` java
-    // Example 
+    // Example
     public class GenericFind {
-    	
+
     	public static <T> T find(T needle, T[] haystack) {
     		T element = null;
     		for(T e : haystack) {
@@ -908,7 +941,7 @@ remove(): void;
     		}
     		return element;
     	}
-        
+
     	// usage
     	public static void main(String[] args) {
     		String s = GenericFind.<String>find("Hello", new String[] {
@@ -917,74 +950,75 @@ remove(): void;
     			"Hello",
     			"World"
     		});
-    		
+
     		System.out.println(s);
     	}
     }
-    
+
     ```
 
--   Extends with type parameters 
+-   Extends with type parameters
 
     ``` java
     import java.util.List;
     import java.util.ArrayList;
-    
+
     abstract class Liquid {
     	public Liquid(double litres) {
     		this.litres = litres;
     	}
-    	
+
     	protected double litres;
     	public abstract double getLitres();
     }
-    
+
     class Water extends Liquid {
-    	
+
     	public Water(double l) {
     		super(l);
     	}
-    	
+
     	public double getLitres() {
     		return litres;
     	}
-    	
+
     	public String toString() { return "Water"; }
     }
-    
+
     class Oil extends Liquid {
-    	
+
     	public Oil(double l) {
     		super(l);
     	}
-    	
+
     	public double getLitres() {
     		return litres;
     	}
-    	
+
     	public String toString() { return "Oil"; }
     }
-    
-    
+    ```
+
+
     public class Barrel<T extends Liquid> {
-    	
+
     	List<T> contents;
-    	
+
     	public Barrel() {
     		contents = new ArrayList<T>();
     	}
-    	
+
     	public void add(T item) {
     		contents.add(item);
     	}
-    	
-        // since we have a bounded type we are able to infer that all types 
-        // have a super type Liquid, therefore we are able to utilise 
-        // the methods defined in liquids 
+
+        // since we have a bounded type we are able to infer that all types
+        // have a super type Liquid, therefore we are able to utilise
+        // the methods defined in liquids
     	public void outputContents() {
     		for(T e : contents) {
     			System.out.println(e + " " + e.getLitres());
-    			
+
     		}
     	}
     }
@@ -995,8 +1029,8 @@ remove(): void;
     ``` java
     List<String> strings = new ArrayList<String>();
     List<Object> objects = strings;
-    // because generics are invariant, we are unable to perform a similar operation 
-    // to arrays, this will result in a compilation error 
+    // because generics are invariant, we are unable to perform a similar operation
+    // to arrays, this will result in a compilation error
     ```
 
 ### DynamicArray
@@ -1007,19 +1041,19 @@ package collections;
 public class DynamicArray<T> {
 	private int size;
 	private T[] elements;
-	
+
 	@SuppressWarnings("unchecked")
 	public DynamicArray() {
 		size = 0;
-        // we will need to instantiate an Object[] to use with array and cast 
-        // cannot instantiate with generic type 
+        // we will need to instantiate an Object[] to use with array and cast
+        // cannot instantiate with generic type
 		elements = (T[]) new Object[16];
 	}
-	
+
 	public int size() {
 		return size;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public void add(T v) {
 		if(size >= elements.length) {
@@ -1032,7 +1066,7 @@ public class DynamicArray<T> {
 		elements[size] = v;
 		size++;
 	}
-	
+
 	public T remove(int idx) {
 		if(idx >= 0 && idx < size) {
 			T v = elements[idx];
@@ -1045,7 +1079,7 @@ public class DynamicArray<T> {
 			return null;
 		}
 	}
-	
+
 	public T get(int idx) {
 		if(idx >= 0 && idx < size) {
 			T v = elements[idx];
@@ -1225,24 +1259,24 @@ public class JArray<T> {
     public Object[] setSlice(int start, T[] slice, int sliceEnd) {
         array = Arrays.copyOf(array, array.length +  slice.length -1);
         int count = 0;
-        // duplicate the data backwards 
+        // duplicate the data backwards
 		for (int i = array.length - 1; i >= sliceEnd; i--) {
 			if (i >= start + sliceEnd) {
 				array[i] = array[i-slice.length+1];
 			}
 		}
-        // apply from the start 
+        // apply from the start
         for (int i = 0; i < slice.length; i++) {
             array[start] = slice[i];
 			start++;
         }
         return array;
     }
-    
+
     public void clear() {
         array = new Object[array.length];
     }
-    
+
 	@Override
 	public String toString() {
 		return Arrays.toString(array);
@@ -1262,19 +1296,19 @@ public class JArray<T> {
 
 ## Testing
 
--   white box testing --> typically where we employ some unit testing software, to help analyse the internals of the system and test them independently 
--   black box testing --> user centric testing, without knowledge of the internals, input is given and compared to match the output of the program 
--   regression testing --> when the system has been modified and the changes may result in a failure of a previous successful test case 
--   integration testing --> when developing individual components, we want to integrate it into the whole system and check to see if it works. 
+-   white box testing --> typically where we employ some unit testing software, to help analyse the internals of the system and test them independently
+-   black box testing --> user centric testing, without knowledge of the internals, input is given and compared to match the output of the program
+-   regression testing --> when the system has been modified and the changes may result in a failure of a previous successful test case
+-   integration testing --> when developing individual components, we want to integrate it into the whole system and check to see if it works.
 
 ``` java
-@Test 
+@Test
 public void checkForNull() {
     Container a = new Container(null);
     assertNull(a.get());
 }
 
-// examples 
+// examples
 assertTrue(boolean expression);
 assertFalse(boolean expression);
 assertEquals(expected, actual);
@@ -1282,31 +1316,31 @@ assertNull(object);
 assertSame(object1, object2);
 ```
 
-## Recursion 
+## Recursion
 
--   a base case, where the function terminates 
--   recursive case, which will converge to a base case 
+-   a base case, where the function terminates
+-   recursive case, which will converge to a base case
 
-### Advantages 
+### Advantages
 
--   can be simpler to read and write 
--   immediately writing an iterative method where there is an established recursive method can be considered a premature optimisation 
+-   can be simpler to read and write
+-   immediately writing an iterative method where there is an established recursive method can be considered a premature optimisation
 
-### Drawbacks 
+### Drawbacks
 
--   the java programming model does not allow for infinite recursion 
--   inefficient with memory 
--   potentially more computationally demanding due to the overhead caused by method calls 
+-   the java programming model does not allow for infinite recursion
+-   inefficient with memory
+-   potentially more computationally demanding due to the overhead caused by method calls
 
 ### Caching
 
 ``` java
-// constructing it with an interger as a key(the nth fibonacci sequence) 
-// and int[] as the value 
+// constructing it with an interger as a key(the nth fibonacci sequence)
+// and int[] as the value
 public static HashMap<Integer, int[]> results = new HashMap<>();
 
 public static int[] generateSequence(int n) {
-    // we have added a check to see if we have already computed this answer before 
+    // we have added a check to see if we have already computed this answer before
     if(results.containsKey(n)) {
         System.out.println("We have retrieved a result!");
         return results.get(n);
@@ -1333,11 +1367,11 @@ public static int[] generateSequence(int n) {
 }
 ```
 
-## Inner classes 
+## Inner classes
 
--   a common case to use is where we have a similar concept but its definition may differ for each class 
--   Non-static inner class will utilise instance variables from the outer class 
--   Static inner class operate similarly to regular classes by their existence within another class is for grouping reasons 
+-   a common case to use is where we have a similar concept but its definition may differ for each class
+-   Non-static inner class will utilise instance variables from the outer class
+-   Static inner class operate similarly to regular classes by their existence within another class is for grouping reasons
 
 ``` java
 public class Book implements Iterable<Book.Page> {
@@ -1348,14 +1382,14 @@ public class Book implements Iterable<Book.Page> {
 		public Page(String c) { contents = c; }
 		public String toString() { return contents; }
 	}
-    
-	// change the access modifier to public and access it outside 
+
+	// change the access modifier to public and access it outside
 	public class BookReader implements Iterator<Page> {
 		int index;
 		public BookReader(int i) {
 			index = i;
 		}
-		
+
 		public boolean hasNext() { return index < pages.size(); }
 		public Page next() {
 			Page p = pages.get(index);
@@ -1363,11 +1397,11 @@ public class Book implements Iterable<Book.Page> {
 			return p;
 		}
 	}
-	
+
 	public void addPage(Page p) { pages.add(p); }
-	
+
 	public void addContent(String s) { pages.add(new Page(s)); }
-	
+
 	public Iterator<Page> iterator() { return new BookReader(0); }
 }
 
@@ -1376,22 +1410,22 @@ public static void main(String[] args) {
     b.addContent("Line 1");
     b.addContent("Line 2");
     b.addContent("Line 3");
-    // since changing it to public we can access the class 
+    // since changing it to public we can access the class
     // but only through an instance of the outer class
-    // the declaration type does not require an instance 
+    // the declaration type does not require an instance
     Book.BookReader reader = b.new BookReader(0);
     while(reader.hasNext()) {
         Book.Page p = reader.next();
-        System.out.println(p); 
+        System.out.println(p);
     }
 }
 ```
 
-## Optionals 
+## Optionals
 
 ``` java
-// since the method could return no element, our method will return an optional, 
-// notifying the programmer that it could return null and they should handle it 
+// since the method could return no element, our method will return an optional,
+// notifying the programmer that it could return null and they should handle it
 public static Optional<Integer> retrieveElement(List<Integer> list, int i) {
     // we will initialise the result to an empty optional type
     // if the element can be retrieved, we can set it to contain an element from the list
@@ -1403,13 +1437,13 @@ public static Optional<Integer> retrieveElement(List<Integer> list, int i) {
 }
 ```
 
-## Anonymous class VS Lambdas 
+## Anonymous class VS Lambdas
 
 -   anonymous class can do more
 
-    -   create instance variables 
+    -   create instance variables
 
-        ```java 
+        ```java
         interface Greeting {
             public void hello();
             public void goodbye();
@@ -1426,18 +1460,18 @@ public static Optional<Integer> retrieveElement(List<Integer> list, int i) {
             }
         }
         ```
-        
--   multiple methods 
-    
--   encapsulation of fields 
+
+-   multiple methods
+
+-   encapsulation of fields
 
 ### Anonymouse Class
 
-An anonymous class is immediately constructed and an instance returned to the caller 
+An anonymous class is immediately constructed and an instance returned to the caller
 
--   only one instance of an anonymous class exists 
--   interface can have multiple methods 
--   it is typically declared within a method 
+-   only one instance of an anonymous class exists
+-   interface can have multiple methods
+-   it is typically declared within a method
 
 ``` java
 SayHello hi = new SayHello() { public void hello() { System.out.println("Hello!")} }
@@ -1449,7 +1483,7 @@ SayHello hi = new SayHello() { public void hello() { System.out.println("Hello!"
 
 -   Lambda methods require an interface that declares only **one** method
 
--   lambda can have multiple lines 
+-   lambda can have multiple lines
 
     ``` java
     SayHello hi = () -> {
@@ -1458,9 +1492,9 @@ SayHello hi = new SayHello() { public void hello() { System.out.println("Hello!"
     }
     ```
 
--   we can use lambda expression within our default methods 
+-   we can use lambda expression within our default methods
 
-### Comparator 
+### Comparator
 
 ``` java
 Collections.sort(people, new Comparator<Person>() {
@@ -1506,7 +1540,7 @@ public class MethodReference {
 }
 ```
 
-## Functional Interfaces 
+## Functional Interfaces
 
 ### Predicate<T>
 
@@ -1517,18 +1551,18 @@ Predicate<String> p = (String s) -> s.length() > 5;
 System.out.pritnln(p.test("This is a string longer than 5"));
 ```
 
--   e.g. filter 
+-   e.g. filter
 
 ### Consumer<T>
 
--   ipt: String, opt: n/a 
+-   ipt: String, opt: n/a
 
 ``` java
 Consumer<String> i = (String s) -> System.out.pritnln(s);
 i.accept("I'm printing this!");
 ```
 
--   e.g. forEach 
+-   e.g. forEach
 
 ### Supplier<T>
 
@@ -1553,7 +1587,7 @@ System.out.pritnln(f.apply("Give me the length"));
 
 Example
 
-``` java 
+``` java
 List<Person> over25 = people.stream().filter((Person p) -> p.getAge() > 25).collect(Collectors.toList());
 // aka
 List<Person> over25 = new ArrayList<Person>();
@@ -1564,9 +1598,9 @@ for (Person p : people) {
 }
 ```
 
-## Builder Pattern 
+## Builder Pattern
 
-``` java 
+``` java
 public class ComputerBuilder {
     private Part cpu;
     private Part motherboard;
@@ -1608,7 +1642,7 @@ class LineBusy extends TelephoneState {
 	public TelephoneState dial(String number) {
 		throw new RuntimeException("Line is already busy");
 	}
-	
+
 	public TelephoneState hangup() {
 		System.out.println("Shutting down");
 		return new LineWaiting();
@@ -1620,7 +1654,7 @@ class LineWaiting extends TelephoneState {
 		System.out.println("Dialing... " + number);
 		return new LineBusy();
 	}
-	
+
 	public TelephoneState hangup() {
 		throw new RuntimeException("Line is already waiting");
 	}
@@ -1628,15 +1662,15 @@ class LineWaiting extends TelephoneState {
 
 public class Telephone {
 	private TelephoneState state;
-	
+
 	public Telephone() {
 		state = new LineWaiting();
 	}
-	
+
 	public void dial(String number) {
 		state = state.dial(number);
 	}
-	
+
 	public void hangup() {
 		state = state.hangup();
 	}
@@ -1649,7 +1683,7 @@ Producer extends, Consumer super (PECS)
 
 ### Super
 
--   Add to the list 
+-   Add to the list
 
 ``` java
 Type<? super LowerBound> variable;
@@ -1657,14 +1691,14 @@ Type<? super LowerBound> variable;
 
 ### Extends
 
--   read object from list 
+-   read object from list
 
 ``` java
 Type<? extends UpperBound> variable;
 ```
 
-### Wildcards VS Generic 
+### Wildcards VS Generic
 
--   type parameters support multiple bounds, wildcards don't 
--   Wildcards support both upper and lower bounds unlike generic which support only extends 
+-   type parameters support multiple bounds, wildcards don't
+-   Wildcards support both upper and lower bounds unlike generic which support only extends
 

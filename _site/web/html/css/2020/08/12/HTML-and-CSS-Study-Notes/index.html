@@ -1,0 +1,857 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta http-equiv="Content-Language" content="en"> <title>HTML and CSS Study Notes &#8211; Yufei Zuo</title> <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> <link rel="dns-prefetch" href="//cdn.mathjax.org"> <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content="Study notes about web skeletons and skins"> <meta name="robots" content="all"> <meta name="author" content="Yufei Zuo"> <meta name="keywords" content="Web, HTML, CSS"> <link rel="canonical" href="http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/"> <link rel="alternate" type="application/rss+xml" title="RSS Feed for Yufei Zuo" href="/feed.xml" /> <!-- JQuery --> <script aync src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!-- Page-type specific CSS --> <!-- Theme CSS --> <link rel="stylesheet" href="/css/junior.css?202009012221" type="text/css"> <!-- Fonts --> <link href="https://fonts.googleapis.com/css?family=Muli:300,400,800" rel="stylesheet"> <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> <!-- MathJax --> <!-- Verifications --> <!-- Open Graph --> <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="HTML and CSS Study Notes"> <meta property="og:description" content="A little space of internet for myself"> <meta property="og:url" content="http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/"> <meta property="og:site_name" content="Yufei Zuo"> <!-- Twitter Card --> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="HTML and CSS Study Notes" /> <meta name="twitter:description" content="Study notes about web skeletons and skins" /> <meta name="twitter:url" content="http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/" /> <!-- Icons --> <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png"> <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png"> <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png"> <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png"> <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png"> <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"> <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"> <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"> <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"> <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192"> <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160"> <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"> <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> <script src="https://kit.fontawesome.com/9f419fabf5.js" crossorigin="anonymous"></script> </head> <body class="site"> <header class="site-header px-responsive"> <div class="mt2 wrap"> <nav class=""> <ul id="main-menu" data-nav-showing="false" style="transform: translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0);"> <!-- <li class="nav-jr home-anc"><h4><a href="#home"><br></a></h4></li> --> <div class="flexbox-parent"> <div class="flexbox-child"> <li class="about-anc"> <h4><a class="nav-underline home" href="http://localhost:4000">Home</a></h4></li> <li class="about-anc"> <h4><a class="nav-underline about" href="/about/">About Me</a></h4></li> <li class="expertise-anc"> <h4><a class="nav-underline contact" href="/contact/">Contact</a></h4></li> <li class="team-anc"> <h4><a class="nav-underline portfolio" href="/design/">Sketch</a></h4></li> <li class="beliefs-anc"> <h4><a class="nav-underline open-source" href="/projects/">Projects</a></h4></li> <li class="beliefs-anc"> <h4><a class="nav-underline resume" href="/resume/">Resumé</a></h4></li> <li> <div class="social-icons"> <div> <a class="fa fa-github" href="https://github.com/Phoebezuo" target="_blank"></a> <a class="fa fa-rss" href="/feed.xml"target="_blank"></a> <a class="fa fa-envelope" href="mailto:phoebezuobj@gmail.com"target="_blank"></a> <a class="fa fa-linkedin" href="https://www.linkedin.com/in/yufei-zuo-664635117"target="_blank"></a> <a class="fa fa-youtube-play" href="https://youtube.com/channel/UCZ7uXHROM7CLOU9E-Uj0rlA"target="_blank"></a> </div> <div class="right"> </div> </div> <div class="clearfix"></div> </li> </div> </ul> <!-- <div class="title-div"> <div class="title" style="transform: translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0);"><span class="title-label">About</span></div> </div> --> </nav> </div> </header> <div class="menu-btn"> <span class="menu-line"></span> <span class="menu-line"></span> <span class="menu-text">Menu</span> </div> <div class="home-btn" onclick="window.location.href = '/'"> <span class="static-menu-line"></span> <span class="home-text">Home</span> </div> <script> $( ".menu-btn" ).click(function() { if ( $( ".menu-text" ).css( "opacity" ) == "0" ){ $(".menu-line:nth-of-type(2)").css("transform","rotate(135deg)"); $(".menu-text").css("opacity", "1"); $( "#main-menu" ).css("transform", "translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0)"); } else { $(".menu-line:nth-of-type(2)").css("transform","rotate(44deg)"); $(".menu-text").css("opacity", "0"); $( "#main-menu" ).css("transform", "matrix(1, 0, 0, 1, 0, 0)"); } }); </script> <div class="site-wrap"> <div class="post p2 p-responsive wrap" role="main"> <div class="measure"> <style> p a { color: black !important; text-decoration: none; border-bottom: .0625em solid #dcf3ff; box-shadow: 0 -.4em 0 #dcf3ff inset; } p a:hover, p a:active, p a:focus { border-color: #aedbf9; box-shadow: 0 -.75em 0 #aedbf9 inset; } p .reversefootnote { border: none; box-shadow: none; } p .reversefootnote:hover, p .reversefootnote:active, p .reversefootnote:focus { border-color: none; box-shadow: none; } </style> <div class="post-header mb2"> <h1>HTML and CSS Study Notes</h1> <span class="post-meta">Aug 12, 2020</span><br> <span class="post-meta small"> 57 minute read </span> </div> <article class="post-content"> <h1 id="components-of-the-web">Components of the Web</h1> <p>The World Wide Web (WWW) is a collection of HTML documents. The links between web pages are called <strong>hyperlinks</strong> (links) and allows you to navigate the web.</p> <ol> <li><strong>HTTP:</strong> the protocol of the web that allows browsers to communicate with servers</li> <li><strong>Servers:</strong> computers that host the files (usually webpages) that make up the web</li> <li><strong>Internet:</strong> the world’s largest computer network</li> <li><strong>Browser:</strong> a program that runs on your computer to display files found on the web</li> </ol> <h1 id="history-of-html-and-web-browsers">History of HTML and web browsers</h1> <p>In 2004, the W3C was developing XHTML2, which was to replace XHTML1 and HTML4 as the primary mark-up language for the web. Frustrated with this direction, the WHATWG started its own specification, Web Applications 1.0. The W3C finally adopted the WHATWG specification in 2007 and renamed it HTML5.</p> <p>The actual specifications and what’s actually in it, continues to be the most confusing aspect of HTML5. There is so much conflicting information out there that it is hard to differentiate what is part of HTML5, and what is not. HTML5’s primary focus was on facilitating the development of applications. This includes making it easier for designers to make web and mobile applications, serve videos and add interactive content.</p> <p>It is important to learn the basic principles and syntax of HTML before you use an HTML Web Authoring Tool like Dreamweaver. This unit will provide you with the knowledge and capabilities to develop more advanced websites, as well as to be able to properly understand its inner workings. You do not need to learn the entire language in detail, but you do need to understand the basic concepts of mark-up languages such as HTML.</p> <h1 id="what-is-html5">What is HTML5?</h1> <p><em>HTML5</em> is latest revision of the <em>HTML</em> (Hyper Text Mark-up Language) used to create richer and more semantic documents on the World Wide Web.</p> <ul> <li><em>HTML</em> is the language of your browser that makes it possible to present information on the Internet</li> <li>The purpose of the browser is thus to read <em>HTML</em> code and interpret them into visible pages</li> <li>The primary purpose of <em>HTML</em> is to control the content and structure of a webpage</li> <li><em>HTML</em> is not a programming language, it is a mark-up language. Mark-up is semantically categorising text in a document. You mark-up text the same way you do in Microsoft Word with: headings; bullets; and emphasised text.</li> </ul> <p>HTML is made up of:</p> <ul> <li>Text content, which is what you see</li> <li>Mark-up, which is what that content looks like or how it is arranged</li> <li>References to other documents e.g. images and videos</li> <li>Links to other pages</li> </ul> <p>Unlike previous versions of <em>HTML</em>, <em>HTML5</em> has the ability to retain backwards compatibility with previous versions of HTML. This means that implementing <em>HTML5</em> will not cause older pages to fail.</p> <p>HTML has nothing to do with fancy presentation and layout of a page. Thus, at this point, you should not even be thinking about what and how your page should look like. Rather, you should be concentrating on your content and grouping content thematically together.</p> <ul> <li>The browser does not display HTML tags, but uses tags (or mark-up) to interpret the content of the page.</li> <li>The <strong>.htm</strong> or <strong>.html</strong> files created are called source files, and the code that it contains is called source code.</li> </ul> <h3 id="mark-up--tag-guidelines">Mark-up / Tag Guidelines</h3> <ul> <li><strong>HTML</strong> files contain a set of tags e.g. <strong><em><code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code></em></strong>, <strong><em><code class="highlighter-rouge">&lt;title&gt;&lt;/title&gt;</code></em></strong>, <strong><em><code class="highlighter-rouge">&lt;em&gt;&lt;/em&gt;</code></em></strong></li> <li>Tags are <strong>case insensitive</strong>, but the convention is to write them in lowercase</li> <li>All HTML tags are enclosed in angled brackets: ‘&lt;’ and ‘&gt;’</li> <li>Tag elements often come in <strong>pairs</strong>. That is, you have a beginning tag and an ending tag e.g. <strong><em><code class="highlighter-rouge"><span class="nt">&lt;html&gt;&lt;/html&gt;</span></code></em></strong>. Beginning tags mark the start of a tag element and closing tags mark the end of a tag element i.e. a paragraph starts here (<code class="highlighter-rouge">&lt;p&gt;</code>) and ends here (<code class="highlighter-rouge">&lt;/p&gt;</code>)</li> <li>Some tags do not need to be closed as browses are smart; it is obvious to the browser that once a new tag starts, the unclosed tag must have ended. After all, certain tags cannot be nested inside other tags. E.g. <code class="highlighter-rouge">&lt;p&gt;</code>, <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> and <code class="highlighter-rouge">&lt;body&gt;</code></li> </ul> <h3 id="about-the-tags">About the Tags</h3> <ul> <li><strong><em>DOCTYPE</em></strong> declares the type of document you are writing. If this tag is missing, the browser will try to guess the type. Including the <strong><em>DOCTYPE</em></strong> is good practice for backward compatibility with older browsers. <strong><em>DOCTYPE html</em></strong> indicates the document is type <strong><em>HTML5</em></strong></li> <li><strong><em><code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code></em></strong> tells the browser this is the start of an HTML document and <strong><em><code class="highlighter-rouge">&lt;/html&gt;</code></em></strong> tells the browser this is the end of the HTML document</li> <li><strong><em><code class="highlighter-rouge">&lt;head&gt;</code></em></strong> represents an area for heading information e.g. title and meta information (data about data). Heading information is not displayed in the browser window except the title.</li> <li><strong><em><code class="highlighter-rouge">&lt;title&gt;</code></em></strong> contains the title of your document. The title is displayed in the browser’s caption:</li> <li><strong><em><code class="highlighter-rouge">&lt;body&gt;</code></em></strong> contains text that will be displayed in the browser</li> <li><strong><em><code class="highlighter-rouge">&lt;h1&gt;</code></em></strong>, <strong><em><code class="highlighter-rouge">&lt;h2&gt;</code></em></strong>, <strong><code class="highlighter-rouge">&lt;h3&gt;</code></strong> represent headings. <strong><em><code class="highlighter-rouge">&lt;h1&gt;</code></em></strong> is the largest heading and <strong><em><code class="highlighter-rouge">&lt;h6&gt;</code></em></strong> is the smallest heading</li> <li><strong><em><code class="highlighter-rouge">&lt;ol&gt;</code></em></strong> defines an ordered (numbered) list. Inside the <strong><em><code class="highlighter-rouge">&lt;ol&gt;</code></em></strong> tag, you need to mark the individual list item element by using the <strong><em><code class="highlighter-rouge">&lt;li&gt;</code></em></strong> tag (list items)</li> <li><strong><em><code class="highlighter-rouge">&lt;ul&gt;</code></em></strong> is similar to <strong><em><code class="highlighter-rouge">&lt;ol&gt;</code></em></strong> except it defines an unordered list. This means individual <strong><em><code class="highlighter-rouge">&lt;li&gt;</code></em></strong> tags will define bulleted list items</li> <li><strong><em><code class="highlighter-rouge">&lt;p&gt;</code></em></strong> is a paragraph tag with an automatic line break afterwards</li> <li><strong><em><code class="highlighter-rouge">&lt;em&gt;</code></em></strong> defines text to be emphasised (the browser default displays this tag with an italic effect)</li> <li><strong><em><code class="highlighter-rouge">&lt;strong&gt;</code></em></strong> mark-up important text (the browser default displays this tag with a bold effect)</li> <li>Notice we can also have a nesting of tags to define an emphasised and important text. This is common in HTML: <em><code class="highlighter-rouge">&lt;strong&gt;&lt;em&gt;</code></em> …<em><code class="highlighter-rouge">&lt;/strong&gt;&lt;/em&gt;</code></em></li> </ul> <h1 id="html-attributes">HTML Attributes</h1> <p>You can specify more options to your mark-up by defining attributes to your tags. We still have our opening and closing tag as before, but now we also have this new thing called an attribute. Attributes have a name and a corresponding value (inside double quotes).</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SYNTAX: <span class="nt">&lt;tag</span> <span class="na">attribute=</span><span class="s">"value"</span><span class="nt">&gt;</span>content<span class="nt">&lt;/tag&gt;</span>
+</code></pre></div></div> <h3 id="ids-and-classes"><strong>IDs and Classes</strong></h3> <p>The attributes that apply to all mark-up are the id and class attributes. IDs are unique names which identify a <em>single</em> element e.g. <code class="highlighter-rouge">&lt;h1 id="motto"&gt;</code>. Classes are unique names which identify a <em>group</em> of elements e.g. <code class="highlighter-rouge">&lt;p class="welcome"&gt;</code>, <code class="highlighter-rouge">&lt;h1 class="welcome"&gt;</code>. Tags may have multiple attributes. <code class="highlighter-rouge">&lt;ol id="wishList" class="alpha"&gt;</code></p> <p>IDs and classes should add meaning to your code. They should help you quickly gather the overall content from a distant glance. You should not assign IDs and classes based on how you want them to look like (e.g. red, leftSide), but by semantics.</p> <h1 id="creating-hyperlinks">Creating Hyperlinks</h1> <p>An example of a tag with additional attributes is the anchor tag <strong><code class="highlighter-rouge">&lt;a&gt;</code></strong> (or hyperlinks). Hyperlinks allow webpages to connect to each other. Hyperlinks can link to: pages outside the current website; pages within the current website; and links to other anchors on the current webpage.</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SYNTAX: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"URL"</span><span class="nt">&gt;</span>Hyperlink Text<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div> <ul> <li><code class="highlighter-rouge">&lt;a&gt;</code> tells you where the link should begin and &lt;/a&gt; indicates where the link ends</li> <li>Any text between these two tags act as the hyperlink text</li> <li>The attribute href defines the path of where the hyperlink will link to</li> </ul> <h3 id="link-to-another-document">Link to Another Document</h3> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.google.com"</span><span class="nt">&gt;</span>Click here to go to Google<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"firstpage.htm"</span><span class="nt">&gt;</span>Click to open a file in the current directory<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div> <h3 id="bookmark-inside-a-document">Bookmark Inside a Document</h3> <p>The <strong>id</strong> attribute can also specify the name of an <strong>anchor</strong>, used to create a <strong>bookmark</strong> inside an HTML document. <strong>Bookmark IDs</strong> (just like IDs and class attributes in general) are not displayed in the browser. To link to this bookmark, use the <strong>href</strong> attribute and specify the ID of the bookmark as the corresponding value, preceded with a <strong>#</strong> symbol.</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"topAnchor"</span><span class="nt">&gt;</span>top<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#topAnchor"</span><span class="nt">&gt;</span>Click to scroll back to the top<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div> <h1 id="referencing-images">Referencing Images</h1> <p>Images are not technically <em>inserted</em> into a webpage, rather images are <em>linked</em> to webpages. We use the image tag <strong><em><code class="highlighter-rouge">&lt;img&gt;</code></em></strong> to create a holding space for the image.</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SYNTAX: <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"URL"</span> <span class="na">alt=</span><span class="s">"TEXT"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div> <ul> <li>The <strong><em><code class="highlighter-rouge">&lt;img&gt;</code></em></strong> tag has a src (source) attribute whose value is the path of the image location to be downloaded</li> <li>It is good practice to include an alt (alternate) attribute whose value is the text to be displayed if the user for some reason cannot view the image. If the image is moved or the requested URL is missing, this is the fall back text that is displayed. The text associated with the alt attribute is also the text picked up by search engines, crawlers and reading software used by blind people (screen readers) to access the web.</li> </ul> <p>When you load a webpage, the browser gets the image from the web server and inserts it into the page for you. This is different from using MS Word. In MS Word, when you insert an image into Word, the image becomes a ‘part’ of the document. When you save a Word file, all you need to keep track of is that one Word file, knowing that the images you inserted will be there when you open it next time no matter where you move the Word file. With an HTML page, since you are only <em>referencing</em> the images, you have to make sure the image you are linking to always stay in the same spot in relation to the webpage.</p> <ul> <li><code class="highlighter-rouge">&lt;img&gt;</code> tags are examples of tags with no content inside them (void tags). Thus, the tag can be simplified: <code class="highlighter-rouge">&lt;img /&gt;</code></li> <li>In the example, “computer.gif”, means that the browser will look for the image named “computer.gif” <strong>in the same folder (or directory) as the HTML document itself</strong></li> <li>This image path is an example of a partial <em>(relative)</em> You can also specify the full <em>(absolute)</em> path to the URL e.g. src=<strong>“home/Users/{yourUserName}/Downloads/Files/computer.gif”</strong></li> </ul> <p><img src="https://i.loli.net/2020/08/12/R2YcIBpVWlEu75v.png" alt="1.png" /></p> <h1 id="referencing-multimedia">Referencing Multimedia</h1> <p>The new mostly used media element in HTML5 is digital audio, which uses the <strong><em><code class="highlighter-rouge">&lt;audio&gt;</code></em></strong> tag. This tag is not included in the previous version of HTML. The <strong><em><code class="highlighter-rouge">&lt;src&gt;</code></em></strong> tag references a digital audio asset file name, and the <strong><em><code class="highlighter-rouge">&lt;controls&gt;</code></em></strong> tag adds the audio transport user interface feature. The following table shows the <strong><em><code class="highlighter-rouge">&lt;audio&gt;</code></em></strong> tag parameters supported in HTML5:</p> <p>The last two parameters are not recommended for use unless absolutely necessary. The reason for this is that the autoplay bothers many users, and an autobuffer takes up system resources that may not even be used if the user chooses not to hit the transport play button.</p> <p>When referencing multimedia elements, the source elements are referenced using their own source tags. There can be more than one source tag. This source tag provides a fallback mechanism if the browser does not support the first specified format.</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;audio</span> <span class="na">controls</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"happybirthday/happybirthday.ogg"</span> <span class="na">type=</span><span class="s">"audio/ogg"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"happybirthday/happybirthday.mp3"</span> <span class="na">type=</span><span class="s">"audio/mp3"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"happybirthday/happybirthday.acc"</span> <span class="na">type=</span><span class="s">"audio/acc"</span> <span class="nt">/&gt;</span>
+		Your browser does not support the audio element.
+<span class="nt">&lt;/audio&gt;</span>
+</code></pre></div></div> <h3 id="explanation">Explanation</h3> <ul> <li>The presence of any <strong><em><code class="highlighter-rouge">&lt;audio&gt;</code></em></strong> attributes has an implicit “true” value so you do not need to type: <code class="highlighter-rouge">&lt;audio controls=**"true"**&gt;</code>. Similarly, the absence of any attributes indicates an implicit “false”. For example, the inclusion (true scenario) of the controls attribute tells the browser to display default audio controls such as play, pause, and volume. If this attribute is excluded (false scenario), no controls will be displayed.</li> <li>This <strong><em>true/false</em></strong> attribute can similarly be applied for other audio attributes e.g. autoplay.</li> <li>The <strong><em><code class="highlighter-rouge">&lt;audio&gt;</code></em></strong> element allows multiple <strong><em><code class="highlighter-rouge">&lt;source&gt;</code></em></strong> elements (or audio file paths) in case the browser does not support the first specified format.</li> <li>The browser will try to use the first recognised format. If this does not work, it will try the second format under <strong><em><code class="highlighter-rouge">&lt;source&gt;</code></em></strong>. If this still doesn’t work, it will try the third format in the list and so on until finally it will display the alternative error text message.</li> <li>Fallback error text can be written anywhere, as long as it is between audio tags.</li> <li>Browser does not load each file and see if it works. Rather, it looks at the type attribute and compare it to its own browser specification to see if it supports the specified codec.</li> <li>The controls look different in different browsers.</li> <li>Only MP3, WAV, and Ogg audio are supported by the <strong><em>HTML5</em></strong> standard.</li> </ul> <h3 id="referencing-video">Referencing Video</h3> <p>Videos can be referenced similar to audio elements using <strong><em><code class="highlighter-rouge">&lt;video&gt;</code></em></strong> tag. The following table presents the ten parameters for <strong><em><code class="highlighter-rouge">&lt;video&gt;</code></em></strong> tag. The last four parameters in the table are less frequently utilized.</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;video</span> <span class="na">controls</span> <span class="na">poster=</span><span class="s">"card/poster.jpg"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"card/card.ogg"</span> <span class="na">type=</span><span class="s">"video/ogg"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"card/card.mp4"</span> <span class="na">type=</span><span class="s">"video/mp4"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"card/card.webm"</span> <span class="na">type=</span><span class="s">"video/webm"</span> <span class="nt">/&gt;</span>
+		Your browser does not support the video element.
+<span class="nt">&lt;/video&gt;</span>
+</code></pre></div></div> <h3 id="explanation-1">Explanation</h3> <ul> <li>The poster attribute specifies an image to be displayed when the video is first loaded. It is a good idea to always do this because the default black screen is not always a good representation of your video.</li> <li>Notice how similar the attributes and syntax are compared to audios.</li> <li>Only MP4, WebM, and Ogg video are supported by the HTML5 standard.</li> </ul> <h3 id="example-using--html-to-change-style">Example using HTML to change style</h3> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Change the background colour of the page to blue --&gt;</span>
+<span class="nt">&lt;body</span> <span class="na">style=</span><span class="s">"background-color:blue;"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Change size of picture to a height of 150 pixels --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.it.usyd.edu.au"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"coffee.jpg"</span> <span class="na">alt=</span><span class="s">"Coffee"</span> <span class="na">height=</span><span class="s">"150"</span><span class="nt">&gt;&lt;/a&gt;</span>
+</code></pre></div></div> <h1 id="html-text-formatting-in-details">HTML Text Formatting in Details</h1> <p>When you created your first HTML page you have noticed you can format your texts in different format. Here there are some more details about text formatting in HTML.</p> <h2 id="lists">Lists</h2> <p>There are three types of lists available in HTML.</p> <p>Ordered List: <strong><em><code class="highlighter-rouge">&lt;ol&gt;</code></em></strong> defines an ordered (numbered) list. Inside the <strong><em><code class="highlighter-rouge">&lt;ol&gt;</code></em></strong> tag, you need to mark the individual list item element by using the <strong><em><code class="highlighter-rouge">&lt;li&gt;</code></em></strong> tag (list items)</p> <p><img src="https://i.loli.net/2020/08/12/HPC5bXUSYNQWn1l.png" alt="3.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ol&gt;</span>
+		<span class="nt">&lt;li&gt;</span>Tea
+				<span class="nt">&lt;ul&gt;&lt;li&gt;</span>The most refreshing drink.<span class="nt">&lt;/li&gt;&lt;/ul&gt;</span>
+		<span class="nt">&lt;/li&gt;</span>
+
+		<span class="nt">&lt;li&gt;</span>Coffee
+				<span class="nt">&lt;ul&gt;&lt;li&gt;</span>Want to have when you are sleepy.<span class="nt">&lt;/li&gt;&lt;/ul&gt;</span>
+		<span class="nt">&lt;/li&gt;</span>
+
+		<span class="nt">&lt;li&gt;</span>Water
+				<span class="nt">&lt;ul&gt;&lt;li&gt;</span>Life saver!<span class="nt">&lt;/li&gt;&lt;/ul&gt;</span>
+		<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+</code></pre></div></div> <p>Unordered List: <strong><em><code class="highlighter-rouge">&lt;ul&gt;</code></em></strong> is similar to <strong><em><code class="highlighter-rouge">&lt;ol&gt;</code></em></strong> except it defines an unordered list. This means individual <strong><em><code class="highlighter-rouge">&lt;li&gt;</code></em></strong> tags will define bulleted list items</p> <p><img src="https://i.loli.net/2020/08/12/e2nEYkw78yaKqXp.png" alt="2.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+		<span class="nt">&lt;li&gt;</span>Tea
+				<span class="nt">&lt;ul&gt;&lt;li&gt;</span>The most refreshing drink.<span class="nt">&lt;/li&gt;&lt;/ul&gt;</span>
+		<span class="nt">&lt;/li&gt;</span>
+
+		<span class="nt">&lt;li&gt;</span>Coffee
+				<span class="nt">&lt;ul&gt;&lt;li&gt;</span>Want to have when you are sleepy.<span class="nt">&lt;/li&gt;&lt;/ul&gt;</span>
+		<span class="nt">&lt;/li&gt;</span>
+
+		<span class="nt">&lt;li&gt;</span>Water
+				<span class="nt">&lt;ul&gt;&lt;li&gt;</span>Life saver!<span class="nt">&lt;/li&gt;&lt;/ul&gt;</span>
+		<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div> <p>Description List: <strong><em><code class="highlighter-rouge">&lt;dl&gt;</code></em></strong> defines a description list. The idea behind the description list is to set up a set of items and their related descriptions. <strong><em><code class="highlighter-rouge">&lt;dt&gt;</code></em></strong> wrapped up in <strong><em><code class="highlighter-rouge">&lt;dl&gt;</code></em></strong> defines description term, and each description is wrapped in a <code class="highlighter-rouge">&lt;dd&gt;</code>which is* description definition element.</p> <p><img src="https://i.loli.net/2020/08/12/KIrtG68bOuqEnJw.png" alt="4.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dl&gt;</span>
+		<span class="nt">&lt;dt&gt;</span>Tea<span class="nt">&lt;/dt&gt;</span>
+		<span class="nt">&lt;dd&gt;</span>The most refreshing drink.<span class="nt">&lt;/dd&gt;</span>
+
+		<span class="nt">&lt;dt&gt;</span>Coffee<span class="nt">&lt;/dt&gt;</span>
+		<span class="nt">&lt;dd&gt;</span>Want to have when you are sleepy.<span class="nt">&lt;/dd&gt;</span>
+
+		<span class="nt">&lt;dt&gt;</span>Water<span class="nt">&lt;/dt&gt;</span>
+		<span class="nt">&lt;dd&gt;</span>Life saver!<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+</code></pre></div></div> <h2 id="quotations">Quotations</h2> <p>HTML has the options to mark up quotations as block and inline quotation. Block quotations are intended for a long block of quotations. On the other hand, the inline quotation is intended for short quotations which do do not need any paragraph break.</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;blockquote&gt;</span>This is a blockquote<span class="nt">&lt;/blockquote&gt;</span>
+<span class="nt">&lt;q&gt;</span>This is an inline quotation.<span class="nt">&lt;/q&gt;</span>
+</code></pre></div></div> <h2 id="other-text-formatting">Other Text Formatting</h2> <ul> <li>Abbreviations: <code class="highlighter-rouge">&lt;abbr&gt;</code> - is used to wrap around an abbreviation or acronym.</li> <li><code class="highlighter-rouge">&lt;address&gt;</code> - wraps around any contact details.</li> <li><code class="highlighter-rouge">&lt;sup&gt;&lt;/sup&gt;</code>and <code class="highlighter-rouge">&lt;sub&gt;&lt;/sub&gt;</code>: To format texts and numbers as superscript and subscript.</li> <li><code class="highlighter-rouge">&lt;code&gt;</code>: For marking up generic pieces of computer code.</li> <li><code class="highlighter-rouge">&lt;pre&gt;&lt;/pre&gt;</code>: For retaining whitespace (generally code blocks)</li> <li><code class="highlighter-rouge">&lt;var&gt;</code>: For specifically marking up variable names.</li> <li><code class="highlighter-rouge">&lt;kbd&gt;</code>: For marking up keyboard (and other types of) input entered into the computer.</li> <li><code class="highlighter-rouge">&lt;samp&gt;</code>: For marking up the output of a computer program.</li> <li><code class="highlighter-rouge">&lt;time&gt;</code>: For marking up times and dates in a machine-readable format.</li> </ul> <h3 id="example-to-jump-to-bottom">Example to jump to bottom</h3> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#bottom"</span><span class="nt">&gt;</span>Click here<span class="nt">&lt;/a&gt;</span> to go to the bottom of the page<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- INSERT A LARGE AMOUNT OF TEXT HERE --&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>This is the bottom of the page.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;h2&gt;&lt;a</span> <span class="na">id=</span><span class="s">"bottom"</span><span class="nt">&gt;</span>The bottom of the page<span class="nt">&lt;/a&gt;&lt;/h2&gt;</span>
+</code></pre></div></div> <h1 id="structural-semantics">Structural Semantics</h1> <p>In HTML, there are structural elements that define the structure of a webpage document, written inside the body tag. Below are two of the many visualisations. How you intend to structure your page may of course, differ from this structure.</p> <p><img src="https://i.loli.net/2020/08/12/18SDOCdB2VFY9mA.png" alt="5.png" /></p> <h3 id="header"><strong>&lt;header&gt;</strong></h3> <p>The header tag is for introductory information about a section or an entire webpage. This can include a logo and/or a slogan that sits atop most pages, or a headline introducing a section.</p> <h3 id="nav"><strong>&lt;nav&gt;</strong></h3> <p>The nav element represents a section with the <em>major</em> links to other pages within a website or to parts within the page (primary navigation).</p> <h3 id="section"><strong>&lt;section&gt;</strong></h3> <p>section is a generic grouping of related content. That is, a grouping of content that relate to the same information, thematically.</p> <h3 id="article"><strong>&lt;article&gt;</strong></h3> <p>The article element wraps a section of content that forms an <em>independent</em> part of a document or site e.g. a magazine, newspaper article, or blog entry. If certain content can be or will be syndicated or republished, it should reside in the article tag, as opposed to the section tag.</p> <h3 id="aside"><strong>&lt;aside&gt;</strong></h3> <p>The aside element represents a portion of a page which can stand alone e.g. sidebars, related posts, tag clouds, pull quotes or annotations.</p> <h3 id="footer"><strong>&lt;footer&gt;</strong></h3> <p>footer mark up the foot of, not only the current page, but each section contained in the page.</p> <p>Remember, HTML is about content. This means just because you grouped content under aside does not mean it will appear as a right hand sidebar when you load the page. Making it appear on the right hand side is about style, which is not HTML’s responsibility. The purpose of structural tags is to ensure semantic content. This aids in communication with search engines and screen readers so that they can easily understand your content for the purposes of ranking pages and translating them to useful things, especially for the visually impaired.</p> <h3 id="div-tag-detour"><strong>div Tag Detour</strong></h3> <ul> <li>The div (division) tag is a generic block level element</li> <li>All it really does for us is allow us to group elements together for easy reading and formatting at a block-by-block basis</li> <li>It is up to us authors to add any meaning to it at all. This is achieved through the use of meaningful and descriptive class and id attributes</li> </ul> <h3 id="notice-the-differences-between-these-mark-ups">Notice the differences between these mark-ups:</h3> <p><code class="highlighter-rouge">&lt;section&gt;</code> -&gt; <em>groups <strong>related</strong> content together</em></p> <p><code class="highlighter-rouge">&lt;article&gt;</code> -&gt; <em>wraps <strong>independent</strong> content that can be <strong>syndicated</strong></em></p> <p><code class="highlighter-rouge">&lt;div&gt;</code> -&gt; <em>groups <strong>any</strong> elements together for <strong>styling</strong> purposes</em></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+       <span class="nt">&lt;title&gt;</span>Title of document goes here<span class="nt">&lt;/title&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+
+   <span class="nt">&lt;body&gt;</span>
+       Visible text goes here...
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+Basic Tags
+<span class="nt">&lt;h1&gt;</span>Largest Heading<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span> . . . <span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span> . . . <span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;</span> . . . <span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;</span> . . . <span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;</span>Smallest Heading<span class="nt">&lt;/h6&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"IDname"</span> <span class="na">class=</span><span class="s">"className"</span><span class="nt">&gt;</span>This is a paragraph<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;em&gt;</span>Emphasised Text<span class="nt">&lt;/em&gt;</span>
+<span class="nt">&lt;strong&gt;</span>Important Text<span class="nt">&lt;/strong&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.example.com"</span><span class="nt">&gt;</span>Link goes here<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Unordered List --&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+   <span class="nt">&lt;li&gt;</span>Item<span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;li&gt;</span>Item<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="c">&lt;!-- Ordered List --&gt;</span>
+<span class="nt">&lt;ol&gt;</span>
+   <span class="nt">&lt;li&gt;</span>Item<span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;li&gt;</span>Item<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+
+<span class="c">&lt;!-- Description List --&gt;</span>
+<span class="nt">&lt;dl&gt;</span>
+	 <span class="nt">&lt;dt&gt;</span>Item<span class="nt">&lt;/dt&gt;</span>
+	 <span class="nt">&lt;dd&gt;</span>Description<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+
+<span class="c">&lt;!-- Images --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"URL"</span> <span class="na">alt=</span><span class="s">"Alternate Text"</span> <span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- Audio --&gt;</span>
+<span class="nt">&lt;audio&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"URL"</span> <span class="na">type=</span><span class="s">"audio/mp3"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;</span><span class="err">!—</span><span class="na">More</span> <span class="na">source</span> <span class="na">elements</span> <span class="na">--</span><span class="nt">&gt;</span>
+   Fallback text
+<span class="nt">&lt;/audio&gt;</span>
+
+<span class="c">&lt;!-- Video --&gt;</span>
+<span class="nt">&lt;video&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"URL"</span> <span class="na">type=</span><span class="s">"video/mp4"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;</span><span class="err">!—</span><span class="na">More</span> <span class="na">source</span> <span class="na">elements</span> <span class="na">--</span><span class="nt">&gt;</span>
+   Fallback text
+<span class="nt">&lt;/</span> <span class="nt">video</span> <span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Semantics --&gt;</span>
+<span class="nt">&lt;article&gt;</span>Groups independent elements<span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;aside&gt;</span>Standalone element<span class="nt">&lt;/aside&gt;</span>
+<span class="nt">&lt;footer&gt;</span>Foot information<span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;header&gt;</span>Introductory information<span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;nav&gt;</span>Primary navigation<span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;section&gt;</span>Grouping of related elements<span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;div&gt;</span>Group block elements <span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div> <h1 id="css-what-is-it">CSS What is it?</h1> <p>In short, CSS is putting some skin onto your web skeleton (HTML) for styling purposes.</p> <p>An important element of web design and usability is to design a website with a consistent look and feel. A quick way to achieve this is through the use of Cascading Style Sheets (CSS). <strong>CSS allows you to control the style and layout</strong> of your website all at once. You can define a style for each HTML element and apply it to as many web pages as you want. To make a global change, simply change the stylesheet file, and all elements in the web are updated automatically.</p> <p>CSS is a style sheet language that controls the presentation of mark-up language documents. Visually, think of HTML as a structure of a new building; you can see the structure as it is being built, but you do not really know what the building is going to look like. CSS on the other hand, serves as the skin of the building and determines what the outside of the building can look like. By separating structure and presentation in this way, you can change how things look by changing the CSS files or by changing the underlying HTML structure</p> <ul> <li><strong>HTML</strong>: controls content and structure of the webpage (content)</li> <li><strong>CSS</strong>: controls the style and layout of the webpage (presentation)</li> </ul> <p>CSS is not a mark-up language, but a style sheet language. This means that CSS consists of a collection of formatting rules that identify the elements you want to control and the properties you wish to set.</p> <h1 id="css-syntax">CSS Syntax</h1> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">selector</span> <span class="p">{</span>
+   <span class="py">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>A <strong>style</strong> is a definition for a particular look and feel, i.e. fonts, colours, sizes, etc. A <strong>style</strong> is made up of three parts: a <strong>selector</strong>; <strong>properties/attribute</strong>; and corresponding <strong>values</strong></p> <ul> <li>The selector selects the elements you want to style</li> <li>The property and value are linked by a colon</li> <li>Each property and value pair is separated by a semi-colon</li> </ul> <p>Curly braces are used to enclose all properties and values. You can have one or more properties/value definitions inside the selector</p> <h1 id="css-selector">CSS Selector</h1> <h3 id="type-selectors">Type Selectors</h3> <p>Used to style the look of existing HTML tags</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* all h1, h2 and h3 tags will have an Arial font of size 40px */</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span>
+		<span class="nl">font-family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">;</span>
+		<span class="nl">font-size</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span> <span class="p">{</span>
+	  <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">128</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.3</span><span class="p">)</span> <span class="c">/* Green background with 30% opacity */</span>
+<span class="p">}</span>
+
+<span class="nt">div</span> <span class="p">{</span>
+		<span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+	  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.3</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="universal-selectors">Universal Selectors</h3> <p>Used to style any single element of any type (basically, it selects all elements). To use this selector, define an asterisk, “ * “</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* all HTML tags will have a blue font colour */</span>
+<span class="o">*</span> <span class="p">{</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="class-selectors">Class Selectors</h3> <p>Used to style a group of elements defined by the same class. To use this selector, define a dot, “.” followed by the class attribute e.g. .centre</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* any paragraphs with a class "quote" will have a grey background colour and a bold effect */</span>
+<span class="nt">p</span><span class="nc">.quote</span> <span class="p">{</span>
+   <span class="nl">background-color</span><span class="p">:</span> <span class="m">#BBB</span><span class="p">;</span>
+   <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="id-selectors">ID Selectors</h3> <p>Used to style a single, unique element identified by their ID. To use this selector, define a hash, “#” followed by the ID (similar to the hyperlink bookmark)</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* tags that have an id "mainContent" will have a purple colour and centred text */</span>
+<span class="nf">#mainContent</span> <span class="p">{</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">50</span><span class="p">,</span> <span class="m">200</span><span class="p">);</span>
+   <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="attribute-selectors">Attribute Selectors</h3> <p>Used to style an element using the presence of a given attribute or attribute value. To use this selector, specify a pair of square brackets. Within the square brackets, identify an attribute, followed by an equals sign, followed by a value in quotation marks.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* any hyperlinks with a href attribute will be set to uppercase and italicised */</span>
+<span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">]</span><span class="p">{</span>
+   <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+   <span class="nl">font-style</span><span class="p">:</span> <span class="nb">italic</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* all images with an alternate equalling "computer" will have a 200px width and 150px height */</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span> <span class="o">=</span> <span class="s1">"computer"</span><span class="o">]</span><span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+   <span class="nl">height</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="pseudo-class-selectors">Pseudo-Class Selectors</h3> <p>Used to style certain elements, but characterised by special states. To use this selector, define a colon, “ : “, followed by the pseudo-class name. <strong>Do not leave a space between the selector and the state, otherwise the style will not be applied.</strong></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* when a hyperlink is moused over, the font will transition to an underline and small capitalisation state */</span>
+<span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+   <span class="nl">font-variant</span><span class="p">:</span> <span class="nb">small-caps</span><span class="p">;</span>
+   <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* use text-decoration: none; to remove underline */</span>
+</code></pre></div></div> <p>All HTML elements can have a hover state. The anchor tag however, has further special states:</p> <p>:<strong>link</strong> to style links to unvisited pages,</p> <p>:<strong>visited</strong> to style links to visited pages,</p> <p>:<strong>active</strong> to style the active link.</p> <p><a href="https://www.notion.so/488f430fdf1c432e8220cbb079ab0b2d">CSS Selectors</a></p> <h2 id="rendering-engines">Rendering Engines</h2> <p>Each browser has their own rendering engines that parse your code and determine how to display everything. That’s why browsers render pages differently – rendering engines. Every browser has its own rendering engine that it uses to parse (or analyse) your code and determines how it is supposed to display. Since most browsers are developed independently of each other, there are multiple rendering engines. Each one has slightly different parsers, preferences and policies that determine how your content is rendered. As a designer, take note of the rendering engines for the more common browsers:</p> <p>These rendering engines are still being developed and older versions of these browsers will have older rendering engines. For this reason, designers should test their webpage not only in multiple browsers, but also in different versions.</p> <h1 id="css-reset-and-normalize">CSS Reset and Normalize</h1> <p>If any CSS styles are not declared, then they either have a zero value or take the browser default value (typically not zero). During testing, if you notice that your webpage does not display exactly the same in different browsers, it is most likely that the browser default CSS properties are being applied.</p> <p>To avoid cross-browser style inconsistency, you must reset any browser default.</p> <p>Eric Meyer has created a CSS Reset file to remove all browser defaults so you do not have to do it every time you create a webpage. Make sure to include this in all your HTML files as an external link before applying your own styles (you will learn how to do this later).</p> <ul> <li>Why is normalize.css useful? <ul> <li>aligns some base styles</li> <li>provides better cross-browser consistency in the default styling of HTML elements</li> <li>preserves useful defaults</li> </ul> </li> </ul> <h1 id="css-makinglinking">CSS Making/Linking</h1> <p>There are three ways to apply CSS to your HTML page:</p> <ul> <li><strong>External style sheets:</strong> used when the same style is applied to many pages</li> <li><strong>Internal style sheets:</strong> used when a single document has additional unique elements that need styling</li> <li><strong>Inline style sheets:</strong> mixes content with presentation. Use sparingly!</li> </ul> <p><strong>We recommend that you use external style sheets wherever possible to adhere to good coding style and HTML5 standards.</strong> Thus, little time will be spent on internal and inline styles.</p> <p>In your HTML file, you need to link your CSS file with the following line in between the head tags</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">link</span> <span class="nt">rel</span><span class="o">=</span><span class="s1">"stylesheet"</span> <span class="nt">href</span><span class="o">=</span><span class="s1">"URL"</span><span class="o">&gt;</span>
+</code></pre></div></div> <ul> <li>The <code class="highlighter-rouge">&lt;link&gt;</code> tag allows the page to link to the external style sheet</li> <li>rel specifies the relationship between the current document and the linked document. In this case, the relationship is a <strong>“stylesheet”</strong></li> <li>href refers to the path of the external style sheet</li> </ul> <p>Remember, to remove browser defaults to ensure browser consistency for webpages look. To ensure that you need to reference a reset.css file to all your HTML documents. Make sure to include the reset.css file before all the other CSS files you plan to use since styles are rendered in the order they are linked. This means that the last specified CSS file will override any styles you specified at the beginning.</p> <h1 id="css-cascading-order">CSS Cascading Order</h1> <p>The term cascade refers to how styles are applied to pages. Styles are applied to pages in the order they are found.</p> <p>If more than one style is specified for an HTML element, the browser will select which styles to apply by following the Cascading Order. Generally, all styles “cascade” into a virtual style sheet by following the order (from lowest to highest priority):</p> <ol> <li>Browser default</li> <li>External style sheet</li> <li>Internal style sheet (in the head section)</li> <li>Inline style (inside an HTML element)</li> </ol> <p><strong>Or more simply, the last rule wins.</strong></p> <p>This means that if you applied the same property-value twice, the last specified will take priority.</p> <h1 id="css-typography-font">CSS Typography Font</h1> <p>Typography is the design and use of typefaces and fonts, including their proportions and spacing. Typography is about the space, the style and the text display. There are two main groups of CSS properties that control typography styles: font and text.</p> <p>The font CSS property group dictates general font characteristics such as font-style and font-weight. The text CSS property group deals with the characters, spaces, words and paragraphs. For example, the text-indent property indents the first line of a text block. The letter-spacing property controls the spaces between a text block.</p> <h3 id="web-fonts">Web Fonts</h3> <p>Web fonts refer to the technique of having the browser download and install fonts that are requested in the page using the @font-face syntax. This allows web authors to apply any font without worrying about if they are installed on the client’s machine or not.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Referencing the font */</span>
+<span class="k">@font-face</span> <span class="p">{</span>
+   <span class="nl">font-family</span><span class="p">:</span> <span class="n">myFirstFont</span><span class="p">;</span>
+   <span class="nl">src</span><span class="p">:</span> <span class="sx">url('Sansation_Light.ttf')</span><span class="p">;</span>
+   <span class="nl">src</span><span class="p">:</span> <span class="sx">url('Sansation_Light.eot)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Using the font */</span>
+<span class="nt">a</span> <span class="p">{</span>
+   <span class="nl">font-family</span><span class="p">:</span> <span class="n">myFirstFont</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Essentially, you make a font-face rule by giving the font a name for the font-family property. Next, include a font file somewhere on your server and refer to it (via the src attribute). Font files can have multiple fallback src files if the first format is not supported by the browser.</p> <p>To then use the referenced font, the font-family attribute can be applied to a CSS selector.</p> <h1 id="css-box-model">CSS Box Model</h1> <p>In <strong>CSS</strong>, every <strong>HTML</strong> element is made up of nested boxes: <strong>margin</strong>, <strong>border</strong>, <strong>padding</strong>, and <strong>content.</strong> This is termed the box model, where every single HTML element is considered a rectangular box. This allows us to place a border around elements and space elements in relation to other elements.</p> <p><img src="https://i.loli.net/2020/08/12/zNeVaxEr2TDIw5l.png" alt="7.png" /></p> <ul> <li><strong>Margin:</strong> defines the whitespace with respect to ‘surrounding’ elements. Margins are transparent and thus, will not obstruct elements behind it.</li> <li><strong>Border:</strong> outlines the visible portion of the element.</li> <li><strong>Padding:</strong> defines the whitespace between the border and content. Padding is transparent. The easiest way to think of this is to think of a box with something fragile inside it that you need to ship. You, therefore, need to add some padding material inside the box to keep the product from touching the box. That is padding.</li> <li><strong>Content:</strong> where all your text and images appear.</li> </ul> <p>Note that there is a difference between the content width and the total width of the element:</p> <p><img src="https://i.loli.net/2020/08/12/paHX16ntmjNOI2T.png" alt="6.png" /></p> <p>This means when you assign a width to a tag element, this is just the content width. Further, you actually add to the overall width of the tag by setting a margin, border or padding width.</p> <ul> <li><em><strong>The total width of an element is calculated as</strong>:</em> <ul> <li>Total element width = width + left padding + right padding + left border + right border + left margin + right margin</li> </ul> </li> <li><strong><em>The total height of an element is calculated as:</em></strong> <ul> <li>Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin</li> </ul> </li> </ul> <h1 id="css-box-model-padding">CSS Box Model Padding</h1> <h2 id="syntax">Syntax</h2> <p><strong>Margin</strong>, <strong>border</strong> and <strong>padding</strong> have similar syntax in terms of whitespace. You can either manipulate its individual CSS properties, or use the shorthand notation. In the following, we will use padding as an example, but remember that this can equally be applied to margin and border.</p> <h2 id="individual-properties">Individual Properties</h2> <p>padding-top, padding-right, padding-bottom, padding-left, specified in pixels or percentages</p> <h1 id="css-box-model-margin-considerations">CSS Box Model Margin Considerations</h1> <h2 id="margin-considerations">Margin Considerations</h2> <p>There is one aspect of margins that tends to trip up designers. <strong>Unlike horizontal elements, vertical elements collapse.</strong> That means if you have two elements loaded on top of the other, only one of the margin element will be applied.</p> <p>For example, consider a <strong>heading1</strong> with a <strong>10px bottom margin</strong>, and a paragraph with a <strong>10px top margin</strong>. In this case, there will only be a margin of 10px worth of space between them, not 20px. If the values are not the same, the higher value will be applied.</p> <p><img src="https://i.loli.net/2020/08/12/U9gXNBhmTpil8kO.png" alt="8.png" /></p> <p><img src="https://i.loli.net/2020/08/12/qw7NdfIjWcs4hxP.png" alt="21.png" /></p> <h1 id="css-box-model-border">CSS Box Model Border</h1> <p><img src="https://i.loli.net/2020/08/12/tBSX4zr9F7JyPNx.png" alt="9.png" /></p> <p>This top/right/bottom/left syntax can similarly be applied to the border’s color and weight property (e.g. border-left-weight, border-bottom-color). Putting these three attributes together, we have the shorthand notation to control these properties: border-weight, border-style, border-color.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-top</span><span class="o">:</span> <span class="nt">1px</span> <span class="nt">solid</span> <span class="nt">black</span><span class="o">;</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">dotted</span><span class="o">;</span>
+</code></pre></div></div> <p>The important thing to remember about the border is that they do affect the overall width of an element. Border widths begin at the edge of padding width and extend outward. It is easy to forget about that typical 1px border on an element. This is often the culprit for breaking layout or causing elements to shift unexpectedly. Be sure to account for border widths when planning layout.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Total width = 1px + 20px + 200px + 20px + 1px = 242 */</span>
+<span class="nt">p</span> <span class="p">{</span>
+	   <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+	   <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+	   <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-box-model-centring-a-block-or-image">CSS Box Model Centring a Block or Image</h1> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* cneter text */</span>
+<span class="nt">p</span><span class="o">,</span><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span> <span class="p">{</span>
+		<span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* center img */</span>
+<span class="nt">img</span> <span class="p">{</span>
+		<span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+		<span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+		<span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-box-model-centring-a-document">CSS Box Model Centring a Document</h1> <p>To control your webpage so that the styles do not jerk into weird positions when you change browser widths, you need to fix the width of your webpages. To do this, you will need to add an automatic margin and a fixed width (recommended 1200px) to the body tag.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+	   <span class="nl">width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">;</span>
+	   <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span> <span class="c">/* set right and left to auto, element is centred */</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>This does not centre align all your text and images. It centres the page in the middle of a giant canvas (which is your browser window).</p> <h3 id="the-alternative-css-box-model">The Alternative CSS Box Model</h3> <p>The <strong>Alternative CSS Box model</strong> is another option for Standard Box Model. It has been introduced to eradicate the inconvenience of adding up all the border and padding width to get the real size of the box. This model takes the width of the visible box on the page as width. As a result, the content area width is that width of the visible box minus the width for the padding and border.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* The browser takes the border box as the area defined by any size you set. */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+	  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>If you want all of your elements to use the alternative box model, and this is a common choice among developers, set the box-sizing property on the element, then set all other elements to inherit that value, as seen in the snippet below.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">html</span> <span class="p">{</span>
+	  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">*,</span> <span class="o">*</span><span class="nd">::before</span><span class="o">,</span> <span class="o">*</span><span class="nd">::after</span> <span class="p">{</span>
+	  <span class="nl">box-sizing</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="example-about-box-sizing">Example about box sizing</h3> <p><img src="https://i.loli.net/2020/08/12/eUnM4IBZ1ArlgcN.png" alt="10.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section&gt;</span>
+		<span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"box-standard"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;header&gt;</span>
+						<span class="nt">&lt;h2&gt;</span>header 1<span class="nt">&lt;/h2&gt;</span>
+				<span class="nt">&lt;/header&gt;</span>
+
+				<span class="nt">&lt;p&gt;</span>paragraph 1<span class="nt">&lt;/p&gt;</span>
+		<span class="nt">&lt;/article&gt;</span>
+
+		<span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"box-standard box-alternate"</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;header&gt;</span>
+						<span class="nt">&lt;h2&gt;</span>header 2<span class="nt">&lt;/h2&gt;</span>
+				<span class="nt">&lt;/header&gt;</span>
+
+				<span class="nt">&lt;p&gt;</span>paragraph 2<span class="nt">&lt;/p&gt;</span>
+				<span class="nt">&lt;p&gt;</span>paragraph 3<span class="nt">&lt;/p&gt;</span>
+		<span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.firstpara</span> <span class="p">{</span>
+			<span class="nl">margin-top</span><span class="p">:</span><span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.secondpara</span><span class="p">{</span>
+		<span class="nl">padding</span><span class="p">:</span><span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.thirdpara</span><span class="p">{</span>
+		<span class="nl">padding</span><span class="p">:</span><span class="m">10px</span><span class="p">;</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.box-standard</span> <span class="p">{</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+		<span class="nl">height</span><span class="p">:</span> <span class="m">160px</span><span class="p">;</span>
+		<span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.box-alternate</span> <span class="p">{</span>
+		<span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="example-about-border-box">Example about border-box</h3> <p><img src="https://i.loli.net/2020/08/12/nDHCAOli5638f1X.png" alt="32.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.box</span> <span class="p">{</span>
+		<span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">&lt;</span><span class="nt">p</span> <span class="nt">class</span><span class="o">=</span><span class="nt">box</span><span class="o">&gt;</span><span class="nt">Lorem</span> <span class="nt">ipsum</span> <span class="nt">dolor</span> <span class="nt">sit</span> <span class="nt">amet</span><span class="nc">.Vestibulum</span> <span class="nt">pretium</span> <span class="nt">purus</span> <span class="nt">orci</span><span class="o">,</span> <span class="nt">eget</span> <span class="nt">malesuada</span> <span class="nt">nunc</span> <span class="nt">iaculis</span> <span class="nt">non</span><span class="o">.</span> <span class="nt">Nullam</span> <span class="nt">mollis</span> <span class="nt">feugiat</span> <span class="nt">risus</span><span class="o">,</span> <span class="nt">id</span> <span class="nt">egestas</span> <span class="nt">diam</span><span class="o">.</span> <span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</code></pre></div></div> <h3 id="example-about-padding-and-margin">Example about padding and margin</h3> <p>All the padding and margin properties can have the following values:</p> <ul> <li><em>length</em> - specifies a margin in px, pt, cm, etc.</li> <li><em>%</em> - specifies a margin in % of the width of the containing element</li> <li>inherit - specifies that the margin should be inherited from the parent element</li> </ul> <p>But margin properties can have <code class="highlighter-rouge">auto</code> property, which is the browser calculates the margin.</p> <p><img src="https://i.loli.net/2020/08/12/Fp5hXUNMTvaic3e.png" alt="35.png" /></p> <p>Notice that your div tag has moved down by an invisible white 10px top margin. These extra white coloured spaces are the margins. Note this whitespace difference between margin (whitespace in relation to surrounding elements) and padding (whitespace outside current elements).</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+		<span class="nt">&lt;p&gt;</span>
+			I'm a paragraph inside a div.
+		<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+		<span class="nt">&lt;p&gt;</span>
+			I'm another paragraph inside a second div.
+		<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+		<span class="nl">background-color</span><span class="p">:</span> <span class="m">#9933FF</span><span class="p">;</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span> <span class="c">/* purple background */</span>
+		<span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span> <span class="c">/* white space*/</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span> <span class="p">{</span>
+	  <span class="nl">padding</span><span class="p">:</span> <span class="m">25px</span> <span class="m">50px</span> <span class="m">75px</span><span class="p">;</span> <span class="c">/* top is 25px, right and left are 50px, bottom is 75px */</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><img src="https://i.loli.net/2020/08/12/nphJBx6wEj1AMKa.png" alt="33.png" /></p> <h3 id="example-on-padding">Example on Padding</h3> <p>Here, the &lt;div&gt; element is given a width of 300px. However, the actual width of the &lt;div&gt; element will be 350px (300px + 25px of left padding + 25px of right padding):</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+	  <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+	  <span class="nl">padding</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>To keep the width at 300px, no matter the amount of padding, you can use the box-sizing property. This causes the element to maintain its width; if you increase the padding, the available content space will decrease.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+	  <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+	  <span class="nl">padding</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
+	  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-display">CSS Display</h1> <p><strong>The CSS <em>display</em></strong> property is an important property to control the webpage layout. Every <em>HTML</em> element has a default display value depending on what type of element it is. The default display value for most elements is <strong><em>block</em></strong> or <strong><em>inline</em></strong>.</p> <h2 id="block-level-elements">Block-level Elements</h2> <p>A <strong><em>block-level</em></strong> element always starts <strong>on a new line and takes up the full width available in the container</strong>.</p> <h2 id="inline-elements">Inline Elements</h2> <p>An <strong><em>inline</em></strong> element <strong>does not start on a new line and only takes up as much width as necessary</strong>. Examples of inline elements:</p> <ul> <li><code class="highlighter-rouge">&lt;span&gt;</code></li> <li><code class="highlighter-rouge">&lt;a&gt;</code></li> <li><code class="highlighter-rouge">&lt;img&gt;</code></li> </ul> <h2 id="displayflex">Display:flex</h2> <p>The flex option establishes the outer display type as block, but the inner display type is changed to flex. Flexbox is a one-dimensional layout method for laying out items in rows or columns. Items flex to fill additional space and shrink to fit into smaller spaces.</p> <h2 id="display-none">Display: none;</h2> <p><em>display: none;</em> is commonly used with <em>JavaScript</em> to hide and show elements without deleting and recreating them.</p> <p>The <em><code class="highlighter-rouge">&lt;script&gt;</code></em> element uses <em>display: none;</em> as default.</p> <h2 id="override-the-default-display-value">Override The Default Display Value</h2> <p>It is possible to override a default display value of any element. For example,</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+<span class="err">  </span><span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="difference-between-display-none-and-visibility-hidden">Difference between display: none and visibility: hidden</h3> <p>Hiding an element can be done by setting the <em>display</em> property to <em>none</em> and <em>visibility</em> property as hidden. However, the difference is the hidden property will only hide the element and will use the same space for the element as before.</p> <h3 id="example-between-display-none-and-visibility-hidden">Example between display: none and visibility: hidden</h3> <p><img src="https://i.loli.net/2020/08/12/MZSbf19kKpieTsB.png" alt="11.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2&gt;</span>Display none<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"hidden-none"</span><span class="nt">&gt;</span>Testing Display none<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Normal display<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;h2&gt;</span>Visibility Hidden<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"hidden-visibility"</span><span class="nt">&gt;</span>Testing visibility hidden<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Normal display<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.hidden-none</span> <span class="p">{</span>
+		<span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.hidden-visibility</span> <span class="p">{</span>
+		<span class="nl">visibility</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="example-to-see-display-block">Example to see display: block</h3> <p><img src="https://i.loli.net/2020/08/12/oQvONDEKyqpYaS3.png" alt="12.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2&gt;</span>Changing Block to Inline and vice-versa<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;p&gt;</span>I am a paragraph with <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"block"</span><span class="nt">&gt;</span>wrapped<span class="nt">&lt;/span&gt;</span> elements<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.block</span> <span class="p">{</span>
+		<span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="example-between-inline-and-flex-display">Example between inline and flex display</h3> <p><img src="https://i.loli.net/2020/08/12/bFJatxKcDljnBi7.png" alt="13.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2&gt;</span>An inline list<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"inline"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"inline"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"inline"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;h2&gt;</span>Testing flex display<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"flex-display"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Item 1<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Item 2<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Item 3<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">ul</span> <span class="p">{</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">li</span> <span class="p">{</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.flex-display</span> <span class="p">{</span>
+		<span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+		<span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="c">/* no bullut point */</span>
+<span class="p">}</span>
+
+<span class="nc">.inline</span> <span class="p">{</span>
+		<span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="true-or-false">True or false</h3> <ul> <li>Setting the visibility property to hidden will only hide the element and will use the same space for the element as before. (True)</li> <li><code class="highlighter-rouge">&lt;img&gt;</code> is a block-level element. (True)</li> <li>The display:none and visibility:hidden hide the elements in exact same way. (False)</li> <li>The following style will make the paragraphs start on a new line. p { display: inline; } (False)</li> <li>A inline-level element always starts on a new line and takes up the full width available. (False)</li> <li>The <code class="highlighter-rouge">&lt;script&gt;</code> element uses display: none; as default. (True)</li> <li>An inline element does not start on a new line and only takes up as much width as necessary. (True)</li> </ul> <h1 id="css-positions-schemes-intro">CSS Positions Schemes Intro</h1> <p>There are four common types of CSS positioning schemes:</p> <ul> <li>Normal flow</li> <li>Relative positioning</li> <li>Absolute positioning</li> <li>Fixed positioning</li> </ul> <h2 id="normal-flow">Normal Flow</h2> <p><strong>position: static;</strong></p> <p>Normal flow is when you do nothing on a page layout (default layout of your browser). It takes the content in the order it is found in the <strong>HTML</strong> and stacks it, one element after the other one element right on top of another other. <strong>Block-level elements</strong> (heading, paragraphs, sectional elements e.g. div, article, section) take their own space in the document flow and are stacked one on top of another.</p> <p><strong>Inline elements</strong> (e.g. img, a,) appear inside the block-level elements and they stack themselves based on the flow of line boxes. Think of how the lines of a paragraph are stacked; this is essentially the flow of inline elements. That is, they are stacked as wide as they can.</p> <h1 id="css-position-schemes-relative">CSS Position Schemes: Relative</h1> <p>Here, elements are still considered a part of normal document flow, but you can offset the element from its normal position using the top, right, bottom or left offset values.</p> <p><img src="https://i.loli.net/2020/08/12/2tRP5Kh6bUeiJ3E.png" alt="14.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box1</span> <span class="p">{</span>
+   <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+   <span class="nl">left</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+   <span class="nl">top</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Note that using this method creates a hole where the element would normally be found.</p> <h1 id="css-position-schemes-absolute">CSS Position Schemes: Absolute</h1> <p>Here, elements are actually removed from normal document flow and repositioned based on top, right, bottom or left offset values. Elements are placed relative to the nearest positioned-attribute ancestor.</p> <p><img src="https://i.loli.net/2020/08/12/plDBFXneZ6qRcCG.png" alt="15.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box1</span> <span class="p">{</span>
+   <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+   <span class="nl">left</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+   <span class="nl">top</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Any element below the absolute positioned element moves up in its place. Where they get tricky is where the element gets positioned. Essentially, an absolute positioned element looks to the nearest parent element that has a positioning property. If there are no elements positioned above it, it simply looks at the body tag, and thus offsets relative within the body tag.</p> <p>Relying on the body tag does not always give the desired result.</p> <p><img src="https://i.loli.net/2020/08/12/6DdxjTEKROzHQ1U.png" alt="16.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.quote</span> <span class="p">{</span>
+   <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+   <span class="nl">left</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+   <span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* see the difference with and without this code */</span>
+<span class="nc">.content</span> <span class="p">{</span>
+   <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+   <span class="nl">left</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+   <span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>This is because your actual desired parent element (the content block) is not a positioned element, thus the quote block positions the quote with the body tag as the parent. To rectify this, you must qualify the content element as a positioned element. This is achieved by setting the containing block to have a position: relative property-value.</p> <ul> <li>Trying to create layouts purely based on relative positioning will give you a lot to keep track of. That is, it would be very difficult to remember where everything was supposed to be normally so that you can offset it correctly. Even then, if you change one element, then the whole layout flexes and changes since everybody is responding to everything else. Thus, relative positioning is not going to be used to create entire layouts, rather, mainly to do two things: <ul> <li>provide slight tweaks to your layout when you need to offset an element in a specific direction (e.g. up a little bit, or left a little bit)</li> <li>provide a positioning value for containing elements.</li> </ul> </li> <li>When designing layouts, you thus need to consider what elements you are going to set as the containing block to contain the other positioned elements. That is, absolute position elements require a containing block (relative position statement). If you don’t provide it one, it will use the outer block of the document (the body of your document).</li> </ul> <h1 id="css-position-schemes-fixed">CSS Position Schemes: Fixed</h1> <p>If you want an element to always be present, no matter whether you resize or scroll through the page, you need to set the position property to fixed:</p> <p><img src="https://i.loli.net/2020/08/12/hIvgdFBGfEHVoMA.png" alt="17.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.ad</span> <span class="p">{</span>
+   <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+   <span class="nl">left</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+   <span class="nl">top</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-stacking-context">CSS Stacking Context</h1> <p>Although we tend to regard a webpage as a two-dimensional entity, the box model is positioned in <strong>three dimensions</strong>. The third dimension is the <strong>z-axis</strong>, which is perpendicular to the screen and each box has an associated stack level. Positioned elements, after all, can overlap.</p> <p>By default, positioned elements are stacked on top of each other based on where they are encountered in the source order, with the last object being on top. A box with a higher stack level is rendered “in front of” a box with a lower stack level. That is, it is rendered closer to a user. A stack level can also be negative. The stack level is specified via the z-index property.</p> <p><img src="https://i.loli.net/2020/08/12/pfTZ9l7hUs1Sky2.png" alt="18.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">header</span><span class="o">,</span> <span class="nt">aside</span> <span class="p">{</span>
+   <span class="nl">z-index</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="nc">.content</span> <span class="p">{</span>
+   <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="nc">.quote</span> <span class="p">{</span>
+   <span class="nl">z-index</span><span class="p">:</span> <span class="m">3</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Each stacking index does not need to be incremented by 1 or 1000 for each level. It’s just a number; the index needs only be larger or smaller than each respective index.</p> <h1 id="css-positioning-float">CSS Positioning Float</h1> <p>How floats actually work changes based on the elements being floated. Essentially, it is an element that is shifted to the left or to the right of its current position, removed from the normal document flow. Remember that in the normal document flow, block-level elements stack on top of each other and can be referred to as boxes. If you apply the following code:</p> <p><img src="https://i.loli.net/2020/08/12/JBuAjQRpoZeKUEG.png" alt="19.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box1</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>If you actually floated box1 to the left, the surrounding elements will still move up because box1 is removed from the normal document flow.</p> <p><img src="https://i.loli.net/2020/08/12/V3L9S7rx4JglKt2.png" alt="22.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box1</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="inline-boxes">Inline Boxes</h3> <p>When you float the image to the left, what happens is the paragraph wraps around the image instead of going underneath it. Any inline element will wrap around floated elements if they have enough room.</p> <p><img src="https://i.loli.net/2020/08/12/ab53fTGkivSExuN.png" alt="20.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">img</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-positioning-clear">CSS Positioning Clear</h1> <p>However, based on the way floats work, any remaining content on the page will move up and underneath the floated elements. By using the clear property, you can tell the browser to stop floating elements and go back to normal document flow</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">footer</span> <span class="p">{</span>
+   <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h2 id="2-column-layout">2 Column Layout</h2> <p>Your typical two-column layout can, therefore, be obtained by using floats:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* method 1 */</span>
+<span class="nt">aside</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.content</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* method 2 */</span>
+<span class="nt">aside</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+   <span class="nl">margin-right</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.content</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* method 3 */</span>
+<span class="nf">#container</span> <span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">960px</span><span class="p">;</span>
+   <span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#content</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">620px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#sidebar</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">340px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#footer</span> <span class="p">{</span>
+   <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h2 id="3-column-layout">3 Column Layout</h2> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#container</span> <span class="p">{</span>
+<span class="err">  </span> <span class="nl">width</span><span class="p">:</span> <span class="m">960px</span><span class="p">;</span>
+<span class="err">  </span> <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err"> </span>
+<span class="nf">#leftSidebar</span> <span class="p">{</span>
+<span class="err">  </span> <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="err">  </span> <span class="nl">width</span><span class="p">:</span> <span class="m">240px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#content</span> <span class="p">{</span>
+<span class="err">  </span> <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="err">  </span> <span class="nl">width</span><span class="p">:</span> <span class="m">480px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err"> </span>
+<span class="nf">#rightSidebar</span> <span class="p">{</span>
+<span class="err">  </span> <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="err">  </span> <span class="nl">width</span><span class="p">:</span> <span class="m">240px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#footer</span> <span class="p">{</span>
+<span class="err">  </span> <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="make-nav-horizontally-or-vertically">Make nav horizontally or vertically</h3> <p><img src="https://i.loli.net/2020/08/12/E1gDzZGWFHOi85w.png" alt="23.png" /></p> <p><img src="https://i.loli.net/2020/08/12/OIcKuJAbTVCyN2n.png" alt="24.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* horizontally centered */</span>
+<span class="nt">nav</span> <span class="nt">ul</span> <span class="nt">li</span> <span class="p">{</span>
+		<span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span> <span class="c">/* horizontally */</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">0px</span><span class="p">;</span> <span class="c">/* centered */</span>
+		<span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span> <span class="m">5px</span><span class="p">;</span> <span class="c">/* centered */</span>
+<span class="p">}</span>
+
+<span class="c">/* vertically to left */</span>
+<span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span> <span class="c">/* vertically to left */</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">540px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">ul</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">10px</span> <span class="m">5px</span> <span class="m">5px</span><span class="p">;</span>
+		<span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span> <span class="m">10px</span><span class="p">;</span>
+		<span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span> <span class="c">/* align with nav */</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-responsive-web-design-intro">CSS Responsive Web Design Intro</h1> <h2 id="background">Background</h2> <p>Responsive web design is rapidly evolving idea, especially as websites need to adapt to the growing number of mobile devices and their relatively small screens. What we have dealt with so far involved multiple fixed width layouts, but of course, the dream is: one website for all sizes. If a website can respond to the user’s preference of device, this would eliminate the need for a different design and development phase for each new gadget on the market.</p> <p>As designers, if you don’t design for all the ways that people can consume or interact with your content, you are failing to address a significant amount of your audience. In terms of smart phones and tablets, those audiences are just too big to ignore anymore.</p> <h2 id="responsive-design-in-a-nutshell">Responsive Design in a Nutshell</h2> <p>The basic idea of responsive web design is that <strong>a website’s design and development should “respond” to the user’s behaviour and environment</strong>. This includes <strong>screen size</strong>, <strong>platform</strong>, <strong>orientation</strong> and <strong>device</strong>. These devices can include: desktops; tablets; mobiles; and television. Generally, this responsiveness can mean things like:</p> <ul> <li>Adapting layout to suit different screen sizes</li> <li>Resizing images to suit screen resolution</li> <li>Serving lower bandwidth images to mobile devices</li> <li>Simplifying or hiding elements for mobile devices</li> <li>Providing finger-friendly links and buttons for mobile users</li> <li>Detecting and responding to mobile features such as geolocation and device orientation</li> </ul> <p>Essentially, responsive design practices consists of <strong>flexible grids</strong>, <strong>layouts</strong>, <strong>images</strong> and <strong>intelligent use of CSS media queries</strong>.</p> <h2 id="flexible-layouts">Flexible Layouts</h2> <p>Flexible layouts are essentially any layouts that use relative measurements to allow the layout to resize under different conditions.</p> <p><a href="https://www.notion.so/1b98be90b4a24df782bf6eef3343a96c">Untitled</a></p> <p>As you can see, in today’s multi-device world, the idea of developing sites that respond to medium makes a lot of sense. You cannot control how your audience comes to your site or make them use a browser of your choosing, and fixed at a specific width. The good thing is that there are only a handful of different ranges most people will fall into. Thus, you can create several designs, each to work well with one range of device, browser and resolution. Next, it is up to you to respond to users’ environment.</p> <h2 id="html-structure">HTML Structure</h2> <p>For best designs, you need to start thinking modular. That is, you need to think of the different parts of your design such as main content, sidebar, header and navigation, not as pieces that must stay in the same place relative to one another, but as modules that can be reorganised, resized and shuffled.</p> <p>The crucial part is identifying groups of elements that must stay together for any layout. For example, navigation links must stay together otherwise they will make no sense. This will make it easier to adapt for different viewport (window) sizes. In the next three diagrams, we visualise the typical structure for desktops, tablets, and mobile devices respectively.</p> <p><img src="https://i.loli.net/2020/08/12/wX9aUjnuiNdTSm1.png" alt="25.png" /></p> <h1 id="viewport">Viewport</h1> <p>The viewport is the user’s visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.</p> <p>You can set the viewport as follows:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0, maximum-scale=1"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div> <ul> <li>A <em><code class="highlighter-rouge">&lt;meta&gt;</code></em> viewport element gives the browser instructions on how to control the page’s dimensions and scaling.</li> <li>The <em>width=device-width</em> part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).</li> <li>The <em>initial-scale=1.0</em> part sets the initial zoom level when the page is first loaded by the browser. Simply it disables the initial scale, thus ensuring that when the page is first displayed, it is fully zoomed in.</li> <li><em>maximum-scale = 1</em> ensures that there is always a 1:1 ratio between the page’s CSS pixel and the device’s screen pixels. This is important when a device switches to landscape orientation and you want the width to increase accordingly.</li> </ul> <h1 id="media-types">Media Types</h1> <p>Media types allow you to specify how documents will be presented in different media. This includes documents displayed on screens, or on paper.</p> <p><a href="https://www.notion.so/52cf1979979147b792f62c2180a4fde2">Untitled</a></p> <h3 id="media-rule">@media Rule</h3> <p>The @media rule allows different style rules for different media in the same style sheet. An example usage:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="n">screen</span> <span class="p">{</span>
+   <span class="nt">div</span> <span class="nf">#mainContent</span> <span class="p">{</span>
+       <span class="nl">font-family</span><span class="p">:</span> <span class="n">verdana</span><span class="p">;</span>
+       <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+	 <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">screen</span><span class="p">,</span> <span class="n">print</span> <span class="p">{</span>
+   <span class="nt">div</span> <span class="nf">#mainContent</span> <span class="p">{</span>
+       <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+	 <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Alternatively, media types can be specified within the link tag</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">media=</span><span class="s">"screen"</span> <span class="na">href=</span><span class="s">"style320.css"</span><span class="nt">/&gt;</span>
+</code></pre></div></div> <h1 id="media-queries">Media Queries</h1> <p>CSS media queries are the key trick for responsive design. The purpose of media queries is to apply different CSS rules to achieve different layouts for a specified viewport (window) width. It is essentially a block of <strong><em>if</em></strong> conditions to tell the browser how to render the page for a specified viewport width. Example of a media query syntax:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="n">media-type</span> <span class="n">and</span> <span class="p">(</span><span class="n">media-feature-rule</span><span class="p">)</span> <span class="p">{</span>
+	  <span class="c">/* CSS rules go here */</span>
+<span class="p">}</span>
+</code></pre></div></div> <ul> <li>A <strong>media type</strong>, which tells the browser what kind of media this code is for (e.g. print, or screen). Media types are optional; if you do not indicate a media type in your media query then the media query will default to being for all media types.</li> <li>A <strong>media expression</strong>, which is a rule, or test that must be passed for the contained CSS to be applied.</li> <li>A <strong>set of CSS rules</strong> that will be applied if the test passes and the media type is correct.</li> </ul> <h3 id="ways-to-insert-media-queries">Ways to Insert Media Queries</h3> <p>Just like CSS, there are three ways to implement media queries (and thus media types)</p> <h3 id="import-rule"><strong>@import rule</strong></h3> <p>Within the main CSS style sheet, reference the other style sheets using the import rule:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="sx">url(style600min.css)</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">600px</span><span class="p">);</span>
+</code></pre></div></div> <p>Note: Chaining media queries (eg. using min-width). More chaining is possible.</p> <h3 id="media-queries-in-style-sheets">Media Queries in Style Sheets</h3> <p>Media queries can also be placed directly into style sheets:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#nav</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#nav</span> <span class="nt">ul</span> <span class="p">{</span>
+   <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">480px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">orientation</span><span class="p">:</span> <span class="nb">portrait</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nf">#nav</span> <span class="nt">li</span> <span class="p">{</span>
+       <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+       <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">.5em</span><span class="p">;</span>
+       <span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="m">#000000</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nf">#nav</span> <span class="p">{</span>
+       <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="nf">#nav</span> <span class="nt">li</span> <span class="p">{</span>
+       <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+       <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">.5em</span><span class="p">;</span>
+       <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="linked-style-sheet">Linked Style Sheet</h3> <p>Media queries can also be included in a linked style sheet’s media attribute:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">media=</span><span class="s">"screen and (max-device-width: 800px)"</span> <span class="na">href=</span><span class="s">"style768.css"</span><span class="nt">/&gt;</span>
+</code></pre></div></div> <p>All the above queries, except for orientation, accept a min/max prefix. This will set a maximum/ minimum browser/device width that a certain set of styles would apply to.</p> <p>The set of pixel widths that this course recommends you target are as follow. Of course, they should only serve as a starting point. Generally, catering for three different range of widths is sufficient</p> <ul> <li>320px</li> <li>480px</li> <li>600px</li> <li>768px</li> <li>900px</li> <li>1200px</li> </ul> <h3 id="which-to-use">Which to Use</h3> <p>Imported style sheets have the advantage of being conditionally downloaded according to media attribute. The disadvantage is the lack of browser/device support relative to the other options.</p> <p>If organisational benefits outweigh the efficiency lost, linking separate style sheets should be used. This is also suitable for devices that do not switch orientation or for screens whose browser width cannot be changed manually.</p> <p>If you are dealing with devices that can switch orientation, placing media queries all in the <strong>one</strong> style sheet may be best. Because devices can switch orientation instantly, if two media queries were placed in separate style sheets, the website would have to call each style sheet file every time the user switched orientations. Placing it all in the one style sheet would be more efficient. Further, if the design is meant for a standard computer screen with a resizable browser, placing all media queries in one style sheet would be best.</p> <p>In this course, we recommend you to use media queries in your style sheets.</p> <h3 id="problems-with-media-queries">Problems with Media Queries</h3> <p>There are two main problems with CSS media queries.</p> <ol> <li>If you use only media queries, the browser will still download the scripts associated with the application, even if your element is hidden</li> <li>Even though images may be hidden from low resolution devices, the browser still downloads the full-source variants</li> </ol> <h3 id="solving-the-css-issue">Solving the CSS Issue</h3> <p>To remedy the two main problems of CSS media queries, JavaScript is needed to read out the media queries and from there, decide whether to download the complicated mapping script, and whether to download the low-source or full-source image (or even no image at all). To fire JavaScript when a media query is triggered:</p> <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">width</span> <span class="o">&gt;</span> <span class="mi">600</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// download complicated script</span>
+      <span class="c1">// swap in full-source images for low-source ones</span>
+<span class="p">}</span>
+<span class="c1">// OR</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">&lt;</span> <span class="mi">900</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// scripts</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="media-query-browser-support">Media Query Browser Support</h3> <p>Of course, not all devices support all of the CSS3 media query options. For this reason, you have been provided with a <strong>respond.js</strong> file to act as a back-up for older browsers, in particular, IE8 and below. The good thing about this script is that it can be compressed down to as little as 1 KB and can parse CSS files fairly fast without needing any additional libraries.</p> <p>However, <strong>respond.js</strong> was never meant to be a full-featured solution. Its purpose is to provide the bare minimum for responsive layouts to work. It supports only min-width and max-width queries. <strong>css3-mediaqueries.js</strong> provdies more complex queries.</p> <h1 id="flexible-grids">Flexible Grids</h1> <p>The meaning of a flexible grid is to add a breakpoint in the style to change the design at the point where it requires. As a result you don’t need to target every possible device size and design layout for it.</p> <p>In the early days of responsive design the only available option was using float. The basic idea is to transform pixel-based absolute widths to percentage-based relative measurements. The general rule to apply is:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Target/Context=Result (The rule is first proposed by Marcotte)
+</code></pre></div></div> <p><img src="https://i.loli.net/2020/08/12/yIijxN4sYv5uVKJ.png" alt="26.png" /></p> <p>For example if our target column size is 300 pixels, and the context (or container) it is in is 960 pixels, we divide 300 by 960 to get a value we can use in our CSS, after moving the decimal point two places to the right.</p> <h3 id="example-on-2-column-layout-response-design">Example on 2 Column Layout Response Design</h3> <p><img src="https://i.loli.net/2020/08/12/hwprf45eWgtNcMu.png" alt="27.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">col1</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;article&gt;</span>
+        <span class="nt">&lt;header&gt;</span>
+		        <span class="nt">&lt;h2&gt;</span>Explore Our World Your Way<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Explore Australia is the best way to explore our wonderful country! Come find out why our tours are so good!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/article&gt;</span>
+    <span class="nt">&lt;article&gt;</span>
+        <span class="nt">&lt;header&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>Must See Attractions<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;p&gt;</span>No matter which state you're in, Australia is filled with cultural must-see attractions from the Opera House to Uluru.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;aside</span> <span class="na">class=</span><span class="s">col2</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>NSW Climb<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>See the City from above in a mind-blowing Harbour Bridge Climb<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/aside&gt;</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* only width &gt; 600px, using following css rules */</span>
+<span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">600px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.col1</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">31.24999999%</span><span class="p">;</span>
+        <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.col2</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">64.58333331%</span><span class="p">;</span>
+        <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-responsive-web-design-modern-layout-technologies">CSS Responsive Web Design Modern layout technologies</h1> <p>There are other modern technologies that are responsive by default. These methods are Mutilple-column layout, Flexbox, and Grid.</p> <h3 id="multiple-column-layout">Multiple-column Layout</h3> <p>You can use <strong>column-count</strong> and <strong>column-width</strong> attributes to make your content responsive to the device needs. The attribute <strong>column-count</strong> indicates how many columns the webpage content will be split into. The browser then changes the size of the columns accordingly.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.container</span> <span class="p">{</span>
+		<span class="nl">column-count</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>On the other hand, if you specify a column-width, the browser will create as many columns of that width will fit into the container. Then it will share out the remaining space between all the columns. Therefore the number of columns will change according to how much space there is.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.container</span> <span class="p">{</span>
+		<span class="nl">column-width</span><span class="p">:</span> <span class="m">12em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* px -&gt; absolute dimension, em -&gt; relative dimension */</span>
+</code></pre></div></div> <p><img src="https://i.loli.net/2020/08/12/umADsePUk48FVzg.png" alt="28.png" /></p> <h3 id="flex-box">Flex box</h3> <p>The Flex box method allows the flex items to shrink and distribute space between them according to the space in their container, as their initial behaviour. The <strong>flex-grow</strong> and <strong>flex-shrink</strong> attributes control the behaviour of the items behave when they encounter more or less space around them.</p> <ul> <li>No floats</li> <li>Responsive and mobile friendly</li> <li>Positioning child elements is MUCH easier</li> <li>Flex container’s margins do not collapse with the margins of its contents</li> <li>Order of elements can easily be changed without editing the source HTML</li> </ul> <p><img src="https://i.loli.net/2020/08/12/w4HSnIRYO1tsbBa.png" alt="29.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">/* the flex items will each take an equal amount of space in the flex container, using the shorthand of flex: 1 */</span>
+<span class="nc">.container</span> <span class="p">{</span>
+	  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.item</span> <span class="p">{</span>
+	  <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><img src="https://i.loli.net/2020/08/12/G7BWM2LiwPChtUX.png" alt="30.png" /></p> <h3 id="grid">Grid</h3> <p>In the Grid Layout, the distribution of space is maintained through <strong>fr</strong> unit.</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* the three 1 fr will create three columns taking equal space from the container */</span>
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span> <span class="m">1</span><span class="n">fr</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><img src="https://i.loli.net/2020/08/12/n3mJsMFSKYldg2j.png" alt="31.png" /></p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* when width &gt;= 600px, divide into two column with 1:2, gap 5% */</span>
+<span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">600px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.wrapper</span> <span class="p">{</span>
+		    <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+		    <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span> <span class="m">2</span><span class="n">fr</span><span class="p">;</span>
+		    <span class="nl">column-gap</span><span class="p">:</span> <span class="m">5%</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-responsive-web-design-fluid-images">CSS Responsive Web Design Fluid Images</h1> <p>No matter how perfect you build your liquid or elastic layout, it is not going to work if you do not make the content within it flexible too. Text is easy, it wraps by default. Images are a little tricky. There are a number of techniques for creating fluid images:</p> <ul> <li>Foreground images that scale with the layout</li> <li>Creating sliding composite images</li> <li>Hiding and revealing portions of images</li> </ul> <h3 id="dynamically-scaling-images">Dynamically Scaling Images</h3> <h3 id="fluid">Fluid</h3> <p>For a liquid image, setting the image’s width to a percentage value will constrains the image’s dimension:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">img</span> <span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Note that the <strong>height</strong> attribute is not necessary; the browser determines the <strong>height</strong> that will be proportionately constrained.</p> <h3 id="elastic">Elastic</h3> <p>If you want the image to scale with the text size, then just like elastic designs, change the <strong>width</strong> value to an <strong>em</strong> value:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">img</span> <span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">20em</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>To ensure that the browser always scales the image down, not up, you can set a maximum width an image can scale to:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">img</span> <span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">20em</span><span class="p">;</span>
+   <span class="nl">max-width</span><span class="p">:</span> <span class="m">500px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="sliding-composite-images">Sliding Composite Images</h3> <p>This technique creates what appears to be a single image out of multiple pieces that slide over and away from each other. To achieve this, you will need a nested block element to place each as a background image:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"outer"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"inner"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div> <p>Since the divs are empty, you will need dimensions to prevent them from collapsing entirely as well as to create flexible behaviour:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#outer</span> <span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+   <span class="nl">max-width</span><span class="p">:</span> <span class="m">1000px</span><span class="p">;</span>
+   <span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+   <span class="nl">background</span><span class="p">:</span> <span class="sx">url(skyline.jpg)</span> <span class="nb">no-repeat</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#inner</span> <span class="p">{</span>
+   <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+   <span class="nl">top</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+   <span class="nl">right</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+   <span class="nl">height</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+   <span class="nl">background</span><span class="p">:</span> <span class="sx">url(ufo.png)</span> <span class="nb">no-repeat</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="switching-sizes">Switching Sizes</h3> <p>The two new attributes of <code class="highlighter-rouge">&lt;img&gt;</code> tag <strong>srcset</strong> and <strong>sizes</strong> help the browser to pick the right images by proving several sources of images. Here is an example:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">srcset=</span><span class="s">"cat-480w.jpg 480w, cat-800w.jpg 800w"</span>
+     <span class="na">sizes=</span><span class="s">"(max-width: 600px) 480px, 800px"</span>
+     <span class="na">src=</span><span class="s">"cat-800w.jpg"</span> <span class="na">alt=</span><span class="s">"A Cat"</span><span class="nt">&gt;</span>
+</code></pre></div></div> <p><strong>srcset</strong> defines the following parts:</p> <ul> <li>An image filename</li> <li>A space</li> <li>The actual width of the image, uses <strong>w</strong> unit.</li> </ul> <p><strong>sizes</strong> defines the following parts:</p> <ul> <li>A media viewport size</li> <li>A space</li> <li>The width of the slot the image will fill when the media condition is true</li> </ul> <p>As a result with the <strong>srcset</strong> and <strong>sizes</strong> attribute of <strong><img /></strong> tag set, the browser will work as follows:</p> <ol> <li>The browser will first look at device’s width</li> <li>Then it will work out to see which one in the media condition defined in sizes is true.</li> <li>Then it will take that slot size and load the image referenced in <strong>srcset</strong> which matches closely.</li> <li>If the browser does not support the <strong>srcset</strong> attribute, it will use the as usual <strong>src</strong> attribute to load the image.</li> </ol> <h3 id="solving-art-direction-problem">Solving Art Direction Problem</h3> <p>The <strong>art direction problem</strong> is the method to change the image displayed to suit different image display sizes. The <code class="highlighter-rouge">&lt;picture&gt;</code> element allows to solve this issue.</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;picture&gt;</span>
+	  <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">"(max-width: 799px)"</span> <span class="na">srcset=</span><span class="s">"a-cat-480w.jpg"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">"(min-width: 800px)"</span> <span class="na">srcset=</span><span class="s">"cat-800w.jpg"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"acat-800w.jpg"</span> <span class="na">alt=</span><span class="s">"A cat"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</code></pre></div></div> <p>The explanation of <code class="highlighter-rouge">&lt;picture&gt;</code> tag: `</p> <ul> <li>The elements include a media attribute that contains a media condition.</li> <li>The srcset attributes contain the path to the image to display.</li> <li>You must provide an <strong><code class="highlighter-rouge">&lt;img&gt;</code></strong> element, with <strong>src</strong> and <strong>alt</strong> attribute, otherwise no images will appear. This provides a default case while none of the media condition are true and a workaround for browsers that do not support the <strong><code class="highlighter-rouge">&lt;picture&gt;</code></strong> element.</li> </ul> <h3 id="filaments-group-solution">Filament’s Group Solution</h3> <p>The Filament’s Group technique involves resizing images proportionately, but shrinks image resolution on smaller devices so that large images do not waste space unnecessarily on small screens.</p> <h3 id="example-on-not-stretching-image">Example on Not Stretching Image</h3> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+	  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+	  <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+	  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('img_flowers.jpg')</span><span class="p">;</span>
+	  <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h1 id="css-responsive-web-design-overall-solution">CSS Responsive Web Design Overall Solution</h1> <p>The responsive design that this course will take is to separate desktop rendering and mobile rendering. For widths between 900px and 1200px (approximately), designs will have a rather normal development process (that you are used to), with the addition of CSS queries. Anything less than 900px wide will trigger a fluid layout. All the while, both designs will be responsive. That is, <strong>fixed widths for large and medium screens</strong>, <strong>but fluid widths for smaller screens.</strong></p> <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// jsPair.js</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="err">“</span><span class="nx">DOMContentLoaded</span><span class="err">”</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s2">"resize"</span><span class="p">,</span> <span class="nx">resizeWindow</span><span class="p">);</span>
+
+   <span class="kd">function</span> <span class="nx">resizeWindow</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+       <span class="kd">var</span> <span class="nx">newWindowWidth</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">width</span><span class="p">();</span>
+
+       <span class="k">if</span> <span class="p">(</span><span class="nx">newWindowWidth</span> <span class="o">&lt;</span> <span class="mi">600</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Mobile</span>
+           <span class="nx">$</span><span class="p">(</span><span class="s2">"link[rel=stylesheet]"</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="na">href</span> <span class="p">:</span> <span class="s2">"../css/mobile.css"</span><span class="p">});</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">newWindowWidth</span> <span class="o">&lt;</span> <span class="mi">1024</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// iPad</span>
+           <span class="nx">$</span><span class="p">(</span><span class="s2">"link[rel=stylesheet]"</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="na">href</span> <span class="p">:</span> <span class="s2">"../css/ipad.css"</span><span class="p">});</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+           <span class="nx">$</span><span class="p">(</span><span class="s2">"link[rel=stylesheet]"</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="na">href</span> <span class="p">:</span> <span class="s2">"../css/styles.css"</span><span class="p">});</span>
+       <span class="p">}</span>
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* default sytle */</span>
+<span class="nf">#container</span> <span class="p">{</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">;</span>
+   <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+   <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span> <span class="m">0</span><span class="p">;</span>
+   <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span> <span class="nt">nav</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+   <span class="nl">margin</span><span class="p">:</span> <span class="m">24px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#content</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">900px</span><span class="p">;</span>
+   <span class="nl">margin-right</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#content</span> <span class="nt">article</span> <span class="p">{</span>
+   <span class="nl">background</span><span class="p">:</span> <span class="m">#FFF</span><span class="p">;</span>
+   <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">30px</span> <span class="m">0</span><span class="p">;</span>
+   <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#sidebar</span> <span class="p">{</span>
+   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+   <span class="nl">width</span><span class="p">:</span> <span class="m">280px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#sidebar</span> <span class="nt">aside</span> <span class="p">{</span>
+   <span class="nl">background</span><span class="p">:</span> <span class="m">#FFF</span><span class="p">;</span>
+   <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">30px</span> <span class="m">0</span><span class="p">;</span>
+   <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* width &lt; 1200px viewport */</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nf">#container</span><span class="p">{</span>
+		      <span class="nl">width</span><span class="p">:</span> <span class="m">960px</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#content</span> <span class="p">{</span>
+		     <span class="nl">width</span><span class="p">:</span> <span class="m">700px</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#sidebar</span> <span class="p">{</span>
+		     <span class="nl">width</span><span class="p">:</span> <span class="m">240px</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* ipad in landscape */</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-device-width</span><span class="p">:</span> <span class="m">1024px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">orientation</span><span class="p">:</span> <span class="nb">landscape</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nf">#container</span> <span class="p">{</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">768px</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#content</span> <span class="p">{</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">540px</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#sidebar</span> <span class="p">{</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">208px</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nt">header</span> <span class="nt">nav</span> <span class="p">{</span>
+				<span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+				<span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nt">header</span> <span class="nt">nav</span> <span class="nt">ul</span> <span class="p">{</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#content</span> <span class="nt">article</span> <span class="nt">img</span> <span class="p">{</span>
+				<span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+				<span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">10px</span> <span class="m">0</span><span class="p">;</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* ipad in portrait */</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-device-width</span><span class="p">:</span> <span class="m">1024px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">orientation</span><span class="p">:</span> <span class="nb">portrait</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nf">#container</span> <span class="p">{</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#content</span> <span class="p">{</span>
+				<span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+				<span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">12px</span> <span class="m">0</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#sidebar</span> <span class="p">{</span>
+				<span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nt">header</span> <span class="nt">nav</span> <span class="nt">ul</span> <span class="p">{</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">600px</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nf">#container</span><span class="o">,</span> <span class="nf">#content</span> <span class="p">{</span>
+				<span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#content</span> <span class="p">{</span>
+				<span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#sidebar</span><span class="o">,</span><span class="nf">#banner</span> <span class="p">{</span>
+				<span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nt">header</span> <span class="nt">nav</span> <span class="p">{</span>
+				<span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+				<span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nt">header</span> <span class="nt">nav</span> <span class="nt">ul</span> <span class="p">{</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nt">header</span> <span class="nt">nav</span> <span class="nt">ul</span> <span class="nt">li</span> <span class="p">{</span>
+				<span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+				<span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+				<span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+				<span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+				<span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#938A78</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#content</span> <span class="nt">article</span> <span class="nt">img</span> <span class="p">{</span>
+				<span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nf">#sidebar</span> <span class="nt">aside</span> <span class="p">{</span>
+				<span class="nl">background</span><span class="p">:</span> <span class="m">#A79F91</span><span class="p">;</span>
+				<span class="nl">color</span><span class="p">:</span> <span class="m">#FFF</span><span class="p">;</span>
+				<span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+				<span class="nl">width</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+				<span class="nl">min-height</span><span class="p">:</span> <span class="m">170px</span><span class="p">;</span>
+				<span class="nl">margin-right</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+				<span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><img src="https://i.loli.net/2020/08/12/AK6FOQL8E4MDV2o.png" alt="34.png" /></p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- left hand side, for desktop takes 25%, for tablet takes 25% --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-desktop-25 col-tablet-25 menu"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>The Flight<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>The City<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- middle content, for desktop takes 50%, for tablet takes 75% --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-desktop-50 col-tablet-75"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>The City<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- right hand side, for desktop takes 25%, for tablet takes 100% --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-desktop-25 col-tablet-100"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>What?<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Chania is a city on the island of Crete.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* For mobile phones: */</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s1">"col-"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* For tablets: */</span>
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">600px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.col-tablet-25</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">25%</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nc">.col-tablet-50</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nc">.col-tablet-75</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">75%</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nc">.col-tablet-100</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* For desktop: */</span>
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.col-desktop-25</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">25%</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nc">.col-desktop-50</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nc">.col-desktop-75</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">75%</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nc">.col-desktop-100</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> </article> <div class="share-page"> <!-- Share this post! --> <div class="share-links"> <div class="circle-share share-facebook"> <a class="fa fa-facebook fa-2x" href="https://facebook.com/sharer.php?u=http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/" rel="nofollow" target="_blank" title="Share on Facebook"></a> </div> <div class=" circle-share share-twitter"> <a class="fa fa-twitter fa-2x" href="https://twitter.com/intent/tweet?text=HTML and CSS Study Notes&url=http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/" rel="nofollow" target="_blank" title="Share on Twitter"></a> </div> <div class=" circle-share share-google"> <a class="fa fa-google-plus fa-2x" href="https://plus.google.com/share?url=http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/" rel="nofollow" target="_blank" title="Share on Google+"></a> </div> <div class=" circle-share"> <a class="fa fa-linkedin fa-2x" href="http://www.linkedin.com/shareArticle?url=http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/&title=HTML and CSS Study Notes" rel="nofollow" target="_blank" title="Share on LinkedIn"></a> </div> <div class=" circle-share"> <a class="fa fa-tumblr fa-2x" href="http://www.tumblr.com/share/link?url=http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/&name=HTML and CSS Study Notes" rel="nofollow" target="_blank" title="Share on Tumblr"></a> </div> <div class=" circle-share share-reddit"> <a class="fa fa-reddit fa-2x" href="http://reddit.com/submit?url=http://localhost:4000/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes/&title=HTML and CSS Study Notes" rel="nofollow" target="_blank" title="Share on Reddit"></a> </div> </div> </div> <style> @media screen and (min-width: 770px) { .clients .circle-share { margin-bottom: 50px; } } .share-page { margin-top: 8%; margin-bottom: 1%; } .share-links { margin: 0 auto; position: relative; text-align: center; } .circle-share { width: 80px; height: 80px; background: #000; border-radius: 50px; margin: 0 auto; display: block; } .circle-share { cursor: pointer; } .circle-share { display: inline-block; margin-right: 2%; margin-left: 2%; } .circle-share a { width: 53%; display: block; margin: 0 auto; padding-top: 21px; text-decoration: none; text-shadow: none; color: white; } .share-facebook a { width: 39%; } .share-reddit a { width: 60%; } .share-google a { width: 73%; } </style> <div class="py2 post-footer"> <img src="/images/jono.jpg" alt="Jonathon Belotti headshot" class="avatar" /> <p> Thanks for reading, and please leave some feedback if you have the time. </p> <p> Follow me on <a href="https://github.com/Phoebezuo">Github</a>. </p> </div> <div id="disqus_thread"></div> <script type="text/javascript"> var disqus_shortname = 'yufei'; var disqus_identifier = "/web/html/css/2020/08/12/HTML-and-CSS-Study-Notes"; var disqus_title = "HTML and CSS Study Notes"; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> </div> </div> </div> <footer class="center"> <div class="desktop-footer"> <div class="footer-each"> <h5><a href="mailto:phoebezuobj@gmail.com"><i class="fas fa-envelope"></i> Email</a></h5> </div> <div class="footer-each"> <h5><a href="https://www.linkedin.com/in/yufei-zuo-664635117"><i class="fab fa-linkedin"></i> Linkedin</a></h5> </div> <div class="footer-each"> <h5><a href="https://github.com/Phoebezuo"><i class="fab fa-github-square"></i> Github</a></h5> </div> <div class="footer-each"> <h5><a href="https://www.instagram.com/phoebezuooooo/?hl=en"><i class="fab fa-instagram-square"></i> Ins</a></h5> </div> <div class="footer-each"> <h5><a href="https://www.youtube.com/channel/UCZ7uXHROM7CLOU9E-Uj0rlA"><i class="fab fa-youtube"></i> Youtube</a></h5> </div> </div> </footer> <style> footer .desktop-footer { margin-left: auto; margin-right: auto; } .client-each, .footer-bar, .section, footer .desktop-footer { max-width: 45.33563em; } footer { margin-bottom: 30px; visibility: visible; -webkit-transform: translateY(0) scale(1); opacity: 1; transform: translateY(0) scale(1); opacity: 1; -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; } </style> <style> .home .contact-overlay .contact-a:nth-child(6n+1), .icon-and-text:nth-child(2n+1), footer .desktop-footer .footer-each:nth-child(6n+1) { clear: left; } footer .desktop-footer .footer-each { float: left; display: block; margin-right: 4%; width: 14.70196%; } footer .desktop-footer .footer-each:first-child { margin-left: 4%; } footer .footer-each a { text-decoration: none; background-image: none; color: #000; font-weight: 300; word-wrap: normal; } footer .footer-each a:active, footer .footer-each a:hover { outline-width: 0; } .founder-each h2, .group-pic, .header-title, .home .contact-overlay .contact-a, .section h1, .section h2, .section h3, .section p, .team small, .title-div, body .home .contact-overlay .contact-a-mob, footer .desktop-footer .footer-each, footer .mobile-footer, footer .mobile-footer .footer-each, nav li { text-align: center; } .contact-a, .contact-a span, .contact-a-mob span, .footer-each span, footer, sub, sup { position: relative; } .contact-a span:before, .contact-a-mob span:before, .footer-each span:before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; transition: .4s; -webkit-transform: scaleX(1); transform: scaleX(2); } .contact-a a:hover span:before, .contact-a-mob a:hover span:before, .footer-each a:hover span:before { content: ''; -webkit-transform: scaleX(0); transform: scaleX(0); } </style> </body> </html>
