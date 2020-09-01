@@ -1,4 +1,7 @@
-<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta http-equiv="Content-Language" content="en"> <title>Summary Note for Java &#8211; Yufei Zuo</title> <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> <link rel="dns-prefetch" href="//cdn.mathjax.org"> <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content="Summary notes for Object-Oriented Programming"> <meta name="robots" content="all"> <meta name="author" content="Yufei Zuo"> <meta name="keywords" content="Java, Programming, Object-Oriented"> <link rel="canonical" href="http://localhost:4000/java/programming/object-oriented/2020/08/21/Summary-Note-for-Java/"> <link rel="alternate" type="application/rss+xml" title="RSS Feed for Yufei Zuo" href="/feed.xml" /> <!-- JQuery --> <script aync src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!-- Page-type specific CSS --> <!-- Theme CSS --> <link rel="stylesheet" href="/css/junior.css?202009012221" type="text/css"> <!-- Fonts --> <link href="https://fonts.googleapis.com/css?family=Muli:300,400,800" rel="stylesheet"> <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> <!-- MathJax --> <!-- Verifications --> <!-- Open Graph --> <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="Summary Note for Java"> <meta property="og:description" content="A little space of internet for myself"> <meta property="og:url" content="http://localhost:4000/java/programming/object-oriented/2020/08/21/Summary-Note-for-Java/"> <meta property="og:site_name" content="Yufei Zuo"> <!-- Twitter Card --> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="Summary Note for Java" /> <meta name="twitter:description" content="Summary notes for Object-Oriented Programming" /> <meta name="twitter:url" content="http://localhost:4000/java/programming/object-oriented/2020/08/21/Summary-Note-for-Java/" /> <!-- Icons --> <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png"> <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png"> <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png"> <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png"> <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png"> <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"> <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"> <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"> <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"> <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192"> <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160"> <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"> <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> <script src="https://kit.fontawesome.com/9f419fabf5.js" crossorigin="anonymous"></script> </head> <body class="site"> <header class="site-header px-responsive"> <div class="mt2 wrap"> <nav class=""> <ul id="main-menu" data-nav-showing="false" style="transform: translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0);"> <!-- <li class="nav-jr home-anc"><h4><a href="#home"><br></a></h4></li> --> <div class="flexbox-parent"> <div class="flexbox-child"> <li class="about-anc"> <h4><a class="nav-underline home" href="http://localhost:4000">Home</a></h4></li> <li class="about-anc"> <h4><a class="nav-underline about" href="/about/">About Me</a></h4></li> <li class="expertise-anc"> <h4><a class="nav-underline contact" href="/contact/">Contact</a></h4></li> <li class="team-anc"> <h4><a class="nav-underline portfolio" href="/design/">Sketch</a></h4></li> <li class="beliefs-anc"> <h4><a class="nav-underline open-source" href="/projects/">Projects</a></h4></li> <li class="beliefs-anc"> <h4><a class="nav-underline resume" href="/resume/">Resumé</a></h4></li> <li> <div class="social-icons"> <div> <a class="fa fa-github" href="https://github.com/Phoebezuo" target="_blank"></a> <a class="fa fa-rss" href="/feed.xml"target="_blank"></a> <a class="fa fa-envelope" href="mailto:phoebezuobj@gmail.com"target="_blank"></a> <a class="fa fa-linkedin" href="https://www.linkedin.com/in/yufei-zuo-664635117"target="_blank"></a> <a class="fa fa-youtube-play" href="https://youtube.com/channel/UCZ7uXHROM7CLOU9E-Uj0rlA"target="_blank"></a> </div> <div class="right"> </div> </div> <div class="clearfix"></div> </li> </div> </ul> <!-- <div class="title-div"> <div class="title" style="transform: translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0);"><span class="title-label">About</span></div> </div> --> </nav> </div> </header> <div class="menu-btn"> <span class="menu-line"></span> <span class="menu-line"></span> <span class="menu-text">Menu</span> </div> <div class="home-btn" onclick="window.location.href = '/'"> <span class="static-menu-line"></span> <span class="home-text">Home</span> </div> <script> $( ".menu-btn" ).click(function() { if ( $( ".menu-text" ).css( "opacity" ) == "0" ){ $(".menu-line:nth-of-type(2)").css("transform","rotate(135deg)"); $(".menu-text").css("opacity", "1"); $( "#main-menu" ).css("transform", "translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0)"); } else { $(".menu-line:nth-of-type(2)").css("transform","rotate(44deg)"); $(".menu-text").css("opacity", "0"); $( "#main-menu" ).css("transform", "matrix(1, 0, 0, 1, 0, 0)"); } }); </script> <div class="site-wrap"> <div class="post p2 p-responsive wrap" role="main"> <div class="measure"> <style> p a { color: black !important; text-decoration: none; border-bottom: .0625em solid #dcf3ff; box-shadow: 0 -.4em 0 #dcf3ff inset; } p a:hover, p a:active, p a:focus { border-color: #aedbf9; box-shadow: 0 -.75em 0 #aedbf9 inset; } p .reversefootnote { border: none; box-shadow: none; } p .reversefootnote:hover, p .reversefootnote:active, p .reversefootnote:focus { border-color: none; box-shadow: none; } </style> <div class="post-header mb2"> <h1>Summary Note for Java</h1> <span class="post-meta">Aug 21, 2020</span><br> <span class="post-meta small"> 28 minute read </span> </div> <article class="post-content"> <h2 id="compilation">Compilation</h2> <ul> <li>a byte is made up of 8 bits</li> <li>your code is compiled to form bytecode(.class file), then JVM then convert this Bytecode into machine code in order to communicate with the underlying system.</li> <li>python source code is interpreted by a python interpreter and code is <strong>compiled and executed at runtime</strong></li> <li>C is <strong>compiled into a set of machine instructions</strong> and can be executed by the machine.</li> </ul> <h2 id="printing">Printing</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta http-equiv="Content-Language" content="en"> <title>Summary Note for Java &#8211; Yufei Zuo</title> <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> <link rel="dns-prefetch" href="//cdn.mathjax.org"> <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content="Summary notes for Object-Oriented Programming"> <meta name="robots" content="all"> <meta name="author" content="Yufei Zuo"> <meta name="keywords" content="Java, Programming, Object-Oriented"> <link rel="canonical" href="http://localhost:4000/java/programming/object-oriented/2020/08/21/Summary-Note-for-Java/"> <link rel="alternate" type="application/rss+xml" title="RSS Feed for Yufei Zuo" href="/feed.xml" /> <!-- JQuery --> <script aync src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!-- Page-type specific CSS --> <!-- Theme CSS --> <link rel="stylesheet" href="/css/junior.css?202009012244" type="text/css"> <!-- Fonts --> <link href="https://fonts.googleapis.com/css?family=Muli:300,400,800" rel="stylesheet"> <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> <!-- MathJax --> <!-- Verifications --> <!-- Open Graph --> <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="Summary Note for Java"> <meta property="og:description" content="A little space of internet for myself"> <meta property="og:url" content="http://localhost:4000/java/programming/object-oriented/2020/08/21/Summary-Note-for-Java/"> <meta property="og:site_name" content="Yufei Zuo"> <!-- Twitter Card --> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="Summary Note for Java" /> <meta name="twitter:description" content="Summary notes for Object-Oriented Programming" /> <meta name="twitter:url" content="http://localhost:4000/java/programming/object-oriented/2020/08/21/Summary-Note-for-Java/" /> <!-- Icons --> <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png"> <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png"> <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png"> <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png"> <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png"> <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"> <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"> <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"> <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"> <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192"> <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160"> <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"> <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> <script src="https://kit.fontawesome.com/9f419fabf5.js" crossorigin="anonymous"></script> </head> <body class="site"> <header class="site-header px-responsive"> <div class="mt2 wrap"> <nav class=""> <ul id="main-menu" data-nav-showing="false" style="transform: translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0);"> <!-- <li class="nav-jr home-anc"><h4><a href="#home"><br></a></h4></li> --> <div class="flexbox-parent"> <div class="flexbox-child"> <li class="about-anc"> <h4><a class="nav-underline home" href="http://localhost:4000">Home</a></h4></li> <li class="about-anc"> <h4><a class="nav-underline about" href="/about/">About Me</a></h4></li> <li class="expertise-anc"> <h4><a class="nav-underline contact" href="/contact/">Contact</a></h4></li> <li class="beliefs-anc"> <h4><a class="nav-underline resume" href="/resume/">Resumé</a></h4></li> <li> <div class="social-icons"> <div> <a class="fa fa-github" href="https://github.com/Phoebezuo" target="_blank"></a> <a class="fa fa-rss" href="/feed.xml"target="_blank"></a> <a class="fa fa-envelope" href="mailto:phoebezuobj@gmail.com"target="_blank"></a> <a class="fa fa-linkedin" href="https://www.linkedin.com/in/yufei-zuo-664635117"target="_blank"></a> <a class="fa fa-youtube-play" href="https://youtube.com/channel/UCZ7uXHROM7CLOU9E-Uj0rlA"target="_blank"></a> </div> <div class="right"> </div> </div> <div class="clearfix"></div> </li> </div> </ul> <!-- <div class="title-div"> <div class="title" style="transform: translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0);"><span class="title-label">About</span></div> </div> --> </nav> </div> </header> <div class="menu-btn"> <span class="menu-line"></span> <span class="menu-line"></span> <span class="menu-text">Menu</span> </div> <div class="home-btn" onclick="window.location.href = '/'"> <span class="static-menu-line"></span> <span class="home-text">Home</span> </div> <script> $( ".menu-btn" ).click(function() { if ( $( ".menu-text" ).css( "opacity" ) == "0" ){ $(".menu-line:nth-of-type(2)").css("transform","rotate(135deg)"); $(".menu-text").css("opacity", "1"); $( "#main-menu" ).css("transform", "translate(0%, -116%) matrix(1, 0, 0, 1, 0, 0)"); } else { $(".menu-line:nth-of-type(2)").css("transform","rotate(44deg)"); $(".menu-text").css("opacity", "0"); $( "#main-menu" ).css("transform", "matrix(1, 0, 0, 1, 0, 0)"); } }); </script> <div class="site-wrap"> <div class="post p2 p-responsive wrap" role="main"> <div class="measure"> <style> p a { color: black !important; text-decoration: none; border-bottom: .0625em solid #dcf3ff; box-shadow: 0 -.4em 0 #dcf3ff inset; } p a:hover, p a:active, p a:focus { border-color: #aedbf9; box-shadow: 0 -.75em 0 #aedbf9 inset; } p .reversefootnote { border: none; box-shadow: none; } p .reversefootnote:hover, p .reversefootnote:active, p .reversefootnote:focus { border-color: none; box-shadow: none; } </style> <div class="post-header mb2"> <h1>Summary Note for Java</h1> <span class="post-meta">Aug 21, 2020</span><br> <span class="post-meta small"> 29 minute read </span> </div> <article class="post-content"> <h2 id="compilation">Compilation</h2> <ul> <li>A byte is made up of 8 bits</li> <li>Java is <strong>compiled</strong> into <strong>bytecode</strong>(.class file), then <strong>JVM</strong> then convert this Bytecode into <strong>machine code</strong> in order to communicate with the underlying system.</li> <li>Python source code is interpreted by a python interpreter and code is <strong>compiled and executed at runtime</strong></li> <li>C is <strong>compiled into a set of machine instructions</strong> and can be executed by the machine.</li> </ul> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> javac MyProgram.java
+<span class="o">&gt;</span> java MyProgram
+Output from MyProgram ...
+</code></pre></div></div> <p><img src="https://i.loli.net/2020/08/21/AZBTK3I4htolgdY.png" alt="iShot2020-08-21pm10.26.07.png" /></p> <h2 id="anatomy-of-a-source-file">Anatomy of a Source File</h2> <p><img src="https://i.loli.net/2020/08/21/m1yXf8ucViwtLRQ.png" alt="iShot2020-08-21pm10.13.42.png" /></p> <p><img src="https://i.loli.net/2020/08/21/5fI9REAdHqJzcZj.png" alt="iShot2020-08-21pm10.16.25.png" /></p> <h2 id="printing">Printing</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">"hello"</span><span class="o">;</span>
 <span class="kt">float</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">3.45</span><span class="o">;</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d %s %f"</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">);</span>
@@ -11,32 +14,42 @@
 	<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">++;</span> <span class="c1">// j = 0, i = 1;</span>
   	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">j</span><span class="o">);</span> <span class="c1">// 1 0; 2 1; ...; 10 9</span>
 <span class="o">}</span>
-</code></pre></div></div> <h2 id="converting">Converting</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// String to integer</span>
+</code></pre></div></div> <h2 id="converting">Converting</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// number-like String to integer</span>
 <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="s">"1"</span><span class="o">);</span>
 
-<span class="c1">// int to String </span>
+<span class="c1">// int to String</span>
 <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
 
-<span class="c1">// char to string </span>
+<span class="c1">// char to string</span>
 <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Character</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
 
-<span class="c1">// array to string </span>
+<span class="c1">// array to string</span>
 <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
 </code></pre></div></div> <h3 id="type-casting">Type Casting</h3> <p>Although we cannot change the type of the variable after declaring it, we can use it in operations with certain types</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
 <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">;</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">x</span><span class="o">;</span> <span class="c1">// implicit casting, compiler recognnises the type of z as a float </span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">x</span><span class="o">;</span> <span class="c1">// implicit casting, compiler recognnises the type of z as a float</span>
+</code></pre></div></div> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">;</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">/</span> <span class="mi">2</span><span class="o">);</span> <span class="c1">// 0</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">f</span> <span class="o">/</span> <span class="mi">2</span><span class="o">);</span> <span class="c1">// 0.5</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">f</span> <span class="o">/</span> <span class="n">i</span><span class="o">);</span> <span class="c1">// 1.0</span>
 </code></pre></div></div> <h2 id="data-type">Data Type</h2> <table> <thead> <tr> <th>Name</th> <th>Memory</th> <th>Type</th> <th>Default</th> </tr> </thead> <tbody> <tr> <td>boolean</td> <td>1 byte</td> <td>primitive</td> <td>False</td> </tr> <tr> <td>Byte</td> <td>1 byte</td> <td>primitive</td> <td>0</td> </tr> <tr> <td>short</td> <td>2 byte</td> <td>primitive</td> <td>0</td> </tr> <tr> <td>Char</td> <td>2 byte</td> <td>primitive</td> <td>‘\u0000’</td> </tr> <tr> <td>Int</td> <td>4 byte</td> <td>primitive</td> <td>0</td> </tr> <tr> <td>float</td> <td>4 byte</td> <td>primitive</td> <td>0.0f</td> </tr> <tr> <td>Long</td> <td>8 byte</td> <td>primitive</td> <td>0L</td> </tr> <tr> <td>double</td> <td>8 byte</td> <td>primitive</td> <td>0.0d</td> </tr> <tr> <td>string</td> <td>variable</td> <td>object</td> <td>null</td> </tr> </tbody> </table> <p>Reference types hold an address pointing to the area of memory containing the data. It is not storing the value directly but rather a <strong>REFERENCE</strong> to it. That is why comparison between Strings as shown above need a speciﬁc .equals operation rather than ==, since == compares direct contents of the <strong>address</strong> whereas .equals compares that <strong>content</strong> within the address</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">"Meow"</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">"Meow"</span><span class="o">);</span>
+
+<span class="c1">// compare the address of s1 and s2</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span><span class="o">);</span> <span class="c1">// false</span>
+
+<span class="c1">// compare the content within s1 and s2</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">s2</span><span class="o">));</span> <span class="c1">// true</span>
-</code></pre></div></div> <h2 id="scanner">Scanner</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+</code></pre></div></div> <h2 id="command-line-arguments">Command Line Arguments</h2> <p>Program name is not included in the commands line arguments</p> <p><img src="https://i.loli.net/2020/08/21/xqCPLByOmu7bd8W.png" alt="iShot2020-08-21pm10.53.42.png" /></p> <h2 id="scanner">Scanner</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsingScanner</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">lines</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
         <span class="n">Scanner</span> <span class="n">scan</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-        <span class="c1">// the new keyword on instatiation creates an instant </span>
+        <span class="c1">// the new keyword on instatiation creates an instant</span>
         <span class="c1">// of the object using the called constructor.</span>
         <span class="c1">// which defines a blueprint of how to make and use a scanner</span>
         <span class="k">while</span> <span class="o">(</span><span class="n">scan</span><span class="o">.</span><span class="na">hasNextLine</span><span class="o">())</span> <span class="o">{</span>
@@ -50,7 +63,7 @@
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div> <h2 id="defensive-programming">Defensive Programming</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 1D array: check for null and empty array</span>
-<span class="c1">// 2D array: also check for null array of array </span>
+<span class="c1">// 2D array: also check for null array of array</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">numbers</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">numbers</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">numbers</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span><span class="o">;</span>
@@ -58,7 +71,7 @@
         <span class="k">return</span><span class="o">;</span>
     <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="c1">// for loop has 3 parts: variable, condition, updates </span>
+            <span class="c1">// for loop has 3 parts: variable, condition, updates</span>
             <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numbers</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
                 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
                     <span class="n">sum</span> <span class="o">+=</span> <span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">];</span>
@@ -76,21 +89,21 @@
 <span class="c1">// method 1</span>
 <span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">};</span>
 <span class="c1">// method 2</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span> <span class="c1">// initialising 4 references </span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span> <span class="c1">// initialising 4 references</span>
 <span class="n">numbers</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">};</span>
 </code></pre></div></div> <p>a memory address is the size of the cpu address size. E.g. X86-64 CPU (Intel, AMD) has an address size of 8 bytes. (64 / 8 = 8)</p> <h3 id="multi-dimensional-array">Multi Dimensional Array</h3> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="o">{</span>
   				<span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">},</span>
   				<span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">4</span><span class="o">}</span>
-						<span class="o">};</span> 
+						<span class="o">};</span>
 
 <span class="c1">// method 1</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> 
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
 	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
     	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]);</span>
   	<span class="o">}</span>
 <span class="o">}</span>
 
-<span class="c1">// method 2 </span>
+<span class="c1">// method 2</span>
 <span class="n">String</span><span class="o">[]</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span><span class="s">"a"</span><span class="o">,</span><span class="s">"b"</span><span class="o">,</span><span class="s">"c"</span><span class="o">};</span>
 <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="nl">s:</span> <span class="n">strings</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
@@ -103,9 +116,9 @@
 </code></pre></div></div> <h3 id="string-builder">String Builder</h3> <ul> <li>it can resize and append very efficiently</li> </ul> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
 <span class="n">append</span><span class="o">(</span><span class="n">Stirng</span> <span class="n">str</span><span class="o">):</span> <span class="n">StringBuilder</span>
 <span class="nf">charAt</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">):</span> <span class="kt">char</span>
-<span class="nf">indexOf</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">):</span> <span class="kt">int</span> 
+<span class="nf">indexOf</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">):</span> <span class="kt">int</span>
 <span class="nf">length</span><span class="o">():</span> <span class="kt">int</span>
-<span class="nf">toString</span><span class="o">():</span> <span class="n">String</span> 
+<span class="nf">toString</span><span class="o">():</span> <span class="n">String</span>
 </code></pre></div></div> <h2 id="classes">Classes</h2> <ul> <li>reference type, the type of an object variable is its class</li> <li>Objects are instance of a particular class.</li> <li>a class is a <strong>Blueprint</strong> of an object</li> <li>it defines the <strong>attributes</strong> and <strong>behaviours</strong> of the object.</li> <li>the main objective of a class is to able to reuse the data we store in an efficient and easy manner</li> </ul> <h3 id="constuctor">Constuctor</h3> <ul> <li>what is the difference between constructor and a normal method? <ul> <li>The return type of a constructor is defined as the object of the class being created, hence there is no need to specify the return type</li> </ul> </li> <li>every class in java has a constructor even if it is not explicity defined.</li> <li>extending the class, we can write our own constructor</li> </ul> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Coffee</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">type</span><span class="o">;</span>
@@ -145,9 +158,9 @@
     <span class="n">String</span> <span class="n">receiver</span><span class="o">;</span>
     <span class="kt">boolean</span> <span class="n">received</span><span class="o">;</span>
 
-  <span class="c1">// this static method is attempting to utillise an instance variable. what is the issue? </span>
+  <span class="c1">// this static method is attempting to utillise an instance variable. what is the issue?</span>
   <span class="c1">// because it isn't referring to an object</span>
-  <span class="c1">// instance methods are not allowed in this context </span>
+  <span class="c1">// instance methods are not allowed in this context</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">inTransit</span><span class="o">()</span> <span class="o">{</span>
       <span class="k">return</span> <span class="o">!</span><span class="n">received</span><span class="o">;</span>
   <span class="o">}</span>
@@ -156,14 +169,14 @@
     <span class="n">String</span> <span class="n">sender</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">receiver</span><span class="o">;</span>
     <span class="kt">boolean</span> <span class="n">received</span><span class="o">;</span>
-  
+
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">inTransit</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="o">!</span><span class="n">received</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="c1">// this static method is attempting to utillise an instance method </span>
+    <span class="c1">// this static method is attempting to utillise an instance method</span>
     <span class="c1">// attached to an object. is there an issue?</span>
-    <span class="c1">// nope! there is an object instantiated and we are able to utilise method </span>
+    <span class="c1">// nope! there is an object instantiated and we are able to utilise method</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">hasArrived</span><span class="o">(</span><span class="n">Postcard</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(!</span><span class="n">p</span><span class="o">.</span><span class="na">inTransit</span><span class="o">())</span> <span class="o">{</span>
             <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
@@ -176,10 +189,10 @@
     <span class="n">String</span> <span class="n">sender</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">receiver</span><span class="o">;</span>
     <span class="kt">boolean</span> <span class="n">received</span><span class="o">;</span>
-  
-      <span class="c1">// we have an instance method invoking a static method </span>
-      <span class="c1">// while also using this keyword. is this correct? </span>
-      <span class="c1">// yes! we are just passing the instance to a static function. </span>
+
+      <span class="c1">// we have an instance method invoking a static method</span>
+      <span class="c1">// while also using this keyword. is this correct?</span>
+      <span class="c1">// yes! we are just passing the instance to a static function.</span>
       <span class="c1">// this is no difference from what we have done before but we are using this keyword</span>
       <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">alreadyArrived</span><span class="o">()</span> <span class="o">{</span>
           <span class="k">return</span> <span class="nf">hasArrived</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
@@ -200,15 +213,15 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReadingFile</span> <span class="o">{</span>
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 		<span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"numbers.txt"</span><span class="o">);</span>
-        
+
 		<span class="k">try</span> <span class="o">{</span>
 			<span class="n">Scanner</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
-            
+
 			<span class="k">while</span><span class="o">(</span><span class="n">reader</span><span class="o">.</span><span class="na">hasNextInt</span><span class="o">())</span> <span class="o">{</span>
 				<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
 				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
 			<span class="o">}</span>
-            
+
 		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"File not found"</span><span class="o">);</span>
             <span class="c1">// we can also print the error</span>
@@ -236,8 +249,8 @@
             <span class="o">}</span>
 			<span class="n">writer</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="c1">// save from 10 to 19</span>
 		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>	
-		<span class="o">}</span>		
+			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div> <h2 id="binary-io">Binary IO</h2> <ul> <li>Input stream and output stream classes are byte stream classes</li> </ul> <h3 id="reading">Reading</h3> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
@@ -245,14 +258,14 @@
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BinaryWriter</span> <span class="o">{</span>
-  
+
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">convert</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="o">(</span><span class="n">b</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="o">)</span> <span class="o">|</span>
             <span class="o">((</span><span class="n">b</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="o">)</span> <span class="o">|</span>
             <span class="o">((</span><span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="o">)</span> <span class="o">|</span>
             <span class="o">((</span><span class="n">b</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="o">);</span>
     <span class="o">}</span>
-    
+
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="n">FileInputStream</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="s">"file.bin"</span><span class="o">);</span>
@@ -272,7 +285,7 @@
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BinaryWriter</span> <span class="o">{</span>
-  
+
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">convert</span><span class="o">(</span><span class="kt">int</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span>
         <span class="n">b</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="o">(</span><span class="n">v</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="o">);</span>
@@ -301,10 +314,10 @@
 <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="n">E</span> <span class="n">element</span><span class="o">):</span> <span class="kt">void</span>
 <span class="nf">contains</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">):</span> <span class="kt">boolean</span>
 <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">):</span> <span class="n">E</span>
-<span class="nf">indexOf</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">):</span> <span class="kt">int</span> 
+<span class="nf">indexOf</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">):</span> <span class="kt">int</span>
 <span class="nf">remove</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">):</span> <span class="n">E</span>
 <span class="nf">set</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="n">E</span> <span class="n">element</span><span class="o">):</span> <span class="n">E</span>
-<span class="nf">size</span><span class="o">():</span> <span class="kt">int</span> 
+<span class="nf">size</span><span class="o">():</span> <span class="kt">int</span>
 <span class="nf">toArray</span><span class="o">():</span> <span class="n">Object</span><span class="o">[]</span>
 </code></pre></div></div> <h3 id="map">Map</h3> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="n">name</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span> <span class="n">V</span><span class="o">&gt;();</span>
 <span class="n">containsKey</span><span class="o">(</span><span class="n">Object</span> <span class="n">key</span><span class="o">):</span> <span class="kt">boolean</span>
@@ -320,7 +333,7 @@
 </code></pre></div></div> <h3 id="set">Set</h3> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">name</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;;</span>
 </code></pre></div></div> <h2 id="checked-operation-vs-unchecked-operation">Checked Operation VS Unchecked Operation</h2> <h3 id="checked-operation">Checked Operation</h3> <ul> <li>compiler checks for errors in the code and ensures that the types we are using are valid and not being muddled</li> <li>e.g. FileNotFoundException</li> </ul> <h3 id="unchecked-operation">Unchecked Operation</h3> <ul> <li>assumption of the compiler that the user knows to a degree what they are doing in areas of code where exceptions can occur</li> <li>e.g. RuntimeException</li> </ul> <h2 id="inheritance">Inheritance</h2> <ul> <li>What does inheritance offer? <ul> <li>attribute and method reusability</li> <li>defining sub-type methods</li> <li>overriding inherited methods</li> <li>type information</li> </ul> </li> <li>what does protected mean? (Encapsulation) <ul> <li>Is only accessible within the class</li> <li>attributes and methods will be accessible by all subtypes</li> <li>allows single definition of an attribute instead of multiple</li> </ul> </li> <li>some factors to consider <ul> <li>superclass does not know about its subclass</li> <li>private is not inherited, only protected and public</li> <li>only inherit from 1 class</li> </ul> </li> <li>Polymorphism <ul> <li>idea of having the same interface/design to represent diﬀerent types of objects and being able to manipulate this to represent them under a branch</li> </ul> </li> </ul> <h3 id="abstract-class-1">Abstract Class</h3> <ul> <li>cannot be instantiated, but can specify methods subtypes must define</li> <li>the main case for abstract is that we have some type that we do not want instantiate but is a generalisation of many other types</li> </ul> <h3 id="abstract-methods">Abstract methods</h3> <ul> <li>only declare an abstract method in only abstract classes</li> <li>When declearing an abstract method, we do not define a method body</li> </ul> <h3 id="interface-1">Interface</h3> <ul> <li>Cannot use instances variables, only static and constant (have the final modifier applied to them) in interface</li> <li>do not (typically) provide a method definition</li> <li>cannot instantiate them</li> <li>can be implemented multiple times</li> </ul> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">move</span> <span class="o">{</span>
   	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">(</span><span class="kt">double</span> <span class="n">hours</span><span class="o">);</span>
-  <span class="c1">// an interface is not a class, it defines a group of methods for implementers to define </span>
+  <span class="c1">// an interface is not a class, it defines a group of methods for implementers to define</span>
 <span class="o">}</span>
 
 <span class="c1">// sinve they both implement Move interface, we can treat them as a Move type</span>
@@ -329,7 +342,7 @@
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dophin</span> <span class="kd">implements</span> <span class="n">Move</span> <span class="o">{</span>
-  <span class="o">...</span> 
+  <span class="o">...</span>
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MovingAnimals</span> <span class="o">{</span>
@@ -338,7 +351,7 @@
         <span class="n">Dolphine</span> <span class="n">dolphine</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dolphin</span><span class="o">();</span>
         <span class="n">Move</span><span class="o">[]</span> <span class="n">movingAnimals</span> <span class="o">=</span> <span class="o">{</span><span class="n">dog</span><span class="o">,</span> <span class="n">dolphine</span><span class="o">};</span>
 
-        <span class="c1">// if they of type Move we are guaranteed to be able to use move() method </span>
+        <span class="c1">// if they of type Move we are guaranteed to be able to use move() method</span>
         <span class="k">for</span> <span class="o">(</span><span class="n">Move</span> <span class="nl">m:</span> <span class="n">movingAnimals</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">m</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="mf">1.0</span><span class="o">);</span>
         <span class="o">}</span>
@@ -369,14 +382,14 @@
 <span class="o">}</span>
 </code></pre></div></div> <h2 id="overloading">Overloading</h2> <ul> <li> <p>use the same method name but with different method signature</p> </li> <li> <p>We are unable to apply overloading if we have a different return type between the methods. the return type is <strong>not</strong> part of method signature</p> </li> <li> <p>e.g.</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">int</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
   <span class="kt">float</span><span class="o">[]</span> <span class="n">y</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-  <span class="c1">// the compiler would be unable to determine exactly </span>
-  <span class="c1">// what method is trying to be called and will throw an error </span>
-    
+  <span class="c1">// the compiler would be unable to determine exactly</span>
+  <span class="c1">// what method is trying to be called and will throw an error</span>
+
   <span class="kt">int</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="n">add</span><span class="o">((</span><span class="kt">int</span><span class="o">[])</span><span class="kc">null</span><span class="o">,</span> <span class="o">(</span><span class="kt">int</span><span class="o">[])</span><span class="kc">null</span><span class="o">);</span>
   <span class="kt">float</span><span class="o">[]</span> <span class="n">y</span> <span class="o">=</span> <span class="n">add</span><span class="o">((</span><span class="kt">float</span><span class="o">[])</span><span class="kc">null</span><span class="o">,</span> <span class="o">(</span><span class="kt">float</span><span class="o">[])</span><span class="kc">null</span><span class="o">);</span>
-  <span class="c1">// if we want to deal with ambiguous statement, we will need to cast. </span>
+  <span class="c1">// if we want to deal with ambiguous statement, we will need to cast.</span>
 </code></pre></div> </div> </li> </ul> <h3 id="constructor-overloading">Constructor Overloading</h3> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-  
+
     <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">DEFAULT_AGE</span> <span class="o">=</span> <span class="mi">21</span><span class="o">;</span>
 
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
@@ -394,49 +407,49 @@
         <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
         <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="c1">// by using this keyword, we are able to eliminate 2 lines </span>
+    <span class="c1">// by using this keyword, we are able to eliminate 2 lines</span>
     <span class="c1">// from the other constructors by usinte last one</span>
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Employee</span> <span class="kd">extends</span> <span class="n">Person</span> <span class="o">{</span>
-  
+
     <span class="kd">private</span> <span class="kt">long</span> <span class="n">employeeID</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">long</span> <span class="n">departmentID</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="nf">Employee</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">,</span> <span class="kt">long</span> <span class="n">departmentID</span><span class="o">,</span> <span class="kt">long</span> <span class="n">employeeID</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">age</span><span class="o">);</span>
-        <span class="c1">// we are able to specify the constructor we want to invoke </span>
-        <span class="c1">// and set attributes for the object </span>
+        <span class="c1">// we are able to specify the constructor we want to invoke</span>
+        <span class="c1">// and set attributes for the object</span>
         <span class="k">this</span><span class="o">.</span><span class="na">departmentID</span> <span class="o">=</span> <span class="n">departmentID</span><span class="o">;</span>
         <span class="k">this</span><span class="o">.</span><span class="na">employeeID</span> <span class="o">=</span> <span class="n">employeeID</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div> <h2 id="overriding">Overriding</h2> <ul> <li> <p>applies for classes, abstract classes and interface</p> </li> <li> <p>able to override inherited methods and replace them with a subtype specific definition</p> </li> <li> <p>without the use of the ‘@Override’, java automatically overrides</p> </li> <li> <p>cannot override final class</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="o">...</span> 
+    <span class="o">...</span>
 <span class="o">}</span>
 </code></pre></div> </div> </li> </ul> <p>example</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// Defensive checking </span>
+    <span class="c1">// Defensive checking</span>
     <span class="k">if</span> <span class="o">(!(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">Plant</span><span class="o">))</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
     <span class="o">}</span>
-    
-    <span class="c1">// type casting </span>
+
+    <span class="c1">// type casting</span>
     <span class="n">Plant</span> <span class="n">p</span> <span class="o">=</span> <span class="o">(</span><span class="n">Plant</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>
-    
-    <span class="o">...</span> 
+
+    <span class="o">...</span>
 <span class="o">}</span>
-</code></pre></div></div> <h2 id="exception">Exception</h2> <ul> <li> <p>checked exception (handled at compile time)</p> <ul> <li>These exceptions are checked during compilation and the code will compile only if these conditions are met.</li> <li>Examples of these include Type exceptions etc.</li> </ul> </li> <li> <p>runtime exception (unchecked exception)</p> <ul> <li>It is something that can occur but the compiler will allow you to compile. This can cause an exception if not handled correctly.</li> <li>e.g. list of objects. Adding elements that are not expected</li> <li>e.g. an Integer to an Object list of Strings. Then casting to Strings.</li> </ul> </li> <li> <p>Error (state that cannot be handled)</p> <ul> <li> <p>Cannot be handled by a try/catch block and these include irrecoverable errors, such as StackOverﬂowError and the program will crash.</p> </li> <li> <p>Both Errors and Exception are subclasses of java.lang.Throwable class.</p> </li> <li> <p>All errors are also unchecked.</p> </li> <li> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// StackOverFlowError </span>
+</code></pre></div></div> <h2 id="exception">Exception</h2> <ul> <li> <p>checked exception (handled at compile time)</p> <ul> <li>These exceptions are checked during compilation and the code will compile only if these conditions are met.</li> <li>Examples of these include Type exceptions etc.</li> </ul> </li> <li> <p>runtime exception (unchecked exception)</p> <ul> <li>It is something that can occur but the compiler will allow you to compile. This can cause an exception if not handled correctly.</li> <li>e.g. list of objects. Adding elements that are not expected</li> <li>e.g. an Integer to an Object list of Strings. Then casting to Strings.</li> </ul> </li> <li> <p>Error (state that cannot be handled)</p> <ul> <li> <p>Cannot be handled by a try/catch block and these include irrecoverable errors, such as StackOverﬂowError and the program will crash.</p> </li> <li> <p>Both Errors and Exception are subclasses of java.lang.Throwable class.</p> </li> <li> <p>All errors are also unchecked.</p> </li> <li> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// StackOverFlowError</span>
 <span class="kd">public</span> <span class="kt">int</span> <span class="nf">recursion</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">return</span> <span class="nf">recursion</span><span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">recursion</span><span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="o">);</span>
 <span class="o">}</span>
-<span class="c1">// occur then a recursive function does not have base case that </span>
-<span class="c1">// properly exits it out of the recursive case </span>
+<span class="c1">// occur then a recursive function does not have base case that</span>
+<span class="c1">// properly exits it out of the recursive case</span>
 </code></pre></div> </div> </li> </ul> </li> </ul> <p>example 1</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">imGonnaCrash</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
   	<span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="o">(</span><span class="s">"Definitely crashing!"</span><span class="o">);</span>
 <span class="o">}</span>
 
-<span class="c1">// we are forced to catch it by the compiler </span>
+<span class="c1">// we are forced to catch it by the compiler</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">try</span> <span class="o">{</span>
         <span class="n">imGonnaCrash</span><span class="o">();</span>
@@ -451,7 +464,7 @@
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Monitor</span> <span class="o">{</span>
-    
+
     <span class="kd">private</span> <span class="kt">double</span> <span class="n">rate</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">MAX_RATE</span><span class="o">;</span>
 
@@ -472,7 +485,7 @@
 </code></pre></div></div> <h2 id="enums">Enums</h2> <ul> <li>a set of defined instances of the same type</li> <li>Cannot use the “new” keywoard of an enum type</li> </ul> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// method 1</span>
 <span class="kd">enum</span> <span class="n">Colour</span> <span class="o">{</span>
     <span class="n">Red</span><span class="o">,</span> <span class="n">Green</span><span class="o">,</span> <span class="n">Yellow</span><span class="o">;</span>
-    
+
     <span class="kd">public</span> <span class="n">Colour</span> <span class="nf">change</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">Red</span><span class="o">)</span> <span class="o">{</span>
             <span class="k">return</span> <span class="n">Green</span><span class="o">;</span>
@@ -489,17 +502,17 @@
     <span class="n">Red</span> <span class="o">{</span> <span class="kd">public</span> <span class="n">Colour</span> <span class="nf">change</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">Green</span><span class="o">;</span> <span class="o">}},</span>
     <span class="n">Green</span> <span class="o">{</span> <span class="kd">public</span> <span class="n">Colour</span> <span class="nf">change</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">Yellow</span><span class="o">;</span> <span class="o">}},</span>
     <span class="n">Yellow</span> <span class="o">{</span> <span class="kd">public</span> <span class="n">Colour</span> <span class="nf">change</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">Red</span><span class="o">;</span> <span class="o">}};</span>
-    
+
     <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">Colour</span> <span class="nf">change</span><span class="o">();</span>
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TrafficLight</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="n">Colour</span> <span class="n">colour</span><span class="o">;</span>
-    
+
     <span class="kd">public</span> <span class="nf">TrafficLight</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">colour</span> <span class="o">=</span> <span class="n">Colour</span><span class="o">.</span><span class="na">Red</span><span class="o">;</span> <span class="c1">// by default it is red </span>
+        <span class="n">colour</span> <span class="o">=</span> <span class="n">Colour</span><span class="o">.</span><span class="na">Red</span><span class="o">;</span> <span class="c1">// by default it is red</span>
     <span class="o">}</span>
-    
+
     <span class="kd">public</span> <span class="n">Colour</span> <span class="nf">change</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">colour</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="na">change</span><span class="o">();</span>
         <span class="k">return</span> <span class="n">colour</span><span class="o">;</span>
@@ -517,9 +530,9 @@
 </code></pre></div></div> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hasNext</span><span class="o">():</span> <span class="kt">boolean</span><span class="o">;</span>
 <span class="n">next</span><span class="o">():</span> <span class="n">E</span><span class="o">;</span>
 <span class="n">remove</span><span class="o">():</span> <span class="kt">void</span><span class="o">;</span>
-</code></pre></div></div> <h2 id="generics">Generics</h2> <ul> <li> <p>advantages</p> <ul> <li>Stronger type checks at compile time</li> <li>elimination of casts</li> <li>enabling programmers to implement generic algorithms (handle multiple different types without needing to rewrite the same code)</li> </ul> </li> <li> <p>Generic Static Method</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example </span>
+</code></pre></div></div> <h2 id="generics">Generics</h2> <ul> <li> <p>advantages</p> <ul> <li>Stronger type checks at compile time</li> <li>elimination of casts</li> <li>enabling programmers to implement generic algorithms (handle multiple different types without needing to rewrite the same code)</li> </ul> </li> <li> <p>Generic Static Method</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenericFind</span> <span class="o">{</span>
-    	
+
 	<span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="nf">find</span><span class="o">(</span><span class="n">T</span> <span class="n">needle</span><span class="o">,</span> <span class="n">T</span><span class="o">[]</span> <span class="n">haystack</span><span class="o">)</span> <span class="o">{</span>
 		<span class="n">T</span> <span class="n">element</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 		<span class="k">for</span><span class="o">(</span><span class="n">T</span> <span class="n">e</span> <span class="o">:</span> <span class="n">haystack</span><span class="o">)</span> <span class="o">{</span>
@@ -530,7 +543,7 @@
 		<span class="o">}</span>
 		<span class="k">return</span> <span class="n">element</span><span class="o">;</span>
 	<span class="o">}</span>
-        
+
 	<span class="c1">// usage</span>
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 		<span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">GenericFind</span><span class="o">.&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="n">find</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span>
@@ -539,94 +552,89 @@
 			<span class="s">"Hello"</span><span class="o">,</span>
 			<span class="s">"World"</span>
 		<span class="o">});</span>
-    		
+
 		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
 	<span class="o">}</span>
 <span class="o">}</span>
-    
+
 </code></pre></div> </div> </li> <li> <p>Extends with type parameters</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-    
+
 <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Liquid</span> <span class="o">{</span>
 	<span class="kd">public</span> <span class="nf">Liquid</span><span class="o">(</span><span class="kt">double</span> <span class="n">litres</span><span class="o">)</span> <span class="o">{</span>
 		<span class="k">this</span><span class="o">.</span><span class="na">litres</span> <span class="o">=</span> <span class="n">litres</span><span class="o">;</span>
 	<span class="o">}</span>
-    	
+
 	<span class="kd">protected</span> <span class="kt">double</span> <span class="n">litres</span><span class="o">;</span>
 	<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getLitres</span><span class="o">();</span>
 <span class="o">}</span>
-    
+
 <span class="kd">class</span> <span class="nc">Water</span> <span class="kd">extends</span> <span class="n">Liquid</span> <span class="o">{</span>
-    	
+
 	<span class="kd">public</span> <span class="nf">Water</span><span class="o">(</span><span class="kt">double</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>
 		<span class="kd">super</span><span class="o">(</span><span class="n">l</span><span class="o">);</span>
 	<span class="o">}</span>
-    	
+
 	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">getLitres</span><span class="o">()</span> <span class="o">{</span>
 		<span class="k">return</span> <span class="n">litres</span><span class="o">;</span>
 	<span class="o">}</span>
-    	
+
 	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="s">"Water"</span><span class="o">;</span> <span class="o">}</span>
 <span class="o">}</span>
-    
+
 <span class="kd">class</span> <span class="nc">Oil</span> <span class="kd">extends</span> <span class="n">Liquid</span> <span class="o">{</span>
-    	
+
 	<span class="kd">public</span> <span class="nf">Oil</span><span class="o">(</span><span class="kt">double</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>
 		<span class="kd">super</span><span class="o">(</span><span class="n">l</span><span class="o">);</span>
 	<span class="o">}</span>
-    	
+
 	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">getLitres</span><span class="o">()</span> <span class="o">{</span>
 		<span class="k">return</span> <span class="n">litres</span><span class="o">;</span>
 	<span class="o">}</span>
-    	
+
 	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="s">"Oil"</span><span class="o">;</span> <span class="o">}</span>
 <span class="o">}</span>
-    
-    
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Barrel</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Liquid</span><span class="o">&gt;</span> <span class="o">{</span>
-    	
-	<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">contents</span><span class="o">;</span>
-    	
-	<span class="kd">public</span> <span class="nf">Barrel</span><span class="o">()</span> <span class="o">{</span>
-		<span class="n">contents</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;();</span>
-	<span class="o">}</span>
-    	
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">contents</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
-	<span class="o">}</span>
-    	
-    <span class="c1">// since we have a bounded type we are able to infer that all types </span>
-    <span class="c1">// have a super type Liquid, therefore we are able to utilise </span>
-    <span class="c1">// the methods defined in liquids </span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">outputContents</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">for</span><span class="o">(</span><span class="n">T</span> <span class="n">e</span> <span class="o">:</span> <span class="n">contents</span><span class="o">)</span> <span class="o">{</span>
-			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getLitres</span><span class="o">());</span>
-    			
-		<span class="o">}</span>
-	<span class="o">}</span>
-<span class="o">}</span>
+</code></pre></div> </div> <p>public class Barrel<T extends="" Liquid=""> {</T></p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List&lt;T&gt; contents;
+
+public Barrel() {
+	contents = new ArrayList&lt;T&gt;();
+}
+
+public void add(T item) {
+	contents.add(item);
+}
+
+// since we have a bounded type we are able to infer that all types
+// have a super type Liquid, therefore we are able to utilise
+// the methods defined in liquids
+public void outputContents() {
+	for(T e : contents) {
+		System.out.println(e + " " + e.getLitres());
+
+	}
+} } ```
 </code></pre></div> </div> </li> <li> <p>Array are covariant, Generics are <strong>NOT</strong></p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">objects</span> <span class="o">=</span> <span class="n">strings</span><span class="o">;</span>
-<span class="c1">// because generics are invariant, we are unable to perform a similar operation </span>
-<span class="c1">// to arrays, this will result in a compilation error </span>
+<span class="c1">// because generics are invariant, we are unable to perform a similar operation</span>
+<span class="c1">// to arrays, this will result in a compilation error</span>
 </code></pre></div> </div> </li> </ul> <h3 id="dynamicarray">DynamicArray</h3> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">collections</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DynamicArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
 	<span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
 	<span class="kd">private</span> <span class="n">T</span><span class="o">[]</span> <span class="n">elements</span><span class="o">;</span>
-	
+
 	<span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unchecked"</span><span class="o">)</span>
 	<span class="kd">public</span> <span class="nf">DynamicArray</span><span class="o">()</span> <span class="o">{</span>
 		<span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="c1">// we will need to instantiate an Object[] to use with array and cast </span>
-        <span class="c1">// cannot instantiate with generic type </span>
+        <span class="c1">// we will need to instantiate an Object[] to use with array and cast</span>
+        <span class="c1">// cannot instantiate with generic type</span>
 		<span class="n">elements</span> <span class="o">=</span> <span class="o">(</span><span class="n">T</span><span class="o">[])</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="mi">16</span><span class="o">];</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span>
 		<span class="k">return</span> <span class="n">size</span><span class="o">;</span>
 	<span class="o">}</span>
-	
+
 	<span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unchecked"</span><span class="o">)</span>
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">T</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
 		<span class="k">if</span><span class="o">(</span><span class="n">size</span> <span class="o">&gt;=</span> <span class="n">elements</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
@@ -639,7 +647,7 @@
 		<span class="n">elements</span><span class="o">[</span><span class="n">size</span><span class="o">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">;</span>
 		<span class="n">size</span><span class="o">++;</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="n">T</span> <span class="nf">remove</span><span class="o">(</span><span class="kt">int</span> <span class="n">idx</span><span class="o">)</span> <span class="o">{</span>
 		<span class="k">if</span><span class="o">(</span><span class="n">idx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
 			<span class="n">T</span> <span class="n">v</span> <span class="o">=</span> <span class="n">elements</span><span class="o">[</span><span class="n">idx</span><span class="o">];</span>
@@ -652,7 +660,7 @@
 			<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
 		<span class="o">}</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="n">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">idx</span><span class="o">)</span> <span class="o">{</span>
 		<span class="k">if</span><span class="o">(</span><span class="n">idx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
 			<span class="n">T</span> <span class="n">v</span> <span class="o">=</span> <span class="n">elements</span><span class="o">[</span><span class="n">idx</span><span class="o">];</span>
@@ -822,24 +830,24 @@
     <span class="kd">public</span> <span class="n">Object</span><span class="o">[]</span> <span class="nf">setSlice</span><span class="o">(</span><span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="n">T</span><span class="o">[]</span> <span class="n">slice</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sliceEnd</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">array</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">+</span>  <span class="n">slice</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
         <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="c1">// duplicate the data backwards </span>
+        <span class="c1">// duplicate the data backwards</span>
 		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">sliceEnd</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
 			<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">sliceEnd</span><span class="o">)</span> <span class="o">{</span>
 				<span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="n">slice</span><span class="o">.</span><span class="na">length</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span>
 			<span class="o">}</span>
 		<span class="o">}</span>
-        <span class="c1">// apply from the start </span>
+        <span class="c1">// apply from the start</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">slice</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
             <span class="n">array</span><span class="o">[</span><span class="n">start</span><span class="o">]</span> <span class="o">=</span> <span class="n">slice</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
 			<span class="n">start</span><span class="o">++;</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="n">array</span><span class="o">;</span>
     <span class="o">}</span>
-    
+
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">clear</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
     <span class="o">}</span>
-    
+
 	<span class="nd">@Override</span>
 	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
 		<span class="k">return</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
@@ -855,24 +863,24 @@
 		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
 	<span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div> <h2 id="testing">Testing</h2> <ul> <li>white box testing –&gt; typically where we employ some unit testing software, to help analyse the internals of the system and test them independently</li> <li>black box testing –&gt; user centric testing, without knowledge of the internals, input is given and compared to match the output of the program</li> <li>regression testing –&gt; when the system has been modified and the changes may result in a failure of a previous successful test case</li> <li>integration testing –&gt; when developing individual components, we want to integrate it into the whole system and check to see if it works.</li> </ul> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Test</span> 
+</code></pre></div></div> <h2 id="testing">Testing</h2> <ul> <li>white box testing –&gt; typically where we employ some unit testing software, to help analyse the internals of the system and test them independently</li> <li>black box testing –&gt; user centric testing, without knowledge of the internals, input is given and compared to match the output of the program</li> <li>regression testing –&gt; when the system has been modified and the changes may result in a failure of a previous successful test case</li> <li>integration testing –&gt; when developing individual components, we want to integrate it into the whole system and check to see if it works.</li> </ul> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Test</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkForNull</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">Container</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Container</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
     <span class="n">assertNull</span><span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
 <span class="o">}</span>
 
-<span class="c1">// examples </span>
+<span class="c1">// examples</span>
 <span class="n">assertTrue</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="o">);</span>
 <span class="n">assertFalse</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="o">);</span>
 <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">);</span>
 <span class="n">assertNull</span><span class="o">(</span><span class="n">object</span><span class="o">);</span>
 <span class="n">assertSame</span><span class="o">(</span><span class="n">object1</span><span class="o">,</span> <span class="n">object2</span><span class="o">);</span>
-</code></pre></div></div> <h2 id="recursion">Recursion</h2> <ul> <li>a base case, where the function terminates</li> <li>recursive case, which will converge to a base case</li> </ul> <h3 id="advantages">Advantages</h3> <ul> <li>can be simpler to read and write</li> <li>immediately writing an iterative method where there is an established recursive method can be considered a premature optimisation</li> </ul> <h3 id="drawbacks">Drawbacks</h3> <ul> <li>the java programming model does not allow for infinite recursion</li> <li>inefficient with memory</li> <li>potentially more computationally demanding due to the overhead caused by method calls</li> </ul> <h3 id="caching">Caching</h3> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// constructing it with an interger as a key(the nth fibonacci sequence) </span>
-<span class="c1">// and int[] as the value </span>
+</code></pre></div></div> <h2 id="recursion">Recursion</h2> <ul> <li>a base case, where the function terminates</li> <li>recursive case, which will converge to a base case</li> </ul> <h3 id="advantages">Advantages</h3> <ul> <li>can be simpler to read and write</li> <li>immediately writing an iterative method where there is an established recursive method can be considered a premature optimisation</li> </ul> <h3 id="drawbacks">Drawbacks</h3> <ul> <li>the java programming model does not allow for infinite recursion</li> <li>inefficient with memory</li> <li>potentially more computationally demanding due to the overhead caused by method calls</li> </ul> <h3 id="caching">Caching</h3> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// constructing it with an interger as a key(the nth fibonacci sequence)</span>
+<span class="c1">// and int[] as the value</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
 
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">generateSequence</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// we have added a check to see if we have already computed this answer before </span>
+    <span class="c1">// we have added a check to see if we have already computed this answer before</span>
     <span class="k">if</span><span class="o">(</span><span class="n">results</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"We have retrieved a result!"</span><span class="o">);</span>
         <span class="k">return</span> <span class="n">results</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
@@ -905,14 +913,14 @@
 		<span class="kd">public</span> <span class="nf">Page</span><span class="o">(</span><span class="n">String</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span> <span class="n">contents</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span> <span class="o">}</span>
 		<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">contents</span><span class="o">;</span> <span class="o">}</span>
 	<span class="o">}</span>
-    
-	<span class="c1">// change the access modifier to public and access it outside </span>
+
+	<span class="c1">// change the access modifier to public and access it outside</span>
 	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookReader</span> <span class="kd">implements</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Page</span><span class="o">&gt;</span> <span class="o">{</span>
 		<span class="kt">int</span> <span class="n">index</span><span class="o">;</span>
 		<span class="kd">public</span> <span class="nf">BookReader</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
 			<span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
 		<span class="o">}</span>
-		
+
 		<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">pages</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="o">}</span>
 		<span class="kd">public</span> <span class="n">Page</span> <span class="nf">next</span><span class="o">()</span> <span class="o">{</span>
 			<span class="n">Page</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pages</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">index</span><span class="o">);</span>
@@ -920,11 +928,11 @@
 			<span class="k">return</span> <span class="n">p</span><span class="o">;</span>
 		<span class="o">}</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addPage</span><span class="o">(</span><span class="n">Page</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span> <span class="n">pages</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">p</span><span class="o">);</span> <span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addContent</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span> <span class="n">pages</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Page</span><span class="o">(</span><span class="n">s</span><span class="o">));</span> <span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Page</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="k">new</span> <span class="n">BookReader</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="o">}</span>
 <span class="o">}</span>
 
@@ -933,17 +941,17 @@
     <span class="n">b</span><span class="o">.</span><span class="na">addContent</span><span class="o">(</span><span class="s">"Line 1"</span><span class="o">);</span>
     <span class="n">b</span><span class="o">.</span><span class="na">addContent</span><span class="o">(</span><span class="s">"Line 2"</span><span class="o">);</span>
     <span class="n">b</span><span class="o">.</span><span class="na">addContent</span><span class="o">(</span><span class="s">"Line 3"</span><span class="o">);</span>
-    <span class="c1">// since changing it to public we can access the class </span>
+    <span class="c1">// since changing it to public we can access the class</span>
     <span class="c1">// but only through an instance of the outer class</span>
-    <span class="c1">// the declaration type does not require an instance </span>
+    <span class="c1">// the declaration type does not require an instance</span>
     <span class="n">Book</span><span class="o">.</span><span class="na">BookReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="na">new</span> <span class="nf">BookReader</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
     <span class="k">while</span><span class="o">(</span><span class="n">reader</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
         <span class="n">Book</span><span class="o">.</span><span class="na">Page</span> <span class="n">p</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">p</span><span class="o">);</span> 
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">p</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div> <h2 id="optionals">Optionals</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// since the method could return no element, our method will return an optional, </span>
-<span class="c1">// notifying the programmer that it could return null and they should handle it </span>
+</code></pre></div></div> <h2 id="optionals">Optionals</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// since the method could return no element, our method will return an optional,</span>
+<span class="c1">// notifying the programmer that it could return null and they should handle it</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">retrieveElement</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// we will initialise the result to an empty optional type</span>
     <span class="c1">// if the element can be retrieved, we can set it to contain an element from the list</span>
@@ -1055,7 +1063,7 @@
 	<span class="kd">public</span> <span class="n">TelephoneState</span> <span class="nf">dial</span><span class="o">(</span><span class="n">String</span> <span class="n">number</span><span class="o">)</span> <span class="o">{</span>
 		<span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Line is already busy"</span><span class="o">);</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="n">TelephoneState</span> <span class="nf">hangup</span><span class="o">()</span> <span class="o">{</span>
 		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Shutting down"</span><span class="o">);</span>
 		<span class="k">return</span> <span class="k">new</span> <span class="nf">LineWaiting</span><span class="o">();</span>
@@ -1067,7 +1075,7 @@
 		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Dialing... "</span> <span class="o">+</span> <span class="n">number</span><span class="o">);</span>
 		<span class="k">return</span> <span class="k">new</span> <span class="nf">LineBusy</span><span class="o">();</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="n">TelephoneState</span> <span class="nf">hangup</span><span class="o">()</span> <span class="o">{</span>
 		<span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Line is already waiting"</span><span class="o">);</span>
 	<span class="o">}</span>
@@ -1075,15 +1083,15 @@
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Telephone</span> <span class="o">{</span>
 	<span class="kd">private</span> <span class="n">TelephoneState</span> <span class="n">state</span><span class="o">;</span>
-	
+
 	<span class="kd">public</span> <span class="nf">Telephone</span><span class="o">()</span> <span class="o">{</span>
 		<span class="n">state</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LineWaiting</span><span class="o">();</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">dial</span><span class="o">(</span><span class="n">String</span> <span class="n">number</span><span class="o">)</span> <span class="o">{</span>
 		<span class="n">state</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="na">dial</span><span class="o">(</span><span class="n">number</span><span class="o">);</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">hangup</span><span class="o">()</span> <span class="o">{</span>
 		<span class="n">state</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="na">hangup</span><span class="o">();</span>
 	<span class="o">}</span>
