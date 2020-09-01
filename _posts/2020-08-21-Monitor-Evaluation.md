@@ -20,10 +20,7 @@ categories: Monitor 4k
 - resolution 3840 x 2160
 - 有 type c 接口, 支持 90W供电
 - 2020 新款
-- $979.00 → [https://www.dell.com/en-au/shop/ultrasharp-27-4k-usb-c-monitor-u2720q/apd/210-auzu/monitors-monitor-accessories](https://www.dell.com/en-au/shop/ultrasharp-27-4k-usb-c-monitor-u2720q/apd/210-auzu/monitors-monitor-accessories)
-- $808.42 + $217.85 → [https://www.amazon.com/Dell-UltraSharp-U2720Q-Backlit-Monitor/dp/B086H26XWV](https://www.amazon.com/Dell-UltraSharp-U2720Q-Backlit-Monitor/dp/B086H26XWV)
-- $929.00 → [https://www.mwave.com.au/product/dell-ultrasharp-u2720q-27-4k-uhd-99-srgb-usbc-ips-monitor-ac33903](https://www.mwave.com.au/product/dell-ultrasharp-u2720q-27-4k-uhd-99-srgb-usbc-ips-monitor-ac33903)
-- $709.99 + $100.61 → [https://www.bhphotovideo.com/c/product/1547779-REG/dell_27_u2720q_ultrasharp_4k.html](https://www.bhphotovideo.com/c/product/1547779-REG/dell_27_u2720q_ultrasharp_4k.html)
+- [$979.00](https://www.dell.com/en-au/shop/ultrasharp-27-4k-usb-c-monitor-u2720q/apd/210-auzu/monitors-monitor-accessories) | [$808.42 + $217.85](https://www.amazon.com/Dell-UltraSharp-U2720Q-Backlit-Monitor/dp/B086H26XWV) | [$929.00](https://www.mwave.com.au/product/dell-ultrasharp-u2720q-27-4k-uhd-99-srgb-usbc-ips-monitor-ac33903) | [$709.99 + $100.61](https://www.bhphotovideo.com/c/product/1547779-REG/dell_27_u2720q_ultrasharp_4k.html)
 
 ## 2. Dell: P2415Q
 
