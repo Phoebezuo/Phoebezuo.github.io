@@ -7,7 +7,6 @@ categories: Java SOLID
 ---
 
 
-
 SOLID is a software design acronym that incorporates ﬁve principles to assist with designing ﬂexible, maintainable and robust software. These typically push for application structure to be contain types which can act independently, depend on abstractions and can be easily refactored.
 
 ![83jvHpV2cgn6xX5](https://i.loli.net/2020/09/02/83jvHpV2cgn6xX5.png)
@@ -30,10 +29,10 @@ Open-Closed principle outlines that **an element is open for extension but close
 
 比如，代码修改前为
 
-``````Java
+```java
 public boolean sendByEmail(String addr, String title, String content);
 Public boolean sendByFax(String addr, String content);
-``````
+```
 
 当我们需要在其他地方调用上面的信息
 
