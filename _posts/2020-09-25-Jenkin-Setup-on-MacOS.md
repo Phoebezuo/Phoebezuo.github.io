@@ -23,7 +23,7 @@ Might need to restart Jenkin after adding new plugins
 
 Jenkins > Manage Jenkins > Global Tool Configuration > Gradle > Gradle Installation > Add Gradle x.x. e.g
 
-<img src='https://i.loli.net/2020/09/25/nhRTYzqfLpA1urW.png' alt='nhRTYzqfLpA1urW' style="width:20%;height:20px;"/>
+<img src='https://i.loli.net/2020/09/25/nhRTYzqfLpA1urW.png' alt='nhRTYzqfLpA1urW'/>
 
 ## Connect Github with Jenkins 
 
@@ -35,7 +35,9 @@ Jenkins > Manage Jenkins > Configure System > GitHub Enterprise Servers > API En
 
 Jenkins > New Item > Enter an iterm name > Freestyle project > Configue > Source Code Management > Git
 
-<img src='https://i.loli.net/2020/09/25/HXEIaKs1btfF3kQ.png' alt='HXEIaKs1btfF3kQ' style="width:20%;"/>
+<!-- <img src='https://i.loli.net/2020/09/25/HXEIaKs1btfF3kQ.png' alt='HXEIaKs1btfF3kQ' style="width:20%;"/> -->
+
+<img src='https://i.loli.net/2020/09/25/HXEIaKs1btfF3kQ.png' alt='HXEIaKs1btfF3kQ'/>
 
 <img src='https://i.loli.net/2020/09/25/hYfEMoxzSRNOjc7.png' alt='hYfEMoxzSRNOjc7'/>
 
