@@ -85,7 +85,17 @@ TODO: Add step to set up google webhook
 
 2.
 
-3. Go to `Github > Settings > Hooks > Add webhook` and add this link at `Payload URL`, e.g. `https://<hostname>/github-webhook/`. Then select `application/json` as `Content Type`.
+1. Install ngrok using `brew cask install ngrok`. 
+
+   <img src='https://i.loli.net/2020/09/30/R8A4StWlFxQfcaG.png' alt='R8A4StWlFxQfcaG' style="width:50%"/>
+   
+2. Login to your Ngrok account at [link](https://dashboard.ngrok.com/get-started/setup). Then type `ngrok authtoken ...` in terminal. 
+
+3. Then type `ngrok http 8080` to get http
+
+   <img src='https://i.loli.net/2020/09/25/IbBmqA2y9RYKcDr.png' alt='IbBmqA2y9RYKcDr'/>
+   
+4. Go to `Github > Settings > Hooks > Add webhook` and add this link at `Payload URL`, e.g. `https://<hostname>/github-webhook/`. Then select `application/json` as `Content Type`.
 
    <img src='https://i.loli.net/2020/09/25/5MbAuKTPgv4p2GV.png' alt='5MbAuKTPgv4p2GV'/>
 
