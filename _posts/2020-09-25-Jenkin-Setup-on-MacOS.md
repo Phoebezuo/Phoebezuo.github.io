@@ -35,7 +35,7 @@ Jenkins > Manage Jenkins > Configure System > GitHub Enterprise Servers > API En
 
 Jenkins > New Item > Enter an iterm name > Freestyle project > Configue > Source Code Management > Git
 
-<img src='https://i.loli.net/2020/09/25/HXEIaKs1btfF3kQ.png' alt='HXEIaKs1btfF3kQ'style="width:500px;"/>
+<img src='https://i.loli.net/2020/09/25/HXEIaKs1btfF3kQ.png' alt='HXEIaKs1btfF3kQ' style="width:50%;"/>
 
 <img src='https://i.loli.net/2020/09/25/hYfEMoxzSRNOjc7.png' alt='hYfEMoxzSRNOjc7'/>
 
