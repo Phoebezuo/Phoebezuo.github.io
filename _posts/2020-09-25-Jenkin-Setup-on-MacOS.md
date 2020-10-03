@@ -89,34 +89,6 @@ TODO: Add step to set up google webhook
 
    <img src='https://i.loli.net/2020/09/25/5MbAuKTPgv4p2GV.png' alt='5MbAuKTPgv4p2GV'/>
 
-# Roles 
-
-1.  Cheng Chen cche7436
-
-    -   Code reviewer for the conflict events 
-    -   
-    
-2.  Yufei Zuo yzuo4982 
-
-    -   Report proofreading 
-    -   
-    
-3.  Yuanqun Wang ywan3184
-
-    -   
-    
-4.  Zexuan Long zlon4018
-
-    -   
-    
-5.  Songyin Li soli2722
-
-    -   
-    
-6.  Zehui Lin zlin3338
-
-    -   
-
 # Workflow
 
 1. After clone/pull the latest version of application, create a new a **branch** other than local **master** branch to make changes for new features or bug fixes.
