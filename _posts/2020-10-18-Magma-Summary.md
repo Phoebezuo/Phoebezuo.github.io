@@ -55,9 +55,9 @@ load "MagmaProcedures.txt";
 - Assignment: `:=`
 - Division: `23 div 3;`
 - Residue: `23 mod 4;`
-- Logarithm: $log_{10}100 =$ `Log(10,100);`
+- Logarithm: $$log_{10}100 =$$ `Log(10,100);`
 - Random select a 50 digit number: `Random(10^49, 10^50);`
-- Factorial: $18! =$ `Factorial(18);`
+- Factorial: $$18! =$$ `Factorial(18);`
 - Greatest Common Divisior: `GCD(1333,234);`
 - Check a number if prime or not: `IsPrime(7);`
 
@@ -77,12 +77,12 @@ loyal[3],loyal[5..6],loyal[14..18];
 ## Boolean Operation
 
 - $$x = y$$ means `x eq y`
-- $x \neq y$ means `x ne y`
-- $x < y$ means `x lt y`
-- $x \leq y$ means `x le y`
-- $x > y$ means `x gt y`
-- $x \geq y$ means `x ge y`
-- $x \in A$ means `x in y`
+- $$x \neq y$$ means `x ne y`
+- $$x < y$$ means `x lt y`
+- $$x \leq y$$ means `x le y`
+- $$x > y$$ means `x gt y`
+- $$x \geq y$$ means `x ge y`
+- $$x \in A$$ means `x in y`
 
 ## Control Structure
 
@@ -183,46 +183,46 @@ CheckMersenne:=procedure(p)
 end procedure;
 ```
 
-## Coincidence Index ($CI$)
+## Coincidence Index ($$CI$$)
 
-Suppose there are N letters in the text, $CI = \frac{\sum k_i(k_1 - 1)}{N(N-1)}$, where $k_i$ is the number of times the ith symbol appears. 
+Suppose there are N letters in the text, $$CI = \frac{\sum k_i(k_1 - 1)}{N(N-1)}$$, where $$k_i$$ is the number of times the ith symbol appears. 
 
-### Common Statistic of $CI$
+### Common Statistic of $$CI$$
 
-- Random string of text: $CI = \frac{1}{26} \approx 0.0385$
-- English text: $CI \approx 0.066$
+- Random string of text: $$CI = \frac{1}{26} \approx 0.0385$$
+- English text: $$CI \approx 0.066$$
 
 ### Cipher vs $CI$
 
-- $CI(Substitution) = CI(English)$
-- $CI(Random) < CI(Vig_80) < CI(Vig_20) < CI(English)$
+- $$CI(Substitution) = CI(English)$$
+- $$CI(Random) < CI(Vig_80) < CI(Vig_20) < CI(English)$$
     - Vig_80 means vigenere cipher with ken length 80.
     - Vig_20 means vigenere cipher with ken length 20.
-- $CI(Transposition) = CI(English)$
+- $$CI(Transposition) = CI(English)$$
 
 ### Digraph Coincidence Index 
 
-- Letters for random text are adjacent: $CI \approx 0.001$.
-- Letters for English text are NOT adjacent: $CI \approx 0.004$.
-- Letters for English text are adjacent: $CI \approx 0.007$.
+- Letters for random text are adjacent: $$CI \approx 0.001$$.
+- Letters for English text are NOT adjacent: $$CI \approx 0.004$$.
+- Letters for English text are adjacent: $$CI \approx 0.007$$.
 
 ## Coincidence Discriminant ($CD$)
 
-$CD = \sum_{x,y}(p(x,y) - p(x,-)p(-,y))^2 = \sum_{x,y}(p(x,y) - s(x,y))^2$, where
+$$CD = \sum_{x,y}(p(x,y) - p(x,-)p(-,y))^2 = \sum_{x,y}(p(x,y) - s(x,y))^2$$, where
 
-- $p(x,y)$ is the probability that a randomly chosen digraph is xy.
-- $p(x,-)$ is the probability that a randomly chosen digraph begin with x.
-- $p(x,-)$ is the probability that a randomly chosen digraph begin with x.
-- $s(x,y)$ is the relative frequency in a piece of normal text.
+- $$p(x,y)$$ is the probability that a randomly chosen digraph is xy.
+- $$p(x,-)$$ is the probability that a randomly chosen digraph begin with x.
+- $$p(x,-)$$ is the probability that a randomly chosen digraph begin with x.
+- $$s(x,y)$$ is the relative frequency in a piece of normal text.
 
 ### Common Statistic of $CD$
 
-- Letters for English text are NOT adjacent: $CD \approx 0.001$.
-- Letters for English text are adjacent: $CD \approx 0.005$.
+- Letters for English text are NOT adjacent: $$CD \approx 0.001$$.
+- Letters for English text are adjacent: $$CD \approx 0.005$$.
 
 # Substitution Cipher
 
-A substitution cipher is a method of enciphering a message by replacing all occurrences of the various letters by other letters, according to some key. The ith letter of the alphabet is replaced everywhere by the jth letter, where $j \equiv i + k \mod 26$.
+A substitution cipher is a method of enciphering a message by replacing all occurrences of the various letters by other letters, according to some key. The ith letter of the alphabet is replaced everywhere by the jth letter, where $$j \equiv i + k \mod 26$$.
 
 ## Setup
 
@@ -333,7 +333,7 @@ Score(guess_PT, Common);
 
 # Vigenere Cipher
 
-The ith letter of the message is enciphered with the jth translation cipher and n-letter word as key, where $j \equiv i \mod n$. 
+The ith letter of the message is enciphered with the jth translation cipher and n-letter word as key, where $$j \equiv i \mod n$$. 
 
 ## Setup
 
