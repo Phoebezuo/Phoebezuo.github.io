@@ -21,6 +21,7 @@ categories: Magma cryptosystem
     - [Digraph Coincidence Index](#digraph-coincidence-index)
   - [Coincidence Discriminant ($CD$)](#coincidence-discriminant-cd)
     - [Common Statistic of $CD$](#common-statistic-of-cd)
+    - [Digraph Coincidence Discriminant](#digraph-coincidence-discriminant)
 - [Substitution Cipher](#substitution-cipher)
   - [Setup](#setup)
   - [Encoding](#encoding)
@@ -192,13 +193,13 @@ Suppose there are N letters in the text, $$CI = \frac{\sum k_i(k_1 - 1)}{N(N-1)}
 - Random string of text: $$CI = \frac{1}{26} \approx 0.0385$$
 - English text: $$CI \approx 0.066$$
 
-### Cipher vs $CI$
+### Cipher vs $$CI$$
 
-- $$CI(Substitution) = CI(English)$$
-- $$CI(Random) < CI(Vig_80) < CI(Vig_20) < CI(English)$$
+- CI(Substitution) = CI(English)
+- CI(Random) < CI(Vig_80) < CI(Vig_20) < CI(English)
     - Vig_80 means vigenere cipher with ken length 80.
     - Vig_20 means vigenere cipher with ken length 20.
-- $$CI(Transposition) = CI(English)$$
+- CI(Transposition) = CI(English)
 
 ### Digraph Coincidence Index 
 
@@ -206,7 +207,7 @@ Suppose there are N letters in the text, $$CI = \frac{\sum k_i(k_1 - 1)}{N(N-1)}
 - Letters for English text are NOT adjacent: $$CI \approx 0.004$$.
 - Letters for English text are adjacent: $$CI \approx 0.007$$.
 
-## Coincidence Discriminant ($CD$)
+## Coincidence Discriminant ($$CD$$)
 
 $$CD = \sum_{x,y}(p(x,y) - p(x,-)p(-,y))^2 = \sum_{x,y}(p(x,y) - s(x,y))^2$$, where
 
@@ -215,10 +216,15 @@ $$CD = \sum_{x,y}(p(x,y) - p(x,-)p(-,y))^2 = \sum_{x,y}(p(x,y) - s(x,y))^2$$, wh
 - $$p(x,-)$$ is the probability that a randomly chosen digraph begin with x.
 - $$s(x,y)$$ is the relative frequency in a piece of normal text.
 
-### Common Statistic of $CD$
+### Common Statistic of $$CD$$
 
 - Letters for English text are NOT adjacent: $$CD \approx 0.001$$.
 - Letters for English text are adjacent: $$CD \approx 0.005$$.
+
+### Digraph Coincidence Discriminant
+
+- Letters for random text are adjacent: $$CD \approx 0$$.
+- Letters for English text are adjacent: $$CD \approx 0.003$$.
 
 # Substitution Cipher
 
@@ -291,7 +297,7 @@ Enciphering(yek, CT);
    
    It shows:
    - `T` in PT = `F` in CT
-   - `H` in PT = `I` in CT, `H` in PT $\neq$ `E` in CT
+   - `H` in PT = `I` in CT, `H` in PT $$\neq$$ `E` in CT
    - `E` in PT = `Z` in CT
 
 5. So swap `I` and `H` in guessing key using `swap`. Let `H` in PT = `E` in CT. 
