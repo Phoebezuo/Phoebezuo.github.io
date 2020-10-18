@@ -76,7 +76,7 @@ loyal[3],loyal[5..6],loyal[14..18];
 
 ## Boolean Operation
 
-- $x = y$ means `x eq y`
+- $$x = y$$ means `x eq y`
 - $x \neq y$ means `x ne y`
 - $x < y$ means `x lt y`
 - $x \leq y$ means `x le y`
