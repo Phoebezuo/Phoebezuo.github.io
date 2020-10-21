@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      Magma Summary
+title:      Summary Notes for Magma
 date:       2020-10-18
-summary:    Magma Summary Notes for MATH2088
+summary:    Summary Notes for Magma (a software package designed for computations in algebra, number theory, etc.)
 categories: Magma cryptosystem
 ---
 
