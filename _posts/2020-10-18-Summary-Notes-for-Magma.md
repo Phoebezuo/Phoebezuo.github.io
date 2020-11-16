@@ -25,6 +25,8 @@ categories: Magma cryptosystem
     - [Digraph Coincidence Discriminant](#digraph-coincidence-discriminant)
   - [Polynomials](#polynomials)
   - [Pollard's Rho Method](#pollards-rho-method)
+  - [Primitive Root](#primitive-root)
+  - [Discrete Logarithm](#discrete-logarithm)
 - [Substitution Cipher](#substitution-cipher)
   - [Setup](#setup)
   - [Encoding](#encoding)
@@ -46,8 +48,8 @@ categories: Magma cryptosystem
   - [Decoding Techniques](#decoding-techniques-2)
     - [Method 1](#method-1-1)
     - [Method 2](#method-2-1)
-- [RSA cryptosystem](#rsa-cryptosystem)
-  - [Procedure](#procedure)
+- [RSA Cryptosystem](#rsa-cryptosystem)
+- [Elgamal Cryptosystem](#elgamal-cryptosystem)
 
 # Magma Basic Usage
 
@@ -61,14 +63,14 @@ load "MagmaProcedures.txt";
 - Assignment: `:=`
 - Division: `23 div 3;`
 - Residue: `23 mod 4;`
-- Exponent residue: $$a^{n-1} \mod n =$$ `Modexp(a,n-1,n);`
-- Modulo inverse: $$d = e^{-1} \mod n)$$ = `d:=InverseMod(e,n);`
-- Logarithm: $$log_{10}100 =$$ `Log(10,100);`
+- Exponent residue: $$a^{n-1} \mod n$$ = `Modexp(a,n-1,n);`
+- Modulo inverse: $$d = e^{-1} \mod n$$ = `d:=InverseMod(e,n);`
+- Logarithm: $$log_{10}100$$ = `Log(10,100);`
 - Random select a 50 digit number: `Random(10^49, 10^50);`
-- Factorial: $$18! =$$ `Factorial(18);`
+- Factorial: $$18!$$ = `Factorial(18);`
 - Greatest common divisor: `GCD(1333,234);`
 - Check a number if prime or not: `IsPrime(7);`
-- Euler's number $$e = 2.71..$$ is calculated by `exp:=Exp(1);`
+- Calculate Euler's number $$e = 2.71..$$: `exp:=Exp(1);`
 - Calculate $$d = \sqrt{n}$$: `Sqrt(n);` or `boolean,d:=IsSquare(n)`
 - Get a random 100 bit prime: `p:=NextPrime(Random(10^100, 10^101));` or `p:=RandomPrime(500);`
 - Calculate digit numbers of $$21^{18}$$ in base 2 representation: `Log(2, Factorial(21^18));` or `18*Log(2,21);`
@@ -171,12 +173,14 @@ loyal[3],loyal[5..6],loyal[14..18];
 
   ```
   message:=NaiveDecoding(PT);
+  A:=CodeToString(65);
   ```
 
 - Convert alphabets to sequence of numbers
 
   ```
   PT:=NaiveEncoding("message");
+  65:=StringToCode("A");
   ```
 
 ## `Set` vs `Sequence`
@@ -303,6 +307,34 @@ function> end function;
 ```
 
 To utilize this function: `PRho(1001, x^2+1, 1);`
+
+## Primitive Root
+
+- Calculate the order of a mod m.
+  ```
+  ModOrder(a,m);
+  ```
+- Calculate the order of a mod m, where $$a$$ is primitive root modulo m.
+  ```
+  Field:=FiniteField(m);
+  a:=PrimitiveElement(Field);
+  Order(a);
+  ```
+
+## Discrete Logarithm
+
+- Calculate b, such that $$a^b \equiv c \mod m$$.
+  ```
+  Field:=FiniteField(m);
+  b:=Log(Field!a,Field!c);
+  ```
+
+- Calculate b, such that $$a^b \equiv c \mod m$$, where $$a$$ is primitive root modulo m.
+  ```
+  Field:=FiniteField(m);
+  a:=PrimitiveElement(Field);
+  b:=Log(Field!c);
+  ```
 
 # Substitution Cipher
 
@@ -590,9 +622,7 @@ end for;
    - If the result has low value, means it does follow the sequence of key.
    - If the result has high value, means it does NOT follow the sequence of key.
 
-# RSA cryptosystem
-
-## Procedure
+# RSA Cryptosystem
 
 1. Bob choose two prime p and q. Compute $$n = pq$$ and $$\phi(n) = (p-1)(q-1)$$.
    ```
@@ -612,15 +642,60 @@ end for;
    ```
    PT:=NaiveEncoding("message");
    ```
-6. Alice encrypts message by computing $$m_i' \equiv m_i^e \mod n$$.
+6. Alice encrypts message by computing $$M_i' \equiv M_i^e \mod n$$.
    ```
    CT:=[Modexp(m,e,n): m in PT];
    ```
-7. Bob decrypts message by computing $$m_i \equiv (m_i')^d \mod n$$.
+7. Bob decrypts message by computing $$M_i \equiv (M_i')^d \mod n$$.
    ```
    PT:=[Modexp(m,d,n): m in CT];
    ```
 8. Bob decode sequence of numbers to message
+   ```
+   message:=NaiveDecoding(PT);
+   ```
+
+# Elgamal Cryptosystem
+
+1. Alice choose $$(p,b,k)$$ and compute $$k \equiv b^x \mod p$$.
+   ```
+   p:=NextPrime(Random(10^100, 10^101));
+   b:=2;
+   k:=Modexp(b,x,p);
+   ```
+2. **Notes:** public key is $$(p,b,k)$$.
+3. Bob choose y, which is coprime with $$p-1$$ and computes $$c \equiv b^y \mod p$$.
+   ```
+   y:=Random(p-1);
+   GCD(y,p-1) eq 1;
+   c:=Modexp(b,y,p);
+   ```
+4. Bob compute the shared secret key $$S \equiv k^y \mod p$$.
+   ```
+   SL=Modexp(k,y,p);
+   ```
+5. Bob encode message to sequence of numbers.
+   ```
+   PT:=NaiveEncoding("message");
+   ```
+6. Bob encrypts message by computing $$M_i' \equiv SM_i \mod p$$.
+   ```
+   CT:=Modexp(S*t mod p: t in PT);
+   ```
+7. Bob send information to Alice: `<C, [M1', M2', .., Md']>`
+   ```
+   <c, CT>
+   ```
+8. Alice compute the shared secret key $$S \equiv c^x \mod p$$.
+   ```
+   S:=Modexp(c,x,p);
+   ```
+9. Alice decrypts message by computing $$M_i \equiv S^{-1} M_i' \mod p$$.
+   ```
+   InverseS:=InverseMod(S,p);
+   PT:=[InverseS * u mod p: u in CT];
+   ```
+10. Alice decode sequence of numbers to message
    ```
    message:=NaiveDecoding(PT);
    ```
