@@ -27,6 +27,7 @@ categories: Magma cryptosystem
   - [Pollard's Rho Method](#pollards-rho-method)
   - [Primitive Root](#primitive-root)
   - [Discrete Logarithm](#discrete-logarithm)
+  - [Safe Primes](#safe-primes)
 - [Substitution Cipher](#substitution-cipher)
   - [Setup](#setup)
   - [Encoding](#encoding)
@@ -70,6 +71,7 @@ load "MagmaProcedures.txt";
 - Factorial: $$18!$$ = `Factorial(18);`
 - Greatest common divisor: `GCD(1333,234);`
 - Check a number if prime or not: `IsPrime(7);`
+- Calculate number of prime numbers less than n: `PrimesUpTo(n);`
 - Calculate Euler's number $$e = 2.71..$$: `exp:=Exp(1);`
 - Calculate $$d = \sqrt{n}$$: `Sqrt(n);` or `boolean,d:=IsSquare(n)`
 - Get a random 100 bit prime: `p:=NextPrime(Random(10^100, 10^101));` or `p:=RandomPrime(500);`
@@ -334,6 +336,30 @@ To utilize this function: `PRho(1001, x^2+1, 1);`
   Field:=FiniteField(m);
   a:=PrimitiveElement(Field);
   b:=Log(Field!c);
+  ```
+
+## Safe Primes
+
+```
+safeprimes:= function(N)
+function> SP:={}; p:=3;
+function> while p le N do
+function|while> if IsPrime((p-1) div 2) then
+function|while|if> Include(~SP,p);
+function|while|if> end if;
+function|while> p:=NextPrime(p);
+function|while> end while;
+function> return SP;
+function> end function;
+```
+
+- Output a set of safe prime numbers less than n
+  ```
+  safeprimes(n)
+  ```
+- Output the number of safe prime numbers less than n
+  ```
+  #safeprimes(n)
   ```
 
 # Substitution Cipher
