@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Post Sytle Guide
-date:       2017-04-01 02:31:19
+date:       2020-04-01 02:31:19
 summary:    A style guide for me to reference when I am using markdown.
 categories: jekyll 
 mathjax: true
