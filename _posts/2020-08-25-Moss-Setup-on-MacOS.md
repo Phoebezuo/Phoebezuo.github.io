@@ -69,3 +69,14 @@ categories: Text Moss Software
 4. Click on the file name, you will see more information.
 
     ![YkcV1j7h9OzgDA5](https://i.loli.net/2020/08/25/YkcV1j7h9OzgDA5.png)
+
+
+
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $B$ | Assump. I |  |
+| 2 | 2 | $A$ | Assump. I |  |
+| 3 | 1,2 | $(A \land B)$ | $ \land $I | 1,2 |
+| 4 | 1,2 | $B$ | $ \land $E | 3 |
+| 5 | 1 | $(A \rightarrow B)$ | $ \rightarrow $I | 2,4 |
