@@ -33,65 +33,65 @@ categories: Logic Natural Deduction
 
 ## Idempotent
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$A \vdash(A \land A)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \land A) \vdash A$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$A \vdash (A \lor A)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor A) \vdash A$$</span>
 
 ## Commutative
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor B) \vdash (B \lor A)$$</span>
 
 ## Associative
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A\land (B\land C)) \vdash ((A\land B)\land C)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A\land B)\land C) \vdash (A\land (B\land C))$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A\lor (B\lor C)) \vdash ((A\lor B)\lor C)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A\lor B)\lor C) \vdash (A\lor (B\lor C))$$</span>
 
 ## Distributive
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \land (B \lor C)) \vdash ((A \land B) \lor (A \land C))$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \land B) \lor (A \land C)) \vdash (A \land (B \lor C))$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor(B \land C)) \vdash ((A \lor B) \land (A \lor C))$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \lor B) \land (A \lor C)) \vdash (A \lor(B \land C))$$</span>
 
 ## de Morgan's Laws
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg (A\land B) \vdash (\neg A\lor \neg B)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg A\land \neg B) \vdash \neg (A\lor B)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg (A\lor B) \vdash (\neg A\land \neg B)$$</span>
 
 ## Double Negation
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg \neg A \vdash A$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$A \vdash \neg \neg A$$</span>
 
 ## Implication Definition
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg A\lor B) \vdash (A \rightarrow B)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow B) \vdash (\neg A\lor B)$$</span>
 
 ## Transposition
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg B \rightarrow \neg A) \vdash (A \rightarrow B)$$</span>
 
 ## Exportation
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \land B) \rightarrow C) \vdash (A \rightarrow (B \rightarrow C))$$</span>
 
 # $$F \vdash G$$ Propositional Logic
 
@@ -107,7 +107,7 @@ categories: Logic Natural Deduction
 | 4 | 1,2 | $$B$$ | $$ \land $$E | 3 |
 | 5 | 1 | $$(A \rightarrow B)$$ | $$ \rightarrow $$I | 2,4 |
 
-<mark>$$\neg A \vdash (A \rightarrow B)$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg A \vdash (A \rightarrow B)$$</span>
 
 | Line | Assumptions | Formula             | Justification    | References |
 | ---- | ----------- | ------------------- | ---------------- | ---------- |
@@ -117,7 +117,7 @@ categories: Logic Natural Deduction
 | 4    | 1,2         | $$B$$                 | $$ \bot $$         | 3          |
 | 5    | 1           | $$(A \rightarrow B)$$ | $$ \rightarrow $$I | 2,4        |
 
-<mark>$$A \vdash (\neg A \rightarrow B)$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$A \vdash (\neg A \rightarrow B)$$</span>
 
 | Line | Assumptions | Formula                   | Justification    | References |
 | ---- | ----------- | ------------------------- | ---------------- | ---------- |
@@ -127,7 +127,7 @@ categories: Logic Natural Deduction
 | 4    | 1,2         | $$B$$                       | $$ \bot $$         | 3          |
 | 5    | 1           | $$( \neg A \rightarrow B)$$ | $$ \rightarrow $$I | 2,4        |
 
-<mark>$$(A \rightarrow (B \rightarrow C)) \vdash (B \rightarrow (A \rightarrow C))$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow (B \rightarrow C)) \vdash (B \rightarrow (A \rightarrow C))$$</span>
 
 | Line | Assumptions | Formula                             | Justification    | References |
 | ---- | ----------- | ----------------------------------- | ---------------- | ---------- |
@@ -139,7 +139,7 @@ categories: Logic Natural Deduction
 | 6    | 1,3         | $$(A \rightarrow C)$$                 | $$ \rightarrow $$I | 2,5        |
 | 7    | 1           | $$(B \rightarrow (A \rightarrow C))$$ | $$ \rightarrow $$I | 4,6        |
 
-<mark>$$\neg(A \lor B) \vdash \neg A$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg(A \lor B) \vdash \neg A$$</span>
 
 | Line | Assumptions | Formula            | Justification | References |
 | ---- | ----------- | ------------------ | ------------- | ---------- |
@@ -149,7 +149,7 @@ categories: Logic Natural Deduction
 | 4    | 1,2         | $$ \bot $$                  | $$ \neg $$E     | 1,3        |
 | 5    | 1           | $$ \neg A$$          | $$ \neg $$I     | 2,4        |
 
-<mark>$$\vdash (A \lor \neg A)$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\vdash (A \lor \neg A)$$</span>
 
 | Line | Assumptions | Formula                  | Justification | References |
 | ---- | ----------- | ------------------------ | ------------- | ---------- |
@@ -164,29 +164,29 @@ categories: Logic Natural Deduction
 
 ## Modus Tollens
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow B), \neg B \vdash \neg A$$</span>
 
 ## Hypothetical Syllogism
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow B), (B \rightarrow C) \vdash (A \rightarrow C)$$</span>
 
 ## Disjunctive Syllogism
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor B), \neg B \vdash A$$</span>
 
 ## Construction Dilemma
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \rightarrow B) \land (C \rightarrow D)), (A \lor C) \vdash (B \lor D)$$</span>
 
 ## Destructive Dilemma
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \rightarrow B) \land (C \rightarrow D)), (\neg B \lor \neg D) \vdash (\neg A \lor \neg C)$$</span>
 
 # $$F \equiv G$$ Predicate Logic
 
 ## Trivial Proof
 
-<mark>$$\forall xF(x) \vdash \exists x F(x)$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall xF(x) \vdash \exists x F(x)$$</span>
 
 | Line | Assumptions | Formula          | Justification | References |
 | ---- | ----------- | ---------------- | ------------- | ---------- |
@@ -194,7 +194,7 @@ categories: Logic Natural Deduction
 | 2    | 1           | $F(c)$           | $ \forall $E  | 1          |
 | 3    | 1           | $ \exists xF(x)$ | $ \exists $I  | 2          |
 
-<mark>$$\exists x \forall y F(x,y) \vdash \forall x \exists y F(x,y)$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x \forall y F(x,y) \vdash \forall x \exists y F(x,y)$$</span>
 
 | Line | Assumptions | Formula                      | Justification | References |
 | ---- | ----------- | ---------------------------- | ------------- | ---------- |
@@ -207,29 +207,28 @@ categories: Logic Natural Deduction
 
 ## Qualifier Negation
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg \forall x F(x) \vdash \exists x \neg F(x)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x \neg F(x) \vdash \neg \forall x F(x)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg \exists x F(x) \vdash \forall x \neg F(x)$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x \neg F(x) \vdash \neg \exists x F(x)$$</span>
 
 ## Qualifier Unification
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x F(x) \land \forall x G(x)) \vdash \forall x (F(x) \land G(x))$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x (F(x) \land G(x)) \vdash (\forall x F(x) \land \forall x G(x))$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\exists x F(x) \lor \exists x G(x)) \vdash \exists x (F(x) \lor G(x))$$</span>
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x (F(x) \lor G(x)) \vdash (\exists x F(x) \lor \exists x G(x))$$</span>
 
 ## Qualifier Transposition
 
-<mark>$$$$</mark>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x \forall y F(x,y) \vdash \forall y \forall x F(x,y)$$</span>
 
-<mark>$$$$</mark>
-
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x \exists y F(x,y) \vdash \exists y \exists x F(x,y)$$</span>
 
 
