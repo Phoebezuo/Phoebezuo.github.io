@@ -257,20 +257,20 @@ categories: Logic Natural Deduction
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
 | 1 | 1 | $$ \neg  \forall xF(x)$$ | Assump. I |  |
-| 2 | 2 | $$ \neg  \exists x( \neg F(x))$$ | Assump. I |  |
+| 2 | 2 | $$ \neg  \exists x \neg F(x)$$ | Assump. I |  |
 | 3 | 3 | $$ \neg F(c)$$ | Assump. I |  |
-| 4 | 3 | $$ \exists x( \neg F(x))$$ | $$ \exists $$I | 3 |
+| 4 | 3 | $$ \exists x \neg F(x)$$ | $$ \exists $$I | 3 |
 | 5 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,4 |
 | 6 | 2 | $$F(c)$$ | RA | 3,5 |
 | 7 | 2 | $$ \forall xF(x)$$ | $$ \forall $$I | 6 |
 | 8 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,7 |
-| 9 | 1 | $$ \exists x( \neg F(x))$$ | RA | 2,8 |
+| 9 | 1 | $$ \exists x \neg F(x)$$ | RA | 2,8 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x \neg F(x) \vdash \neg \forall x F(x)$$</span>
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
-| 1 | 1 | $$ \exists x( \neg F(x))$$ | Assump. I |  |
+| 1 | 1 | $$ \exists x \neg F(x)$$ | Assump. I |  |
 | 2 | 2 | $$ \forall xF(x)$$ | Assump. I |  |
 | 3 | 2 | $$F(c)$$ | $$ \forall $$E | 2 |
 | 4 | 4 | $$ \neg F(c)$$ | Assump. I |  |
@@ -287,13 +287,13 @@ categories: Logic Natural Deduction
 | 3 | 2 | $$ \exists xF(x)$$ | $$ \exists $$I | 2 |
 | 4 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,3 |
 | 5 | 1 | $$ \neg F(c)$$ | $$ \neg $$I | 2,4 |
-| 6 | 1 | $$ \forall x( \neg F(x))$$ | $$ \forall $$I | 5 |
+| 6 | 1 | $$ \forall x \neg F(x)$$ | $$ \forall $$I | 5 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x \neg F(x) \vdash \neg \exists x F(x)$$</span>
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
-| 1 | 1 | $$ \forall x( \neg F(x))$$ | Assump. I |  |
+| 1 | 1 | $$ \forall x \neg F(x)$$ | Assump. I |  |
 | 2 | 2 | $$ \exists xF(x)$$ | Assump. I |  |
 | 3 | 3 | $$F(c)$$ | Assump. I |  |
 | 4 | 1 | $$ \neg F(c)$$ | $$ \forall $$E | 1 |
