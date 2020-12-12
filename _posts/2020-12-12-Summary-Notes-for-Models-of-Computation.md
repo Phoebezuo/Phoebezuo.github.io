@@ -76,17 +76,17 @@ categories: Computation Logic DFA RegEx
 
     This is because the truth value of a sentence does not depends on the variable assignment. X
 
-3.  **Notes**: $$\exist x\forall yF \vdash \forall y \exist x F$$, but $$\forall x \exist y F \not\vdash \exist x \forall yF$$.
+3.  **Notes**: $$\exists x\forall yF \vdash \forall y \exists x F$$, but $$\forall x \exists y F \not\vdash \exists x \forall yF$$.
 
-4.  For formula $$F = (\forall x (P(x,z) \land \exist y Q(y)) \rightarrow P(y,z))$$ and term $$t = f(x,y)$$
+4.  For formula $$F = (\forall x (P(x,z) \land \exists y Q(y)) \rightarrow P(y,z))$$ and term $$t = f(x,y)$$
 
-    **Notes: ** For $$F[x/a]$$, and $$ a = x + y$$, If no free occurrence of a is the scope of qualifiers of x and y (since $$a = x + y$$), then it can replace.
+    **Notes:** For $$F[x/a]$$, and $$ a = x + y$$, If no free occurrence of a is the scope of qualifiers of x and y (since $$a = x + y$$), then it can replace.
 
     1.  write $$F[t/y]$$ and say whether t is free to replace y in F
 
-        -   Since no free occurrence of y in the scope of qualifiers of $$\forall x$$ and $$\exist y$$, so y can be replaced.
+        -   Since no free occurrence of y in the scope of qualifiers of $$\forall x$$ and $$\exists y$$, so y can be replaced.
 
-        -   It can replaced any free occurrence of y outside the scope of qualifiers of $$\forall x$$ and $$\exist y$$, so $$F = (\forall x (P(x,z) \land \exist y Q(y)) \rightarrow P(\textcolor{red}{f(x,y)},z))$$,
+        -   It can replaced any free occurrence of y outside the scope of qualifiers of $$\forall x$$ and $$\exists y$$, so $$F = (\forall x (P(x,z) \land \exists y Q(y)) \rightarrow P(f(x,y),z))$$,
 
     2.  write $$F[t/z]$$ and say whether z is free to replace y in F
 
@@ -94,44 +94,44 @@ categories: Computation Logic DFA RegEx
 
     3.  write $$F[t/x]$$ and say whether x is free to replace y in F
 
-        -   Since no free occurrence of y in the scope of qualifiers of $$\forall x$$ and $$\exist y$$, so x can be replace.
-        -   However there is no free occurrence of x outside the scope of qualifiers of $$\forall x$$ and $$\exist y$$, so $$F = (\forall x (P(x,z) \land \exist y Q(y)) \rightarrow P(y,z))$$, which is unchanged.
+        -   Since no free occurrence of y in the scope of qualifiers of $$\forall x$$ and $$\exists y$$, so x can be replace.
+        -   However there is no free occurrence of x outside the scope of qualifiers of $$\forall x$$ and $$\exists y$$, so $$F = (\forall x (P(x,z) \land \exists y Q(y)) \rightarrow P(y,z))$$, which is unchanged.
 
 5.  Prove that $$(\exists x P(x) \land F)$$ is not valid.
 
-    There is a structure $$\mathbb{A}$$, such that predicate $$P^{\mathbb{A}}$$ is an empty set. Thus $$tv(P, \alpha) = 0$$ under any assignment, so $$(\exist x P(x) \land F)$$  under structure $$\mathbb{A}$$ is false, i.e. not valid.
+    There is a structure $$\mathbb{A}$$, such that predicate $$P^{\mathbb{A}}$$ is an empty set. Thus $$tv(P, \alpha) = 0$$ under any assignment, so $$(\exists x P(x) \land F)$$  under structure $$\mathbb{A}$$ is false, i.e. not valid.
 
 # Regular Languages
 
-1.  **Notes**: the empty set $$\empty$$ and $$\{\epsilon \}$$ is a language over alphabet $$\Sigma = \{a, b\}$$, but empty string $$\epsilon$$ is not.
+1.  **Notes**: the empty set $$\varnothing$$ and $$\{\epsilon \}$$ is a language over alphabet $$\Sigma = \{a, b\}$$, but empty string $$\epsilon$$ is not.
 
 2.  Which is not the languages over alphabet $$\{a,b\}$$?
     -   $$\{a,b,c\}$$ X because c is not in the $$\Sigma$$
-    -   $$\empty$$ √
+    -   $$\varnothing$$ √
     -   $$\{\epsilon\}$$ √
     -   $$(ab)^*$$ X because language is the set of strings over $$\Sigma$$, however $$(ab)^*$$ is infinite.
 
-3.  Draw a DFA that recognise $$L = \{w | w  \text{ begins with ab and ends with ba}\}$$
+3.  Draw a DFA that recognise $$L = \{w \mid w  \text{ begins with ab and ends with ba}\}$$
 
     <img src='https://i.loli.net/2020/12/10/IKr6YB9Eozmtw2p.png' alt='IKr6YB9Eozmtw2p' width="50%"/>
 
-4.  Draw a DFA that recognise $$L = \{w | \text{ either number of a in w is divisible by 3 or w begins with bbb}\}$$
+4.  Draw a DFA that recognise $$L = \{w \mid \text{ either number of a in w is divisible by 3 or w begins with bbb}\}$$
 
     <img src='https://i.loli.net/2020/12/10/QkbXxoORJ9hIpg3.png' alt='QkbXxoORJ9hIpg3' width="50%"/>
 
-5.  Draw a DFA that recognise $$L = \{w | \text{ number of a in w $$=3k + 1, k \in \mathbb{Z}$$ and number of b in w is odd}\}$$
+5.  Draw a DFA that recognise $$L = \{w \mid \text{ number of a in w $$=3k + 1, k \in \mathbb{Z}$$ and number of b in w is odd}\}$$
 
     <img src='https://i.loli.net/2020/12/10/NbqlP1QCXZvtcUD.png' alt='NbqlP1QCXZvtcUD' width="50%"/>
 
-6.  Draw a DFA that recognise $$L = \{w | \text{ number of a in w is even or |w| is even}\}$$
+6.  Draw a DFA that recognise $$L = \{w \mid \text{ number of a in w is even or |w| is even}\}$$
 
     <img src='https://i.loli.net/2020/12/10/yos3J6pQn1kg9Lf.png' alt='yos3J6pQn1kg9Lf' width="50%"/>
 
-7.  Draw a DFA that recognise $$L = \{w | \text{w contains exactly one occurrence of substring aaa}\}$$
+7.  Draw a DFA that recognise $$L = \{w \mid \text{w contains exactly one occurrence of substring aaa}\}$$
 
     <img src='https://i.loli.net/2020/12/10/Hao3i5cgJMRrAdN.png' alt='Hao3i5cgJMRrAdN' width="50%"/>
 
-8.  Draw a DFA that recognise $$L = \{w | \text{ occurrence of substring bcd is even}\}$$
+8.  Draw a DFA that recognise $$L = \{w \mid \text{ occurrence of substring bcd is even}\}$$
 
     <img src='https://i.loli.net/2020/12/10/DKxIJow2VihU14T.png' alt='DKxIJow2VihU14T' width="50%"/>
 
@@ -159,18 +159,18 @@ categories: Computation Logic DFA RegEx
 
      Define $$L(R^0) = \{\epsilon\}$$, and for $$k \geq 1$$, define $$L(R^k) = L(R^{k-1})\cdot L(R)$$.
 
-12.  Draw a DFA that recognise $$L = \{w | \text{ w contains equal number of occurrences of substring 01 and 10}\}$$
+12.  Draw a DFA that recognise $$L = \{w \mid \text{ w contains equal number of occurrences of substring 01 and 10}\}$$
 
      <img src='https://i.loli.net/2020/12/10/xntHUyNVQqMpjJ7.png' alt='xntHUyNVQqMpjJ7' width="50%"/>
 
 13.  Let $$N_1$$, $$N_2$$ be NFAs.
 
-     1.  Devise an algorithm for testing whether or not $$L(N_1) = \empty$$
-         -   If the acceptstateis not in the connected component from the starting state, then $$L(N_1) = \empty$$
+     1.  Devise an algorithm for testing whether or not $$L(N_1) = \varnothing$$
+         -   If the acceptstateis not in the connected component from the starting state, then $$L(N_1) = \varnothing$$
      2.  Devise an algoirthm for testing whether or not $$L(N_1) \subseteq L(N_2)$$
-         -   If $$L(N_1) \ L(N_2) = \empty$$, then $$L(N_1) \subseteq L(N_2)$$
+         -   If $$L(N_1) \ L(N_2) = \varnothing$$, then $$L(N_1) \subseteq L(N_2)$$
 
-14.  What is the equivalent NFA with no $\epsilon$$-transition of the following NFA?
+14.  What is the equivalent NFA with no $$\epsilon$$-transition of the following NFA?
 
      <img src='https://i.loli.net/2020/12/10/CP9F7iGonLB1vlV.png' alt='CP9F7iGonLB1vlV' width="40%"/>
 
@@ -183,11 +183,11 @@ categories: Computation Logic DFA RegEx
 
      <img src='https://i.loli.net/2020/12/10/uyLwdT9Dkzb4rxq.png' alt='uyLwdT9Dkzb4rxq' width="40%"/>
 
-     Suppose $$L(M_1) = \{aa^{2k}b | k \geq 0\}$$, if using this construction, it will accept aa, but $$aa \not\in L(M_1)^*$$.
+     Suppose $$L(M_1) = \{aa^{2k}b \mid k \geq 0\}$$, if using this construction, it will accept aa, but $$aa \not\in L(M_1)^*$$.
 
      <img src='https://i.loli.net/2020/12/10/6aHCTAncdODLp5K.png' alt='6aHCTAncdODLp5K' width="80%"/>
 
-16.  Construct a DFA that recognise $$L = \{w | \text{x is number of 1's mod 3, y is number of 0's mod 3}, s.t. x \neq y\}$$, then give the corresponding RegEx.
+16.  Construct a DFA that recognise $$L = \{w \mid \text{x is number of 1's mod 3, y is number of 0's mod 3}, s.t. x \neq y\}$$, then give the corresponding RegEx.
 
      -   Construct corresponding DFA and convert it to GNFA
 
@@ -224,7 +224,7 @@ categories: Computation Logic DFA RegEx
          R_2 &= (00\cup1)(10)^*(11\cup0)\cup01\\
          R_3 &= (00\cup1)(10)^*\cup \epsilon \\
          R_4 &= 0(10)^*\\
-         R_1R_2^*R_3\cup R_4 &= \textcolor{red}{0(10)^*(11\cup0)\cup1}\textcolor{blue}{((00\cup1)(10)^*(11\cup0)\cup01)^*}\textcolor{red}{(00\cup1)(10)^*\cup \epsilon}\cup \textcolor{blue}{0(10)^*}
+         R_1R_2^*R_3\cup R_4 &= 0(10)^*(11\cup0)\cup1((00\cup1)(10)^*(11\cup0)\cup01)^*(00\cup1)(10)^*\cup \epsilon\cup {0(10)^*
          \end{align}
          $$
 
@@ -235,7 +235,7 @@ categories: Computation Logic DFA RegEx
 3.  If G, H are CFG in Chomsky Normal Form that does not generate the empty string, and if one applies the operation we saw in class to get a grammar G' generating $$<option>$$ , then G' is also in Chomsky Normal Form.
     1.  $$L(G)^*$$, True, since it only introdoce $$S \rightarrow S_M S$$
     2.  $$L(G) \circ L(H)$$, True, since it only introduce $$S \rightarrow S_MS_N$$
-    3.  $$L(G) \cup L(H)$$, False, since it introduce $$S \rightarrow S_M | S_N$$, which can't be the form in CNF.
+    3.  $$L(G) \cup L(H)$$, False, since it introduce $$S \rightarrow S_M \mid S_N$$, which can't be the form in CNF.
 4.  What is the procedure of *DEL* step when converting a CFG G to a CNF, where G does not generate $$\epsilon$$?
     -   generate all $$\epsilon$$-rules, i.e. $$A_i \rightarrow \epsilon$$, add $$A_i$$ to set X
         -   for each variable $$A_i$$ in X:
@@ -249,7 +249,7 @@ categories: Computation Logic DFA RegEx
 
 2.  Every context-free language is Turing-decidable, and every Turing-decidable language is Turing-recognisable.
 
-    True, because $$A_{CFG} = \{<G,w> | \text{G is a. CFG that generates w}\}$$ is decidable.
+    True, because $$A_{CFG} = \{<G,w> \mid \text{G is a. CFG that generates w}\}$$ is decidable.
 
 3.  For every multi-tape TM M, there is a single-tape TM M' such that L(M) = L(M′). True
 
@@ -287,7 +287,7 @@ categories: Computation Logic DFA RegEx
 
 7.  Prove that every context-free language is Turning-decidable.
 
-    Suppose languagee $$A = \{<G, w> | \text{ G is a  CFG and } w \in L(G)\}$$.
+    Suppose languagee $$A = \{<G, w> \mid \text{ G is a  CFG and } w \in L(G)\}$$.
 
     -   Convert G to an equivalent grammar in CNF
     -   If length of w is 0, then list all derivations with 1 step
@@ -297,7 +297,7 @@ categories: Computation Logic DFA RegEx
 8.  Compute $$(((\lambda x.(\lambda x.(xy)))a)b)$$
     $$
     \begin{align}
-    (((\lambda x.\textcolor{red}{(\lambda x.(xy))})a)b) &\stackrel{\beta}{\rightarrow} ((\lambda z.(zy))b) \quad x = x, M = (\lambda x.(xy)), N = a \\
+    (((\lambda x.(\lambda x.(xy)))a)b) &\stackrel{\beta}{\rightarrow} ((\lambda z.(zy))b) \quad x = x, M = (\lambda x.(xy)), N = a \\
     &\stackrel{\beta}{\rightarrow} ((by)) \quad x = z, M = (zy), N = b \\
     \end{align}
     $$
@@ -305,8 +305,8 @@ categories: Computation Logic DFA RegEx
 9.  Compute $$(((\lambda x.(xx))(\lambda x.x))x)$$
     $$
     \begin{align}
-    (((\lambda x.(xx))\textcolor{red}{(\lambda x.x)})x) &\stackrel{\beta}{\rightarrow} (((\lambda x.(xx))(\lambda x.x))x) \quad x = x, M = (xx), N = (\lambda x.x) \\
-    &\stackrel{\alpha}{\rightarrow} (((\lambda y.\textcolor{red}{(yy)})(\lambda z.z))x) \\
+    (((\lambda x.(xx))(\lambda x.x))x) &\stackrel{\beta}{\rightarrow} (((\lambda x.(xx))(\lambda x.x))x) \quad x = x, M = (xx), N = (\lambda x.x) \\
+    &\stackrel{\alpha}{\rightarrow} (((\lambda y.(yy))(\lambda z.z))x) \\
     &\stackrel{\beta}{\rightarrow} (((\lambda z.z)(\lambda z.z))x) \quad x = y, M = (yy), N = (\lambda z.z) \\
     &\stackrel{\alpha}{\rightarrow} (((\lambda z.z)(\lambda a.a))x) \\
     &\stackrel{\beta}{\rightarrow} ((\lambda a.a)x) \quad x = z, M = z, N = (\lambda a.a) \\
