@@ -51,6 +51,7 @@ categories: Magma cryptosystem
     - [Method 2](#method-2-1)
 - [RSA Cryptosystem](#rsa-cryptosystem)
 - [Elgamal Cryptosystem](#elgamal-cryptosystem)
+- [Other Useful Tools](#other-useful-tools)
 
 # Magma Basic Usage
 
@@ -726,3 +727,13 @@ end for;
    message:=NaiveDecoding(PT);
    ```
 
+# Other Useful Tools
+
+- [GCD Calculator](https://www.calculatorsoup.com/calculators/math/gcf.php)
+- [Modular  Calculator](https://planetcalc.com/8326/)
+- [Modular Inverse Calculator](https://www.dcode.fr/modular-inverse)
+- [Primitive Root Calculator](https://www.wolframalpha.com/widgets/view.jsp?id=ef51422db7db201ebc03c8800f41ba99)
+- [Order Calculator](http://www.numbertheory.org/php/order.html)
+- [Euler's Totient Calculator](https://www.dcode.fr/euler-totient)
+- [Limit Calculator](https://www.symbolab.com/solver/limit-calculator)
+- [Modular Equation Calculator](https://www.dcode.fr/modular-equation-solver)
