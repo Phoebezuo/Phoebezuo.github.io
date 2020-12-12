@@ -97,7 +97,7 @@ categories: Logic Natural Deduction
 
 ## Trivial Proof
 
-<mark>$$B \vdash (A \rightarrow B)$$</mark>
+<span class="bg-dark-gray white">$$B \vdash (A \rightarrow B)$$</span>
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
@@ -143,11 +143,11 @@ categories: Logic Natural Deduction
 
 | Line | Assumptions | Formula            | Justification | References |
 | ---- | ----------- | ------------------ | ------------- | ---------- |
-| 1    | 1           | $ \neg (A \lor B)$ | Assump. I     |            |
-| 2    | 2           | $A$                | Assump. I     |            |
-| 3    | 2           | $(A \lor B)$       | $ \lor $I     | 2          |
-| 4    | 1,2         | $ \bot $           | $ \neg $E     | 1,3        |
-| 5    | 1           | $ \neg A$          | $ \neg $I     | 2,4        |
+| 1    | 1           | $$ \neg (A \lor B)$$ | Assump. I     |            |
+| 2    | 2           | $$A$$                | Assump. I     |            |
+| 3    | 2           | $$(A \lor B)$$       | $$ \lor $$I     | 2          |
+| 4    | 1,2         | $$ \bot $$                  | $$ \neg $$E     | 1,3        |
+| 5    | 1           | $$ \neg A$$          | $$ \neg $$I     | 2,4        |
 
 <mark>$$\vdash (A \lor \neg A)$$</mark>
 
@@ -186,7 +186,7 @@ categories: Logic Natural Deduction
 
 ## Trivial Proof
 
-<mark>$$\forall xF(x) \vdash \exist x F(x)$$</mark>
+<mark>$$\forall xF(x) \vdash \exists x F(x)$$</mark>
 
 | Line | Assumptions | Formula          | Justification | References |
 | ---- | ----------- | ---------------- | ------------- | ---------- |
@@ -194,7 +194,7 @@ categories: Logic Natural Deduction
 | 2    | 1           | $F(c)$           | $ \forall $E  | 1          |
 | 3    | 1           | $ \exists xF(x)$ | $ \exists $I  | 2          |
 
-<mark>$$\exist x \forall y F(x,y) \vdash \forall x \exists y F(x,y)$$</mark>
+<mark>$$\exists x \forall y F(x,y) \vdash \forall x \exists y F(x,y)$$</mark>
 
 | Line | Assumptions | Formula                      | Justification | References |
 | ---- | ----------- | ---------------------------- | ------------- | ---------- |
