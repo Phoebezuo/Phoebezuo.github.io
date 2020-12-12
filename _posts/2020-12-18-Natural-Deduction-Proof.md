@@ -42,15 +42,47 @@ categories: Logic Natural Deduction
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \land A) \vdash A$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \land A)$$ | Assump. I |  |
+| 2 | 1 | $$A$$ | $$ \land $$E | 1 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$A \vdash (A \lor A)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$A$$ | Assump. I |  |
+| 2 | 1 | $$(A \lor A)$$ | $$ \lor $$I | 1 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor A) \vdash A$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \lor A)$$ | Assump. I |  |
+| 2 | 2 | $$A$$ | Assump. I |  |
+| 3 | 1 | $$A$$ | $$ \lor $$E | 1,2,2,2,2 |
 
 ## Commutative
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \land B) \vdash (B \land A)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \land B)$$ | Assump. I |  |
+| 2 | 1 | $$A$$ | $$ \land $$E | 1 |
+| 3 | 1 | $$B$$ | $$ \land $$E | 1 |
+| 4 | 1 | $$(B \land A)$$ | $$ \land $$I | 2,3 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor B) \vdash (B \lor A)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \lor B)$$ | Assump. I |  |
+| 2 | 2 | $$A$$ | Assump. I |  |
+| 3 | 2 | $$(B \lor A)$$ | $$ \lor $$I | 2 |
+| 4 | 4 | $$B$$ | Assump. I |  |
+| 5 | 4 | $$(B \lor A)$$ | $$ \lor $$I | 4 |
+| 6 | 1 | $$(B \lor A)$$ | $$ \lor $$E | 1,2,3,4,5 |
 
 ## Associative
 
@@ -203,9 +235,9 @@ categories: Logic Natural Deduction
 
 | Line | Assumptions | Formula          | Justification | References |
 | ---- | ----------- | ---------------- | ------------- | ---------- |
-| 1    | 1           | $ \forall xF(x)$ | Assump. I     |            |
-| 2    | 1           | $F(c)$           | $ \forall $E  | 1          |
-| 3    | 1           | $ \exists xF(x)$ | $ \exists $I  | 2          |
+| 1    | 1           | $$ \forall xF(x)$$ | Assump. I     |            |
+| 2    | 1           | $$F(c)$$           | $$ \forall $$E  | 1          |
+| 3    | 1           | $$ \exists xF(x)$$ | $$ \exists $$I  | 2          |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x \forall y F(x,y) \vdash \forall x \exists y F(x,y)$$</span>
 
@@ -244,4 +276,4 @@ categories: Logic Natural Deduction
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x \exists y F(x,y) \vdash \exists y \exists x F(x,y)$$</span>
 
-
+**Notes:** PDF version can be found at [here](https://github.com/Phoebezuo/Natural-Deduction-Proof/blob/main/Derived_Rules_of_Natural_Deduction_Proof.pdf)
