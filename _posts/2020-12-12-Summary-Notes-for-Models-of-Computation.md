@@ -119,7 +119,7 @@ categories: Computation Logic DFA RegEx
 
     <img src='https://i.loli.net/2020/12/10/QkbXxoORJ9hIpg3.png' alt='QkbXxoORJ9hIpg3' width="50%"/>
 
-5.  Draw a DFA that recognise $$L = \{w \mid \text{ number of a in w $$=3k + 1, k \in \mathbb{Z}$$ and number of b in w is odd}\}$$
+5.  Draw a DFA that recognise $$L = \{w \mid \text{ number of a in w $=3k + 1, k \in \mathbb{Z}$ and number of b in w is odd}\}$$
 
     <img src='https://i.loli.net/2020/12/10/NbqlP1QCXZvtcUD.png' alt='NbqlP1QCXZvtcUD' width="50%"/>
 
@@ -225,7 +225,7 @@ categories: Computation Logic DFA RegEx
          R_2 &= (00\cup1)(10)^*(11\cup0)\cup01\\
          R_3 &= (00\cup1)(10)^*\cup \epsilon \\
          R_4 &= 0(10)^*\\
-         R_1R_2^*R_3\cup R_4 &= 0(10)^*(11\cup 0)\cup 1((00\cup 1)(10)^*(11\cup 0)\cup 01)^*(00\cup 1)(10)^*\cup \epsilon \cup {0(10)^*\\
+         R_1R_2^*R_3\cup R_4 &= 0(10)^*(11\cup 0)\cup 1((00\cup 1)(10)^*(11\cup 0)\cup 01)^*(00\cup 1)(10)^*\cup \epsilon \cup 0(10)^*\\
          \end{align}
          $$
 
