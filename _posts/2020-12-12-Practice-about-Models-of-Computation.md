@@ -10,21 +10,21 @@ categories: Computation Logic DFA RegEx
 
 <img src='https://i.loli.net/2020/12/09/ASwfc29DoxebEnR.png' alt='ASwfc29DoxebEnR'/>
 
-| p    | q    | $(p \rightarrow (p \rightarrow q))$ | $(q \rightarrow (q \rightarrow p))$ |
+| p    | q    | $$(p \rightarrow (p \rightarrow q))$$ | $$(q \rightarrow (q \rightarrow p))$$ |
 | ---- | ---- | ----------------------------------- | ----------------------------------- |
 | F    | F    | T                                   | T                                   |
 | F    | T    | T                                   | F                                   |
 | T    | F    | F                                   | T                                   |
 | T    | T    | T                                   | T                                   |
 
-As shown from the table above, when p is F, q is T, $(p \rightarrow (p \rightarrow q)) = T$, but $(q \rightarrow (q \rightarrow p))$ = F.
+As shown from the table above, when p is F, q is T, $$(p \rightarrow (p \rightarrow q)) = T$$, but $$(q \rightarrow (q \rightarrow p))$$ = F.
 
 Hence, they are not logically equivalent.
 
 
 <img src='https://i.loli.net/2020/12/09/mVhWnyXGUYcaJ9Q.png' alt='mVhWnyXGUYcaJ9Q'/>
 
-| p    | q    | r    | $((p \rightarrow (q \lor r)) \rightarrow ((p \rightarrow q) \lor (p \rightarrow r)))$ |
+| p    | q    | r    | $$((p \rightarrow (q \lor r)) \rightarrow ((p \rightarrow q) \lor (p \rightarrow r)))$$ |
 | ---- | ---- | ---- | ------------------------------------------------------------ |
 | F    | F    | F    | T                                                            |
 | F    | F    | T    | T                                                            |
@@ -55,50 +55,50 @@ $$
 
 | Line | Assumptions | Formula                                         | Justification    | References |
 | ---- | ----------- | ----------------------------------------------- | ---------------- | ---------- |
-| 1    | 1           | $(p \rightarrow  \neg q)$                       | Assump. I        |            |
-| 2    | 2           | $( \neg r \lor p)$                              | Assump. I        |            |
-| 3    | 3           | $p$                                             | Assump. I        |            |
-| 4    | 4           | $ \neg r$                                       | Assump. I        |            |
-| 5    | 5           | $( \neg p \rightarrow r)$                       | Assump. I        |            |
-| 6    | 6           | $ \neg p$                                       | Assump. I        |            |
-| 7    | 5,6         | $r$                                             | $ \rightarrow $E | 5,6        |
-| 8    | 4,5,6       | $ \bot $                                        | $ \neg $E        | 4,7        |
-| 9    | 4,5         | $p$                                             | RA               | 6,8        |
-| 10   | 2,5         | $p$                                             | $ \lor $E        | 2,3,3,4,9  |
-| 11   | 1,2,5       | $ \neg q$                                       | $ \rightarrow $E | 1,10       |
-| 12   | 1,2         | $(( \neg p \rightarrow r) \rightarrow  \neg q)$ | $ \rightarrow $I | 5,11       |
+| 1    | 1           | $$(p \rightarrow  \neg q)$$                       | Assump. I        |            |
+| 2    | 2           | $$( \neg r \lor p)$$                              | Assump. I        |            |
+| 3    | 3           | $$p$$                                             | Assump. I        |            |
+| 4    | 4           | $$ \neg r$$                                       | Assump. I        |            |
+| 5    | 5           | $$( \neg p \rightarrow r)$$                       | Assump. I        |            |
+| 6    | 6           | $$ \neg p$$                                       | Assump. I        |            |
+| 7    | 5,6         | $$r$$                                             | $$ \rightarrow $$E | 5,6        |
+| 8    | 4,5,6       | $$ \bot $$                                        | $$ \neg $$E        | 4,7        |
+| 9    | 4,5         | $$p$$                                             | RA               | 6,8        |
+| 10   | 2,5         | $$p$$                                             | $$ \lor $$E        | 2,3,3,4,9  |
+| 11   | 1,2,5       | $$ \neg q$$                                       | $$ \rightarrow $$E | 1,10       |
+| 12   | 1,2         | $$(( \neg p \rightarrow r) \rightarrow  \neg q)$$ | $$ \rightarrow $$I | 5,11       |
 
 
 <img src='https://i.loli.net/2020/12/09/jLfUMosZg4TuWih.png' alt='jLfUMosZg4TuWih'/>
 
-For the statement 2, if $F_1 = p$ and $F_2 = \neg p$, they are both individdually satisfiable. However, $F = (F_1 \land F_2) = (p \land \neg p) = \bot$, which is not satisfiable.
+For the statement 2, if $$F_1 = p$$ and $$F_2 = \neg p$$, they are both individdually satisfiable. However, $$F = (F_1 \land F_2) = (p \land \neg p) = \bot$$, which is not satisfiable.
 
 # Question 2
 
 <img src='https://i.loli.net/2020/12/09/8ZGU1NtEgHFknQa.png' alt='8ZGU1NtEgHFknQa'/>
 
-The required predicate formula is $\neg eq(x,y) \land \exist x' \exist y' (child(x,x') \land child(y,y') \land sib(x',y'))$.
+The required predicate formula is $$\neg eq(x,y) \land \exist x' \exist y' (child(x,x') \land child(y,y') \land sib(x',y'))$$.
 
-The $sib(x',y')$ is the formula. $\neg eq(x',y') \land \exist. z (child(x',z) \land child(y', z))$
+The $$sib(x',y')$$ is the formula. $$\neg eq(x',y') \land \exist. z (child(x',z) \land child(y', z))$$
 
 <img src='https://i.loli.net/2020/12/09/pOsIQPfqytRgWCU.png' alt='pOsIQPfqytRgWCU'/>
 
-If there exists a sentence F and a proof $F \vdash \bot$,  then this F is unsatisfiable.
+If there exists a sentence F and a proof $$F \vdash \bot$$,  then this F is unsatisfiable.
 
-If we can show $F \vdash \bot$ then we can deduce (by soundness of ND) that $F \vDash \bot$, which means that every assignment that satisfies *F* also satisfies $\bot$. But since no assignment satisfies $\bot$, no assignment satisfies *F*, i.e. *F* is unsatisfiable.
+If we can show $$F \vdash \bot$$ then we can deduce (by soundness of ND) that $$F \vDash \bot$$, which means that every assignment that satisfies *F* also satisfies $\bot$. But since no assignment satisfies $\bot$, no assignment satisfies *F*, i.e. *F* is unsatisfiable.
 
 <img src='https://i.loli.net/2020/12/09/COXKZo8x7y5uFqS.png' alt='COXKZo8x7y5uFqS'/>
 
-For all $z \in \mathbb{Z}$ and $y \in \mathbb{Z}$ such that if x < y where $x \leq 0$, then $x + y \geq 0$.
+For all $$z \in \mathbb{Z}$$ and $$y \in \mathbb{Z}$$ such that if x < y where $$x \leq 0$$, then $$x + y \geq 0$$.
 
-Compute the TV($\forall x \forall y G, \alpha$), where G is the formula $(A(x,y) \rightarrow B(x,y))$. where $A(x,y) = (P(x,y) \land (P(x,c) \lor Q(x,c)))$ and $B(x,y) = (P(c, f(x,y)) \lor Q(c, f(x,y)))$
+Compute the TV($$\forall x \forall y G, \alpha$$), where G is the formula $$(A(x,y) \rightarrow B(x,y))$$. where $$A(x,y) = (P(x,y) \land (P(x,c) \lor Q(x,c)))$$ and $$B(x,y) = (P(c, f(x,y)) \lor Q(c, f(x,y)))$$
 
-By the rule of $\forall$ (applied twice), TV($\forall x \forall y G, \alpha$) = 0 if there exist $d \in A$ or $e \in A$: TV($\forall x \forall y G, \alpha[x,y \mapsto d,e]$) = 0.
+By the rule of $$\forall$$ (applied twice), TV($$\forall x \forall y G, \alpha$$) = 0 if there exist $$d \in A$$ or $$e \in A$$: TV($$\forall x \forall y G, \alpha[x,y \mapsto d,e]$$) = 0.
 
 By the rule for predicates, this means that:
 
--   $tv(P(x,y), \alpha) = 1 \text{ if } \alpha(x) < \alpha(y)$, and 0 otherwise.
--   $tv(Q(x,y), \alpha) = 1 \text{ if } \alpha(x) = \alpha(y)$, and 0 otherwise.
+-   $$tv(P(x,y), \alpha) = 1 \text{ if } \alpha(x) < \alpha(y)$$, and 0 otherwise.
+-   $$tv(Q(x,y), \alpha) = 1 \text{ if } \alpha(x) = \alpha(y)$$, and 0 otherwise.
 
 $$
 \begin{align}
@@ -114,7 +114,7 @@ $$
     \equiv &\max\{TV(P(c, f(x,y)), \alpha), TV(Q(c, f(x,y)), \alpha)\} \\
 \end{align}
 $$
-When $d = -100$ and $y = 1$:
+When $$d = -100$$ and $$y = 1$$:
 $$
 \begin{align}
     TV(A(x,y), \alpha[x,y \mapsto -100, 1])
@@ -137,18 +137,18 @@ $$
 \equiv &0
 \end{align}
 $$
-Hence, $TV(\forall x \forall y G, \alpha) = 0$.
+Hence, $$TV(\forall x \forall y G, \alpha) = 0$$.
 
 <img src='https://i.loli.net/2020/12/09/CgOXQFfYbZIlWJc.png' alt='CgOXQFfYbZIlWJc'/>
 $$
 \begin{align}
 	&(\forall x Q(x) \rightarrow \exists z \forall y R(z,y)) \\
 	\equiv &(\neg \forall x Q(x) \lor \exists z \forall y R(z,y)) \qquad &\text{definition of $\rightarrow$}\\
-	\equiv &(\exist x Q(x) \lor \exist z \forall y R(z,y)) \qquad &\text{Q.Negation} \\
-	\equiv &\exist x(Q(x) \lor \exist z \forall y R(z,y)) \qquad &\text{Q.Extraction} \\
-	\equiv &\exist x(\exist z \forall y R(z,y) \lor Q(x)) \qquad &\text{association} \\
-	\equiv &\exist x \exist z (\forall y R(z,y) \lor Q(x)) \qquad &\text{Q.Extraction} \\
-	\equiv &\exist x \exist z \forall y(R(z,y) \lor Q(x)) \qquad &\text{Q.Extraction} \\
+	\equiv &(\exists x Q(x) \lor \exists z \forall y R(z,y)) \qquad &\text{Q.Negation} \\
+	\equiv &\exists x(Q(x) \lor \exists z \forall y R(z,y)) \qquad &\text{Q.Extraction} \\
+	\equiv &\exists x(\exist z \forall y R(z,y) \lor Q(x)) \qquad &\text{association} \\
+	\equiv &\exists x \exist z (\forall y R(z,y) \lor Q(x)) \qquad &\text{Q.Extraction} \\
+	\equiv &\exists x \exist z \forall y(R(z,y) \lor Q(x)) \qquad &\text{Q.Extraction} \\
 \end{align}
 $$
 
