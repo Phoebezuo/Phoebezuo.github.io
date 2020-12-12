@@ -35,6 +35,11 @@ categories: Logic Natural Deduction
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$A \vdash(A \land A)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$A$$ | Assump. I |  |
+| 2 | 1 | $$(A \land A)$$ | $$ \land $$I | 1,1 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \land A) \vdash A$$</span>
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$A \vdash (A \lor A)$$</span>
@@ -42,6 +47,8 @@ categories: Logic Natural Deduction
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor A) \vdash A$$</span>
 
 ## Commutative
+
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \land B) \vdash (B \land A)$$</span>
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor B) \vdash (B \lor A)$$</span>
 
@@ -67,6 +74,8 @@ categories: Logic Natural Deduction
 
 ## de Morgan's Laws
 
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg A\lor \neg B) \vdash \neg (A\land B)$$</span>
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg (A\land B) \vdash (\neg A\lor \neg B)$$</span>
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg A\land \neg B) \vdash \neg (A\lor B)$$</span>
@@ -87,11 +96,15 @@ categories: Logic Natural Deduction
 
 ## Transposition
 
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow B) \vdash (\neg B \rightarrow \neg A)$$</span>
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg B \rightarrow \neg A) \vdash (A \rightarrow B)$$</span>
 
 ## Exportation
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \land B) \rightarrow C) \vdash (A \rightarrow (B \rightarrow C))$$</span>
+
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow (B \rightarrow C)) \vdash ((A \land B) \rightarrow C)$$</span>
 
 # $$F \vdash G$$ Propositional Logic
 
