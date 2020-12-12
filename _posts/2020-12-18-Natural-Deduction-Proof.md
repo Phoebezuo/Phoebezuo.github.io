@@ -97,7 +97,7 @@ categories: Logic Natural Deduction
 
 ## Trivial Proof
 
-<span class="bg-yellow white" style="text-align: center; font-size:18px">$$B \vdash (A \rightarrow B)$$</span>
+<span class="bg-yellow black" style="text-align: center; font-size:25px">$$B \vdash (A \rightarrow B)$$</span>
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
