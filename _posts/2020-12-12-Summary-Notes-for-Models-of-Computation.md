@@ -123,7 +123,7 @@ categories: Computation Logic DFA RegEx
 
     <img src='https://i.loli.net/2020/12/10/NbqlP1QCXZvtcUD.png' alt='NbqlP1QCXZvtcUD' width="50%"/>
 
-6.  Draw a DFA that recognise $$L = \{w \mid \text{ number of a in w is even or \mid w \mid is even}\}$$
+6.  Draw a DFA that recognise $$L = \{w \mid \text{ number of a in w is even or $\mid w \mid$ is even}\}$$
 
     <img src='https://i.loli.net/2020/12/10/yos3J6pQn1kg9Lf.png' alt='yos3J6pQn1kg9Lf' width="50%"/>
 
@@ -195,7 +195,7 @@ categories: Computation Logic DFA RegEx
 
      -   remove $$q_0$$
 
-         | index | transition                            | $R_1$      | $R_2$         | $R_3$ | $R_4$         | output      |
+         | index | transition                            | $$R_1$$      | $$R_2$$         | $$R_3$$ | $$R_4$$         | output      |
          | ----- | ------------------------------------- | ---------- | ------------- | ----- | ------------- | ----------- |
          | 1     | $$A \rightarrow q_0 \rightarrow q_1$$   | $$\epsilon$$ | $$\varnothing$$ | 0     | $$\varnothing$$ | 0           |
          | 2     | $$A \rightarrow q_0 \rightarrow q_2$$   | $$\epsilon$$ | $$\varnothing$$ | 1     | $$\varnothing$$ | 1           |
@@ -208,7 +208,7 @@ categories: Computation Logic DFA RegEx
 
      -   remove $$q_1$$
 
-         | index | transition                            | $R_1$     | $R_2$ | $R_3$      | $R_4$         | output                           |
+         | index | transition                            | $$R_1$$     | $$R_2$$ | $$R_3$$      | $$R_4$$         | output                           |
          | ----- | ------------------------------------- | --------- | ----- | ---------- | ------------- | -------------------------------- |
          | 1     | $$A \rightarrow q_1 \rightarrow B$$     | 0         | 10    | $$\epsilon$$ | $$\varnothing$$ | $$0(10)^*$$                        |
          | 2     | $$A \rightarrow q_1 \rightarrow q_2$$   | 0         | 10    | $$11\cup0$$  | 1             | $$0(10)^*(11\cup0)\cup1$$          |
