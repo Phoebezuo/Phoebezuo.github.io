@@ -123,7 +123,7 @@ categories: Computation Logic DFA RegEx
 
     <img src='https://i.loli.net/2020/12/10/NbqlP1QCXZvtcUD.png' alt='NbqlP1QCXZvtcUD' width="50%"/>
 
-6.  Draw a DFA that recognise $$L = \{w \mid \text{ number of a in w is even or |w| is even}\}$$
+6.  Draw a DFA that recognise $$L = \{w \mid \text{ number of a in w is even or \mid w \mid is even}\}$$
 
     <img src='https://i.loli.net/2020/12/10/yos3J6pQn1kg9Lf.png' alt='yos3J6pQn1kg9Lf' width="50%"/>
 
@@ -218,13 +218,14 @@ categories: Computation Logic DFA RegEx
          <img src='https://i.loli.net/2020/12/10/dSFgNiGsZcLe8AB.png' alt='dSFgNiGsZcLe8AB' width="50%"/>
 
      -   remove $$q_2$$
+     
          $$
          \begin{align}
          R_1 &= 0(10)^*(11\cup0)\cup1 \\
          R_2 &= (00\cup1)(10)^*(11\cup0)\cup01\\
          R_3 &= (00\cup1)(10)^*\cup \epsilon \\
          R_4 &= 0(10)^*\\
-         R_1R_2^*R_3\cup R_4 &= 0(10)^*(11\cup0)\cup1((00\cup1)(10)^*(11\cup0)\cup01)^*(00\cup1)(10)^*\cup \epsilon\cup {0(10)^*
+         R_1R_2^*R_3\cup R_4 &= 0(10)^*(11\cup 0)\cup 1((00\cup 1)(10)^*(11\cup 0)\cup 01)^*(00\cup 1)(10)^*\cup \epsilon \cup {0(10)^*\\
          \end{align}
          $$
 
