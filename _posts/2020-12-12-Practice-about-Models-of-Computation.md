@@ -21,7 +21,6 @@ As shown from the table above, when p is F, q is T, $$(p \rightarrow (p \rightar
 
 Hence, they are not logically equivalent.
 
-
 <img src='https://i.loli.net/2020/12/09/mVhWnyXGUYcaJ9Q.png' alt='mVhWnyXGUYcaJ9Q'/>
 
 | p    | q    | r    | $$((p \rightarrow (q \lor r)) \rightarrow ((p \rightarrow q) \lor (p \rightarrow r)))$$ |
@@ -77,15 +76,15 @@ For the statement 2, if $$F_1 = p$$ and $$F_2 = \neg p$$, they are both individd
 
 <img src='https://i.loli.net/2020/12/09/8ZGU1NtEgHFknQa.png' alt='8ZGU1NtEgHFknQa'/>
 
-The required predicate formula is $$\neg eq(x,y) \land \exist x' \exist y' (child(x,x') \land child(y,y') \land sib(x',y'))$$.
+The required predicate formula is $$\neg eq(x,y) \land \exists x' \exists y' (child(x,x') \land child(y,y') \land sib(x',y'))$$.
 
-The $$sib(x',y')$$ is the formula. $$\neg eq(x',y') \land \exist. z (child(x',z) \land child(y', z))$$
+The $$sib(x',y')$$ is the formula. $$\neg eq(x',y') \land \exists z (child(x',z) \land child(y', z))$$
 
 <img src='https://i.loli.net/2020/12/09/pOsIQPfqytRgWCU.png' alt='pOsIQPfqytRgWCU'/>
 
 If there exists a sentence F and a proof $$F \vdash \bot$$,  then this F is unsatisfiable.
 
-If we can show $$F \vdash \bot$$ then we can deduce (by soundness of ND) that $$F \vDash \bot$$, which means that every assignment that satisfies *F* also satisfies $\bot$. But since no assignment satisfies $\bot$, no assignment satisfies *F*, i.e. *F* is unsatisfiable.
+If we can show $$F \vdash \bot$$ then we can deduce (by soundness of ND) that $$F \vDash \bot$$, which means that every assignment that satisfies *F* also satisfies $$\bot$$. But since no assignment satisfies $$\bot$$, no assignment satisfies *F*, i.e. *F* is unsatisfiable.
 
 <img src='https://i.loli.net/2020/12/09/COXKZo8x7y5uFqS.png' alt='COXKZo8x7y5uFqS'/>
 
@@ -146,9 +145,9 @@ $$
 	\equiv &(\neg \forall x Q(x) \lor \exists z \forall y R(z,y)) \qquad &\text{definition of $\rightarrow$}\\
 	\equiv &(\exists x Q(x) \lor \exists z \forall y R(z,y)) \qquad &\text{Q.Negation} \\
 	\equiv &\exists x(Q(x) \lor \exists z \forall y R(z,y)) \qquad &\text{Q.Extraction} \\
-	\equiv &\exists x(\exist z \forall y R(z,y) \lor Q(x)) \qquad &\text{association} \\
-	\equiv &\exists x \exist z (\forall y R(z,y) \lor Q(x)) \qquad &\text{Q.Extraction} \\
-	\equiv &\exists x \exist z \forall y(R(z,y) \lor Q(x)) \qquad &\text{Q.Extraction} \\
+	\equiv &\exists x(\exists z \forall y R(z,y) \lor Q(x)) \qquad &\text{association} \\
+	\equiv &\exists x \exists z (\forall y R(z,y) \lor Q(x)) \qquad &\text{Q.Extraction} \\
+	\equiv &\exists x \exists z \forall y(R(z,y) \lor Q(x)) \qquad &\text{Q.Extraction} \\
 \end{align}
 $$
 
@@ -166,8 +165,6 @@ $$
 | 8    | 2           | ∃x(∃yP(x,y)∧Q(x,x)) | Existential Introduction | 7          |
 | 9    | 1           | ∃x(∃yP(x,y)∧Q(x,x)) | Existential Elimination  | 1, 2, 8    |
 
-<p style="page-break-after: always;"></p >
-
 # Question 3
 
 <img src='https://i.loli.net/2020/12/09/L3xfAFGOS8hsy4a.png' alt='L3xfAFGOS8hsy4a'/>
@@ -182,7 +179,7 @@ This DFA is correct as whenever there is contiguous a or b, it will goes to the 
 
 <img src='https://i.loli.net/2020/12/09/xMlZwpieJIKdCmr.png' alt='xMlZwpieJIKdCmr'/>
 
-Only epsilon-closure of $q_2$ has $q_2, q_4$, epsilon-closure of other states are themselves.
+Only epsilon-closure of $$q_2$$ has $$q_2, q_4$$, epsilon-closure of other states are themselves.
 
 | state     | repr | a       | repr(a) | b         | repr(b) |
 | --------- | ---- | ------- | ------- | --------- | ------- |
@@ -195,7 +192,7 @@ Only epsilon-closure of $q_2$ has $q_2, q_4$, epsilon-closure of other states ar
 | `0,1,2,4` | `G`  | `0,3,4` | `F`     | `0,1,2,4` | `G`     |
 | `0,4`     | `H`  | `0,4`   | `H`     | `0,1,4`   | `E`     |
 
-Hence,  the equivaent DFA M' = (Q', $\Sigma$, $\delta$, A, F'), where Q' = {A, B, C, D, E, F, G, H} and F' = {E, F, G, H}, with transition function shown below.
+Hence,  the equivaent DFA M' = (Q', $$\Sigma$$, $$\delta$$, A, F'), where Q' = {A, B, C, D, E, F, G, H} and F' = {E, F, G, H}, with transition function shown below.
 
 | state | a    | b    |
 | ----- | ---- | ---- |
@@ -210,53 +207,51 @@ Hence,  the equivaent DFA M' = (Q', $\Sigma$, $\delta$, A, F'), where Q' = {A, B
 
 <img src='https://i.loli.net/2020/12/09/wdzPBa1iYgfZpjQ.png' alt='wdzPBa1iYgfZpjQ'/>
 
-There exits a NFA M = $(\Sigma, Q, q_0, F, \delta)$ that recognises the paths of G, where:
+There exits a NFA M = $$(\Sigma, Q, q_0, F, \delta)$$ that recognises the paths of G, where:
 
--   Introduce alphabet $\Sigma = V$
--   Introduce state $q_i \in Q \cup \{q_0, q_{error}\}$, for each vertice $v_i \in V$
--   Introduce start state $q_0$.
--   Introduce final state $q_i \in F$, for every vertice with label $v_k$ in sequence of vertices.
--   Introduce transition function $\delta(w, v) =$
-    -   $v$, if $(w,v) \in E$
-    -   $v_0$, if $w = q_0$
-    -   $q_{error}$, otherwise
+-   Introduce alphabet $$\Sigma = V$$
+-   Introduce state $$q_i \in Q \cup \{q_0, q_{error}\}$$, for each vertice $$v_i \in V$$
+-   Introduce start state $$q_0$$.
+-   Introduce final state $$q_i \in F$$, for every vertice with label $$v_k$$ in sequence of vertices.
+-   Introduce transition function $$\delta(w, v) =$$
+    -   $$v$$, if $$(w,v) \in E$$
+    -   $$v_0$$, if $$w = q_0$$
+    -   $$q_{error}$$, otherwise
 
-Then convert this NFA M to GNFA M' and repeatly eliminate intermediate state $q_{elim}$ between $q_i$ and $q_j$, using $(R_1R_2^*R_3 \cup R_4)$. This will eventually gives us a regular expression. Hence set of paths of G is a regular language over alphabet V.
+Then convert this NFA M to GNFA M' and repeatly eliminate intermediate state $$q_{elim}$$ between $$q_i$$ and $$q_j$$, using $$(R_1R_2^*R_3 \cup R_4)$$. This will eventually gives us a regular expression. Hence set of paths of G is a regular language over alphabet V.
 
 <img src='https://i.loli.net/2020/12/09/DK3G5eAPaJrcWlY.png' alt='DK3G5eAPaJrcWlY'/>
 
-$ neg(u)$ is also regular as it can be constructed by
+$$ neg(u)$$ is also regular as it can be constructed by
 
 -   replacing every terminal 0 in original with 1 and vice versa.
--   replace $\delta(v, 0) = w$ in original to $\delta(v,1) = w$ and vice versa.
+-   replace $$\delta(v, 0) = w$$ in original to $$\delta(v,1) = w$$ and vice versa.
 
-So the same sequence of DFA also accepts $neg(u)$, and vice versa.
+So the same sequence of DFA also accepts $$neg(u)$$, and vice versa.
 
 <img src='https://i.loli.net/2020/12/09/JcySZPXLzpf5sN4.png' alt='JcySZPXLzpf5sN4'/>
 
-This is because mis-matching parentheses is not reuglar, which can also display as $L = \{p^im^j: i \geq j\}$, because p can represent left parenthese and m can represent right parenthese.
+This is because mis-matching parentheses is not reuglar, which can also display as $$L = \{p^im^j: i \geq j\}$$, because p can represent left parenthese and m can represent right parenthese.
 
--   Assume there is a DFA $M$ that recognises $L = \{p^im^j: i \geq j\}$.
+-   Assume there is a DFA $$M$$ that recognises $$L = \{p^im^j: i \geq j\}$$.
 
--   Write $f(w)$ for the state that M reaches after reading input $w$.
+-   Write $$f(w)$$ for the state that M reaches after reading input $$w$$.
 
--   By Pigeonhole Principle, there exists $x < y$ such that $f(p^x) = f(p^y)$.
+-   By Pigeonhole Principle, there exists $$x < y$$ such that $$f(p^x) = f(p^y)$$.
 
--   But $p^ym^y \in L$ means that the path from state $f(p^y)$ labeled $m^y$ ends in a final state.
+-   But $$p^ym^y \in L$$ means that the path from state $$f(p^y)$$ labeled $$m^y$$ ends in a final state.
 
--   So there is a path from the initial state to a final state labeled $p^xm^y$. so $p^xm^y$ is accepted by M.
+-   So there is a path from the initial state to a final state labeled $$p^xm^y$$. so $$p^xm^y$$ is accepted by M.
 
--   But since $x \not \geq y$ (in fact $x < y$), so M accepts a word not in $L$
+-   But since $$x \not \geq y$$ (in fact $$x < y$$), so M accepts a word not in $$L$$
 
--   This contradicts the assumption that M recognises $L$, thus $L$ is not regular.
-
-<p style="page-break-after: always;"></p >
+-   This contradicts the assumption that M recognises $$L$$, thus $$L$$ is not regular.
 
 # Question 4
 
 <img src='https://i.loli.net/2020/12/09/JKGYqWMwPmXOUEa.png' alt='JKGYqWMwPmXOUEa'/>
 
-Language generated is $L = \{a,b\}^*, where |L| \geq 2$.
+Language generated is $$L = \{a,b\}^*, where |L| \geq 2$$.
 
 This language is ambiguous as it has string ababaa which has two leftmost derivation.
 $$
@@ -315,11 +310,11 @@ Convert it into CNF
     $$
 
 
-    | S, A, $A_1$ |          |      |       |
+    | S, A, $$A_1$$ |          |      |       |
     | ----------- | -------- | ---- | ----- |
     | A           | S        |      |       |
-    | A           | S, $A_1$ | A    |       |
-    | $N_b$       | A        | A    | $N_b$ |
+    | A           | S, $$A_1$$ | A    |       |
+    | $$N_b$$       | A        | A    | $$N_b$$ |
     | b           | a        | a    | b     |
 
 So, baab is accepted.
@@ -328,31 +323,31 @@ So, baab is accepted.
 
 For every regular language, there is an ambiguous context-free grammar that generates it.
 
-Let L be a regular language. Then there exists a DFA *M* = $(\Sigma, Q, q_0, F, \delta)$ that recognises it. We construct a CFG from *M* as follows:
+Let L be a regular language. Then there exists a DFA *M* = $$(\Sigma, Q, q_0, F, \delta)$$ that recognises it. We construct a CFG from *M* as follows:
 
--   Introduce a variable $V_i \in V$, for each state $q_i \in Q$
--   Introduce rule $V_i \rightarrow cV_j$, for each $\delta(q_i, c) = q_j$
--   Introduce rule $V_i \rightarrow \epsilon$, for each $q_i \in F$
--   Let $V_i$ be the start variable, where $q_i$ is the start state of the DFA.
+-   Introduce a variable $$V_i \in V$$, for each state $$q_i \in Q$$
+-   Introduce rule $$V_i \rightarrow cV_j$$, for each $$\delta(q_i, c) = q_j$$
+-   Introduce rule $$V_i \rightarrow \epsilon$$, for each $$q_i \in F$$
+-   Let $V_i$ be the start variable, where $$q_i$$ is the start state of the DFA.
 
 First, this grammar is unambiguous. This is becuase
 
--   DFA has one transition from each state for each terminal, e.g. $V_i \rightarrow \epsilon$
--   Each rule generates at most one variable, e.g. $V_i \rightarrow cV_j$
+-   DFA has one transition from each state for each terminal, e.g. $$V_i \rightarrow \epsilon$$
+-   Each rule generates at most one variable, e.g. $$V_i \rightarrow cV_j$$
 -   Inductively, all parse trees generated by this grammar are binary trees where the left child is always a terminal (except the final leaf $\epsilon$)
 -   There is never more than one way to generate the next terminal
 
 Second, this grammar generates L.This is because
 
 -   If string S is in the language, then there is a path in DFA from the start state to a final state
--   The path maps directly to a derivation, i.e. each transition on the path corresponds to a usage of a rule from this grammar, generating the input symbol followed by the variable corresponding to the next state (i.e. $\delta(q_i,c) = q_j$)
--   Because the path ends in a final state, the remaining variable has $V_i \rightarrow \epsilon$ rule
+-   The path maps directly to a derivation, i.e. each transition on the path corresponds to a usage of a rule from this grammar, generating the input symbol followed by the variable corresponding to the next state (i.e. $$\delta(q_i,c) = q_j$$)
+-   Because the path ends in a final state, the remaining variable has $$V_i \rightarrow \epsilon$$ rule
 
 <img src='https://i.loli.net/2020/12/09/hxfw4iAgoCjp27T.png' alt='hxfw4iAgoCjp27T'/>
 
-$L = \{u\#v: u,v \in \{a,b\}^*, |u| = |v|, reverse(u_ \neq v \}$
+$$L = \{u\#v: u,v \in \{a,b\}^*, |u| = |v|, reverse(u_ \neq v \}$$
 
-The gramma $G = (V, \Sigma, R, S)$, where $V = \{S, T\}$, $\Sigma = \{a,b\}$ and R is
+The gramma $$G = (V, \Sigma, R, S)$$, where $$V = \{S, T\}$$, $$\Sigma = \{a,b\}$$ and R is
 $$
 \begin{align}
 	&S \rightarrow aSa | bSb | aSb | bSa | aTb | bTa \\
@@ -361,15 +356,15 @@ $$
 $$
 First,  we show that G only generates strings in L.
 
--   The rules $S \rightarrow aSa | bSb | aSb | bSa | aTb | bTa$, which rewrite S until S is removed from the intermediate string of the form $uaTbv$ or $ubTav$, where $|u| = |v|$.
--   The rules $T \rightarrow aTa | aTb | bTa | bTb | \#$, will generate the form $x\#y$, where $|x| = |y|$.
+-   The rules $$S \rightarrow aSa | bSb | aSb | bSa | aTb | bTa$$, which rewrite S until S is removed from the intermediate string of the form $uaTbv$ or $$ubTav$$, where $$|u| = |v|$$.
+-   The rules $$T \rightarrow aTa | aTb | bTa | bTb | \#$$, will generate the form $$x\#y$$, where $$|x| = |y|$$.
 
-Applying those rules in any order we get the derivation is strings S of the form $uax\#ybv$ and $ubx\#yav$, where $|u| = |v|$ and $|x| = |y|$, where $S \in L$
+Applying those rules in any order we get the derivation is strings S of the form $$uax\#ybv$$ and $$ubx\#yav$$, where $$|u| = |v|$$ and $$|x| = |y|$$, where $$S \in L$$
 
 Second, we show that G generates all strings in L.
 
--   A string s is in L if and only if (i.e. exactly when) it can be written as $uax\#ybv$ or $ubx\#yav$ for some u, v, x, y with $|u| =|v|$ and $|x| = |y|$ (to see this simply let $uk$ be the shortest preﬁx of s such that
-    -   $k \in \{a,b\}$ and
+-   A string s is in L if and only if (i.e. exactly when) it can be written as $$uax\#ybv$$ or $$ubx\#yav$$ for some u, v, x, y with $$|u| =|v|$$ and $$|x| = |y|$$ (to see this simply let $uk$ be the shortest preﬁx of s such that
+    -   $$k \in \{a,b\}$$ and
     -   the reverse of uk is not a suﬃx of s.
 
 -   But we have seen that each such string is generated by G.
@@ -378,7 +373,7 @@ Second, we show that G generates all strings in L.
 
 <img src='https://i.loli.net/2020/12/09/Gm9CbgkI6lporTL.png' alt='Gm9CbgkI6lporTL'/>
 
-Yes, every finite language is decidable. Because finite language L is regular language. There exists a string w, if $w \in L$, DFA will accepts w; if $w \not \in L$, DFA will rejects w.
+Yes, every finite language is decidable. Because finite language L is regular language. There exists a string w, if $$w \in L$$, DFA will accepts w; if $$w \not \in L$$, DFA will rejects w.
 
 <img src='https://i.loli.net/2020/12/09/BZbSzajchQq1wFW.png' alt='BZbSzajchQq1wFW'/>
 
@@ -391,12 +386,12 @@ Yes, context-free grammars are Turning decidable. Since context-free grammar can
 >   If true, you should explain why (e.g. give a construction of a TM that recognises the intersection)
 >   If false you should explain why (e.g. give examples that show it is false).
 
-Yes, intersection of a recognisable language and a decidable language is recognisable. Let $L_1 = \Sigma^*$ be language that is **decided**  by TMs $M_1$ and $L_2 = L_{HALT}$ be language that is **recognised** by TMs $M_2$. Then $L_1 \cap L_2 = L_2$, which is not decidable, but recognisable.
+Yes, intersection of a recognisable language and a decidable language is recognisable. Let $$L_1 = \Sigma^*$$ be language that is **decided**  by TMs $$M_1$$ and $$L_2 = L_{HALT}$$ be language that is **recognised** by TMs $$M_2$$. Then $$L_1 \cap L_2 = L_2$$, which is not decidable, but recognisable.
 
 Therefore on input x:
 
-1.  Run $M_1$ and $M_2$ in parallel on x.
-2.  Accept. if both $M_1$ and $M_2$ accepts.
+1.  Run $$M_1$$ and $$M_2$$ in parallel on x.
+2.  Accept. if both $$M_1$$ and $$M_2$$ accepts.
 
 <img src='https://i.loli.net/2020/12/09/6y9LJ1cMtxbovfP.png' alt='6y9LJ1cMtxbovfP'/>
 $$
