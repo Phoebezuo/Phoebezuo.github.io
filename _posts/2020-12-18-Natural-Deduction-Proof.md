@@ -254,26 +254,133 @@ categories: Logic Natural Deduction
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg \forall x F(x) \vdash \exists x \neg F(x)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \neg  \forall xF(x)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg  \exists x( \neg F(x))$$ | Assump. I |  |
+| 3 | 3 | $$ \neg F(c)$$ | Assump. I |  |
+| 4 | 3 | $$ \exists x( \neg F(x))$$ | $$ \exists $$I | 3 |
+| 5 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,4 |
+| 6 | 2 | $$F(c)$$ | RA | 3,5 |
+| 7 | 2 | $$ \forall xF(x)$$ | $$ \forall $$I | 6 |
+| 8 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,7 |
+| 9 | 1 | $$ \exists x( \neg F(x))$$ | RA | 2,8 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x \neg F(x) \vdash \neg \forall x F(x)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \exists x( \neg F(x))$$ | Assump. I |  |
+| 2 | 2 | $$ \forall xF(x)$$ | Assump. I |  |
+| 3 | 2 | $$F(c)$$ | $$ \forall $$E | 2 |
+| 4 | 4 | $$ \neg F(c)$$ | Assump. I |  |
+| 5 | 2,4 | $$ \bot $$ | $$ \neg $$E | 3,4 |
+| 6 | 1,2 | $$ \bot $$ | $$ \exists $$E | 1,4,5 |
+| 7 | 1 | $$ \neg  \forall xF(x)$$ | $$ \neg $$I | 2,6 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg \exists x F(x) \vdash \forall x \neg F(x)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \neg  \exists xF(x)$$ | Assump. I |  |
+| 2 | 2 | $$F(c)$$ | Assump. I |  |
+| 3 | 2 | $$ \exists xF(x)$$ | $$ \exists $$I | 2 |
+| 4 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,3 |
+| 5 | 1 | $$ \neg F(c)$$ | $$ \neg $$I | 2,4 |
+| 6 | 1 | $$ \forall x( \neg F(x))$$ | $$ \forall $$I | 5 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x \neg F(x) \vdash \neg \exists x F(x)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \forall x( \neg F(x))$$ | Assump. I |  |
+| 2 | 2 | $$ \exists xF(x)$$ | Assump. I |  |
+| 3 | 3 | $$F(c)$$ | Assump. I |  |
+| 4 | 1 | $$ \neg F(c)$$ | $$ \forall $$E | 1 |
+| 5 | 1,3 | $$ \bot $$ | $$ \neg $$E | 3,4 |
+| 6 | 1,2 | $$ \bot $$ | $$ \exists $$E | 2,3,5 |
+| 7 | 1 | $$ \neg  \exists xF(x)$$ | $$ \neg $$I | 2,6 |
 
 ## Qualifier Unification
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x F(x) \land \forall x G(x)) \vdash \forall x (F(x) \land G(x))$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$( \forall xF(x) \land  \forall xG(x))$$ | Assump. I |  |
+| 2 | 1 | $$ \forall xF(x)$$ | $$ \land $$E | 1 |
+| 3 | 1 | $$F(c)$$ | $$ \forall $$E | 2 |
+| 4 | 1 | $$ \forall xG(x)$$ | $$ \land $$E | 1 |
+| 5 | 1 | $$G(c)$$ | $$ \forall $$E | 4 |
+| 6 | 1 | $$(F(c) \land G(c))$$ | $$ \land $$I | 3,5 |
+| 7 | 1 | $$ \forall x(F(x) \land G(x))$$ | $$ \forall $$I | 6 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x (F(x) \land G(x)) \vdash (\forall x F(x) \land \forall x G(x))$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \forall x(F(x) \land G(x))$$ | Assump. I |  |
+| 2 | 1 | $$(F(c) \land G(c))$$ | $$ \forall $$E | 1 |
+| 3 | 1 | $$F(c)$$ | $$ \land $$E | 2 |
+| 4 | 1 | $$ \forall xF(x)$$ | $$ \forall $$I | 3 |
+| 5 | 1 | $$G(c)$$ | $$ \land $$E | 2 |
+| 6 | 1 | $$ \forall xG(x)$$ | $$ \forall $$I | 5 |
+| 7 | 1 | $$( \forall xF(x) \land  \forall xG(x))$$ | $$ \land $$I | 4,6 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\exists x F(x) \lor \exists x G(x)) \vdash \exists x (F(x) \lor G(x))$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$( \exists xF(x) \lor  \exists xG(x))$$ | Assump. I |  |
+| 2 | 2 | $$ \exists xF(x)$$ | Assump. I |  |
+| 3 | 3 | $$F(c)$$ | Assump. I |  |
+| 4 | 3 | $$(F(c) \lor G(c))$$ | $$ \lor $$I | 3 |
+| 5 | 3 | $$ \exists x(F(x) \lor G(x))$$ | $$ \exists $$I | 4 |
+| 6 | 2 | $$ \exists x(F(x) \lor G(x))$$ | $$ \exists $$E | 2,3,5 |
+| 7 | 7 | $$ \exists xG(x)$$ | Assump. I |  |
+| 8 | 8 | $$G(c)$$ | Assump. I |  |
+| 9 | 8 | $$(F(c) \lor G(c))$$ | $$ \lor $$I | 8 |
+| 10 | 8 | $$ \exists x(F(x) \lor G(x))$$ | $$ \exists $$I | 9 |
+| 11 | 7 | $$ \exists x(F(x) \lor G(x))$$ | $$ \exists $$E | 7,8,10 |
+| 12 | 1 | $$ \exists x(F(x) \lor G(x))$$ | $$ \lor $$E | 1,2,6,7,11 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x (F(x) \lor G(x)) \vdash (\exists x F(x) \lor \exists x G(x))$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \exists x(F(x) \lor G(x))$$ | Assump. I |  |
+| 2 | 2 | $$(F(c) \lor G(c))$$ | Assump. I |  |
+| 3 | 3 | $$F(c)$$ | Assump. I |  |
+| 4 | 3 | $$ \exists xF(x)$$ | $$ \exists $$I | 3 |
+| 5 | 3 | $$( \exists xF(x) \lor  \exists xG(x))$$ | $$ \lor $$I | 4 |
+| 6 | 6 | $$G(c)$$ | Assump. I |  |
+| 7 | 6 | $$ \exists xG(x)$$ | $$ \exists $$I | 6 |
+| 8 | 6 | $$( \exists xF(x) \lor  \exists xG(x))$$ | $$ \lor $$I | 7 |
+| 9 | 2 | $$( \exists xF(x) \lor  \exists xG(x))$$ | $$ \lor $$E | 2,3,5,6,8 |
+| 10 | 1 | $$( \exists xF(x) \lor  \exists xG(x))$$ | $$ \exists $$E | 1,2,9 |
 
 ## Qualifier Transposition
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\forall x \forall y F(x,y) \vdash \forall y \forall x F(x,y)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \forall x \forall yF(x,y)$$ | Assump. I |  |
+| 2 | 1 | $$ \forall yF(c,y)$$ | $$ \forall $$E | 1 |
+| 3 | 1 | $$F(c,d)$$ | $$ \forall $$E | 2 |
+| 4 | 1 | $$ \forall xF(x,d)$$ | $$ \forall $$I | 3 |
+| 5 | 1 | $$ \forall y \forall xF(x,y)$$ | $$ \forall $$I | 4 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\exists x \exists y F(x,y) \vdash \exists y \exists x F(x,y)$$</span>
 
-**Notes:** PDF version can be found at [here](https://github.com/Phoebezuo/Natural-Deduction-Proof/blob/main/Derived_Rules_of_Natural_Deduction_Proof.pdf)
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \exists x \exists yF(x,y)$$ | Assump. I |  |
+| 2 | 2 | $$ \exists yF(c,y)$$ | Assump. I |  |
+| 3 | 3 | $$F(c,d)$$ | Assump. I |  |
+| 4 | 3 | $$ \exists xF(x,d)$$ | $$ \exists $$I | 3 |
+| 5 | 3 | $$ \exists y \exists xF(x,y)$$ | $$ \exists $$I | 4 |
+| 6 | 2 | $$ \exists y \exists xF(x,y)$$ | $$ \exists $$E | 2,3,5 |
+| 7 | 1 | $$ \exists y \exists xF(x,y)$$ | $$ \exists $$E | 1,2,6 |
+
+> PDF version can be found at [here](https://github.com/Phoebezuo/Natural-Deduction-Proof/blob/main/Derived_Rules_of_Natural_Deduction_Proof.pdf)
