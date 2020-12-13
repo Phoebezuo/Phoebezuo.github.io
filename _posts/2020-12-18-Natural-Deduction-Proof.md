@@ -217,7 +217,7 @@ categories: Logic Natural Deduction
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
-| 1 | 1 | $$(( \neg A) \lor ( \neg B))$$ | Assump. I |  |
+| 1 | 1 | $$( \neg A \lor  \neg B)$$ | Assump. I |  |
 | 2 | 2 | $$ \neg A$$ | Assump. I |  |
 | 3 | 3 | $$ \neg B$$ | Assump. I |  |
 | 4 | 4 | $$(A \land B)$$ | Assump. I |  |
@@ -234,31 +234,31 @@ categories: Logic Natural Deduction
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
 | 1 | 1 | $$ \neg (A \land B)$$ | Assump. I |  |
-| 2 | 2 | $$ \neg (( \neg A) \lor ( \neg B))$$ | Assump. I |  |
+| 2 | 2 | $$ \neg ( \neg A \lor \neg B)$$ | Assump. I |  |
 | 3 | 3 | $$ \neg A$$ | Assump. I |  |
-| 4 | 3 | $$(( \neg A) \lor ( \neg B))$$ | $$ \lor $$I | 3 |
+| 4 | 3 | $$( \neg A \lor  \neg B)$$ | $$ \lor $$I | 3 |
 | 5 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,4 |
-| 6 | 2 | $$ \neg ( \neg A)$$ | $$ \neg $$I | 3,5 |
+| 6 | 2 | $$ \neg \neg A$$ | $$ \neg $$I | 3,5 |
 | 7 | 7 | $$ \neg B$$ | Assump. I |  |
-| 8 | 7 | $$(( \neg A) \lor ( \neg B))$$ | $$ \lor $$I | 7 |
+| 8 | 7 | $$( \neg A \lor \neg B)$$ | $$ \lor $$I | 7 |
 | 9 | 2,7 | $$ \bot $$ | $$ \neg $$E | 2,8 |
-| 10 | 2 | $$ \neg ( \neg B)$$ | $$ \neg $$I | 7,9 |
-| 11 | 2 | $$(( \neg ( \neg A)) \land ( \neg ( \neg B)))$$ | $$ \land $$I | 6,10 |
-| 12 | 2 | $$ \neg ( \neg A)$$ | $$ \land $$E | 11 |
+| 10 | 2 | $$ \neg  \neg B$$ | $$ \neg $$I | 7,9 |
+| 11 | 2 | $$(\neg \neg A) \land  \neg \neg B)$$ | $$ \land $$I | 6,10 |
+| 12 | 2 | $$ \neg \neg A$$ | $$ \land $$E | 11 |
 | 13 | 2,3 | $$ \bot $$ | $$ \neg $$E | 3,12 |
 | 14 | 2 | $$A$$ | RA | 3,13 |
-| 15 | 2 | $$ \neg ( \neg B)$$ | $$ \land $$E | 11 |
+| 15 | 2 | $$ \neg  \neg B$$ | $$ \land $$E | 11 |
 | 16 | 2,7 | $$ \bot $$ | $$ \neg $$E | 7,15 |
 | 17 | 2 | $$B$$ | RA | 7,16 |
 | 18 | 2 | $$(A \land B)$$ | $$ \land $$I | 14,17 |
 | 19 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,18 |
-| 20 | 1 | $$(( \neg A) \lor ( \neg B))$$ | RA | 2,19 |
+| 20 | 1 | $$( \neg A \lor \neg B)$$ | RA | 2,19 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg A\land \neg B) \vdash \neg (A\lor B)$$</span>
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
-| 1 | 1 | $$(( \neg A) \land ( \neg B))$$ | Assump. I |  |
+| 1 | 1 | $$( \neg A \land  \neg B)$$ | Assump. I |  |
 | 2 | 1 | $$ \neg A$$ | $$ \land $$E | 1 |
 | 3 | 1 | $$ \neg B$$ | $$ \land $$E | 1 |
 | 4 | 4 | $$(A \lor B)$$ | Assump. I |  |
@@ -286,7 +286,7 @@ categories: Logic Natural Deduction
 | 7 | 6 | $$(A \lor B)$$ | $$ \lor $$I | 6 |
 | 8 | 1,6 | $$ \bot $$ | $$ \neg $$E | 1,7 |
 | 9 | 1 | $$ \neg B$$ | $$ \neg $$I | 6,8 |
-| 10 | 1 | $$(( \neg A) \land ( \neg B))$$ | $$ \land $$I | 5,9 |
+| 10 | 1 | $$( \neg A \land  \neg B)$$ | $$ \land $$I | 5,9 |
 
 ## Double Negation
 
@@ -294,7 +294,7 @@ categories: Logic Natural Deduction
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
-| 1 | 1 | $$ \neg ( \neg A)$$ | Assump. I |  |
+| 1 | 1 | $$ \neg  \neg A$$ | Assump. I |  |
 | 2 | 2 | $$ \neg A$$ | Assump. I |  |
 | 3 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,2 |
 | 4 | 1 | $$A$$ | RA | 2,3 |
@@ -306,7 +306,7 @@ categories: Logic Natural Deduction
 | 1 | 1 | $$A$$ | Assump. I |  |
 | 2 | 2 | $$ \neg A$$ | Assump. I |  |
 | 3 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,2 |
-| 4 | 1 | $$ \neg ( \neg A)$$ | $$ \neg $$I | 2,3 |
+| 4 | 1 | $$ \neg  \neg A$$ | $$ \neg $$I | 2,3 |
 
 ## Implication Definition
 
@@ -314,7 +314,7 @@ categories: Logic Natural Deduction
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
-| 1 | 1 | $$(( \neg A) \lor B)$$ | Assump. I |  |
+| 1 | 1 | $$( \neg A \lor B)$$ | Assump. I |  |
 | 2 | 2 | $$ \neg A$$ | Assump. I |  |
 | 3 | 3 | $$A$$ | Assump. I |  |
 | 4 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,3 |
@@ -331,15 +331,15 @@ categories: Logic Natural Deduction
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
 | 1 | 1 | $$(A \rightarrow B)$$ | Assump. I |  |
-| 2 | 2 | $$ \neg (( \neg A) \lor B)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg (\neg A \lor B)$$ | Assump. I |  |
 | 3 | 3 | $$A$$ | Assump. I |  |
 | 4 | 1,3 | $$B$$ | $$ \rightarrow $$E | 1,3 |
-| 5 | 1,3 | $$(( \neg A) \lor B)$$ | $$ \lor $$I | 4 |
+| 5 | 1,3 | $$( \neg A \lor B)$$ | $$ \lor $$I | 4 |
 | 6 | 1,2,3 | $$ \bot $$ | $$ \neg $$E | 2,5 |
 | 7 | 1,2 | $$ \neg A$$ | $$ \neg $$I | 3,6 |
-| 8 | 1,2 | $$(( \neg A) \lor B)$$ | $$ \lor $$I | 7 |
+| 8 | 1,2 | $$( \neg A \lor B)$$ | $$ \lor $$I | 7 |
 | 9 | 1,2 | $$ \bot $$ | $$ \neg $$E | 2,8 |
-| 10 | 1 | $$(( \neg A) \lor B)$$ | RA | 2,9 |
+| 10 | 1 | $$( \neg A \lor B)$$ | RA | 2,9 |
 
 ## Transposition
 
@@ -353,17 +353,17 @@ categories: Logic Natural Deduction
 | 4 | 1,3 | $$B$$ | $$ \rightarrow $$E | 1,3 |
 | 5 | 1,2,3 | $$ \bot $$ | $$ \neg $$E | 2,4 |
 | 6 | 1,2 | $$ \neg A$$ | $$ \neg $$I | 3,5 |
-| 7 | 1 | $$(( \neg B) \rightarrow ( \neg A))$$ | $$ \rightarrow $$I | 2,6 |
+| 7 | 1 | $$( \neg B \rightarrow  \neg A)$$ | $$ \rightarrow $$I | 2,6 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg B \rightarrow \neg A) \vdash (A \rightarrow B)$$</span>
 
 | Line | Assumptions | Formula     | Justification            | References     |
 | ---- | ----------- | ----------- | ------------------------ | -------------- |
-| 1 | 1 | $$(( \neg B) \rightarrow ( \neg A))$$ | Assump. I |  |
+| 1 | 1 | $$( \neg B \rightarrow  \neg A)$$ | Assump. I |  |
 | 2 | 2 | $$A$$ | Assump. I |  |
 | 3 | 3 | $$ \neg A$$ | Assump. I |  |
 | 4 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,3 |
-| 5 | 2 | $$ \neg ( \neg A)$$ | $$ \neg $$I | 3,4 |
+| 5 | 2 | $$ \neg  \neg A$$ | $$ \neg $$I | 3,4 |
 | 6 | 6 | $$ \neg B$$ | Assump. I |  |
 | 7 | 1,6 | $$ \neg A$$ | $$ \rightarrow $$E | 1,6 |
 | 8 | 1,2,6 | $$ \bot $$ | $$ \neg $$E | 5,7 |
