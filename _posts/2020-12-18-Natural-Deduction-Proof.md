@@ -88,55 +88,313 @@ categories: Logic Natural Deduction
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A\land (B\land C)) \vdash ((A\land B)\land C)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \land (B \land C))$$ | Assump. I |  |
+| 2 | 1 | $$A$$ | $$ \land $$E | 1 |
+| 3 | 1 | $$(B \land C)$$ | $$ \land $$E | 1 |
+| 4 | 1 | $$B$$ | $$ \land $$E | 3 |
+| 5 | 1 | $$C$$ | $$ \land $$E | 3 |
+| 6 | 1 | $$(A \land B)$$ | $$ \land $$I | 2,4 |
+| 7 | 1 | $$((A \land B) \land C)$$ | $$ \land $$I | 5,6 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A\land B)\land C) \vdash (A\land (B\land C))$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$((A \land B) \land C)$$ | Assump. I |  |
+| 2 | 1 | $$(A \land B)$$ | $$ \land $$E | 1 |
+| 3 | 1 | $$A$$ | $$ \land $$E | 2 |
+| 4 | 1 | $$B$$ | $$ \land $$E | 2 |
+| 5 | 1 | $$C$$ | $$ \land $$E | 1 |
+| 6 | 1 | $$(B \land C)$$ | $$ \land $$I | 4,5 |
+| 7 | 1 | $$(A \land (B \land C))$$ | $$ \land $$I | 3,6 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A\lor (B\lor C)) \vdash ((A\lor B)\lor C)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \lor (B \lor C))$$ | Assump. I |  |
+| 2 | 2 | $$A$$ | Assump. I |  |
+| 3 | 2 | $$(A \lor B)$$ | $$ \lor $$I | 2 |
+| 4 | 2 | $$((A \lor B) \lor C)$$ | $$ \lor $$I | 3 |
+| 5 | 5 | $$(B \lor C)$$ | Assump. I |  |
+| 6 | 6 | $$B$$ | Assump. I |  |
+| 7 | 7 | $$C$$ | Assump. I |  |
+| 8 | 6 | $$(A \lor B)$$ | $$ \lor $$I | 6 |
+| 9 | 6 | $$((A \lor B) \lor C)$$ | $$ \lor $$I | 8 |
+| 10 | 7 | $$((A \lor B) \lor C)$$ | $$ \lor $$I | 7 |
+| 11 | 5 | $$((A \lor B) \lor C)$$ | $$ \lor $$E | 5,6,7,9,10 |
+| 12 | 1 | $$((A \lor B) \lor C)$$ | $$ \lor $$E | 1,2,4,5,11 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A\lor B)\lor C) \vdash (A\lor (B\lor C))$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$((A \lor B) \lor C)$$ | Assump. I |  |
+| 2 | 2 | $$(A \lor B)$$ | Assump. I |  |
+| 3 | 3 | $$A$$ | Assump. I |  |
+| 4 | 3 | $$(A \lor (B \lor C))$$ | $$ \lor $$I | 3 |
+| 5 | 5 | $$B$$ | Assump. I |  |
+| 6 | 5 | $$(B \lor C)$$ | $$ \lor $$I | 5 |
+| 7 | 5 | $$(A \lor (B \lor C))$$ | $$ \lor $$I | 6 |
+| 8 | 2 | $$(A \lor (B \lor C))$$ | $$ \lor $$E | 2,3,4,5,7 |
+| 9 | 9 | $$C$$ | Assump. I |  |
+| 10 | 9 | $$(B \lor C)$$ | $$ \lor $$I | 9 |
+| 11 | 9 | $$(A \lor (B \lor C))$$ | $$ \lor $$I | 10 |
+| 12 | 1 | $$(A \lor (B \lor C))$$ | $$ \lor $$E | 1,2,8,9,11 |
 
 ## Distributive
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \land (B \lor C)) \vdash ((A \land B) \lor (A \land C))$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \land (B \lor C))$$ | Assump. I |  |
+| 2 | 1 | $$A$$ | $$ \land $$E | 1 |
+| 3 | 1 | $$(B \lor C)$$ | $$ \land $$E | 1 |
+| 4 | 4 | $$B$$ | Assump. I |  |
+| 5 | 1,4 | $$(A \land B)$$ | $$ \land $$I | 2,4 |
+| 6 | 1,4 | $$((A \land B) \lor (A \land C))$$ | $$ \lor $$I | 5 |
+| 7 | 7 | $$C$$ | Assump. I |  |
+| 8 | 1,7 | $$(A \land C)$$ | $$ \land $$I | 2,7 |
+| 9 | 1,7 | $$((A \land B) \lor (A \land C))$$ | $$ \lor $$I | 8 |
+| 10 | 1 | $$((A \land B) \lor (A \land C))$$ | $$ \lor $$E | 3,4,6,7,9 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \land B) \lor (A \land C)) \vdash (A \land (B \lor C))$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$((A \land B) \lor (A \land C))$$ | Assump. I |  |
+| 2 | 2 | $$(A \land B)$$ | Assump. I |  |
+| 3 | 2 | $$A$$ | $$ \land $$E | 2 |
+| 4 | 2 | $$B$$ | $$ \land $$E | 2 |
+| 5 | 2 | $$(B \lor C)$$ | $$ \lor $$I | 4 |
+| 6 | 2 | $$(A \land (B \lor C))$$ | $$ \land $$I | 3,5 |
+| 7 | 7 | $$(A \land C)$$ | Assump. I |  |
+| 8 | 7 | $$A$$ | $$ \land $$E | 7 |
+| 9 | 7 | $$C$$ | $$ \land $$E | 7 |
+| 10 | 7 | $$(B \lor C)$$ | $$ \lor $$I | 9 |
+| 11 | 7 | $$(A \land (B \lor C))$$ | $$ \land $$I | 8,10 |
+| 12 | 1 | $$(A \land (B \lor C))$$ | $$ \lor $$E | 1,2,6,7,11 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor(B \land C)) \vdash ((A \lor B) \land (A \lor C))$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \lor (B \land C))$$ | Assump. I |  |
+| 2 | 2 | $$A$$ | Assump. I |  |
+| 3 | 2 | $$(A \lor B)$$ | $$ \lor $$I | 2 |
+| 4 | 2 | $$(A \lor C)$$ | $$ \lor $$I | 2 |
+| 5 | 2 | $$((A \lor B) \land (A \lor C))$$ | $$ \land $$I | 3,4 |
+| 6 | 6 | $$(B \land C)$$ | Assump. I |  |
+| 7 | 6 | $$B$$ | $$ \land $$E | 6 |
+| 8 | 6 | $$(A \lor B)$$ | $$ \lor $$I | 7 |
+| 9 | 6 | $$C$$ | $$ \land $$E | 6 |
+| 10 | 6 | $$(A \lor C)$$ | $$ \lor $$I | 9 |
+| 11 | 6 | $$((A \lor B) \land (A \lor C))$$ | $$ \land $$I | 8,10 |
+| 12 | 1 | $$((A \lor B) \land (A \lor C))$$ | $$ \lor $$E | 1,2,5,6,11 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \lor B) \land (A \lor C)) \vdash (A \lor(B \land C))$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$((A \lor B) \land (A \lor C))$$ | Assump. I |  |
+| 2 | 1 | $$(A \lor B)$$ | $$ \land $$E | 1 |
+| 3 | 1 | $$(A \lor C)$$ | $$ \land $$E | 1 |
+| 4 | 4 | $$A$$ | Assump. I |  |
+| 5 | 5 | $$B$$ | Assump. I |  |
+| 6 | 6 | $$C$$ | Assump. I |  |
+| 7 | 4 | $$(A \lor (B \land C))$$ | $$ \lor $$I | 4 |
+| 8 | 5,6 | $$(B \land C)$$ | $$ \land $$I | 5,6 |
+| 9 | 5,6 | $$(A \lor (B \land C))$$ | $$ \lor $$I | 8 |
+| 10 | 1,6 | $$(A \lor (B \land C))$$ | $$ \lor $$E | 2,4,5,7,9 |
+| 11 | 1 | $$(A \lor (B \land C))$$ | $$ \lor $$E | 3,4,6,7,10 |
 
 ## de Morgan's Laws
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg A\lor \neg B) \vdash \neg (A\land B)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(( \neg A) \lor ( \neg B))$$ | Assump. I |  |
+| 2 | 2 | $$ \neg A$$ | Assump. I |  |
+| 3 | 3 | $$ \neg B$$ | Assump. I |  |
+| 4 | 4 | $$(A \land B)$$ | Assump. I |  |
+| 5 | 4 | $$A$$ | $$ \land $$E | 4 |
+| 6 | 2,4 | $$ \bot $$ | $$ \neg $$E | 2,5 |
+| 7 | 2 | $$ \neg (A \land B)$$ | $$ \neg $$I | 4,6 |
+| 8 | 4 | $$B$$ | $$ \land $$E | 4 |
+| 9 | 3,4 | $$ \bot $$ | $$ \neg $$E | 3,8 |
+| 10 | 3 | $$ \neg (A \land B)$$ | $$ \neg $$I | 4,9 |
+| 11 | 1 | $$ \neg (A \land B)$$ | $$ \lor $$E | 1,2,3,7,10 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg (A\land B) \vdash (\neg A\lor \neg B)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \neg (A \land B)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg (( \neg A) \lor ( \neg B))$$ | Assump. I |  |
+| 3 | 3 | $$ \neg A$$ | Assump. I |  |
+| 4 | 3 | $$(( \neg A) \lor ( \neg B))$$ | $$ \lor $$I | 3 |
+| 5 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,4 |
+| 6 | 2 | $$ \neg ( \neg A)$$ | $$ \neg $$I | 3,5 |
+| 7 | 7 | $$ \neg B$$ | Assump. I |  |
+| 8 | 7 | $$(( \neg A) \lor ( \neg B))$$ | $$ \lor $$I | 7 |
+| 9 | 2,7 | $$ \bot $$ | $$ \neg $$E | 2,8 |
+| 10 | 2 | $$ \neg ( \neg B)$$ | $$ \neg $$I | 7,9 |
+| 11 | 2 | $$(( \neg ( \neg A)) \land ( \neg ( \neg B)))$$ | $$ \land $$I | 6,10 |
+| 12 | 2 | $$ \neg ( \neg A)$$ | $$ \land $$E | 11 |
+| 13 | 2,3 | $$ \bot $$ | $$ \neg $$E | 3,12 |
+| 14 | 2 | $$A$$ | RA | 3,13 |
+| 15 | 2 | $$ \neg ( \neg B)$$ | $$ \land $$E | 11 |
+| 16 | 2,7 | $$ \bot $$ | $$ \neg $$E | 7,15 |
+| 17 | 2 | $$B$$ | RA | 7,16 |
+| 18 | 2 | $$(A \land B)$$ | $$ \land $$I | 14,17 |
+| 19 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,18 |
+| 20 | 1 | $$(( \neg A) \lor ( \neg B))$$ | RA | 2,19 |
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg A\land \neg B) \vdash \neg (A\lor B)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(( \neg A) \land ( \neg B))$$ | Assump. I |  |
+| 2 | 1 | $$ \neg A$$ | $$ \land $$E | 1 |
+| 3 | 1 | $$ \neg B$$ | $$ \land $$E | 1 |
+| 4 | 4 | $$(A \lor B)$$ | Assump. I |  |
+| 5 | 5 | $$ \neg B$$ | Assump. I |  |
+| 6 | 6 | $$B$$ | Assump. I |  |
+| 7 | 5,6 | $$ \bot $$ | $$ \neg $$E | 5,6 |
+| 8 | 5,6 | $$A$$ | $$ \bot $$ | 7 |
+| 9 | 9 | $$A$$ | Assump. I |  |
+| 10 | 4,5 | $$A$$ | $$ \lor $$E | 4,6,8,9,9 |
+| 11 | 1,4,5 | $$ \bot $$ | $$ \neg $$E | 2,10 |
+| 12 | 1,4 | $$B$$ | RA | 5,11 |
+| 13 | 1,4 | $$ \bot $$ | $$ \neg $$E | 3,12 |
+| 14 | 1 | $$ \neg (A \lor B)$$ | $$ \neg $$I | 4,13 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg (A\lor B) \vdash (\neg A\land \neg B)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \neg (A \lor B)$$ | Assump. I |  |
+| 2 | 2 | $$A$$ | Assump. I |  |
+| 3 | 2 | $$(A \lor B)$$ | $$ \lor $$I | 2 |
+| 4 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,3 |
+| 5 | 1 | $$ \neg A$$ | $$ \neg $$I | 2,4 |
+| 6 | 6 | $$B$$ | Assump. I |  |
+| 7 | 6 | $$(A \lor B)$$ | $$ \lor $$I | 6 |
+| 8 | 1,6 | $$ \bot $$ | $$ \neg $$E | 1,7 |
+| 9 | 1 | $$ \neg B$$ | $$ \neg $$I | 6,8 |
+| 10 | 1 | $$(( \neg A) \land ( \neg B))$$ | $$ \land $$I | 5,9 |
 
 ## Double Negation
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$\neg \neg A \vdash A$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$ \neg ( \neg A)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg A$$ | Assump. I |  |
+| 3 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,2 |
+| 4 | 1 | $$A$$ | RA | 2,3 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$A \vdash \neg \neg A$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$A$$ | Assump. I |  |
+| 2 | 2 | $$ \neg A$$ | Assump. I |  |
+| 3 | 1,2 | $$ \bot $$ | $$ \neg $$E | 1,2 |
+| 4 | 1 | $$ \neg ( \neg A)$$ | $$ \neg $$I | 2,3 |
 
 ## Implication Definition
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg A\lor B) \vdash (A \rightarrow B)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(( \neg A) \lor B)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg A$$ | Assump. I |  |
+| 3 | 3 | $$A$$ | Assump. I |  |
+| 4 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,3 |
+| 5 | 2,3 | $$B$$ | $$ \bot $$ | 4 |
+| 6 | 2 | $$(A \rightarrow B)$$ | $$ \rightarrow $$I | 3,5 |
+| 7 | 7 | $$B$$ | Assump. I |  |
+| 8 | 3,7 | $$(A \land B)$$ | $$ \land $$I | 3,7 |
+| 9 | 3,7 | $$B$$ | $$ \land $$E | 8 |
+| 10 | 7 | $$(A \rightarrow B)$$ | $$ \rightarrow $$I | 3,9 |
+| 11 | 1 | $$(A \rightarrow B)$$ | $$ \lor $$E | 1,2,6,7,10 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow B) \vdash (\neg A\lor B)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \rightarrow B)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg (( \neg A) \lor B)$$ | Assump. I |  |
+| 3 | 3 | $$A$$ | Assump. I |  |
+| 4 | 1,3 | $$B$$ | $$ \rightarrow $$E | 1,3 |
+| 5 | 1,3 | $$(( \neg A) \lor B)$$ | $$ \lor $$I | 4 |
+| 6 | 1,2,3 | $$ \bot $$ | $$ \neg $$E | 2,5 |
+| 7 | 1,2 | $$ \neg A$$ | $$ \neg $$I | 3,6 |
+| 8 | 1,2 | $$(( \neg A) \lor B)$$ | $$ \lor $$I | 7 |
+| 9 | 1,2 | $$ \bot $$ | $$ \neg $$E | 2,8 |
+| 10 | 1 | $$(( \neg A) \lor B)$$ | RA | 2,9 |
 
 ## Transposition
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow B) \vdash (\neg B \rightarrow \neg A)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \rightarrow B)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg B$$ | Assump. I |  |
+| 3 | 3 | $$A$$ | Assump. I |  |
+| 4 | 1,3 | $$B$$ | $$ \rightarrow $$E | 1,3 |
+| 5 | 1,2,3 | $$ \bot $$ | $$ \neg $$E | 2,4 |
+| 6 | 1,2 | $$ \neg A$$ | $$ \neg $$I | 3,5 |
+| 7 | 1 | $$(( \neg B) \rightarrow ( \neg A))$$ | $$ \rightarrow $$I | 2,6 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(\neg B \rightarrow \neg A) \vdash (A \rightarrow B)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(( \neg B) \rightarrow ( \neg A))$$ | Assump. I |  |
+| 2 | 2 | $$A$$ | Assump. I |  |
+| 3 | 3 | $$ \neg A$$ | Assump. I |  |
+| 4 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,3 |
+| 5 | 2 | $$ \neg ( \neg A)$$ | $$ \neg $$I | 3,4 |
+| 6 | 6 | $$ \neg B$$ | Assump. I |  |
+| 7 | 1,6 | $$ \neg A$$ | $$ \rightarrow $$E | 1,6 |
+| 8 | 1,2,6 | $$ \bot $$ | $$ \neg $$E | 5,7 |
+| 9 | 1,2 | $$B$$ | RA | 6,8 |
+| 10 | 1 | $$(A \rightarrow B)$$ | $$ \rightarrow $$I | 2,9 |
 
 ## Exportation
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \land B) \rightarrow C) \vdash (A \rightarrow (B \rightarrow C))$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$((A \land B) \rightarrow C)$$ | Assump. I |  |
+| 2 | 2 | $$A$$ | Assump. I |  |
+| 3 | 3 | $$B$$ | Assump. I |  |
+| 4 | 2,3 | $$(A \land B)$$ | $$ \land $$I | 2,3 |
+| 5 | 1,2,3 | $$C$$ | $$ \rightarrow $$E | 1,4 |
+| 6 | 1,2 | $$(B \rightarrow C)$$ | $$ \rightarrow $$I | 3,5 |
+| 7 | 1 | $$(A \rightarrow (B \rightarrow C))$$ | $$ \rightarrow $$I | 2,6 |
+
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow (B \rightarrow C)) \vdash ((A \land B) \rightarrow C)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \rightarrow (B \rightarrow C))$$ | Assump. I |  |
+| 2 | 2 | $$(A \land B)$$ | Assump. I |  |
+| 3 | 2 | $$A$$ | $$ \land $$E | 2 |
+| 4 | 2 | $$B$$ | $$ \land $$E | 2 |
+| 5 | 1,2 | $$(B \rightarrow C)$$ | $$ \rightarrow $$E | 1,3 |
+| 6 | 1,2 | $$C$$ | $$ \rightarrow $$E | 4,5 |
+| 7 | 1 | $$((A \land B) \rightarrow C)$$ | $$ \rightarrow $$I | 2,6 |
 
 # $$F \vdash G$$ Propositional Logic
 
@@ -211,21 +469,88 @@ categories: Logic Natural Deduction
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow B), \neg B \vdash \neg A$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \rightarrow B)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg B$$ | Assump. I |  |
+| 3 | 3 | $$A$$ | Assump. I |  |
+| 4 | 1,3 | $$B$$ | $$ \rightarrow $$E | 1,3 |
+| 5 | 1,2,3 | $$ \bot $$ | $$ \neg $$E | 2,4 |
+| 6 | 1,2 | $$ \neg A$$ | $$ \neg $$I | 3,5 |
+
 ## Hypothetical Syllogism
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \rightarrow B), (B \rightarrow C) \vdash (A \rightarrow C)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \rightarrow B)$$ | Assump. I |  |
+| 2 | 2 | $$(B \rightarrow C)$$ | Assump. I |  |
+| 3 | 3 | $$A$$ | Assump. I |  |
+| 4 | 1,3 | $$B$$ | $$ \rightarrow $$E | 1,3 |
+| 5 | 1,2,3 | $$C$$ | $$ \rightarrow $$E | 2,4 |
+| 6 | 1,2 | $$(A \rightarrow C)$$ | $$ \rightarrow $$I | 3,5 |
 
 ## Disjunctive Syllogism
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$(A \lor B), \neg B \vdash A$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$(A \lor B)$$ | Assump. I |  |
+| 2 | 2 | $$ \neg B$$ | Assump. I |  |
+| 3 | 3 | $$B$$ | Assump. I |  |
+| 4 | 2,3 | $$ \bot $$ | $$ \neg $$E | 2,3 |
+| 5 | 2,3 | $$A$$ | $$ \bot $$ | 4 |
+| 6 | 6 | $$A$$ | Assump. I |  |
+| 7 | 1,2 | $$A$$ | $$ \lor $$E | 1,3,5,6,6 |
+
 ## Construction Dilemma
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \rightarrow B) \land (C \rightarrow D)), (A \lor C) \vdash (B \lor D)$$</span>
 
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$((A \rightarrow B) \land (C \rightarrow D))$$ | Assump. I |  |
+| 2 | 2 | $$(A \lor C)$$ | Assump. I |  |
+| 3 | 1 | $$(A \rightarrow B)$$ | $$ \land $$E | 1 |
+| 4 | 1 | $$(C \rightarrow D)$$ | $$ \land $$E | 1 |
+| 5 | 5 | $$A$$ | Assump. I |  |
+| 6 | 1,5 | $$B$$ | $$ \rightarrow $$E | 3,5 |
+| 7 | 1,5 | $$(B \lor D)$$ | $$ \lor $$I | 6 |
+| 8 | 8 | $$C$$ | Assump. I |  |
+| 9 | 1,8 | $$D$$ | $$ \rightarrow $$E | 4,8 |
+| 10 | 1,8 | $$(B \lor D)$$ | $$ \lor $$I | 9 |
+| 11 | 1,2 | $$(B \lor D)$$ | $$ \lor $$E | 2,5,7,8,10 |
+
 ## Destructive Dilemma
 
 <span class="bg-yellow black" style="text-align: center; font-size:25px">$$((A \rightarrow B) \land (C \rightarrow D)), (\neg B \lor \neg D) \vdash (\neg A \lor \neg C)$$</span>
+
+| Line | Assumptions | Formula     | Justification            | References     |
+| ---- | ----------- | ----------- | ------------------------ | -------------- |
+| 1 | 1 | $$((A \rightarrow B) \land (C \rightarrow D))$$ | Assump. I |  |
+| 2 | 2 | $$(\neg B \lor \neg D)$$ | Assump. I |  |
+| 3 | 1 | $$(A \rightarrow B)$$ | $$ \land $$E | 1 |
+| 4 | 1 | $$(C \rightarrow D)$$ | $$ \land $$E | 1 |
+| 5 | 5 | $$ \neg ( \neg A \lor  \neg C)$$ | Assump. I |  |
+| 6 | 6 | $$ \neg A$$ | Assump. I |  |
+| 7 | 6 | $$( \neg A \lor  \neg C)$$ | $$ \lor $$I | 6 |
+| 8 | 5,6 | $$ \bot $$ | $$ \neg $$E | 5,7 |
+| 9 | 5 | $$A$$ | RA | 6,8 |
+| 10 | 1,5 | $$B$$ | $$ \rightarrow $$E | 3,9 |
+| 11 | 11 | $$ \neg C$$ | Assump. I |  |
+| 12 | 11 | $$( \neg A \lor  \neg C)$$ | $$ \lor $$I | 11 |
+| 13 | 5,11 | $$ \bot $$ | $$ \neg $$E | 5,12 |
+| 14 | 5 | $$C$$ | RA | 11,13 |
+| 15 | 1,5 | $$D$$ | $$ \rightarrow $$E | 4,14 |
+| 16 | 16 | $$ \neg B$$ | Assump. I |  |
+| 17 | 1,5,16 | $$ \bot $$ | $$ \neg $$E | 10,16 |
+| 18 | 1,5,16 | $$ \neg D$$ | $$ \bot $$ | 17 |
+| 19 | 19 | $$ \neg D$$ | Assump. I |  |
+| 20 | 1,2,5 | $$ \neg D$$ | $$ \lor $$E | 2,16,18,19,19 |
+| 21 | 1,2,5 | $$ \bot $$ | $$ \neg $$E | 15,20 |
+| 22 | 1,2 | $$(\neg A \lor  \neg C)$$ | RA | 5,21 |
 
 # $$F \equiv G$$ Predicate Logic
 
