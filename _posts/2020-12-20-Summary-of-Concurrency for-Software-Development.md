@@ -1876,7 +1876,7 @@ MPI_Allgather(
 
 -   Using `MPI_Allgather`
 
-    ```c
+    {% highlight c %}
     // Gather all partial averages down to all the processes
     float *sub_avgs = (float *)malloc(sizeof(float) * world_size);
     MPI_Allgather(&sub_avg, 1, MPI_FLOAT, sub_avgs, 1, MPI_FLOAT, MPI_COMM_WORLD);
@@ -1888,5 +1888,5 @@ MPI_Allgather(
     // Avg of all elements from proc 3 is 0.479736
     // Avg of all elements from proc 0 is 0.479736
     // Avg of all elements from proc 2 is 0.479736
-    ```
+    {% endhighlight %}
 
