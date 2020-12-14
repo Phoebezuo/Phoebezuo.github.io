@@ -4,57 +4,58 @@ title:      Summary of Concurrency for Software Development
 date:       2020-12-20
 summary:    Summary notes of Concurrency for Software Development
 categories: Software Concurrency
+
 ---
 
 - [Complexity Model](#complexity-model)
-  - [Speedup](#speedup)
-    - [Examples](#examples)
-  - [Amdahl's Law for fixed problem size](#amdahls-law-for-fixed-problem-size)
-    - [Examples](#examples-1)
-  - [Gustafson's Law for scaled problem size](#gustafsons-law-for-scaled-problem-size)
-    - [Examples](#examples-2)
-  - [Karp-Flatt Metric](#karp-flatt-metric)
-    - [Examples](#examples-3)
-  - [Isoefficiency](#isoefficiency)
-    - [Examples](#examples-4)
+    - [Speedup](#speedup)
+        - [Examples](#examples)
+    - [Amdahl's Law for fixed problem size](#amdahls-law-for-fixed-problem-size)
+        - [Examples](#examples-1)
+    - [Gustafson's Law for scaled problem size](#gustafsons-law-for-scaled-problem-size)
+        - [Examples](#examples-2)
+    - [Karp-Flatt Metric](#karp-flatt-metric)
+        - [Examples](#examples-3)
+    - [Isoefficiency](#isoefficiency)
+        - [Examples](#examples-4)
 - [Memory Hierarchies](#memory-hierarchies)
 - [Locality](#locality)
-  - [Temporal Locality](#temporal-locality)
-  - [Spatial Locality](#spatial-locality)
-  - [Examples](#examples-5)
+    - [Temporal Locality](#temporal-locality)
+    - [Spatial Locality](#spatial-locality)
+    - [Examples](#examples-5)
 - [False Sharing vs True Sharing](#false-sharing-vs-true-sharing)
-  - [True sharing](#true-sharing)
-  - [False sharing](#false-sharing)
+    - [True sharing](#true-sharing)
+    - [False sharing](#false-sharing)
 - [Process](#process)
-  - [Fork](#fork)
-  - [Zombie Process](#zombie-process)
-  - [Communication Between Process](#communication-between-process)
+    - [Fork](#fork)
+    - [Zombie Process](#zombie-process)
+    - [Communication Between Process](#communication-between-process)
 - [Threads](#threads)
-  - [Detached Mode](#detached-mode)
-  - [Unintended Sharing](#unintended-sharing)
-  - [Data Race](#data-race)
-  - [Race Condition](#race-condition)
+    - [Detached Mode](#detached-mode)
+    - [Unintended Sharing](#unintended-sharing)
+    - [Data Race](#data-race)
+    - [Race Condition](#race-condition)
 - [Thread vs Process](#thread-vs-process)
-  - [Process Pros](#process-pros)
-  - [Process Cons](#process-cons)
-  - [Thread Pros](#thread-pros)
-  - [Thread Cons](#thread-cons)
+    - [Process Pros](#process-pros)
+    - [Process Cons](#process-cons)
+    - [Thread Pros](#thread-pros)
+    - [Thread Cons](#thread-cons)
 - [Synchronisation](#synchronisation)
-  - [Semaphores](#semaphores)
-    - [Producer-Consumer with Semaphore](#producer-consumer-with-semaphore)
-  - [Mutex Locks](#mutex-locks)
-    - [Types of Mutex](#types-of-mutex)
-    - [Overheads of Locking](#overheads-of-locking)
-  - [Conditional Variables](#conditional-variables)
-    - [Producer-Consumer using Condition Variable](#producer-consumer-using-condition-variable)
-  - [Atomic Operation](#atomic-operation)
-    - [Lock vs Atomic](#lock-vs-atomic)
-    - [Sequentially Consistent Ordering](#sequentially-consistent-ordering)
-  - [Spinlock](#spinlock)
-    - [CAS (Compare-and-swap)](#cas-compare-and-swap)
-  - [Read-Write Locks](#read-write-locks)
-  - [Barrier](#barrier)
-  - [Deadlocks](#deadlocks)
+    - [Semaphores](#semaphores)
+        - [Producer-Consumer with Semaphore](#producer-consumer-with-semaphore)
+    - [Mutex Locks](#mutex-locks)
+        - [Types of Mutex](#types-of-mutex)
+        - [Overheads of Locking](#overheads-of-locking)
+    - [Conditional Variables](#conditional-variables)
+        - [Producer-Consumer using Condition Variable](#producer-consumer-using-condition-variable)
+    - [Atomic Operation](#atomic-operation)
+        - [Lock vs Atomic](#lock-vs-atomic)
+        - [Sequentially Consistent Ordering](#sequentially-consistent-ordering)
+    - [Spinlock](#spinlock)
+        - [CAS (Compare-and-swap)](#cas-compare-and-swap)
+    - [Read-Write Locks](#read-write-locks)
+    - [Barrier](#barrier)
+    - [Deadlocks](#deadlocks)
 
 # Complexity Model
 
@@ -82,6 +83,7 @@ $$
     $$
 
 2.  Your program has an execution time of $$n^3$$ and uses $$n^2$$ bytes space when the problem size is n. You have worked very hard to make it fully parallel and reduced the communication time to $$24n^2 \log^p_2$$ on p cores.
+
     1.  If you want to achieve a speed up of 1000 with 1024 cores, what is the minimum memory each core must have?
         -   $$\psi = 1000, p = 1024, M(n) = n^2, \kappa(n,p) = 24n^2 \log^p_2$$
         -   $$\psi = \frac{\sigma(n) + \phi(n)}{\sigma(n) + \frac{\phi(n)}{p} + \kappa(n,p)} = \frac{n^3}{\frac{n^3}{1024} + 24n^2 \log^{1024}_2} = \frac{1}{\frac{1}{1024} + \frac{240}{n}} = 1000$$
@@ -178,7 +180,7 @@ $$
 1.  What is the primary reason of the following table for speedup of only 4.7 on 8 CPUs?
 
     | $$p$$    | 2    | 3    | 4    | 5    | 6    | 7    | 8    |
-    | ------ | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | -------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
     | $$\psi$$ | 1.8  | 2.5  | 3.1  | 3.6  | 4.0  | 4.4  | 4.7  |
 
     -   $$p = 2, e = \frac{1/1.8 - 1/2}{1 - 1/2} = 0.1$$
@@ -194,7 +196,7 @@ $$
 2.  What is the primary reason of the following table for speedup of only 4.7 on 8 CPUs?
 
     | $$p$$    | 2    | 3    | 4    | 5    | 6    | 7    | 8    |
-    | ------ | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | -------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
     | $$\psi$$ | 1.9  | 2.6  | 3.2  | 3.7  | 4.1  | 4.5  | 4.7  |
 
     -   $$p = 2, e = \frac{1/1.9 - 1/2}{1 - 1/2} = 0.053$$
@@ -210,7 +212,7 @@ $$
 3.  Is this program likely to achieve a speedup of 10 on 12 processors?
 
     | $$p$$    | 4     | 8     | 12    |
-    | ------ | ----- | ----- | ----- |
+    | -------- | ----- | ----- | ----- |
     | $$\psi$$ | 3.9   | 6.5   | ?     |
     | $$e$$    | 0.008 | 0.032 | 0.018 |
 
@@ -411,11 +413,11 @@ Items with nearby addresses tend to be referenced close together in time
     {
     	int me = omp_get_thread_num();
         sum_local[me] = 0.0;
-
+    
         #pragma omp for
         for (i = 0; i < N; i++)
             sum_local[me] += x[i] * y[i];
-
+    
         #pragma omp atomic
         sum += sum_local[me];
     }
@@ -462,7 +464,7 @@ Items with nearby addresses tend to be referenced close together in time
     #include <stdlib.h>
     #include <unistd.h>
     #include <sys/wait.h>
-
+    
     void main() {
         if (fork() == 0) {
             printf("a");
@@ -470,7 +472,7 @@ Items with nearby addresses tend to be referenced close together in time
             printf("b");
             waitpid(-1, NULL, 0);
         }
-
+    
         printf("c");
         exit(0);
     }
@@ -604,13 +606,39 @@ int main()  {
 }
 ```
 
-```c
-todo
-```
-
 -   Runs independently of other threads
+
 -   Reaped automatically (by kernel) when it terminates
+
 -   without the need for another thread to join with the terminated thread
+
+-   Examples
+
+    -   ```c
+        void* thread(void* vargp) {
+            int arg = *((int*) vargp);
+            printf("hello from thread %d\n", arg);
+            return NULL;
+        }
+        
+        int main() {
+            pthread_t tid[10];
+            int i;
+            
+            for (i = 0; i < 10; i++) {
+                pthread_create(&tid[i], NULL, thread, &i);
+            }
+            for (i = 0; i < 10; i++) {
+                pthread_detach(tid[i], NULL);
+            }
+            pthread_exit(NULL);
+            return 0;
+        }
+        ```
+
+    -   It has passing address of `i` when the thread executes, so it may skip several i. 
+
+    -   Due to the usage of `pthread_detach`, once the master thread exists, every time the thread functions refer to `&i` will trigger segmentation fault because `i` has been released on the stack.
 
 ## Unintended Sharing
 
@@ -620,7 +648,7 @@ todo
     #include <stdio.h>
     #include <stdlib.h>
     #include <pthread.h>
-
+    
     // unintended sharing
     void* thread(void* vargp) {
         pthread_detach(pthread_self());
@@ -629,15 +657,15 @@ todo
         printf("hello from thread %d.\n", arg);
         return NULL;
     }
-
+    
     int main()  {
         pthread_t tid;
-
+    
         for (int i = 0; i < 10; i++) {
             // the address of i is shared within all the threads, so that you cannot predicate the  conteent in i
             pthread_create(&tid, NULL, thread, &i);
         }
-
+    
         pthread_exit(NULL);
         return 0;
     }
@@ -649,7 +677,7 @@ todo
     #include <stdio.h>
     #include <stdlib.h>
     #include <pthread.h>
-
+    
     // fix unintended sharing
     void* thread(void* vargp) {
         pthread_detach(pthread_self());
@@ -658,17 +686,17 @@ todo
         free(vargp);
         return NULL;
     }
-
+    
     int main()  {
         pthread_t tid;
         int* argp;
-
+    
         for (int i = 0; i < 10; i++) {
             argp = malloc(sizeof(int));
             *argp = i;
             pthread_create(&tid, NULL, thread, argp);
         }
-
+    
         pthread_exit(NULL);
         return 0;
     }
@@ -939,8 +967,8 @@ int main(int argc, char** argv) {
 
 -   A normal mutex deadlocks if a thread that already has a lock tries a second lock on it. `PTHREAD_MUTEX_NORMAL`
 
-- A recursive mutex allows a single thread to lock a mutex as many times as it wants. It simply increments a count on the number of locks. A lock is relinquished by a thread when the count becomes zero. `PTHREAD_MUTEX_RECURSIVE`
-- An error check mutex reports an error when a thread with a lock tries to lock it again (as opposed to deadlocking in the first case, or granting the lock, as in the second case). `PTHREAD_MUTEX_ERRORCHECK`
+-   A recursive mutex allows a single thread to lock a mutex as many times as it wants. It simply increments a count on the number of locks. A lock is relinquished by a thread when the count becomes zero. `PTHREAD_MUTEX_RECURSIVE`
+-   An error check mutex reports an error when a thread with a lock tries to lock it again (as opposed to deadlocking in the first case, or granting the lock, as in the second case). `PTHREAD_MUTEX_ERRORCHECK`
 
 ```c
 // initialize a recursive mutex
