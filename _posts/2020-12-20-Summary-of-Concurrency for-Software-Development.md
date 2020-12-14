@@ -74,13 +74,14 @@ $$
 ### Examples
 
 1.  A computer animation program generates feature movies frame-by frame. Each frame can be generated and written to its own file independently. If it takes 90 seconds to render a frame and 10 second to write a frame into a file, what is the maximum speedup you can achieve if you have 100 single-processor computers to use?
+
     $$
     \begin{align*}
         \psi \leq \frac{\sigma(n) + \phi(n)}{\sigma(n) + \frac{\phi(n)}{p} + \kappa(n,p)} = \frac{1}{0 + \frac{1}{100} + 0} = 100
     \end{align*}
     $$
 
-2.  Your program has an execution time of $n^3$ and uses $n^2$ bytes space when the problem size is n. You have worked very hard to make it fully parallel and reduced the communication time to $24n^2 \log^p_2$ on p cores.
+2.  Your program has an execution time of $$n^3$$ and uses $$n^2$$ bytes space when the problem size is n. You have worked very hard to make it fully parallel and reduced the communication time to $$24n^2 \log^p_2$$ on p cores.
     1.  If you want to achieve a speed up of 1000 with 1024 cores, what is the minimum memory each core must have?
         -   $$\psi = 1000, p = 1024, M(n) = n^2, \kappa(n,p) = 24n^2 \log^p_2$$
         -   $$\psi = \frac{\sigma(n) + \phi(n)}{\sigma(n) + \frac{\phi(n)}{p} + \kappa(n,p)} = \frac{n^3}{\frac{n^3}{1024} + 24n^2 \log^{1024}_2} = \frac{1}{\frac{1}{1024} + \frac{240}{n}} = 1000$$
@@ -93,6 +94,7 @@ $$
 ## Amdahl's Law for fixed problem size
 
 Strong scaling concerns the speedup for a fixed problem size with respect to the number of processors.
+
 $$
 \begin{align*}
     \psi(n,p) \leq \frac{1}{f + \frac{1-f}{p}} \, \text{ where sequence $f$ part is fixed}
@@ -102,6 +104,7 @@ $$
 ### Examples
 
 1.  95% of a program’s execution time occurs inside a loop that can be executed in parallel. What is the maximum speedup we should expect from a parallel version of the program executing on 8 CPUs?
+
     $$
     \begin{align*}
         \psi \leq \frac{1}{0.05+ \frac{1-0.05}{8}} \cong 5.9
@@ -109,6 +112,7 @@ $$
     $$
 
 2.  20% of a program’s execution time is spent within inherently sequential code. What is the limit to the speedup achievable by a parallel version of the program?
+
     $$
     \begin{align*}
         \lim _{p \rightarrow \infty} \frac{1}{0.2+\frac{1-0.2}{p}}=\frac{1}{0.2}=5
@@ -116,6 +120,7 @@ $$
     $$
 
 3.  If 99.9% of your sequential program execution time is spent inside a loop that can be paralleled, what is the maximum speedup you can achieve via parallelising this loop?
+
     $$
     \begin{align*}
         \lim _{p \rightarrow \infty} \frac{1}{0.1\% +\frac{1- 0.1\%}{p}}=\frac{1}{0.001}=1000
@@ -125,6 +130,7 @@ $$
 ## Gustafson's Law for scaled problem size
 
 Weak scaling concerns the speedup for a scaled problem size with respect to the number of processors.
+
 $$
 \begin{align*}
     \psi \leq p + (1 - p)s \, \text{ where parallel $s$ part is fixed}
@@ -134,6 +140,7 @@ $$
 ### Examples
 
 1.  An application running on 10 processors spends 3% of its time in serial code. What is the scaled speedup of the application?
+
     $$
     \begin{align*}
         \psi = 10 + (1 - 10) \cdot 0.03 = 10 - 0.27 = 9.73
@@ -141,6 +148,7 @@ $$
     $$
 
 2.  What is the maximum fraction of a program’s parallel execution time that can be spent in serial code if it is to achieve a scaled speedup of 7 on 8 processors?
+
     $$
     \begin{align*}
         &7 = 8 + (1 - 8)s \\
@@ -150,6 +158,7 @@ $$
     $$
 
 3.  If a two-hour parallel program running on one thousand cores spends one hour in its parallel portion, what is the scaled speedup of the program on one thousand cores?
+
     $$
     \begin{align*}
         \psi = 1000 + (1 - 1000) \cdot \frac{1}{2} = 500.5
@@ -208,12 +217,14 @@ $$
     No, because $$e_3 \geq e_2$$, which means the parallel overhead has increase on 12 processors.
 
 4.  A parallel program achieves a speedup of 2 on 4 cores. Is it likely to achieve a speedup of 4 on 8 cores?
+
     $$
     \begin{align*}
         &e_1=\frac{1 / \psi-1 / p}{1-1 / p} = \frac{1 / 2-1 / 4}{1-1 / 4} \cong 0.33 \\
         &e_2=\frac{1 / \psi-1 / p}{1-1 / p} = \frac{1 / 4-1 / 8}{1-1 / 8} \cong 0.14 \\
     \end{align*}
     $$
+
     Since $$e_1 > e_2$$, so it is not likely to achieve a speedup of 4 on 8 cores.
 
 ## Isoefficiency
@@ -236,7 +247,7 @@ $$
 1.  Let $$n > f(p)$$ denote the Isoefficiency relation of a parallel system and $$M(n)$$ denote the amount of memory for a problem of size n. Use the scalability function to rank the following parallel systems from most to least scalable:
 
     -   $$f(p) = p$$ and $$M(n)=n$$
-    -   $$f(p)=p$ and $M(n)=n^2$$
+    -   $$f(p)=p$$ and $$M(n)=n^2$$
     -   $$f(p)=p\cdot \log(p)$$ and $$M(n)=n$$
     -   $$f(p)=p \cdot \log(p)$$ and $$M(n)=n^2$$
 
@@ -262,36 +273,42 @@ $$
     2.  If your experiment actually takes 500 seconds when using 4 cores, what is the minimum execution time when using 6 cores?
         -   When using 4 cores, speedup is $$\frac{1000}{500} = 2$$
         -   When using 4 cores, serial fraction is $$e = \frac{\frac{1}{2} - \frac{1}{4}}{1 - \frac{1}{4}} = \frac{1}{3}$$
-        -   Since serial fraction of 6 cores should be \textbf{larger} than serial fraction of 4 cores in order to achieve speedup, so $$e_6 > \frac{1}{3}$$
+        -   Since serial fraction of 6 cores should be **larger** than serial fraction of 4 cores in order to achieve speedup, so $$e_6 > \frac{1}{3}$$
         -   When using 6 cores, serial fraction is $$e_6 = \frac{\frac{1}{\psi} - \frac{1}{6}}{1 - \frac{1}{6}} \geq \frac{1}{3}$$, thus $$\psi \leq \frac{4}{9}$$
         -   Hence, minimum execution time is $$\text{Parallel execution time} = \frac{\text{sequential execution time}}{\text{speedup}} = \frac{1000}{\frac{9}{4}} = 444.4$$ seconds.
 
 3.  If sequential algorithm complexity is. $$T(n,1) = \Theta(n)$$, computational complexity is $$\Theta(\frac{n}{p})$$, communication complexity is $$\Theta(\log p)$$, parallel overhead is $$T_0(n, p) = \Theta(p \log p)$$ and $$M(n) = n$$. Does this system has good scalability?
+
     $$
     \begin{align*}
         &T(n,1) \geq CT_0(n,p) \Rightarrow n \geq C p \log p \\
-        % &\text{computational complexity is $\Theta(\frac{n}{p})$} \Rightarrow M(n) = n \\
+        &\text{computational complexity is $\Theta(\frac{n}{p})$} \Rightarrow M(n) = n \\
         &\frac{M(C p \log p)}{p} = \frac{Cp \log p}{p} = C\log p
     \end{align*}
     $$
+
     Hence this system has good scalability. (reduction)
 
 4.  If sequential time complexity is $$T(n, 1)=\Theta\left(n^{3}\right)$$, parallel computation time is $$\Theta\left(n^{3} / p\right)$$, parallel communication time is $$\Theta\left(n^{2} \log p\right)$$, parallel overhead is $$T_{0}(n, p)=\Theta\left(p n^{2} \log p\right)$$ and $$M(n) = n^2$$. Does this system has good scalability?
+
     $$
     \begin{align*}
         &T(n,1) \geq CT_0(n,p) \Rightarrow n^3 \geq C pn^2 \log p \Rightarrow n \geq Cp \log p \\
         &\frac{M(C p \log p)}{p} = \frac{(Cp \log p)^2}{p} = \frac{C^2 p^2 \log^2p}{p} = C^2 p \log^2p
     \end{align*}
     $$
+
     Hence this system has poor scalability. (Floyd's algorithm)
 
 5.  If sequential time complexity is $$T(n, 1)=\Theta\left(n^{2}\right)$$, parallel communication complexity per iteration is $$\Theta\left(\frac{n}{\sqrt{p}}\right)$$, parallel overhead is $$T_{0}(n, p)=\Theta(n \sqrt{p})$$ and space complexity $$M(n) = n^2$$. Does this system has good scalability?
+
     $$
     \begin{align*}
         &T(n,1) \geq CT_0(n,p) \Rightarrow n^2 \geq C n \sqrt{p} \Rightarrow n \geq C \sqrt{p} \\
         &\frac{M(C \sqrt{p})}{p} = \frac{(C \sqrt{p})^2}{p} = \frac{C^2 p}{p} = C^2
     \end{align*}
     $$
+
     Hence this system has perfect scalability.
 
 # Memory Hierarchies
