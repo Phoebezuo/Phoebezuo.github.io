@@ -4,81 +4,82 @@ title:      Summary of Concurrency for Software Development
 date:       2020-12-20
 summary:    Summary notes of Concurrency for Software Development
 categories: Software Concurrency
+
 ---
 
 - [Complexity Model](#complexity-model)
-  - [Speedup](#speedup)
-    - [Examples](#examples)
-  - [Amdahl's Law for fixed problem size](#amdahls-law-for-fixed-problem-size)
-    - [Examples](#examples-1)
-  - [Gustafson's Law for scaled problem size](#gustafsons-law-for-scaled-problem-size)
-    - [Examples](#examples-2)
-  - [Karp-Flatt Metric](#karp-flatt-metric)
-    - [Examples](#examples-3)
-  - [Isoefficiency](#isoefficiency)
-    - [Examples](#examples-4)
+    - [Speedup](#speedup)
+        - [Examples](#examples)
+    - [Amdahl's Law for fixed problem size](#amdahls-law-for-fixed-problem-size)
+        - [Examples](#examples-1)
+    - [Gustafson's Law for scaled problem size](#gustafsons-law-for-scaled-problem-size)
+        - [Examples](#examples-2)
+    - [Karp-Flatt Metric](#karp-flatt-metric)
+        - [Examples](#examples-3)
+    - [Isoefficiency](#isoefficiency)
+        - [Examples](#examples-4)
 - [Memory Hierarchies](#memory-hierarchies)
 - [Locality](#locality)
-  - [Temporal Locality](#temporal-locality)
-  - [Spatial Locality](#spatial-locality)
-  - [Examples](#examples-5)
+    - [Temporal Locality](#temporal-locality)
+    - [Spatial Locality](#spatial-locality)
+    - [Examples](#examples-5)
 - [False Sharing vs True Sharing](#false-sharing-vs-true-sharing)
-  - [True sharing](#true-sharing)
-  - [False sharing](#false-sharing)
+    - [True sharing](#true-sharing)
+    - [False sharing](#false-sharing)
 - [Process](#process)
-  - [Fork](#fork)
-  - [Zombie Process](#zombie-process)
-  - [Communication Between Process](#communication-between-process)
+    - [Fork](#fork)
+    - [Zombie Process](#zombie-process)
+    - [Communication Between Process](#communication-between-process)
 - [Threads](#threads)
-  - [Detached Mode](#detached-mode)
-  - [Unintended Sharing](#unintended-sharing)
-  - [Data Race](#data-race)
-  - [Race Condition](#race-condition)
+    - [Detached Mode](#detached-mode)
+    - [Unintended Sharing](#unintended-sharing)
+    - [Data Race](#data-race)
+    - [Race Condition](#race-condition)
 - [Thread vs Process](#thread-vs-process)
-  - [Process Pros](#process-pros)
-  - [Process Cons](#process-cons)
-  - [Thread Pros](#thread-pros)
-  - [Thread Cons](#thread-cons)
+    - [Process Pros](#process-pros)
+    - [Process Cons](#process-cons)
+    - [Thread Pros](#thread-pros)
+    - [Thread Cons](#thread-cons)
 - [Synchronisation](#synchronisation)
-  - [Semaphores](#semaphores)
-    - [Producer-Consumer with Semaphore](#producer-consumer-with-semaphore)
-  - [Mutex Locks](#mutex-locks)
-    - [Types of Mutex](#types-of-mutex)
-    - [Overheads of Locking](#overheads-of-locking)
-  - [Conditional Variables](#conditional-variables)
-    - [Producer-Consumer using Condition Variable](#producer-consumer-using-condition-variable)
-  - [Atomic Operation](#atomic-operation)
-    - [Lock vs Atomic](#lock-vs-atomic)
-    - [Sequentially Consistent Ordering](#sequentially-consistent-ordering)
-  - [Spinlock](#spinlock)
-    - [CAS (Compare-and-swap)](#cas-compare-and-swap)
-  - [Read-Write Locks](#read-write-locks)
-  - [Barrier](#barrier)
-  - [Deadlocks](#deadlocks)
+    - [Semaphores](#semaphores)
+        - [Producer-Consumer with Semaphore](#producer-consumer-with-semaphore)
+    - [Mutex Locks](#mutex-locks)
+        - [Types of Mutex](#types-of-mutex)
+        - [Overheads of Locking](#overheads-of-locking)
+    - [Conditional Variables](#conditional-variables)
+        - [Producer-Consumer using Condition Variable](#producer-consumer-using-condition-variable)
+    - [Atomic Operation](#atomic-operation)
+        - [Lock vs Atomic](#lock-vs-atomic)
+        - [Sequentially Consistent Ordering](#sequentially-consistent-ordering)
+    - [Spinlock](#spinlock)
+        - [CAS (Compare-and-swap)](#cas-compare-and-swap)
+    - [Read-Write Locks](#read-write-locks)
+    - [Barrier](#barrier)
+    - [Deadlocks](#deadlocks)
 - [OpenMP](#openmp)
-  - [Critical Sections](#critical-sections)
-  - [Parallel For Loops](#parallel-for-loops)
-  - [Nowait](#nowait)
-    - [No Waiting Before a For Loop](#no-waiting-before-a-for-loop)
-  - [Scheduling](#scheduling)
-    - [Static Scheduling](#static-scheduling)
-    - [Dynamic Scheduling](#dynamic-scheduling)
-  - [Nested Loops](#nested-loops)
-    - [Solutions to Nested Loops](#solutions-to-nested-loops)
-  - [Common Mistakes](#common-mistakes)
-  - [Useful Tips](#useful-tips)
+    - [Critical Sections](#critical-sections)
+    - [Parallel For Loops](#parallel-for-loops)
+    - [Nowait](#nowait)
+        - [No Waiting Before a For Loop](#no-waiting-before-a-for-loop)
+    - [Scheduling](#scheduling)
+        - [Static Scheduling](#static-scheduling)
+        - [Dynamic Scheduling](#dynamic-scheduling)
+    - [Nested Loops](#nested-loops)
+        - [Solutions to Nested Loops](#solutions-to-nested-loops)
+    - [Common Mistakes](#common-mistakes)
+    - [Useful Tips](#useful-tips)
 - [MPI (Message Passing Interface)](#mpi-message-passing-interface)
-  - [Point to Point Communication](#point-to-point-communication)
-    - [Blocking Send and Receive](#blocking-send-and-receive)
-      - [Ring Communication](#ring-communication)
-    - [Unblocking Send and Receive](#unblocking-send-and-receive)
-      - [Examples](#examples-6)
-  - [Collective Communication](#collective-communication)
-    - [`MPI_Bcast`](#mpi_bcast)
-    - [`MPI_Scatter`](#mpi_scatter)
-    - [`MPI_Gather`](#mpi_gather)
-    - [`MPI_Allgatheer`](#mpi_allgatheer)
-    - [Examples](#examples-7)
+    - [Point to Point Communication](#point-to-point-communication)
+        - [Blocking Send and Receive](#blocking-send-and-receive)
+            - [Ring Communication](#ring-communication)
+        - [Unblocking Send and Receive](#unblocking-send-and-receive)
+            - [Examples](#examples-6)
+    - [Collective Communication](#collective-communication)
+        - [`MPI_Bcast`](#mpi_bcast)
+        - [`MPI_Scatter`](#mpi_scatter)
+        - [`MPI_Gather`](#mpi_gather)
+        - [`MPI_Allgatheer`](#mpi_allgatheer)
+        - [Examples](#examples-7)
 
 # Complexity Model
 
@@ -106,6 +107,7 @@ $$
     $$
 
 2.  Your program has an execution time of $$n^3$$ and uses $$n^2$$ bytes space when the problem size is n. You have worked very hard to make it fully parallel and reduced the communication time to $$24n^2 \log^p_2$$ on p cores.
+
     1.  If you want to achieve a speed up of 1000 with 1024 cores, what is the minimum memory each core must have?
         -   $$\psi = 1000, p = 1024, M(n) = n^2, \kappa(n,p) = 24n^2 \log^p_2$$
         -   $$\psi = \frac{\sigma(n) + \phi(n)}{\sigma(n) + \frac{\phi(n)}{p} + \kappa(n,p)} = \frac{n^3}{\frac{n^3}{1024} + 24n^2 \log^{1024}_2} = \frac{1}{\frac{1}{1024} + \frac{240}{n}} = 1000$$
@@ -202,7 +204,7 @@ $$
 1.  What is the primary reason of the following table for speedup of only 4.7 on 8 CPUs?
 
     | $$p$$    | 2    | 3    | 4    | 5    | 6    | 7    | 8    |
-    | ------ | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | -------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
     | $$\psi$$ | 1.8  | 2.5  | 3.1  | 3.6  | 4.0  | 4.4  | 4.7  |
 
     -   $$p = 2, e = \frac{1/1.8 - 1/2}{1 - 1/2} = 0.1$$
@@ -218,7 +220,7 @@ $$
 2.  What is the primary reason of the following table for speedup of only 4.7 on 8 CPUs?
 
     | $$p$$    | 2    | 3    | 4    | 5    | 6    | 7    | 8    |
-    | ------ | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | -------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
     | $$\psi$$ | 1.9  | 2.6  | 3.2  | 3.7  | 4.1  | 4.5  | 4.7  |
 
     -   $$p = 2, e = \frac{1/1.9 - 1/2}{1 - 1/2} = 0.053$$
@@ -234,7 +236,7 @@ $$
 3.  Is this program likely to achieve a speedup of 10 on 12 processors?
 
     | $$p$$    | 4     | 8     | 12    |
-    | ------ | ----- | ----- | ----- |
+    | -------- | ----- | ----- | ----- |
     | $$\psi$$ | 3.9   | 6.5   | ?     |
     | $$e$$    | 0.008 | 0.032 | 0.018 |
 
@@ -389,6 +391,38 @@ Items with nearby addresses tend to be referenced close together in time
     3.  Reference instructions in sequence. (spatial)
     4.  Cycle through loop repeatedly. (temporal)
 
+2.  Find
+
+    ```c
+    char** ptr;
+    
+    void* thread(void* vargp) {
+        int myid = (int) vargp;
+        static int cnt = 0;
+        printf("[%d] %s (svar=%d)\n", myid, ptr[myid], ++cnt);
+    }
+    
+    int main() {
+        int i;
+        pthread_t tid;
+        char* msgs[2] = {"hello from foo", "hello from bar"};
+        ptr = msgs;
+        
+        for (i = 0; i < 2; i++)
+            pthread_create(&tid, NULL, thread, (void*)i);
+        pthread_exit(NULL);
+    }
+    ```
+
+    | variable instance | referenced by main thread | referenced by thread 0 | referenced by thread 1 |
+    | ----------------- | ------------------------- | ---------------------- | ---------------------- |
+    | ptr               | √                         | √                      | √                      |
+    | cnt               | X                         | √                      | √                      |
+    | i.m               | √                         | X                      | X                      |
+    | msgs.m            | √                         | √                      | √                      |
+    | myid.p0           | X                         | √                      | X                      |
+    | myid.p1           | X                         | X                      | √                      |
+
 # False Sharing vs True Sharing
 
 ![image-20201214131733232](https://i.loli.net/2020/12/14/taxB4G3qzSN16iD.png)
@@ -435,11 +469,11 @@ Items with nearby addresses tend to be referenced close together in time
     {
     	int me = omp_get_thread_num();
         sum_local[me] = 0.0;
-
+    
         #pragma omp for
         for (i = 0; i < N; i++)
             sum_local[me] += x[i] * y[i];
-
+    
         #pragma omp atomic
         sum += sum_local[me];
     }
@@ -486,7 +520,7 @@ Items with nearby addresses tend to be referenced close together in time
     #include <stdlib.h>
     #include <unistd.h>
     #include <sys/wait.h>
-
+    
     void main() {
         if (fork() == 0) {
             printf("a");
@@ -494,7 +528,7 @@ Items with nearby addresses tend to be referenced close together in time
             printf("b");
             waitpid(-1, NULL, 0);
         }
-
+    
         printf("c");
         exit(0);
     }
@@ -642,11 +676,11 @@ int main()  {
             printf("hello from thread %d\n", arg);
             return NULL;
         }
-
+        
         int main() {
             pthread_t tid[10];
             int i;
-
+        
             for (i = 0; i < 10; i++) {
                 pthread_create(&tid[i], NULL, thread, &i);
             }
@@ -670,7 +704,7 @@ int main()  {
     #include <stdio.h>
     #include <stdlib.h>
     #include <pthread.h>
-
+    
     // unintended sharing
     void* thread(void* vargp) {
         pthread_detach(pthread_self());
@@ -679,15 +713,15 @@ int main()  {
         printf("hello from thread %d.\n", arg);
         return NULL;
     }
-
+    
     int main()  {
         pthread_t tid;
-
+    
         for (int i = 0; i < 10; i++) {
             // the address of i is shared within all the threads, so that you cannot predicate the  conteent in i
             pthread_create(&tid, NULL, thread, &i);
         }
-
+    
         pthread_exit(NULL);
         return 0;
     }
@@ -699,7 +733,7 @@ int main()  {
     #include <stdio.h>
     #include <stdlib.h>
     #include <pthread.h>
-
+    
     // fix unintended sharing
     void* thread(void* vargp) {
         pthread_detach(pthread_self());
@@ -708,17 +742,17 @@ int main()  {
         free(vargp);
         return NULL;
     }
-
+    
     int main()  {
         pthread_t tid;
         int* argp;
-
+    
         for (int i = 0; i < 10; i++) {
             argp = malloc(sizeof(int));
             *argp = i;
             pthread_create(&tid, NULL, thread, argp);
         }
-
+    
         pthread_exit(NULL);
         return 0;
     }
@@ -989,8 +1023,8 @@ int main(int argc, char** argv) {
 
 -   A normal mutex deadlocks if a thread that already has a lock tries a second lock on it. `PTHREAD_MUTEX_NORMAL`
 
-- A recursive mutex allows a single thread to lock a mutex as many times as it wants. It simply increments a count on the number of locks. A lock is relinquished by a thread when the count becomes zero. `PTHREAD_MUTEX_RECURSIVE`
-- An error check mutex reports an error when a thread with a lock tries to lock it again (as opposed to deadlocking in the first case, or granting the lock, as in the second case). `PTHREAD_MUTEX_ERRORCHECK`
+-   A recursive mutex allows a single thread to lock a mutex as many times as it wants. It simply increments a count on the number of locks. A lock is relinquished by a thread when the count becomes zero. `PTHREAD_MUTEX_RECURSIVE`
+-   An error check mutex reports an error when a thread with a lock tries to lock it again (as opposed to deadlocking in the first case, or granting the lock, as in the second case). `PTHREAD_MUTEX_ERRORCHECK`
 
 ```c
 // initialize a recursive mutex
@@ -1010,6 +1044,29 @@ pthread_mutexattr_settype(&Attr, PTHREAD_MUTEX_RECURSIVE); pthread_mutex_init(&M
 
 -   A condition variable always has a mutex associated with it. A thread locks this mutex before issuing a wait, a signal or a broadcast on condition variables.
 -   While the thread is waiting (`pthread_cond_wait`) on a condition variable, the mutex is automatically unlocked, and when the thread is signalled (`pthread_cond_signal`), the mutex is automatically locked again.
+
+```c
+pthread_cond_t cv1, cv2;
+pthread_mutex_t mutex1, mutex2;
+
+void* function1(void* vargp) {
+    pthread_mutex_lock(&mutex1);
+    while (some condition)
+        pthread_cond_wait(&cv1, mutex1);
+    // do work
+    pthread_cond_signal(&cv2);
+    pthread_mutex_unlock(&mutex1);
+}
+
+void* function1(void* vargp) {
+    pthread_mutex_lock(&mutex2);
+    while (some condition)
+        pthread_cond_wait(&cv2, mutex2);
+    // do work
+    pthread_cond_signal(&cv1);
+    pthread_mutex_unlock(&mutex2);
+}
+```
 
 ### Producer-Consumer using Condition Variable
 
@@ -1296,6 +1353,8 @@ int main(void) {
 -   If the count is less than the total number of threads, the threads execute a condition wait.
 -   The last thread entering (and setting the count to the number of threads) wakes up all the threads using a condition broadcast and resets the count to zero (to prepare for the next barrier).
 
+### Using Conditional Variable to Implement Barrier
+
 ```c
 typedef struct {
     pthread_mutex_t cond_lock;
@@ -1344,6 +1403,27 @@ int main() {
 ```
 
 <img src="https://i.loli.net/2020/12/14/hjmruawWgVUn5kd.png" alt="image-20201214175622668" style="zoom:50%;" />
+
+### Using Semaphore to Implement Barrier
+
+```c
+int count = 0;
+sem_t barrier;
+sem_t mutex;
+sem_init(&mutex, 0, 1);
+sem_init(&barrier, 0, 0);
+
+void barrier() {
+    sem_wait(&mutex);
+    count++;
+    if (count == M) {
+        for (int i =  0; i < M; i++)
+            sem_post(&barrier);
+    }
+    sem_post(&mutex);
+    sem_wait(&barrier);
+}
+```
 
 ## Deadlocks
 
@@ -1528,7 +1608,7 @@ z();
         c(ij / 6, ij % 6);
     }
     z();
-
+    
     // Method 2
     a();
     #pragma omp parallell for collapse(2)
@@ -1603,8 +1683,11 @@ z();
 ## Useful Tips
 
 -   outside a `parallel` region
+
     -   `omp_get_max_threads()` - returns the number of threads that OpenMP will use in `parallel` regions by default
+
 -   inside a `parallel` region
+
     -   `omp_get_num_threads()` - return the number of threads that OpenMp is using in this `parallel` region
     -   `omp_get_thead_num()` - return the identifier of this thread, numbered from 0.
 
@@ -1713,9 +1796,22 @@ while (ping_pong_count < PING_PONG_LIMIT) {
 
 #### Ring Communication
 
--   process zero makes sure that it has completed its first send before it tries to receive the value from the last process.
+Why can't we just directly do a ``MPI_Send` and `MPI_Recv`? Because it will have deadlock, when all the threads are blocked at `MPI_Send`, since no threads can receive.
+
+```c
+// r has been initialized to my rank
+// p is the number of processes
+int A =  r;
+MPI__Send(&A, 1, MPI_INT, (r + 1) % p, 0, MPI_COMM_WORLD);
+MPI__Recv&A, 1, MPI_INT, (r - 1 + p) % p, 0, MPI_COMM_WORLD);
+if (r == 0) { printf("%d\n", A); }
+```
+
+The correct way to do Ring Communication
+
+-   process 0 makes sure that it has completed its first send before it tries to receive the value from the last process.
 -   All of the other processes simply call `MPI_Recv` (receiving from their neighboring lower process) and then `MPI_Send` (sending the value to their neighboring higher process) to pass the value along the ring.
--    `MPI_Send` and `MPI_Recv` will block until the message has been transmitted. Because of this, the printfs should occur by the order in which the value is passed.
+-   `MPI_Send` and `MPI_Recv` will block until the message has been transmitted. Because of this, the printfs should occur by the order in which the value is passed.
 
 ```c
 int token;
@@ -1848,14 +1944,14 @@ MPI_Allgather(
     if (world_rank == 0) {
         rand_nums = create_rand_nums(elements_per_proc * world_size);
     }
-
+    
     // Create a buffer that will hold a subset of the random numbers
     float *sub_rand_nums = malloc(sizeof(float) * elements_per_proc);
-
+    
     // Scatter the random numbers to all processes
     MPI_Scatter(rand_nums, elements_per_proc, MPI_FLOAT, sub_rand_nums,
                 elements_per_proc, MPI_FLOAT, 0, MPI_COMM_WORLD);
-
+    
     // Compute the average of your subset
     float sub_avg = compute_avg(sub_rand_nums, elements_per_proc);
     // Gather all partial averages down to the root process
@@ -1864,12 +1960,12 @@ MPI_Allgather(
         sub_avgs = malloc(sizeof(float) * world_size);
     }
     MPI_Gather(&sub_avg, 1, MPI_FLOAT, sub_avgs, 1, MPI_FLOAT, 0, MPI_COMM_WORLD);
-
+    
     // Compute the total average of all numbers.
     if (world_rank == 0) {
         float avg = compute_avg(sub_avgs, world_size);
     }
-
+    
     // Avg of all elements is 0.478699
     // Avg computed across original data is 0.478699
     ```
@@ -1880,10 +1976,10 @@ MPI_Allgather(
     // Gather all partial averages down to all the processes
     float *sub_avgs = (float *)malloc(sizeof(float) * world_size);
     MPI_Allgather(&sub_avg, 1, MPI_FLOAT, sub_avgs, 1, MPI_FLOAT, MPI_COMM_WORLD);
-
+    
     // Compute the total average of all numbers.
     float avg = compute_avg(sub_avgs, world_size);
-
+    
     // Avg of all elements from proc 1 is 0.479736
     // Avg of all elements from proc 3 is 0.479736
     // Avg of all elements from proc 0 is 0.479736
