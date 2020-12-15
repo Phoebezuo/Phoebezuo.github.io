@@ -94,7 +94,8 @@ categories: Software Concurrency
 $$
 \begin{align*}
     \psi &= \frac{\text{sequential execution time}}{\text{parallel execution time}} \\
-    &\leq \frac{\sigma(n) + \phi(n)}{\sigma(n) + \frac{\phi(n)}{p} + \kappa(n,p)}
+    &\leq \frac{\sigma(n) + \phi(n)}{\sigma(n) + \frac{\phi(n)}{p} + \kappa(n,p)} \\
+    \text{Effeciency} &= \frac{\text{Speedup}}{\text{# of Cores}} = \frac{\psi}{p}
 \end{align*}
 $$
 
@@ -119,15 +120,13 @@ $$
         -   $$\frac{M(n)}{p} = \frac{n^2}{1024} = 2^{30}$$, hence $$n = \sqrt{2^{30} \cdot 1024} = 1048576$$
         -   $$\psi = \frac{\sigma(n) + \phi(n)}{\sigma(n) + \frac{\phi(n)}{p} + \kappa(n,p)} = \frac{n^3}{\frac{n^3}{1024} + 24n^2 \log^{1024}_2} = \frac{1}{\frac{1}{1024} + \frac{240}{n}} =.  \frac{1}{\frac{1}{1024} + \frac{240}{1048576}} \cong 929.57$$
 
-
-
 ## Amdahl's Law for fixed problem size
 
 Strong scaling concerns the speedup for a fixed problem size with respect to the number of processors.
 
 $$
 \begin{align*}
-    \psi(n,p) \leq \frac{1}{f + \frac{1-f}{p}} \, \text{ where sequence $f$ part is fixed}
+    \psi(n,p) \leq \frac{1}{f + \frac{1-f}{p}} \, \text{ where $f$ is sequential code}
 \end{align*}
 $$
 
@@ -163,7 +162,7 @@ Weak scaling concerns the speedup for a scaled problem size with respect to the 
 
 $$
 \begin{align*}
-    \psi \leq p + (1 - p)s \, \text{ where parallel $s$ part is fixed}
+    \psi \leq p + (1 - p)s \, \text{ where $s$ is sequential code}
 \end{align*}
 $$
 
@@ -177,7 +176,7 @@ $$
     \end{align*}
     $$
 
-2.  What is the maximum fraction of a program’s parallel execution time that can be spent in serial code if it is to achieve a scaled speedup of 7 on 8 processors?
+2.  What is the maximum fraction of a program's parallel execution time that can be spent in serial code if it is to achieve a scaled speedup of 7 on 8 processors?
 
     $$
     \begin{align*}
