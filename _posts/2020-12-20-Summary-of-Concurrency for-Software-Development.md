@@ -99,6 +99,10 @@ $$
 \end{align*}
 $$
 
+$$
+\varepsilon(n,p) \leq \frac{\sigma(n) + \phi(n)}{p \sigma(n) + \phi(n) + p\kappa(n,p)} \Rightarrow 0 \leq \varepsilon(n,p) \leq 1
+$$
+
 ### Examples
 
 1.  A computer animation program generates feature movies frame-by frame. Each frame can be generated and written to its own file independently. If it takes 90 seconds to render a frame and 10 second to write a frame into a file, what is the maximum speedup you can achieve if you have 100 single-processor computers to use?
@@ -129,6 +133,10 @@ $$
     \psi(n,p) \leq \frac{1}{f + \frac{1-f}{p}} \, \text{ where $f$ is sequential code}
 \end{align*}
 $$
+
+-   Ignores $$\kappa(n,p)$$, so that it overestimates speedup achievable
+-   As n increases, $$\phi(n) / p$$ dominates $$\kappa(n,p)$$, thus increase speedup
+-   Shows how execution time decreases as number of processors increases
 
 ### Examples
 
@@ -166,6 +174,10 @@ $$
 \end{align*}
 $$
 
+-   Estimate sequential execution time to solve same problem 
+-   Problem size is an increasing function of p
+-   Predicts scaled speedup
+
 ### Examples
 
 1.  An application running on 10 processors spends 3% of its time in serial code. What is the scaled speedup of the application?
@@ -202,6 +214,13 @@ $$
 \end{align*}
 $$
 
+-   Takes into account parallel overhead
+-   Detects other sources of overhead or inefficiency ignored in speedup model
+    -   Process startup time
+    -   Process synchronisation time
+    -   Imbalanced workload
+    -   Architectural overhead
+
 ### Examples
 
 1.  What is the primary reason of the following table for speedup of only 4.7 on 8 CPUs?
@@ -231,7 +250,7 @@ $$
     -   $$p = 4, e = \frac{1/3.2 - 1/4}{1 - 1/4} = 0.083$$
     -   $$p = 5, e = \frac{1/3.7 - 1/5}{1 - 1/5} = 0.088$$
     -   $$p = 6, e = \frac{1/4.1 - 1/6}{1 - 1/6} = 0.092$$
-    -   $$p = 7, e = \frac{1/4.5 - 1/7}{1 - 1/7} = 0.0.092$$
+    -   $$p = 7, e = \frac{1/4.5 - 1/7}{1 - 1/7} = 0.092$$
     -   $$p = 8, e = \frac{1/4.7 - 1/8}{1 - 1/8} = 0.100$$
 
     Since e is steadily increasing, parallel overhead is the primary reason.
@@ -270,6 +289,22 @@ $$
     &\text{scalability function} = \frac{M(f(p))}{p}
 \end{align*}
 $$
+
+-   Parallel system: parallel program executing on a parallel computer
+
+-   Scalability of a parallel system: measure of its ability to increase performance as number of processors increases
+
+-   A scalable system maintains efficiency as processors are added
+
+-   To maintain efficiency when increasing p, we must increase n 
+
+-   Maximum problem size is limited by available memory, which is linear in p
+
+-   Scalability function shows how memory usage per processor must grow to maintain efficiency
+
+-   Scalability function is a constant means parallel system is perfectly
+
+    scalable
 
 ### Examples
 
@@ -311,7 +346,6 @@ $$
     $$
     \begin{align*}
         &T(n,1) \geq CT_0(n,p) \Rightarrow n \geq C p \log p \\
-        &\text{computational complexity is $\Theta(\frac{n}{p})$} \Rightarrow M(n) = n \\
         &\frac{M(C p \log p)}{p} = \frac{Cp \log p}{p} = C\log p
     \end{align*}
     $$
