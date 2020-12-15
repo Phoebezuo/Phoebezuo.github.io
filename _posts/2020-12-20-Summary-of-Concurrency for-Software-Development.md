@@ -350,7 +350,8 @@ $$
     \end{align*}
     $$
 
-    Hence this system has good scalability. (reduction)
+Hence this system has good scalability. (reduction)
+    
 
 4.  If sequential time complexity is $$T(n, 1)=\Theta\left(n^{3}\right)$$, parallel computation time is $$\Theta\left(n^{3} / p\right)$$, parallel communication time is $$\Theta\left(n^{2} \log p\right)$$, parallel overhead is $$T_{0}(n, p)=\Theta\left(p n^{2} \log p\right)$$ and $$M(n) = n^2$$. Does this system has good scalability?
 
@@ -1833,7 +1834,7 @@ while (ping_pong_count < PING_PONG_LIMIT) {
 
 #### Ring Communication
 
-Why can't we just directly do a ``MPI_Send` and `MPI_Recv`? Because it will have deadlock, when all the threads are blocked at `MPI_Send`, since no threads can receive.
+Why can't we just directly do a `MPI_Send` and `MPI_Recv`? Because it will have deadlock, when all the threads are blocked at `MPI_Send`, since no threads can receive.
 
 ```c
 // r has been initialized to my rank
