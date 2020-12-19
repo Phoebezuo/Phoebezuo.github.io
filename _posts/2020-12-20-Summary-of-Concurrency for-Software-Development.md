@@ -4,7 +4,6 @@ title:      Summary of Concurrency for Software Development
 date:       2020-12-20
 summary:    Summary notes of Concurrency for Software Development
 categories: Software Concurrency
-
 ---
 
 - [Complexity Model](#complexity-model)
