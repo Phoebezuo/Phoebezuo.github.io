@@ -11,7 +11,7 @@ I am a Computer Science and Mathematics student at [University of Sydney](https:
 
 I'll chase any opportunity to improve collaboration and outreach in the tech. industry.
 
-My main areas of interest are in softwares, tattoos. 
+My main areas of interest are in softwares and games. 
 
 
 <style>
