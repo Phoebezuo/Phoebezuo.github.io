@@ -45,6 +45,7 @@ categories: MacOS Softwares
 - 推荐指数：★★★★★
 - 费用：有免费版，也有付费版。但是强推付费版。
 - 推荐理由：一款效率工具，能够快速完成一系列操作。它的工作流允许一系列的操作结合在一起，做一个集合， 只需要一次调用便可以运行所有的任务， 可以做出很多实用的东西，比如快速查询，网易云音乐的控制等。可以在这个[链接](https://www.packal.org/)上找到合适的工作流。
+- 推荐的workflow：[Terminal Finder](https://www.packal.org/workflow/terminalfinder), [Open Folder in iTerm](https://www.packal.org/workflow/open-folder-iterm)
 
 ![alfred_1.gif](https://i.loli.net/2020/08/14/C5Ubz8Het2dBPF9.gif)
 ![alfred_2.png](https://i.loli.net/2020/08/14/97sHCAFDWkhrcZX.png)
