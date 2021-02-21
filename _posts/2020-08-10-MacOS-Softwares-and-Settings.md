@@ -23,7 +23,7 @@ categories: MacOS Softwares
   - [ZY Player](#zy-player)
   - [IINA](#iina)
   - [Pop Clip](#pop-clip)
-  - [Drop Over](#drop-over)
+  - [Droppover](#droppover)
 - [效率利器](#效率利器)
   - [PDF Expert](#pdf-expert)
   - [Notion](#notion)
@@ -42,7 +42,7 @@ categories: MacOS Softwares
 ### [Alfred 4](https://www.alfredapp.com/)
 
 - 推荐指数：★★★★★
-- 费用：
+- 费用：有免费版，也有付费版。但是强推付费版。
 - 推荐理由：一款效率工具，能够快速完成一系列操作。它的工作流允许一系列的操作结合在一起，做一个集合， 只需要一次调用便可以运行所有的任务， 可以做出很多实用的东西，比如快速查询，网易云音乐的控制等。可以在这个[链接](https://www.packal.org/)上找到合适的工作流。
 
 ![alfred_1.gif](https://i.loli.net/2020/08/14/C5Ubz8Het2dBPF9.gif)
@@ -51,7 +51,7 @@ categories: MacOS Softwares
 ### [Magnet](https://magnet.crowdcafe.com/)
 
 - 推荐指数：★★★★★
-- 费用：
+- 费用：¥12
 - 推荐理由：一个帮助Mac分屏的应用，可以填补MacOS系统的不足，像Windows那样拖动窗口分屏，也可以用快捷键分屏。只要是用过就离不开的一个软件， 装机必备。
 
 ![magnet_1.gif](https://i.loli.net/2020/08/14/HqumkbWEVvKMZ5x.gif)
@@ -100,7 +100,7 @@ categories: MacOS Softwares
 ### [iPreview](https://apps.apple.com/au/app/ipreview-powerful-quick-look/id1519213509?mt=12)
 
 - 推荐指数：★★★☆☆
-- 费用：
+- 费用：¥6
 - 推荐理由：很多时候只喜欢按住space键快速看一下当前文件的内容，并不想打开，但是苹果自带的不支持类似`jupyter`, `3ds` 等文件。这款软件不仅支持更多的文件格式，看代码时候还有syntax highlight，并且渲染markdown文件。
 
 <img src='https://i.loli.net/2021/02/21/q9UjKGzYRSiTb2c.png' alt='q9UjKGzYRSiTb2c'/>
@@ -108,7 +108,7 @@ categories: MacOS Softwares
 ### [Flux](https://justgetflux.com/)
 
 - 推荐指数：★★★☆☆
-- 费用：
+- 费用：免费
 - 推荐理由：护眼软件，根据本地时间改变电脑的亮度。长时间看电脑，眼睛也不会疲劳了。
 
 <img src='https://i.loli.net/2021/02/21/WNFnH5bl3wQrcKu.jpg' alt='WNFnH5bl3wQrcKu'/>
@@ -116,7 +116,7 @@ categories: MacOS Softwares
 ### [Gestimer](https://apps.apple.com/au/app/gestimer/id990588172?mt=12)
 
 - 推荐指数：★★★☆☆
-- 费用：
+- 费用：¥18
 - 推荐理由：可以快速定闹钟，往下拉多长就代表闹钟有多久。
 
 <img src='https://i.loli.net/2021/02/21/zNU53SZQrgCGdVR.gif' alt='zNU53SZQrgCGdVR'/>
@@ -124,7 +124,7 @@ categories: MacOS Softwares
 ### [App Cleaner](https://freemacsoft.net/appcleaner/)
 
 - 推荐指数：★★★★☆
-- 费用：
+- 费用：免费
 - 推荐理由：一款轻量级卸载软件，你可以设为自动，之后只用在finder删除一个软件，那么它所附带的文件也会自动删除。
 
 ![appcleaner_1.png](https://i.loli.net/2020/08/14/Lno3KAFgDVUaRcZ.png)
@@ -133,7 +133,7 @@ categories: MacOS Softwares
 ### [CleanMyMac X](https://macpaw.com/cleanmymac)
 
 - 推荐指数：★★★☆☆
-- 费用：
+- 费用：分一年订阅制和买断制，可以去官网看详情
 - 推荐理由：这款软件将所有数据拆分成易于清除的块，以便你电脑运行的更为轻松。它将Mac上所有的垃圾分类，将它们标记为垃圾文件、大小等分组，然后就可以通过查看文件名本身，就能确定是否将其保留在电脑上。
 
 ![cleanmac_2.gif](https://i.loli.net/2020/08/14/gbQSanRIFCi2lu4.gif)
@@ -158,16 +158,16 @@ categories: MacOS Softwares
 ### [Pop Clip](https://pilotmoon.com/popclip/)
 
 - 推荐指数：★★★★★
-- 费用：
+- 费用：¥88
 - 推荐理由：一款效率工具，可以用鼠标选中一段文字就可以做各种动作。个人觉得文本翻译和无文本样式的粘贴这两个extension用处更大。可以在这个[链接](https://pilotmoon.com/popclip/extensions/)上找到合适的extension。
 
 ![popclip_1.gif](https://i.loli.net/2020/08/14/oafTQq5m1RS3NpV.gif)
 ![popclip_2.gif](https://i.loli.net/2020/08/14/iUQKjCW8ofgMlVt.gif)
 
-### [Drop Over](https://apps.apple.com/us/app/dropover-easier-drag-drop/id1355679052?mt=12)
+### [Droppover](https://apps.apple.com/us/app/dropover-easier-drag-drop/id1355679052?mt=12)
 
 - 推荐指数：★★★★☆
-- 费用：
+- 费用：¥25
 - 推荐理由：这是一款给 macOS 增加文件篮子的小工具，你只需要将文件、网页图片、文字拖拽至篮子里临时保存，然后再去目的地进行移动、复制操作，对于需要从多处文件夹移动文件到某一个文件夹的需求来说，极大的简化了操作。里面的文件也支持上传到iCould，dropbox，google drive等，并且能自动获取分享链接。
 
 ![dropover_1.gif](https://i.loli.net/2020/08/14/ablJTiw5KDfEkVt.gif)
@@ -177,7 +177,7 @@ categories: MacOS Softwares
 ### [PDF Expert](https://pdfexpert.com/)
 
 - 推荐指数：★★★★★
-- 费用：
+- 费用：¥518
 - 推荐理由：比系统自带的preview增加了更多的编辑功能，颜值也更高。印象中Acrobat不能merge两个文件，也不能在电脑上签字。
 
 ![pdfexpert_2.gif](https://i.loli.net/2020/08/14/QrofziKCU2BcyPF.gif)
@@ -196,7 +196,7 @@ categories: MacOS Softwares
 ### [Loopback](https://rogueamoeba.com/loopback/)
 
 - 推荐指数：★★★☆☆
-- 费用：
+- 费用：¥545
 - 推荐理由：可以通过可配置的音频路由进行任何设置。只需将电线从音频源拖到输出通道，以及从输出通道拖动到新的更强大的监控设备。一般用于录屏，因为苹果自带的录屏软件没有声音。
 
 <img src='https://i.loli.net/2021/02/21/3vgujJ2ntRcfwLV.png' alt='3vgujJ2ntRcfwLV'/>
@@ -212,7 +212,7 @@ categories: MacOS Softwares
 ### [Texpad](https://www.texpad.com/)
 
 - 推荐指数：★★★★★
-- 费用：
+- 费用：¥195
 - 推荐理由：一款优秀的`LaTeX`编辑器软件, 当Texpad打开你的文档后，它会扫描项目，寻找LaTeX结构，命令和任何包含在内的文件，快速地浏览整个项目。最方便的地方就是他可以实时渲染，比网页版的`overleaf`好太多了。
 
 <img src='https://i.loli.net/2021/02/21/JD54jgumznZsvRp.gif' alt='JD54jgumznZsvRp'/>
@@ -236,7 +236,7 @@ categories: MacOS Softwares
 ### [Money Pro](https://money.pro/mac/)
 
 - 推荐指数：★★★★☆
-- 费用：
+- 费用：¥98
 - 推荐理由：超多功能的记账软件，可能同时录入多种货币并且自动换算成当地货币。这个软件还可以导出csv或者excel表格。它是一款真正的多合一应用程序，可以为你规划账单、安排预算、跟踪交易，并且所有操作均可同步执行。
 
 ![money_1.png](https://i.loli.net/2020/08/14/U9pW73DCXyGVdT6.png)
@@ -245,7 +245,7 @@ categories: MacOS Softwares
 ### [Downie 4](https://software.charliemonroe.net/downie/)
 
 - 推荐指数：★★★☆☆
-- 费用：
+- 费用：¥98
 - 推荐理由：它能提供将不同网站的视频保存到自己的磁盘驱动器的可能性，而且还为了各种流行的网络阅览器提供了匹配的扩展。
 
 ![downie_1.jpg](https://i.loli.net/2020/08/14/P1NQUf5BDwETV4e.jpg)
@@ -253,7 +253,7 @@ categories: MacOS Softwares
 ### [Screen Flow](https://www.telestream.net/screenflow/overview.htm?&gclid=CjwKCAjw4MP5BRBtEiwASfwAL6WEqsswms-0uoyYnZYDDezm1b31T8YhMwlhmb4SuDsI7xSBp3GzLhoCsxIQAvD_BwE)
 
 - 推荐指数：★★★★☆
-- 费用：
+- 费用：¥1000
 - 推荐理由：他是一款老牌录屏软件，不仅仅支持简单的屏幕录制，还包含各种简单和复杂的编辑功能，可以说是制作屏幕录制视频的强大软件，比如可以添加字幕， 增加视频效果与文字效果等功能。
 
 ![screenflow_1.jpg](https://i.loli.net/2020/08/14/FnWl27gBSLZJCbx.jpg)
