@@ -20,6 +20,7 @@ categories: MacOS Softwares
   - [Gestimer](#gestimer)
   - [App Cleaner](#app-cleaner)
   - [CleanMyMac X](#cleanmymac-x)
+  - [Oh My Wechat](#oh-my-wechat)
   - [ZY Player](#zy-player)
   - [IINA](#iina)
   - [Pop Clip](#pop-clip)
@@ -138,6 +139,14 @@ categories: MacOS Softwares
 
 ![cleanmac_2.gif](https://i.loli.net/2020/08/14/gbQSanRIFCi2lu4.gif)
 ![cleanmac_1.png](https://i.loli.net/2020/08/14/gThX5fb7YHIrKPO.png)
+
+### [Oh My Wechat](https://github.com/MustangYM/WeChatExtension-ForMac)
+
+- 推荐指数：★★★★★
+- 费用：免费
+- 推荐理由：再也不需要用手机微信扫描才登上电脑微信了，超级方便有没有！还能监控谁撤回了什么消息。
+
+<img src='https://i.loli.net/2021/02/21/4QhSTjUwvpExa8J.png' alt='4QhSTjUwvpExa8J'/>
 
 ### [ZY Player](http://zyplayer.fun/)
 
