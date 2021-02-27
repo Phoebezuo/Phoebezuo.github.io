@@ -268,6 +268,14 @@ categories: MacOS Softwares
 
 ![screenflow_1.jpg](https://i.loli.net/2020/08/14/FnWl27gBSLZJCbx.jpg)
 
+### [Marginnote 3](https://www.marginnote.com/)
+
+- 推荐指数：★★★★☆
+- 费用：mac上¥280，ipad上¥88
+- 推荐理由：查阅文件的神器，一遍阅读，一遍做思维导图，顺便能搜索相关内容。不过软件功能太多，学习成本有点高。
+
+<img src='https://i.loli.net/2021/02/27/NJqs6cv9jnf2zCd.jpg' alt='NJqs6cv9jnf2zCd'/>
+
 ## 系统设置
 
 ![1.png](https://i.loli.net/2020/08/14/ertgKRZSBiplhIC.png)
