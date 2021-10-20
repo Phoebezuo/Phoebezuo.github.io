@@ -10,7 +10,7 @@ categories: Text Moss Software
 
 1. Registering Moss at [here](http://theory.stanford.edu/~aiken/moss/) to  download it.
 
-    ~~或者从[百度云](https://pan.baidu.com/s/123qmK_OIgyQZaZBVvGN_zw)下载呀, 密码是u22g~~
+    ~~或者从[Google Drive](https://drive.google.com/file/d/1i8vrPaObXZV_aMTNgOIlVNqbhEL62Er1/view?usp=sharing)下载~~
 
 2. After sucessfully downloaded Moss, save name as `moss.pl` and move it to **Applications** folder.
 
