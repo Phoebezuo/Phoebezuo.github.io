@@ -2564,7 +2564,44 @@ UNION
 ORDER BY value
 ```
 
+```
++-------+
+| value |
++-------+
+| a     |
+| b     |
+| c     |
++-------+
+(3 rows)
+```
+
 Note that the result of the previous query is ordered alphabetically. What does this differ from the result without `ORDER BY`? Try removing that clause, or simply comment it out by putting two dashes in front of it: `-- ORDER BY value`
+
+```sql
+(
+  SELECT 'a' AS value
+)
+UNION
+(
+  SELECT 'c' AS value
+)
+UNION
+(
+  SELECT 'b' AS value
+)
+--ORDER BY value
+```
+
+```
++-------+
+| value |
++-------+
+| b     |
+| a     |
+| c     |
++-------+
+(3 rows)
+```
 
 ### Duplicates in Set Results
 
@@ -2580,6 +2617,16 @@ UNION
   SELECT 2, 'b'
 ```
 
+```
++----------+----------+
+| ?column? | ?column? |
++----------+----------+
+|        1 | a        |
+|        2 | b        |
++----------+----------+
+(2 rows)
+```
+
 **Example 2:** The same query with `UNION ALL` keeps duplicates.
 
 ```sql
@@ -2588,6 +2635,17 @@ UNION ALL
   SELECT 1, 'a'
 UNION ALL
   SELECT 2, 'b'
+```
+
+```
++----------+----------+
+| ?column? | ?column? |
++----------+----------+
+|        1 | a        |
+|        1 | a        |
+|        2 | b        |
++----------+----------+
+(3 rows)
 ```
 
 The same `ALL` modifier is available to all set operators:
@@ -2719,8 +2777,6 @@ You can use those operators to compute complex mathematical expression as part o
 SELECT 1050 * (1 + 0.10) AS "price incl GST"
 ```
 
-For further operators supported by PostgreSQL see [its documentation about its mathematical functions and operators](http://www.postgresql.org/docs/current/static/functions-math.html).
-
 **Note for Oracle users**
 
 While PostgreSQL allows to directly use the `SELECT` statement to evaluate a mathematical expression, in Oracle you always have to select `FROM` some table. The usual workaround with Oracle is that there's a standard single-row table in every Oracle instance, called `Dual` that can be used to let Oracle run a `SELECT` query exactly once. The same example query in Oracle syntax:
@@ -2777,7 +2833,7 @@ When run, this query produces the following output:
 (1 row)
 ```
 
-### NaN` versus `NULL
+### NaN `versus` NULL
 
 SQL supports a few special values for floating point data:
 
@@ -2825,7 +2881,7 @@ INSERT 0 3
 (1 row)
 ```
 
-As you see, `NaN` is not considered `NULL`, but it is also no valid number, as any comparison with a real number will be false. Try it with different values in above's example.
+As you see, `NaN` is not considered `NULL`, but it is also no valid number, as any comparison with a real number will be false. 
 
 **Note**
 
@@ -2838,6 +2894,22 @@ CREATE TABLE Test ( v FLOAT );
 INSERT INTO  Test VALUES
   (0),(1),(-1),('NaN'),('infinity'),('-infinity'),(NULL);
 SELECT * FROM Test A, Test B WHERE A.v=B.v;
+```
+
+```
+CREATE TABLE
+INSERT 0 7
++-----------+-----------+
+|     v     |     v     |
++-----------+-----------+
+| -Infinity | -Infinity |
+|        -1 |        -1 |
+|         0 |         0 |
+|         1 |         1 |
+|  Infinity |  Infinity |
+|       NaN |       NaN |
++-----------+-----------+
+(6 rows)
 ```
 
 Note how the code inserted *seven* values, including a NULL, and what the self-join query, that checks for `v=v`, then returns.
@@ -2913,7 +2985,7 @@ INSERT 0 2
 (2 rows)
 ```
 
-The `SERIAL` type is actually not a real type, but a mere syntax convenience to easily specify a table attribute that is connected with an internal counter which produces strictly monotonically increasing values for each new entry. The technical details can be found in the [corresponding section of the PostgreSQL documentation](http://www.postgresql.org/docs/9.2/static/datatype-numeric.html#DATATYPE-SERIAL).
+The `SERIAL` type is actually not a real type, but a mere syntax convenience to easily specify a table attribute that is connected with an internal counter which produces strictly monotonically increasing values for each new entry. 
 
 ## String Operations and Functions
 
@@ -2933,8 +3005,6 @@ Here's a larger example of the string concatenation operator to formualte whole 
 SELECT first_name || ' ' || last_name AS name
   FROM Student
 ```
-
-For further operators supported by PostgreSQL see [its documentation about its string operators and functions](http://www.postgresql.org/docs/current/static/functions-string.html).
 
 ### Concatenated Names
 
@@ -3037,8 +3107,6 @@ SELECT CURRENT_TIMESTAMP;
 
 As you can see, this returns the current timestamp. Note that our servers work with [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), so the time might be off by 10-11 hours from Sydney.
 
-For more information, see the [online documentation of PostgreSQL on date types and functions](http://www.postgresql.org/docs/current/static/functions-datetime.html).
-
 **Note for Oracle users**
 
 In Oracle, every query needs a `FROM` clause, so the above query becomes:
@@ -3096,8 +3164,6 @@ The `EXTRACT` function supports the following parameters for `<component>`:
 | `SECOND`  | Retrieve the **second** of a `TIME` or `TIMESTAMP` value.    |
 
 Some database systems support even more detailed specifications of individual time component, for example for `TIMEZONE` and `DOY` (day-of-the-year). The above should basically always work.
-
-Note that this function supports different field specifications depending on which database system you work with. You can find further information about the `EXTRACT` function in [the online documentation of PostgreSQL](http://www.postgresql.org/docs/current/static/functions-datetime.html#FUNCTIONS-DATETIME-EXTRACT). More details on the Oracle support of `EXTRACT` [can be found here](http://download.oracle.com/docs/cd/B19306_01/server.102/b14200/functions050.htm).
 
 ### Using `EXTRACT`
 
@@ -3188,8 +3254,6 @@ SQL's `EXTRACT` allows us to extract time zone information from `TIME` and `TIME
 | `TIMEZONE_HOUR`   | Retrieve the hour component of the timezone offset from UTC of a `TIMESTAMP` value |
 | `TIMEZONE_MINUTE` | Retrieve the minute component of the timezone offset from UTC of a `TIMESTAMP` value. |
 
-The above should work for different database systems, e.g. PostgreSQL and Oracle in our case. If in doubt, check the online documentation of your specific database system.
-
 ### Examples
 
 Let's have a look at a concrete example of extracting time zone information using the `EXTRACT` function. Get the details of all orders that have been placed in the timezone 'UTC+10:00':
@@ -3205,6 +3269,15 @@ Retrieve the time zone offset (in seconds) of the server's current timestamp:
 
 ```sql
 SELECT EXTRACT(timezone FROM CURRENT_TIMESTAMP);
+```
+
+```
++-----------+
+| date_part |
++-----------+
+|         0 |
++-----------+
+(1 row)
 ```
 
 Another approach is using the SQL `to_char()` function which also allows to convert a `TIMESTAMP` into a string with some control on how this can be done. Furthermore, some parameters allow tight control on how numbers are converted into strings, e.g. with leading plus or minus sign, or formatted with leading 0's etc.
@@ -3257,7 +3330,7 @@ as tz_offset
 
 ### Nesting SQL Queries
 
-Some complex questions can best be answered by using subqueries. You can nest SQL queries within each other at basically every clause of a SFW-statement (see below for examples).
+Some complex questions can best be answered by using subqueries. You can nest SQL queries within each other at basically every clause of a SFW-statement.
 
 Subqueries can be *co-related* or *non co-related* with the outer query.
 
@@ -3591,7 +3664,7 @@ GROUP BY uosCode
 
 ### Filtered Nationality Stats
 
-Your task is to write an SQL query that lists all `Actor` nationalities and how many actors are of each `nationality`. **Only show nationalities with \*at least 2\* associated actors.**
+Your task is to write an SQL query that lists all `Actor` nationalities and how many actors are of each `nationality`. **Only show nationalities with at least 2 associated actors.**
 
 The results must be in descending order by number of actors (i.e. the most frequent nationality first), and then for nationalities with the same number of actors, alphabetically by `nationality`. Your query should thus output two columns:
 
