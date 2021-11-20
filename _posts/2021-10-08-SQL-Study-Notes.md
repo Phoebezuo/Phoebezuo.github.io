@@ -3732,8 +3732,6 @@ SELECT sid, name, grade
  LIMIT 3
 ```
 
-See the [PostgreSQL online documentation about the `LIMIT` clause](http://www.postgresql.org/docs/current/static/sql-select.html#SQL-LIMIT) for further syntax details of this clause.
-
 ### Don't Lose that Film!
 
 Your task is to write an SQL query to find the the `Film` with the highest `replacement_cost`. Your query should only return a single result row, with the following columns:
@@ -3754,7 +3752,7 @@ limit 1
 
 ### Top Five Actor Nationalities
 
-Your task is to write an SQL query to list the names of the top-5 countries, according to the number of `Actor`s who are of that `nationality`. Your query's result should have the following columns:
+Your task is to write an SQL query to list the names of the top-5 countries, according to the number of `Actors` who are of that `nationality`. Your query's result should have the following columns:
 
 1.  `country` - the `name` of the `Country`; and
 2.  `num_actors` - the number of `Actor`s who have this `Country` as their `nationality`.
@@ -3804,7 +3802,7 @@ Your task is to write an SQL query that lists the top-10 `Actor`s from the `'US'
 
 1.  `first_name` of the `Actor`;
 2.  `last_name` of the `Actor`; and
-3.  `films` - number of `Film`s the `Actor` has played in.
+3.  `films` - number of `Films` the `Actor` has played in.
 
 Your query should produce an *ordinal ranking* in descending order by number of films. For actors who played in the same number of films, show those in alphabetical order of their name (first and last name).
 
@@ -3837,8 +3835,6 @@ SELECT sid, name, rank() OVER (ORDER BY mark DESC)
 
 The above query just produces one window over actually all rows of the INFO1903 class list, and then orders the tuples in that 'window' according to descending mark. The `rank()` function than numbers those rows through from 1 to n.
 
-The PostgreSQL online documentation gives some further information on [the `LIMIT` clause](http://www.postgresql.org/docs/current/static/sql-select.html#SQL-LIMIT) and [the SQL window functions](http://www.postgresql.org/docs/current/static/tutorial-window.html).
-
 ### Ranking Film Categories
 
 Your task is to write an SQL query to produce a ranked listing of the top-5 categories according to how many films are associated with each category. Your query's result must have the following columns:
@@ -3859,6 +3855,19 @@ from Film_Category natural join Category
 group by name
 order by rank, name
 limit 5
+```
+
+```
++------+-----------+-------+
+| rank | category  | films |
++------+-----------+-------+
+|    1 | Horror    |     9 |
+|    2 | Action    |     4 |
+|    2 | Foreign   |     4 |
+|    2 | New       |     4 |
+|    5 | Animation |     3 |
++------+-----------+-------+
+(5 rows)
 ```
 
 # SQL Conditional Expressions
@@ -3920,8 +3929,6 @@ Your task is to write an SQL query that lists every `Film` released between 2002
 | PG-13  | Parents Strongly Cautioned. Some Material May Be Inappropriate For Children Under 13. |
 | R      | Restricted. Children Under 17 Require Accompanying Parent or Adult Guardian. |
 | NC-17  | No One 17 and Under Admitted.                                |
-
-Source: [Film ratings of the Motion Picture Association of America](http://filmratings.com/downloads/130207_mpaa_rating-poster.pdf).
 
 ![Film database schema diagram](https://groklearning-cdn.com/modules/tqdWF4WxxgiVjW7nsVeu65/FilmDB_Schema.svg)
 
@@ -4032,7 +4039,7 @@ where:
 -   days is the *number of days* by which the `Film` is late; and
 -   cost is the `replacement_cost`.
 
-Your task is to write an SQL query to calculate the `late_fee` according to the formula above for every `Film` in which the `Actor` named `'JOE SWANK'` played. These films were all due to be returned on ***24 March, 2016\*** but were returned late on ***12 April, 2016\***.
+Your task is to write an SQL query to calculate the `late_fee` according to the formula above for every `Film` in which the `Actor` named `'JOE SWANK'` played. These films were all due to be returned on *24 March, 2016* but were returned late on *12 April, 2016*.
 
 Your query's result must have the following columns:
 
@@ -4041,8 +4048,6 @@ Your query's result must have the following columns:
 3.  `rental_rate`;
 4.  `replacement_cost`;
 5.  `late_fee`.
-
-**Hint:** You may want to revise the notes on handling dates in SQL.
 
 ![Film database schema diagram](https://groklearning-cdn.com/modules/tqdWF4WxxgiVjW7nsVeu65/FilmDB_Schema.svg)
 
@@ -4237,8 +4242,6 @@ Most of SQL's aggregate functions are defined for integer or real numbers (such 
 
 Some database systems, such as PostgreSQL, also provide special functions to 'aggregate' string values from several sub-strings. Unfortunately, these parts of SQL are not well standardised so that you always have to check against the system documentation on which capabilities are available in your specific system.
 
-For a detailed overview of the aggregate functions that are available in PostgreSQL, see the [Section 9.20 in the online documentation of PostgreSQL](http://www.postgresql.org/docs/current/static/functions-aggregate.html).
-
 ### The `string_agg` function
 
 One example for a special aggregate function is PostgreSQL's `string_agg(expression, separator)` function: it aggregates all strings of a given set together by concatenating them into a single string with *separator* characters in between.
@@ -4375,6 +4378,15 @@ What will be inserted in above's `Classroom` table with the following insert sta
 INSERT INTO Classroom VALUES ('SIT123');
 ```
 
+```
++--------+----------+---------+
+|  name  | capacity |  kind   |
++--------+----------+---------+
+| SIT123 |          | slopped |
++--------+----------+---------+
+(1 row)
+```
+
 ### Key Constraints
 
 In the DDL chapter, we had already introduced *key constraints*:
@@ -4429,8 +4441,6 @@ CREATE TABLE Classroom (
 INSERT INTO Classroom VALUES ('SIT123', NULL, 'tiered');
 ```
 
-Do you think above's `INSERT` statement with a NULL capacity will work? What happens if you try to insert a 0 capacity? Try it out!
-
 Note: The `CONSTRAINT` clause used in Example 2 can be used for all kinds of integrity constraints, not just for CHECK. It allows to introduce names per constraint which can be very helpful to later identify constraint violations.
 
 ### CREATE DOMAIN
@@ -4451,7 +4461,20 @@ INSERT INTO Transcript VALUES (1234, 'COMP2120', 'CR');
 SELECT * FROM Transcript;
 ```
 
+```
++--------+----------+-------+
+| studid | uoscode  | grade |
++--------+----------+-------+
+|   1234 | COMP2120 | CR    |
++--------+----------+-------+
+(1 row)
+```
+
 Modify above's example and see what happens if you try to insert an invalid value for grade, such as 'W' or 6.
+
+```
+psql:query.sql:8: ERROR:  value for domain gradingscheme violates check constraint "gradingscheme_check"
+```
 
 ### Using Integrity Constraints
 
@@ -4470,13 +4493,13 @@ The following `INSERT` statements should work with the new table:
 
 ```sql
 INSERT INTO Airplane
-     VALUES ('A380',   'Airbus', 15700, 1050, 'turbofan', '2005-04-27');
+     VALUES ('A380', 'Airbus', 15700, 1050, 'turbofan', '2005-04-27');
 
 INSERT INTO Airplane
      VALUES ('Do 228', 'Dornier', NULL, 352, 'turboprop', '1981-03-28');
 
 INSERT INTO Airplane
-     VALUES ('DC10',  'McDonnell Douglas');
+     VALUES ('DC10', 'McDonnell Douglas');
 ```
 
 ``` sql
@@ -4535,6 +4558,39 @@ UPDATE Classroom SET name='SIT LT123' WHERE name='SIT123';
 
 As you can see, the `UDPATE` statement above is rejected, because the classroom 'SIT123' is still referenced from a tuple in the `Lecture` table.
 How would you extend the `FOREIGN KEY` clause in the example such that above's update statement is working?
+
+```sql
+CREATE TABLE Classroom (
+   name     VARCHAR(10) PRIMARY KEY,
+   capacity INTEGER CHECK (capacity >0)
+);
+CREATE TABLE Lecture (
+   uosCode  CHAR(8) PRIMARY KEY,
+   room     VARCHAR(10),
+   FOREIGN KEY (room) REFERENCES Classroom(name) ON UPDATE CASCADE
+);
+INSERT INTO Classroom VALUES ('SIT123', 50);
+INSERT INTO Lecture   VALUES ('INFO2820', 'SIT123');
+UPDATE Classroom SET name='SIT LT123' WHERE name='SIT123';
+SELECT * FROM Classroom;
+SELECT * FROM Lecture;
+```
+
+```
++-----------+----------+
+|   name    | capacity |
++-----------+----------+
+| SIT LT123 |       50 |
++-----------+----------+
+(1 row)
+
++----------+-----------+
+| uoscode  |   room    |
++----------+-----------+
+| INFO2820 | SIT LT123 |
++----------+-----------+
+(1 row)
+```
 
 ### Creating an Inventory
 
@@ -4750,8 +4806,7 @@ grant update(rental_rate) on Film to ShopAdmin with grant option;
 grant select on FamilyFilms to ShopAdmin with grant option;
 
 grant ShopAssistant to Bob;
-grant ShopAdmin to Alice
-
+grant ShopAdmin to Alice;
 ```
 
 # SQL Stored Procedures and Functions
