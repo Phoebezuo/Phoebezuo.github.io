@@ -4808,10 +4808,3 @@ grant select on FamilyFilms to ShopAdmin with grant option;
 grant ShopAssistant to Bob;
 grant ShopAdmin to Alice;
 ```
-
-# SQL Stored Procedures and Functions
-
-## Stored Procedures
-
-
-
