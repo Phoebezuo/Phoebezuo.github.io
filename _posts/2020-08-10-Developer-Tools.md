@@ -80,7 +80,11 @@ categories: MacOS Iterm Zsh
    Set ZSH_THEME="agnoster" and save the file
    ```
 
-3. Quit iTerm and reopen it
+3. Activiate the zshrc file
+
+   ```
+   source ~/.zshrc
+   ```
 
 4. Add font in Iterm
 
@@ -91,7 +95,9 @@ categories: MacOS Iterm Zsh
 
 ### Customise Color Scheme
 
-![color.png](https://i.loli.net/2020/08/14/n9j63wfVCtXp8kW.png)
+Download the color scheme at [here](https://drive.google.com/file/d/11cRibABT11J9KRP8OKo_RadtVNHc6kKi/view?usp=sharing) and import it in iTerm at `Profiles -> Colors`.
+
+![iShot2021-11-28 19.53.16.png](https://i.loli.net/2021/11/28/e278zR1lAIE6nHq.png)
 
 ### Install Plugins
 
@@ -146,10 +152,6 @@ categories: MacOS Iterm Zsh
    }
    ```
 
-3. Click here to see zshconfig file.
-
-4. Click here to see themeconfig file.
-
-5. Trivial settings
+3. Trivial settings
 
 ![setting.png](https://i.loli.net/2020/08/14/pyNHFV5XSI6rtDA.png)
