@@ -151,7 +151,15 @@ Download the color scheme at [here](https://drive.google.com/file/d/11cRibABT11J
      fi
    }
    ```
+   
+3. Add below lines in zshrc file to get word-by-word cursor navigation in terminal
 
-3. Trivial settings
+   ```
+   # Alt/Option left & right arrows to move between words
+   bindkey "\e\e[D" backward-word 
+   bindkey "\e\e[C" forward-word
+   ```
+
+4. Trivial settings
 
 ![setting.png](https://i.loli.net/2020/08/14/pyNHFV5XSI6rtDA.png)
