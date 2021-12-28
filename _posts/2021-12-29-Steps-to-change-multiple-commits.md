@@ -1,4 +1,3 @@
-```
 ---
 layout:     post
 title:      Steps to change multiple commits
@@ -6,7 +5,6 @@ date:       2021-12-29
 summary:    Steps to change contents on multiple git commits
 categories: Git
 ---
-```
 
 1. According to this [repo](https://github.com/PotatoLabs/git-redate), type 
 
