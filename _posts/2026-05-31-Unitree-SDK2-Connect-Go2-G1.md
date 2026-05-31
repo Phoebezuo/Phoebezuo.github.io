@@ -25,34 +25,14 @@ sudo apt-get update
 sudo apt-get install -y cmake g++ build-essential libyaml-cpp-dev libeigen3-dev libboost-all-dev libspdlog-dev libfmt-dev
 ```
 
-## Step 2: Connect to the robot network
-
-Connect your computer to the robot by Ethernet or by the network mode recommended for your robot.
-
-Then find the computer's network interface name:
-
-```bash
-ip addr
-```
-
-Look for the interface that is connected to the robot. Common names look like:
-
-```text
-enp2s0
-enx00e04c680001
-eth0
-```
-
-In the commands below, replace `<network_interface>` with your real interface name.
-
-## Step 3: Clone the SDK
+## Step 2: Clone the SDK
 
 ```bash
 git clone https://github.com/unitreerobotics/unitree_sdk2.git
 cd unitree_sdk2
 ```
 
-## Step 4: Build the examples
+## Step 3: Build the examples
 
 Build everything from the SDK root:
 
@@ -65,7 +45,7 @@ make
 
 After this, the example programs are built inside the `build` directory.
 
-## Step 5: Test DDS locally first
+## Step 4: Test DDS locally first
 
 Before sending commands to a robot, test that the SDK can run a simple DDS publish/subscribe example.
 
@@ -85,6 +65,53 @@ cd unitree_sdk2/build
 
 If the subscriber prints messages from the publisher, the basic SDK communication layer is working.
 
+## Step 5: Connect to the robot network
+
+Connect your computer to the robot by Ethernet or by the network mode recommended for your robot.
+
+Then find the computer's network interface name:
+
+```bash
+ip addr
+```
+
+Look for the interface that is connected to the robot. Common names look like:
+
+```text
+enp2s0
+enp3s0
+enx00e04c680001
+eth0
+```
+
+In the commands below, replace `<network_interface>` with your real interface name.
+
+`ip addr` only shows the current network status. It does not change anything. You can run the SDK example directly only if the robot-connected interface already has an IP address in the Unitree robot network.
+
+For example, this is good:
+
+```text
+inet 192.168.123.222/24
+```
+
+If your interface already shows `192.168.123.xxx/24`, you can skip the manual IP configuration and run the robot example directly.
+
+If your interface has no `inet` address, or it shows a different network such as `192.168.1.xxx`, `10.xxx.xxx.xxx`, or `172.xxx.xxx.xxx`, configure it manually:
+
+```bash
+sudo ip addr flush dev <network_interface>
+sudo ip addr add 192.168.123.222/24 dev <network_interface>
+sudo ip link set <network_interface> up
+```
+
+These commands mean:
+
+1. remove the old IP address from this network interface
+2. set your computer's IP to `192.168.123.222`
+3. turn the network interface on
+
+Be careful with `flush`: it removes the current IP settings on that interface. Use it only on the interface connected to the robot.
+
 ## Step 6: Connect with Go2
 
 For Go2, start with the high-level sport client. It is safer than jumping straight into low-level motor control.
@@ -93,12 +120,6 @@ From the build directory:
 
 ```bash
 ./bin/go2_sport_client <network_interface>
-```
-
-Example:
-
-```bash
-./bin/go2_sport_client enp2s0
 ```
 
 The Go2 sport client example uses `unitree::robot::go2::SportClient`. In the SDK example, common actions include:
