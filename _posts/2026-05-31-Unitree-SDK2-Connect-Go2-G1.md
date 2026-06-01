@@ -2,7 +2,7 @@
 layout:     post
 title:      Unitree SDK2 Setup for Go2 and G1
 date:       2026-05-31
-summary:    Step by step notes for using unitree_sdk2 to connect with Unitree Go2 or G1 robots
+summary:    Step by step notes for using unitree_sdk2 and Linux to connect with Unitree Go2 or G1 robots
 categories: Robotics Unitree SDK
 ---
 

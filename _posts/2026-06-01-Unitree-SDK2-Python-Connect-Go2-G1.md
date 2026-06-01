@@ -2,7 +2,7 @@
 layout:     post
 title:      Unitree SDK2 Python Setup for Go2 and G1
 date:       2026-06-01
-summary:    Step by step notes for using unitree_sdk2_python to connect with Unitree Go2 or G1 robots
+summary:    Step by step notes for using unitree_sdk2_python and Mac to connect with Unitree Go2 or G1 robots
 categories: Robotics Unitree SDK
 ---
 
@@ -163,6 +163,10 @@ If the interface already has an IP like this, you can skip manual IP configurati
 inet 192.168.123.xxx netmask 0xffffff00
 ```
 
+This diagram shows the full Mac check: find the Ethernet device with `networksetup`, check it with `ifconfig`, set the `192.168.123.222` IP if needed, and confirm the robot network:
+
+![Mac robot network setup with networksetup, ifconfig, and Unitree robot IP checks](/images/unitree-sdk2/mac-robot-network-ifconfig.png)
+
 If it has no `inet` address, or it has a different network like `192.168.1.xxx`, set a manual IP address:
 
 ```bash
@@ -177,6 +181,14 @@ This means:
 4. turn the adapter on
 
 The robot and your Mac must be in the same `192.168.123.x` network for the SDK examples to communicate.
+
+Then test that the Mac can reach the robot:
+
+```bash
+ping 192.168.123.161
+```
+
+If the connection is working, you should see replies from `192.168.123.161`.
 
 ## Step 8: Connect with Go2
 
