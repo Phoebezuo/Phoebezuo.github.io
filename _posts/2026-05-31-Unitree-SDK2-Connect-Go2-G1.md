@@ -67,9 +67,13 @@ If the subscriber prints messages from the publisher, the basic SDK communicatio
 
 ## Step 5: Connect to the robot network
 
-Connect your computer to the robot by Ethernet or by the network mode recommended for your robot.
+Connect your computer to the robot by Ethernet.
 
-Then find the computer's network interface name:
+Before checking the network, start both the controller and the robot.
+
+After a short while, the Go2 may stand up by itself. Press `L2 + A` on the controller to make the robot lower down first.
+
+Once the robot is powered on and in a safe low position, find the computer's network interface name:
 
 ```bash
 ip addr
