@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      Unitree SDK2 Python Setup for Go2 and G1 on Mac
+title:      Unitree SDK2 Python Setup for Go2 and G1
 date:       2026-06-01
-summary:    Step by step notes for using unitree_sdk2_python on Mac to connect with Unitree Go2 or G1 robots
-categories: Robotics Unitree SDK Python MacOS
+summary:    Step by step notes for using unitree_sdk2_python to connect with Unitree Go2 or G1 robots
+categories: Robotics Unitree SDK
 ---
 
 This note explains how to use [`unitree_sdk2_python`](https://github.com/unitreerobotics/unitree_sdk2_python) on Mac to connect with a Unitree Go2 or G1 robot.
