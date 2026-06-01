@@ -134,147 +134,47 @@ If the connection is working, you should see packets being transmitted and repli
 
 ## Step 6: Connect with Go2
 
-For Go2, start with the high-level sport client. It is safer than jumping straight into low-level motor control.
-
-From the build directory:
+From the `unitree_sdk2/build` directory, find the Go2 example executables:
 
 ```bash
-./bin/go2_sport_client <network_interface>
+find . -type f -executable | grep -i go2
 ```
 
-The Go2 sport client example uses `unitree::robot::go2::SportClient`. In the SDK example, common actions include:
-
-- `StandUp()`
-- `StandDown()`
-- `BalanceStand()`
-- `Move(vx, vy, vyaw)`
-- `StopMove()`
-- `RecoveryStand()`
-
-The example source sets a `TEST_MODE` value. To change the action, edit:
-
-```cpp
-const int TEST_MODE = stand_down;
-```
-
-For example, to test standing balance, change it to:
-
-```cpp
-const int TEST_MODE = balance_stand;
-```
-
-Then rebuild:
+Then run the example with your robot network interface:
 
 ```bash
-make
-./bin/go2_sport_client <network_interface>
+./path/to/example <network_interface>
 ```
 
-Important: use small movement values first. For example, `Move(0.3, 0, 0.3)` means forward velocity, side velocity, and yaw velocity. Do not test this on a desk or near people.
+For example:
+
+```bash
+./bin/go2_stand_example <network_interface>
+```
+
+Only run examples that match your robot model and test setup.
 
 ## Step 7: Connect with G1
 
-For G1, start with the high-level loco client example:
+From the `unitree_sdk2/build` directory, find the G1 example executables:
 
 ```bash
-./bin/g1_loco_client --network_interface=<network_interface> --get_fsm_id
+find . -type f -executable | grep -i g1
 ```
 
-Example:
+Then run the example with your robot network interface:
 
 ```bash
-./bin/g1_loco_client --network_interface=enp2s0 --get_fsm_id
+./path/to/example <network_interface>
 ```
 
-If that works, query a few more states:
+For example:
 
 ```bash
-./bin/g1_loco_client --network_interface=enp2s0 --get_fsm_mode
-./bin/g1_loco_client --network_interface=enp2s0 --get_balance_mode
-./bin/g1_loco_client --network_interface=enp2s0 --get_stand_height
+./bin/g1_ankle_swing_example <network_interface>
 ```
 
-Then try a simple high-level command:
-
-```bash
-./bin/g1_loco_client --network_interface=enp2s0 --balance_stand
-```
-
-For controlled movement, the G1 example accepts velocity commands:
-
-```bash
-./bin/g1_loco_client --network_interface=enp2s0 --set_velocity="0.1 0 0 1"
-```
-
-The four values mean:
-
-1. forward velocity
-2. side velocity
-3. yaw velocity
-4. duration in seconds
-
-Start very small. A humanoid robot can fall, so make sure the robot is in a safe test space and follow Unitree's safety instructions.
-
-## Step 8: Know which example to use
-
-The SDK has different examples for different control levels.
-
-For Go2:
-
-- `go2_sport_client`: high-level movement commands
-- `go2_robot_state_client`: robot state query
-- `go2_video_client`: video client
-- `go2_low_level`: low-level control
-- `go2_stand_example`: low-level stand example
-
-For G1:
-
-- `g1_loco_client`: high-level locomotion commands
-- `g1_arm5_sdk_dds_example`: arm control for 5-DoF arm
-- `g1_arm7_sdk_dds_example`: arm control for 7-DoF arm
-- `g1_userctrl_dds_example`: user control through DDS
-- `g1_ankle_swing_example`: low-level ankle example
-- `g1_audio_client_example`: audio client
-- `g1_hand_sdk_example`: hand SDK example
-
-For first connection tests, use high-level examples first:
-
-- Go2: `go2_sport_client`
-- G1: `g1_loco_client`
-
-Use low-level examples only after you understand the robot state, control frequency, joint order, and safety behavior.
-
-## Step 9: Install the SDK for your own C++ project
-
-If you want to write your own project instead of only running examples, install the SDK:
-
-```bash
-cd unitree_sdk2
-mkdir build
-cd build
-cmake ..
-sudo make install
-```
-
-Or install it to a custom path:
-
-```bash
-cmake .. -DCMAKE_INSTALL_PREFIX=/opt/unitree_robotics
-sudo make install
-```
-
-If you install it somewhere other than `/opt/unitree_robotics`, make sure CMake can find it through `CMAKE_PREFIX_PATH`.
-
-## Step 10: Basic troubleshooting
-
-If the example cannot connect:
-
-1. Check the network interface name again with `ip addr`.
-2. Make sure the computer and robot are on the same network.
-3. Make sure you passed the network interface name to the example.
-4. Try a state query before movement commands.
-5. Rebuild after changing example source code.
-6. Check the official [Unitree Document Center](https://support.unitree.com/home/zh/developer) for robot-specific network setup.
+Only run examples that match your robot model and test setup. A humanoid robot can fall, so make sure the robot is in a safe test space and follow Unitree's safety instructions.
 
 ## Useful links
 
