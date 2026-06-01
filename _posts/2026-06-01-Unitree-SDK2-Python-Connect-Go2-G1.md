@@ -244,8 +244,6 @@ For G1:
 - `example/g1/audio/g1_audio_client_example.py`: audio client
 - `example/g1/low_level/g1_ankle_swing_example.py`: low-level ankle example
 
-For first connection tests, use high-level examples before low-level examples.
-
 ## Useful links
 
 - [`unitreerobotics/unitree_sdk2_python`](https://github.com/unitreerobotics/unitree_sdk2_python)

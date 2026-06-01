@@ -176,6 +176,26 @@ For example:
 
 Only run examples that match your robot model and test setup. A humanoid robot can fall, so make sure the robot is in a safe test space and follow Unitree's safety instructions.
 
+## Step 8: Know which examples to use first
+
+For Go2, useful examples include:
+
+- `go2_sport_client`: high-level sport control
+- `go2_robot_state_client`: robot state query
+- `go2_video_client`: video client
+- `go2_vui_client`: voice/user interaction client
+- `go2_trajectory_follow`: trajectory follow example
+- `go2_stand_example`: stand example
+- `go2_low_level`: low-level control
+
+For G1, useful example groups include:
+
+- `g1/high_level`: high-level locomotion examples
+- `g1/low_level`: low-level motion examples
+- `g1/audio`: audio client examples
+- `g1/dex3`: Dex3 hand examples
+- `g1/g1d`: G1D examples
+
 ## Useful links
 
 - [`unitreerobotics/unitree_sdk2`](https://github.com/unitreerobotics/unitree_sdk2)
