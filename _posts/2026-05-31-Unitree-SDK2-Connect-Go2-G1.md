@@ -86,6 +86,14 @@ enx00e04c680001
 eth0
 ```
 
+If the Ethernet adapter is not connected to the robot correctly, the adapter may show `NO-CARRIER`, `state DOWN`, and no robot-network IP address:
+
+![Bad ip addr example: Ethernet adapter is down and the robot is not detected](/images/unitree-sdk2/go2-ip-addr-bad.png)
+
+When the Ethernet adapter is connected correctly, it should show `UP` and an IP address on the Unitree robot network, such as `192.168.123.222/24`:
+
+![Good ip addr example: Ethernet adapter is up with 192.168.123.222 on the robot network](/images/unitree-sdk2/go2-ip-addr-good.png)
+
 > In the commands below, replace `<network_interface>` with your real interface name.
 
 If your interface already shows `192.168.123.xxx/24`, you can skip the manual IP configuration and run the robot example directly.
