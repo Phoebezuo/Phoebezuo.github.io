@@ -71,9 +71,7 @@ Connect your computer to the robot by Ethernet.
 
 Before checking the network, start both the controller and the robot.
 
-After a short while, the Go2 may stand up by itself. Press `L2 + A` on the controller to make the robot lower down first.
-
-Once the robot is powered on and in a safe low position, find the computer's network interface name:
+Once the robot is powered on and in a safe position (hung up or lying on the ground), find the computer's network interface name:
 
 ```bash
 ip addr
@@ -88,15 +86,7 @@ enx00e04c680001
 eth0
 ```
 
-In the commands below, replace `<network_interface>` with your real interface name.
-
-`ip addr` only shows the current network status. It does not change anything. You can run the SDK example directly only if the robot-connected interface already has an IP address in the Unitree robot network.
-
-For example, this is good:
-
-```text
-inet 192.168.123.222/24
-```
+> In the commands below, replace `<network_interface>` with your real interface name.
 
 If your interface already shows `192.168.123.xxx/24`, you can skip the manual IP configuration and run the robot example directly.
 
@@ -114,7 +104,25 @@ These commands mean:
 2. set your computer's IP to `192.168.123.222`
 3. turn the network interface on
 
-Be careful with `flush`: it removes the current IP settings on that interface. Use it only on the interface connected to the robot.
+Before running the SDK example, check the IP address on the robot-connected interface:
+
+```bash
+ip addr show <network_interface>
+```
+
+You should see:
+
+```text
+192.168.123.222/24
+```
+
+Then test the robot connection:
+
+```bash
+ping 192.168.123.161
+```
+
+If the connection is working, you should see packets being transmitted and replies coming back.
 
 ## Step 6: Connect with Go2
 
