@@ -199,12 +199,6 @@ cd ~/unitree_sdk2_python
 python3 ./example/go2/high_level/go2_sport_client.py <network_interface>
 ```
 
-Example:
-
-```bash
-python3 ./example/go2/high_level/go2_sport_client.py en5
-```
-
 The example is interactive. Type `list` to see available test options. Common options include:
 
 ```text
@@ -219,8 +213,6 @@ balanced stand
 recovery
 ```
 
-Start with `stand_up`, `stand_down`, `balanced stand`, or `recovery`. Do not start with movement options unless the robot has enough open space.
-
 ## Step 9: Connect with G1
 
 For G1, use the G1 high-level loco client example:
@@ -230,15 +222,7 @@ cd ~/unitree_sdk2_python
 python3 ./example/g1/high_level/g1_loco_client_example.py <network_interface>
 ```
 
-Example:
-
-```bash
-python3 ./example/g1/high_level/g1_loco_client_example.py en5
-```
-
 The example is interactive. It asks you to confirm that the robot has no obstacles around it, then you can type `list` to see available test options.
-
-Use simple state or stand/balance options first. Be careful with movement commands because G1 is a humanoid robot and can fall.
 
 ## Step 10: Know which examples to use first
 
@@ -261,25 +245,6 @@ For G1:
 - `example/g1/low_level/g1_ankle_swing_example.py`: low-level ankle example
 
 For first connection tests, use high-level examples before low-level examples.
-
-## Step 11: Basic troubleshooting
-
-If `pip install -e .` fails:
-
-1. check `python3 --version`
-2. check `echo "$CYCLONEDDS_HOME"`
-3. check `ls "$CYCLONEDDS_HOME/lib"`
-4. check `ls "$CYCLONEDDS_HOME/include"`
-5. run `python3 -m pip install -e .` again from `~/unitree_sdk2_python`
-
-If the robot example cannot connect:
-
-1. check the Ethernet interface with `networksetup -listallhardwareports`
-2. check the IP address with `ifconfig <network_interface>`
-3. make sure the Mac IP is `192.168.123.xxx`
-4. make sure you pass the same interface name to the Python example
-5. try a safe high-level option like `damp`, `stand_up`, or `balanced stand` before movement control
-6. check the official Unitree network setup document for your robot
 
 ## Useful links
 
