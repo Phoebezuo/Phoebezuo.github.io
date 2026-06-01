@@ -147,15 +147,7 @@ Device: en5
 Ethernet Address: xx:xx:xx:xx:xx:xx
 ```
 
-In this example, the network interface is `en5`.
-
-You can also check interfaces with:
-
-```bash
-ifconfig
-```
-
-In the commands below, replace `<network_interface>` with your real interface name, such as `en5`.
+> In the commands below, replace `<network_interface>` with your real interface name, such as `en5`.
 
 ## Step 7: Configure the Mac IP if needed
 
@@ -163,12 +155,6 @@ Check the Ethernet interface:
 
 ```bash
 ifconfig <network_interface>
-```
-
-Example:
-
-```bash
-ifconfig en5
 ```
 
 If the interface already has an IP like this, you can skip manual IP configuration:
@@ -181,12 +167,6 @@ If it has no `inet` address, or it has a different network like `192.168.1.xxx`,
 
 ```bash
 sudo ifconfig <network_interface> inet 192.168.123.222 netmask 255.255.255.0 up
-```
-
-Example:
-
-```bash
-sudo ifconfig en5 inet 192.168.123.222 netmask 255.255.255.0 up
 ```
 
 This means:
