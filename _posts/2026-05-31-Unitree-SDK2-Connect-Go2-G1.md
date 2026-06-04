@@ -67,7 +67,14 @@ If the subscriber prints messages from the publisher, the basic SDK communicatio
 
 ## Step 5: Connect to the robot network
 
-Connect your computer to the robot by Ethernet.
+For Go2, connect your computer to the robot by Ethernet.
+
+For G1 only, prepare the robot before connecting the Ethernet cable:
+
+1. Hang the robot with the rope tight, switch to Zero Moment mode with `L2 + Y`.
+2. Connect the Ethernet cable.
+
+You only need to lift the robot off the ground and hold `L2 + R2` for 3 seconds to enter developer mode when you want to run **low-level** control examples. Do not enter developer mode when using the high-level commands (e.g. in Step 7), because those commands use the robot's normal high-level locomotion service.
 
 Before checking the network, start both the controller and the robot.
 
@@ -168,13 +175,53 @@ Then run the example with your robot network interface:
 ./path/to/example <network_interface>
 ```
 
-For example:
+### Run the G1 high-level locomotion client
+
+The following example uses the G1 high-level locomotion client. Keep the robot out of developer mode, place it in a clear test area.
+
+1. Put the motors into damping mode:
 
 ```bash
-./bin/g1_ankle_swing_example <network_interface>
+./bin/g1_loco_client --network_interface=<network-interface> --damp
 ```
 
-Only run examples that match your robot model and test setup. A humanoid robot can fall, so make sure the robot is in a safe test space and follow Unitree's safety instructions.
+This stops active motion and puts the joints into a damped state before starting the sequence. Support the robot because it will not actively balance in damping mode.
+
+2. Command the robot to stand up:
+
+```bash
+./bin/g1_loco_client --network_interface=<network-interface> --stand_up
+```
+
+This moves the robot from its current resting posture into a standing posture.
+
+3. Start high-level locomotion control:
+
+```bash
+./bin/g1_loco_client --network_interface=<network-interface> --start
+```
+
+This starts the robot's high-level locomotion controller so it can accept walking commands.
+
+4. Select locomotion FSM `801`:
+
+```bash
+./bin/g1_loco_client --network_interface=<network-interface> --set_fsm=801
+```
+
+The finite state machine (FSM) controls the robot's current behavior. This command switches it to FSM `801` before sending a velocity command.
+
+5. Move the robot backward or forward for one second:
+
+```bash
+# Move backward
+./bin/g1_loco_client --network_interface=<network-interface> --set_velocity="-0.5 0 0 1"
+
+# Move forward
+./bin/g1_loco_client --network_interface=<network-interface> --set_velocity="0.5 0 0 1"
+```
+
+The four values are `forward_velocity lateral_velocity yaw_velocity duration`. A negative first value moves backward, a positive first value moves forward, both `0` values disable sideways movement and turning, and `1` runs the command for one second.
 
 ## Step 8: Know which examples to use first
 

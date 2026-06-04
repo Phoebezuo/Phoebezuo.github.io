@@ -131,7 +131,13 @@ If the subscriber prints messages from the publisher, the Python SDK and DDS lay
 
 ## Step 6: Connect the Mac to the robot network
 
-Connect your Mac to the robot with Ethernet, usually through a USB-C to Ethernet adapter.
+For Go2, connect your Mac to the robot with Ethernet, usually through a USB-C to Ethernet adapter.
+
+For G1 only, prepare the robot before connecting the Ethernet cable:
+
+1. Hang the robot with the rope tight, switch to Zero Moment mode with `L2 + Y`.
+2. Lift the robot off the ground, hold `L2 + R2` for 3 seconds to enter developer mode.
+3. Connect the Ethernet cable.
 
 Find the network device name:
 
