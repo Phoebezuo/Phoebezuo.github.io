@@ -136,8 +136,9 @@ For Go2, connect your Mac to the robot with Ethernet, usually through a USB-C to
 For G1 only, prepare the robot before connecting the Ethernet cable:
 
 1. Hang the robot with the rope tight, switch to Zero Moment mode with `L2 + Y`.
-2. Lift the robot off the ground, hold `L2 + R2` for 3 seconds to enter developer mode.
-3. Connect the Ethernet cable.
+2. Connect the Ethernet cable.
+
+You only need to lift the robot off the ground and hold `L2 + R2` for 3 seconds to enter developer mode when you want to run **low-level** control examples. Do not enter developer mode when using high-level examples such as the G1 high-level locomotion client.
 
 Find the network device name:
 
